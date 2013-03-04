@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+
+%\setcounter{tocdepth}{3}% to get subsubsections in toc
+%\let\oldtocsection=\tocsection
+%\let\oldtocsubsection=\tocsubsection
+%\let\oldtocsubsubsection=\tocsubsubsection
+%\renewcommand{\tocsection}[2]{\hspace{0em}\oldtocsection{#1}{#2}}
+%\renewcommand{\tocsubsection}[2]{\hspace{2em}\oldtocsubsection{#1}{#2}}
+%\renewcommand{\tocsubsubsection}[2]{\hspace{4em}\oldtocsubsubsection{#1}{#2}}
+
+\usepackage{tensor}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[estonian]{babel}
+\usepackage[a4paper]{geometry}
+
+\newtheorem{theorem}{Teoreem}
+%\theoremstyle{plain}
+\newtheorem{acknowledgement}{Märkus}
+\newtheorem{algorithm}{Algoritm}
+\newtheorem{axiom}{Aksioom}
+\newtheorem{case}{Juht}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Järeldus}
+\newtheorem{condition}{Tingimus}
+\newtheorem{conjecture}{Hüpotees}
+\newtheorem{corollary}{Järeldus}
+\newtheorem{criterion}{Kriteerium}
+\newtheorem{definition}{Definitsioon}
+\newtheorem{example}{Näide}
+\newtheorem{exercise}{Ülesanne}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Tähistus}
+\newtheorem{problem}{Probleem}
+\newtheorem{proposition}{Lause}
+\newtheorem{remark}{Kommentaar}
+\newtheorem{solution}{Lahendus}
+\newtheorem{summary}{Kokkuvõte}
+\numberwithin{equation}{section}
+
+\title{Minkowski aegruumi geomeetriast}
+%\author[P. Lätt]{Priit Lätt}
+%\email[P. Lätt]{lattpriit@gmail.com}
+
+\pagestyle{plain}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+{\large TARTU ÜLIKOOL}\\[0.3cm]
+{\large MATEMAATIKA-INFORMAATIKATEADUSKOND}\\[0.3cm]
+{\large Matemaatika instituut}\\[0.3cm]
+{\large Matemaatika eriala}\\[3cm]
+
+{\large Priit Lätt}\\[0.3cm]
+{\huge \textbf{Minkowski aegruumi geomeetriast}}\\[0.3cm]
+{\large Bakalaureusetöö (6 EAP)}\\[3cm]
+
+% Author and supervisor
+\begin{flushright}
+{\large Juhendaja: Viktor Abramov}
+\end{flushright}
+
+\vfill
+
+\begin{flushleft}
+{\large
+Autor: \dotfill "....." jaanuar 2013\\
+Juhendaja: \dotfill "....." jaanuar 2013\\[0.5cm]
+Lubada kaitsmisele\\
+Professor \dotfill "....." jaanuar 2013\\[3cm]
+}
+\end{flushleft}
+{\large TARTU \the\year}
+
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section*{Sissejuhatus}
+Märgime, et töös kasutame summade tähistamisel Einstein'i summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, mis omavad väärtusi $1, \dots, n \left( n \in \mathbb{N} \right)$, siis kirjutame 
+
+
+\[ x^{i} e_{a} = \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n},\]
+\[ \lambda\indices{^i_j} x^{j} = \sum_{j=1}^{n} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n}, \]
+\[ \eta_{ij} u^{i} v^{j} = \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n}, \]
+ja nii edasi.
+
+\newpage
+
+\section{Vajalikud eelteadmised}
+
+Selles patükis toome välja definitsioonid ja tähtsamad tulemusedd, mida läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures tõestusteta.
+
+\subsection{ptk}
+
+\newpage
+
+\section{Minkowski ruumi geomeetriline struktuur}
+
+\subsection{Skalaarkorrutise definitsioon ja omadused}
+
+Olgu $V$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. Me ütleme, et kujutus $g : V \times V \rightarrow \mathbb{R}$ on \textit{bilineaarvorm}, kui $g$ on mõlema muutuja järgi lineaarne, see tähendab $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = \alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right)$ ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = \alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning $u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $V$ elemendid. 
+\\
+Olgu $u, v \in V$. Bilineaarvormi $g$ nimetatakse \textit{sümmeetriliseks}, kui $g \left( u, v \right) = g \left(v, u \right)$ ja \textit{mittekidunuks}, kui $u = 0$ järeldub tingumusest iga $v \in V$ korral $g \left( u, v \right) = 0$.
+
+\begin{definition}
+Mittekidunud sümmeetrilist bilineaarvormi $g:V \times V \rightarrow \mathbb{R}$ nimetatakse skalaarkorrutiseks. Vektorite $u$ ja $v$ skalaarkorrutist tähistame sageli ka kujul $u \cdot v$.
+\end{definition}
+
+\begin{example}
+Vaatleme ruumi $\mathbb{R}^{n}$. Olgu $u = \left(u^1, u^2, \dots, u^n \right), v = \left(v^1, v^2, \dots, v^n \right) \in \mathbb{R}^{n}$. Lihtne on veenduda, et kujutus $g \left(u, v \right) = u^1v^1 + u^2v^2 + \dots + u^n v^n$ on skalaarkorrutis.
+\end{example}
+
+Näites 1 defineeritud skalaarkorrutis on \textit{positiivselt määratud}, see tähendab iga $v \neq 0$ korral $g \left(v, v \right) > 0$. Kui $g \left(v, v \right) < 0$ kõikide $v \neq 0$ korral, siis ütleme, et $g$ on \textit{negatiivselt määratud} ja kui $g$ pole ei positiivselt ega negatiivselt määratud, siis öeldakse, et $g$ on \textit{määramata}.
+
+\begin{definition}
+Kui $g$ on skalaarkorrutis vektorruumil $V$, siis nimetame vektoreid $u$ ja $v$ $g$-ortogonaalseks, või lihtsalt ortogonaalseks, kui $g$ roll on kontekstist selge, kui $g \left( u, v \right) = 0$. Kui $W \subset V$ on alamruum, siis ruumi $W$ ortogonaalne täiend $W^{\perp}$ defineeritakse võrdusega $W^{\perp} = \left\lbrace u \in V : \forall v \in W g \left(u, v \right) = 0 \right\rbrace$.
+\end{definition}
+\begin{definition}
+Skalaarkorrutise $g$ poolt määratud ruutvormiks nimetame kujutust $Q : V \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$.
+\end{definition}
+
+\begin{proposition}
+Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $V$, mis rahuldavad tingimust $g_1 \left(u, u \right) = g_2 \left(u, u \right)$ iga $v \in V$ korral. Siis kehtib $g_1 \left(u, u \right) = g_2 \left(u, u \right)$ kõikide $u, v \in V$ korral.
+\end{proposition}
+
+% SIIA TULEB PÄRIS TÕESTUS KIRJUTADA!!!
+\begin{proof}
+\lipsum[7]
+\end{proof}
+
+\begin{theorem}
+Olgu $V$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : V \times V \rightarrow \mathbb{R}$ skalaarkorrutis. Vektorruumil $V$ leidub baas $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ nii, et $g \left(e_i, e_j\right) = 0$ kui $i \neq j$ ja $Q\left(e_i\right) = \pm 1$ iga $i = 1, 2, \dots, n$ korral. Enamgi veel, baasivektorite arv, mille korral $Q \left(e_i\right) = -1$ on sama kõikide neid tingimusi rahuldavate baaside korral sama.
+\end{theorem}
+
+\begin{proof}
+Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks.
+% Lisa viide Gram-Schmidti algoritmile
+\end{proof}
+Skalaarkorrutise $g$ suhtses ortonormaalse baasi $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ vektorite arvu $r$, mille korral $Q \left(e_i\right) = -1, i \in \left\lbrace 1, 2, \dots, n \right\rbrace$, nimetame skalaarkorrutise $g$ indeksiks.
+Järgnevas eeldame, et ortonormeeritud baasid on indekseeritud nii, et baasivektorid $e_i$, mille korral $Q \left(e_i\right) = -1$, paiknevad loetelu lõpus, ehk ortonormeeritud baasi 
+\[\left\lbrace e_1, e_2, \dots, e_{n-r}, e_{n-r+1}, \dots, e_n \right\rbrace\]
+korral $Q \left(e_i\right) = 1$, kui $i = 1, 2, \dots, n-r$, ja $Q \left(e_i\right) = -1$, kui $i = n-r+1, \dots, n$. Tähistades $u = u^i e_i$ ja $v = v^i e_i$ saame sellise baasi suhtes skalaarkorrutise $g$ arvutada järgmiselt:
+\[g\left(u, v\right) = u^1 v^1 + u^2 v^2 + \dots + u^{n-r} v^{n-r} - u^{n-r+1} v^{n-r+1} - \dots - u^n v^n.\]
+\vfill 
+\end{document}
