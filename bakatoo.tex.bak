@@ -147,7 +147,7 @@ Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\mathbb{V}$, mis rahulda
 \end{proof}
 
 \begin{theorem}
-Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ skalaarkorrutis. Vektorruumil $\mathbb{V}$ leidub baas $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ nii, et $g \left(e_i, e_j\right) = 0$ kui $i \neq j$ ja $Q\left(e_i\right) = \pm 1$ iga $i = 1, 2, \dots, n$ korral. Enamgi veel, baasivektorite arv, mille korral $Q \left(e_i\right) = -1$ on sama kõikide neid tingimusi rahuldavate baaside korral sama.
+Olgu $V$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : V \times V \rightarrow \mathbb{R}$ skalaarkorrutis. Vektorruumil $V$ leidub baas $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ nii, et $g \left(e_i, e_j\right) = 0$ kui $i \neq j$ ja $Q\left(e_i\right) = \pm 1$ iga $i = 1, 2, \dots, n$ korral. Enamgi veel, baasivektorite arv, mille korral $Q \left(e_i\right) = -1$ on sama kõikide neid tingimusi rahuldavate baaside korral sama.
 \end{theorem}
 
 \begin{proof}
