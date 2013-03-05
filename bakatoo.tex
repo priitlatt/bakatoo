@@ -202,7 +202,7 @@ Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullvektorid. Vektorid $u$ ja $v$ on
 \[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
 ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
 \\
-\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $\leq g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
+\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
 \end{proof}
 
 \newpage
@@ -214,12 +214,12 @@ Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}
 \end{algoritm}
 Järgnevaga anname eeskirja sellise baasi konstrueermiseks.
 \newline
-Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{b}{\sqrt{b \cdot b}} \right\rbrace$ on ortonormeeritud baas.\\
+Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.\\
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
 \[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
 Seega tarvitseb meil leida veel $a_n \in \mathbb{V} \setminus \{0\}$ omadusega
 \[a_n \perp \spn\{ e_1, e_2, \dots, e_{n-1}\},\]
-sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{a_n}{|a_n|}\}$ on ruumi $\mathbb{V}$ ortonormeeritud baas.\\
+sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{1}{|a_n|}a_n\}$ on ruumi $\mathbb{V}$ ortonormeeritud baas.\\
 Otsime vektorit $a_n$ kujul
 \begin{equation}
 a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \mathbb{R}.
