@@ -19,29 +19,30 @@
 \usepackage[estonian]{babel}
 \usepackage[a4paper]{geometry}
 
-\newtheorem{theorem}{Teoreem}
+\newtheorem{teoreem}{Teoreem}[section]
 %\theoremstyle{plain}
-\newtheorem{acknowledgement}{Märkus}
-\newtheorem{algorithm}{Algoritm}
-\newtheorem{axiom}{Aksioom}
-\newtheorem{case}{Juht}
-\newtheorem{claim}{Claim}
-\newtheorem{conclusion}{Järeldus}
-\newtheorem{condition}{Tingimus}
-\newtheorem{conjecture}{Hüpotees}
-\newtheorem{corollary}{Järeldus}
-\newtheorem{criterion}{Kriteerium}
-\newtheorem{definition}{Definitsioon}
-\newtheorem{example}{Näide}
-\newtheorem{exercise}{Ülesanne}
-\newtheorem{lemma}{Lemma}
-\newtheorem{notation}{Tähistus}
-\newtheorem{problem}{Probleem}
-\newtheorem{proposition}{Lause}
-\newtheorem{remark}{Kommentaar}
-\newtheorem{solution}{Lahendus}
-\newtheorem{summary}{Kokkuvõte}
+\newtheorem{markus}{Märkus}[section]
+\newtheorem{algoritm}{Algoritm}[section]
+\newtheorem{aksioom}{Aksioom}
+\newtheorem{juht}{Juht}[section]
+\newtheorem{jareldus}{Järeldus}[section]
+\newtheorem{tingimus}{Tingimus}[section]
+\newtheorem{hupotees}{Hüpotees}[section]
+\newtheorem{kriteerium}{Kriteerium}[section]
+\newtheorem{definitsioon}{Definitsioon}[section]
+\newtheorem{naide}{Näide}[section]
+\newtheorem{ulesanne}{Ülesanne}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{tahistus}{Tähistus}[section]
+\newtheorem{probleem}{Probleem}[section]
+\newtheorem{lause}{Lause}[section]
+\newtheorem{kommentaar}{Kommentaar}[section]
+\newtheorem{lahendus}{Lahendus}[section]
+\newtheorem{kokkuvote}{Kokkuvõte}[section]
 \numberwithin{equation}{section}
+
+\usepackage{mathtools}
+\DeclareMathOperator{\spn}{span}
 
 \title{Minkowski aegruumi geomeetriast}
 %\author[P. Lätt]{Priit Lätt}
@@ -72,10 +73,10 @@
 
 \begin{flushleft}
 {\large
-Autor: \dotfill "....." jaanuar 2013\\
-Juhendaja: \dotfill "....." jaanuar 2013\\[0.5cm]
+Autor: \dotfill "....." juuni 2013\\
+Juhendaja: \dotfill "....." juuni 2013\\[0.5cm]
 Lubada kaitsmisele\\
-Professor \dotfill "....." jaanuar 2013\\[3cm]
+Mingi inimene \dotfill "....." juuni 2013\\[3cm]
 }
 \end{flushleft}
 {\large TARTU \the\year}
@@ -86,7 +87,7 @@ Professor \dotfill "....." jaanuar 2013\\[3cm]
 \tableofcontents
 \newpage
 
-\section*{Sissejuhatus}
+\section{Sissejuhatus}
 Märgime, et töös kasutame summade tähistamisel Einstein'i summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, mis omavad väärtusi $1, \dots, n \left( n \in \mathbb{N} \right)$, siis kirjutame 
 
 
@@ -95,6 +96,8 @@ Märgime, et töös kasutame summade tähistamisel Einstein'i summeerimiskokkule
 \[ \eta_{ij} u^{i} v^{j} = \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n}, \]
 ja nii edasi.
 
+\paragraph{}
+Vektori $u$ pikkust tähistame edaspidi $|u|$.
 \newpage
 
 \section{Vajalikud eelteadmised}
@@ -109,13 +112,13 @@ Selles patükis toome välja definitsioonid ja tähtsamad tulemusedd, mida lähe
 
 \subsection{Skalaarkorrutise definitsioon ja omadused}
 
-Olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. Me ütleme, et kujutus $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ on \textit{bilineaarvorm}, kui $g$ on mõlema muutuja järgi lineaarne, see tähendab $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = \alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right)$ ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = \alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning $u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $V$ elemendid. 
+Olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. Me ütleme, et kujutus $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ on \emph{bilineaarvorm}, kui $g$ on mõlema muutuja järgi lineaarne, see tähendab $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = \alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right)$ ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = \alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning $u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $\mathbb{V}$ elemendid. 
 \\
-Olgu $u, v \in \mathbb{V}$. Bilineaarvormi $g$ nimetatakse \textit{sümmeetriliseks}, kui $g \left( u, v \right) = g \left(v, u \right)$ ja \textit{mittekidunuks}, kui $u = 0$ järeldub tingumusest iga $v \in \mathbb{V}$ korral $g \left( u, v \right) = 0$.
+Olgu $u, v \in \mathbb{V}$. Bilineaarvormi $g$ nimetatakse \emph{sümmeetriliseks}, kui $g \left( u, v \right) = g \left(v, u \right)$ ja \emph{mittekidunuks}, kui $u = 0$ järeldub tingumusest iga $v \in \mathbb{V}$ korral $g \left( u, v \right) = 0$.
 
-\begin{definition}
-Mittekidunud sümmeetrilist bilineaarvormi $g: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ nimetatakse skalaarkorrutiseks. Vektorite $u$ ja $v$ skalaarkorrutist tähistame sageli ka kujul $u \cdot v$.
-\end{definition}
+\begin{definitsioon}
+Mittekidunud sümmeetrilist bilineaarvormi $g: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ nimetatakse \emph{skalaarkorrutiseks}. Vektorite $u$ ja $v$ skalaarkorrutist tähistame sageli ka kujul $u \cdot v$.
+\end{definitsioon}
 
 Tänu skalaarkorrutise bilineaarsusele on kergesti tuletatavad järgmised omadused:
 \begin{itemize}
@@ -124,40 +127,150 @@ Tänu skalaarkorrutise bilineaarsusele on kergesti tuletatavad järgmised omadus
 \item kui $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ on vektorruumi $\mathbb{V}$ baas ning kui tähistame $\eta_{ij} = e_i \cdot e_j$, $i,j = 1, 2, \dots, n$, siis $u \cdot v = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \eta_{ij} u^i v^j = \eta_{ij} u^i v^j$, kus $u = u^i e_i$ ja $v = v^i e_i$.
 \end{itemize}
 
-\begin{example}
+\begin{naide}
 Vaatleme ruumi $\mathbb{R}^{n}$. Olgu $u = \left(u^1, u^2, \dots, u^n \right), v = \left(v^1, v^2, \dots, v^n \right) \in \mathbb{R}^{n}$. Lihtne on veenduda, et kujutus $g \left(u, v \right) = u^1v^1 + u^2v^2 + \dots + u^n v^n$ on skalaarkorrutis.
-\end{example}
+\end{naide}
 
-Näites 1 defineeritud skalaarkorrutis on \textit{positiivselt määratud}, see tähendab iga $v \neq 0$ korral $g \left(v, v \right) > 0$. Kui $g \left(v, v \right) < 0$ kõikide $v \neq 0$ korral, siis ütleme, et $g$ on \textit{negatiivselt määratud} ja kui $g$ pole ei positiivselt ega negatiivselt määratud, siis öeldakse, et $g$ on \textit{määramata}.
+Näites 1 defineeritud skalaarkorrutis on \emph{positiivselt määratud}, see tähendab iga $v \neq 0$ korral $g \left(v, v \right) > 0$. Kui $g \left(v, v \right) < 0$ kõikide $v \neq 0$ korral, siis ütleme, et $g$ on \emph{negatiivselt määratud} ja kui $g$ pole ei positiivselt ega negatiivselt määratud, siis öeldakse, et $g$ on \emph{määramata}.
 
-\begin{definition}
-Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame vektoreid $u$ ja $v$ $g$-ortogonaalseks, või lihtsalt ortogonaalseks, kui $g$ roll on kontekstist selge, kui $g \left( u, v \right) = 0$. Kui $\mathbb{W} \subset \mathbb{V}$ on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend $\mathbb{W}^{\perp}$ defineeritakse võrdusega $\mathbb{W}^{\perp} = \left\lbrace u \in V : \forall v \in  \mathbb{W} g \left(u, v \right) = 0 \right\rbrace$.
-\end{definition}
-\begin{definition}
-Skalaarkorrutise $g$ poolt määratud ruutvormiks nimetame kujutust $Q : \mathbb{V} \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$.
-\end{definition}
+\begin{definitsioon}
+Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt ortogonaalseteks, kui $g$ roll on kontekstist selge) kui $g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \mathbb{V}$ on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in V : \forall v \in  \mathbb{W} g \left(u, v \right) = 0 \right\rbrace$.
+\end{definitsioon}
+\begin{definitsioon}
+Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame kujutust $Q : \mathbb{V} \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$.
+\end{definitsioon}
 
-\begin{proposition}
-Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\mathbb{V}$, mis rahuldavad tingimust $g_1 \left(u, u \right) = g_2 \left(u, u \right)$ iga $v \in \mathbb{V}$ korral. Siis kehtib $g_1 \left(u, u \right) = g_2 \left(u, u \right)$ kõikide $u, v \in \mathbb{V}$ korral.
-\end{proposition}
+\begin{lause}
+Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\mathbb{V}$, mis rahuldavad tingimust $g_1 \left(u, u \right) = g_2 \left(u, u \right)$ iga $v \in \mathbb{V}$ korral. Siis kehtib $g_1 \left(u, v \right) = g_2 \left(u, v \right)$ kõikide $u, v \in \mathbb{V}$ korral, ehk teisi sõnu, $g_1 \equiv g_2$.
+\end{lause}
 
 % SIIA TULEB PÄRIS TÕESTUS KIRJUTADA!!!
 \begin{proof}
 \lipsum[7]
 \end{proof}
 
-\begin{theorem}
+\begin{teoreem}
 Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ skalaarkorrutis. Vektorruumil $\mathbb{V}$ leidub baas $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ nii, et $g \left(e_i, e_j\right) = 0$ kui $i \neq j$ ja $Q\left(e_i\right) = \pm 1$ iga $i = 1, 2, \dots, n$ korral. Enamgi veel, baasivektorite arv, mille korral $Q \left(e_i\right) = -1$ on sama kõikide neid tingimusi rahuldavate baaside korral sama.
-\end{theorem}
+\end{teoreem}
 
 \begin{proof}
-Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks.
+Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks\footnote{Vaata Lisa 1, Algoritm 4.1}.
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
-Skalaarkorrutise $g$ suhtses ortonormaalse baasi $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ vektorite arvu $r$, mille korral $Q \left(e_i\right) = -1, i \in \left\lbrace 1, 2, \dots, n \right\rbrace$, nimetame skalaarkorrutise $g$ indeksiks.
-Järgnevas eeldame, et ortonormeeritud baasid on indekseeritud nii, et baasivektorid $e_i$, mille korral $Q \left(e_i\right) = -1$, paiknevad loetelu lõpus, ehk ortonormeeritud baasi 
+
+\begin{definitsioon}
+Vektorruumi $\mathbb{V}$ baasi teoreemist 4.2 nimetame ortonormeeritud baasiks.
+\end{definitsioon}
+
+Skalaarkorrutise $g$ suhtses ortonormaalse baasi $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ vektorite arvu $r$, mille korral $Q \left(e_i\right) = -1, i \in \left\lbrace 1, 2, \dots, n \right\rbrace$, nimetame skalaarkorrutise $g$ \emph{indeksiks}.
+Edasises eeldame, et ortonormeeritud baasid on indekseeritud nii, et baasivektorid $e_i$, mille korral $Q \left(e_i\right) = -1$, paiknevad loetelu lõpus, ehk ortonormeeritud baasi 
 \[\left\lbrace e_1, e_2, \dots, e_{n-r}, e_{n-r+1}, \dots, e_n \right\rbrace\]
 korral $Q \left(e_i\right) = 1$, kui $i = 1, 2, \dots, n-r$, ja $Q \left(e_i\right) = -1$, kui $i = n-r+1, \dots, n$. Tähistades $u = u^i e_i$ ja $v = v^i e_i$ saame sellise baasi suhtes skalaarkorrutise $g$ arvutada järgmiselt:
 \[g\left(u, v\right) = u^1 v^1 + u^2 v^2 + \dots + u^{n-r} v^{n-r} - u^{n-r+1} v^{n-r+1} - \dots - u^n v^n.\]
+
+\subsection{Minkowski aegruumi mõiste}
+
+\begin{definitsioon}
+\emph{Minkowski aegruumiks} nimetatakse $4$-mõõtmelist reaalset vektorruumi $\mathcal{M}$, millel on defineeritud mittekidunud sümmeetriline bilineaarvorm g indeksiga $1$. \\
+Ruumi $\mathcal{M}$ elemente nimetatakse \emph{sündmusteks} ja kujutust $g$ nimetatakse \emph{Lorentzi skalaarkorrutiseks} ruumil $\mathcal{M}$.
+\end{definitsioon}
+Vahetult Minkowski ruumi definitsioonist selgub, et ruumil $\mathcal{M}$ leidub baas $\{e_1, e_2, e_3, e_4\}$ järgmise omadusega. Tähistades $u = u^i e_i$ ja $v = v^i e_i$, siis
+\[g\left(u, v\right) = u^1 v^1 + u^2 v^2 + u^3 v^3 - u^4 v^4.\]
+
+Olgugi $\{e_1, e_2, e_3, e_4\}$ või lühidalt $\{e_a\}$ ruumi $\mathcal{M}$ ortonormeeritud baas. 
+Kui $x = x^1 e_1 + x^2 e_2 + x^3 e_3 + x^4 e_4$, siis tähistame sündmuse $x$ koordinaadid baasi $\{b_a\}$ suhtes $\left( x^1, x^2, x^3, x^4 \right)$ ja seejuures ütleme, et $\left( x^1, x^2, x^3 \right)$ on \emph{ruumikoordinaadid} ning $\left(x^4\right)$ on \emph{ajakoordinaat}.
+\paragraph{}
+Kuna Lorentzi skalaarkorrutis $g$ ei ole ruumil $\mathcal{M}$ positiivselt määratud, siis leiduvad vektorid $u \in \mathcal{M}, u \neq 0$ nii, et $g \left(u, u\right) = 0$. Selliseid vektoreid nimetatakse \emph{nullvektoriteks}. Osutub, et ruumis $\mathcal{M}$ leidub koguni baase, mis koosnevad vaid nullvektoritest.
+
+\begin{naide}
+Üheks ruumi $\mathcal{M}$ baasiks, mis koosneb vaid nullvektoritest on näiteks $\{e_1^0, e_2^0, e_3^0, e_4^0\}$, kus $e_1^0 = \left(1, 0, 0, 1\right)$, $e_2^0 = \left(0, 1, 0, 1\right)$, $e_3^0 = \left(0, 0, 1, 1\right)$ ja $e_4^0 = \left(-1, 0, 0, 1\right).$
+Tõepoolest, süsteemi $\{e_1^0, e_2^0, e_3^0, e_4^0\}$ lineaarne sõltumatus on vahetult kontrollitav ja $e_1^0, \dots, e_4^0$ on nullvektorid, sest
+\begin{eqnarray*}
+Q\left(e_1^0\right) &=& 1^2 + 0 + 0 - 1^2 = 0, \\
+Q\left(e_2^0\right) &=& 0 + 1^2 + 0 - 1^2 = 0, \\
+Q\left(e_3^0\right) &=& 0 + 0 + 1^2 - 1^2 = 0, \\
+Q\left(e_4^0\right) &=& (-1)^2 + 0 + 0 - 1^2 = 0.
+\end{eqnarray*}
+\end{naide}
+
+Samas paneme tähele, et selline baas ei saa koosneda paarikaupa ortogonaalsetest vektoritest.
+\begin{teoreem}
+Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullvektorid. Vektorid $u$ ja $v$ on ortogonaalsed siis ja ainult siis, kui nad on paralleelsed, st leidub $t \in \mathbb{R}$ nii, et $u = tv$.
+\end{teoreem}
+\begin{proof}
+\emph{Piisavus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ paralleelsed nullvektorid. Siis leidub $t \in \mathbb{R}$ nii, et $u = tv$. Seega
+\[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
+ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
+\\
+\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $\leq g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
+\end{proof}
+
+\newpage
+\section{Lisa 1}
+\subsection{Skalaarkorrutisega seotud lisatulemused}
+
+\begin{algoritm}[Gram-Schmidti algoritm]
+Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
+\end{algoritm}
+Järgnevaga anname eeskirja sellise baasi konstrueermiseks.
+\newline
+Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{b}{\sqrt{b \cdot b}} \right\rbrace$ on ortonormeeritud baas.\\
+Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
+\[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
+Seega tarvitseb meil leida veel $a_n \in \mathbb{V} \setminus \{0\}$ omadusega
+\[a_n \perp \spn\{ e_1, e_2, \dots, e_{n-1}\},\]
+sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{a_n}{|a_n|}\}$ on ruumi $\mathbb{V}$ ortonormeeritud baas.\\
+Otsime vektorit $a_n$ kujul
+\begin{equation}
+a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \mathbb{R}.
+\end{equation}
+Paneme tähele, et kui $a_n$ on sellisel kujul, siis $a_n \neq 0$, sest vastasel korral $b_n \in \spn\{ b_1, b_2, \dots, b_{n-1}\}$, mis on vastuolus süsteemi $\spn\{ b_1, b_2, \dots, b_{n-1}\}$ lineaarse sõltumatusega.
+Kui $a_n$ on kujul $4.1$, siis kõikide $k \in \{1, 2, \dots, n-1\}$ korral
+\begin{equation*}
+a_n \perp e_k \iff a_n \cdot e_k = 0 \iff \left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = 0
+\end{equation*}
+Samas, kuna
+\begin{equation*}
+\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = b_n \cdot e_k + \sum_{j = 1}^{n-1} \alpha^j \left(e_j \cdot e_k \right) = b_n \cdot e_k + \alpha_k,
+\end{equation*}
+siis $a_n \perp e_k \iff \alpha_k = - \left(b_n \cdot e_k \right)$. Järelikult võime võtta $a_n := b_n - \sum_{j=1}^{n-1}\left(b_n \cdot e_j\right)e_j$.
+Kirjeldatud protsessi teel ortonormeetirud baasi leidmist nimetatakse \emph{Gram-Schmidti algoritmiks}.
+
+\begin{teoreem}[Cauchy-Schwartz-Bunjakowski võrratus]
+Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$. Sellisel juhul kehtib võrratus
+\begin{equation}
+g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
+\end{equation}
+kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltumatud.
+\end{teoreem}
+
+%
+% Viita FA2 konspektile!!!
+%
+\begin{proof}
+Olgu $\mathbb{V}$ reaalne vektorruum skalaarkorrutisega $g$ ning olgu $u, v \in \mathbb{V}$. Siis iga $\lambda \in \mathbb{R}$ korral
+\begin{eqnarray*}
+0 &\leq& g\left(u+\lambda v,u+\lambda v\right) = g\left(u,u\right) + 2g\left(u, \lambda v \right) + g\left(\lambda v, \lambda v\right) \\
+&=& g\left(u,u\right) + 2\lambda g\left(u, v \right) + \lambda^2 g\left(v,v\right) \leq g\left(u,u\right) + 2\lambda | g\left(u, v \right)| + \lambda^2 g\left(v,v\right).
+\end{eqnarray*}
+Saime $\lambda$ suhtes võrratuse 
+\[ g\left(v,v\right)\lambda^2 + 2|g\left(u, v \right)|\lambda + g\left(u,u\right) \geq 0, \]
+mille reaalarvuliste lahendite hulk on $\mathbb{R}$. Kui $g\left(v,v\right) > 0$, siis on tegu ruutvõrratusega. Seega vastava ruutvõrrandi diskriminant $4|g\left(u,v\right)|^2 - 4g\left(u,u\right)g\left(v,v\right) \leq 0$, millest järeldub vahetult võrratus $(4.1)$. Juhul $g\left(v,v\right) = 0$ peab kõikide $\lambda \in \mathbb{R}$ korral kehtima $2|g\left(u,v\right)|\lambda + g\left(u,u\right) \geq 0$, mis on võimalik vaid siis, kui $g\left(u,v\right) = 0$. Sellisel juhul on tingimuse $(4.1)$ kehtivus aga ilmne.
+\paragraph{}
+Veendume veel, et tingimuses $(4.1)$ kehtib võrdus parajasti siis, kui $u$ ja $v$ on lineaarselt sõltuvad.\\
+Oletame esiteks, et vektorid $u$ ja $v$ on lineaarselt sõltuvad. Siis leidub $\alpha \in \mathbb{R}$ selliselt, et $u = \alpha v$. Seega
+\begin{eqnarray*}
+g^2\left(u,v\right) &=& g^2 \left(\alpha v,v\right) = \alpha^2 g^2 \left(v,v\right) = \alpha^2 g \left(v,v\right) g \left(v,v\right) \\
+&=& g \left(\alpha v,\alpha v\right)g \left( v,v\right) = g \left(u,u\right)g \left(v,v\right),
+\end{eqnarray*}
+nagu tarvis.
+\newline
+Kehtigu nüüd tingimuses $(4.1)$ võrdus. Veendume, et siis $u$ ja $v$ on lineaarselt sõltuvad. Üldistust kitsendamata võime eeldada, et $u \neq 0$ ja $v \neq 0$. Siis ka $g \left(u,u\right) \neq 0$ ja $g \left(v,v\right) \neq 0$. Paneme tähele, et
+\[g^2 \left(u, v \right) = g \left(u, u \right) g \left(v, v \right)\]
+on eelnevat arvestades samaväärne tingimusega
+\[\frac{g^2 \left(u, v \right) g \left(v, v \right)}{g^2 \left(v, v \right) } = g \left(u, u \right). \]
+Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest saame $u = av$.
+
+\end{proof}
 \vfill 
 \end{document}

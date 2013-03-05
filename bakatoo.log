@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  5 MAR 2013 09:10
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  6 MAR 2013 00:33
 entering extended mode
 **bakatoo.tex
 (D:\Kool\bakatoo\bakatoo.tex
@@ -415,53 +415,81 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks33
 
 (D:\Dev\TeX\tex\latex\geometry\geometry.cfg))
-\c@theorem=\count105
-\c@acknowledgement=\count106
-\c@algorithm=\count107
-\c@axiom=\count108
-\c@case=\count109
-\c@claim=\count110
-\c@conclusion=\count111
-\c@condition=\count112
-\c@conjecture=\count113
-\c@corollary=\count114
-\c@criterion=\count115
-\c@definition=\count116
-\c@example=\count117
-\c@exercise=\count118
-\c@lemma=\count119
-\c@notation=\count120
-\c@problem=\count121
-\c@proposition=\count122
-\c@remark=\count123
-\c@solution=\count124
-\c@summary=\count125
- (D:\Kool\bakatoo\bakatoo.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+\c@teoreem=\count105
+\c@markus=\count106
+\c@algoritm=\count107
+\c@aksioom=\count108
+\c@juht=\count109
+\c@jareldus=\count110
+\c@tingimus=\count111
+\c@hupotees=\count112
+\c@kriteerium=\count113
+\c@definitsioon=\count114
+\c@naide=\count115
+\c@ulesanne=\count116
+\c@lemma=\count117
+\c@tahistus=\count118
+\c@probleem=\count119
+\c@lause=\count120
+\c@kommentaar=\count121
+\c@lahendus=\count122
+\c@kokkuvote=\count123
+
+(D:\Dev\TeX\tex\latex\mh\mathtools.sty
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
+ (D:\Dev\TeX\tex\latex\tools\calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count124
+\calc@Bcount=\count125
+\calc@Adimen=\dimen123
+\calc@Bdimen=\dimen124
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count126
+\calc@Cskip=\skip51
+)
+(D:\Dev\TeX\tex\latex\mh\mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count127
+\l_MT_multwidth_dim=\dimen125
+\origjot=\skip52
+\l_MT_shortvdotswithinadjustabove_dim=\dimen126
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen127
+\l_MT_above_intertext_sep=\dimen128
+\l_MT_below_intertext_sep=\dimen129
+\l_MT_above_shortintertext_sep=\dimen130
+\l_MT_below_shortintertext_sep=\dimen131
+) (D:\Kool\bakatoo\bakatoo.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 (D:\Dev\TeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen123
+\scratchcounter=\count128
+\scratchdimen=\dimen132
 \scratchbox=\box28
-\nofMPsegments=\count127
-\nofMParguments=\count128
+\nofMPsegments=\count129
+\nofMParguments=\count130
 \everyMPshowfont=\toks34
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen124
-\MPnumerator=\count130
-\makeMPintoPDFobject=\count131
+\MPscratchCnt=\count131
+\MPscratchDim=\dimen133
+\MPnumerator=\count132
+\makeMPintoPDFobject=\count133
 \everyMPtoPDFconversion=\toks35
 )
 *geometry* driver: auto-detecting
@@ -502,53 +530,75 @@ LaTeX Font Info:    ... okay on input line 52.
 
 {C:/Users/Priit/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 (D:\Kool\bakatoo\bakatoo.toc
-LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
  (D:\Dev\TeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 3.
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 
 (D:\Dev\TeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 \tf@toc=\write3
  [1]
-Overfull \hbox (0.2083pt too wide) in paragraph at lines 90--91
+Overfull \hbox (0.2083pt too wide) in paragraph at lines 91--92
 \OT1/cmr/m/n/12 pet. See t[]ahendab, kui meil on in-deksid $\OML/cmm/m/it/12 i$
  \OT1/cmr/m/n/12 ja $\OML/cmm/m/it/12 j$\OT1/cmr/m/n/12 , mis oma-vad v[]a[]art
 usi $1\OML/cmm/m/it/12 ; [] ; n []$\OT1/cmr/m/n/12 ,
  []
 
 [2] [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 122.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 125.
 
  (D:\Dev\TeX\tex\latex\base\omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 122.
- [4] [5]
-(D:\Kool\bakatoo\bakatoo.aux) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 125.
+ [4] [5] [6] [7]
+Overfull \hbox (8.12256pt too wide) in paragraph at lines 235--238
+\OT1/cmr/m/n/12 siis $\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ? \OML/cmm/m/it/12 
+e[]  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/
+n/12   []$\OT1/cmr/m/n/12 . J[]arelikult v[]oime v[]otta $\OML/cmm/m/it/12 a[] 
+\OT1/cmr/m/n/12 := \OML/cmm/m/it/12 b[] \OMS/cmsy/m/n/12   [][] [] \OML/cmm/m/i
+t/12 e[]$\OT1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (11.25589pt too wide) in paragraph at lines 235--238
+\OT1/cmr/m/n/12 Kir-jel-da-tud prot-ses-si teel or-to-nor-mee-ti-rud ba-asi lei
+d-mist ni-me-ta-tak-se \OT1/cmr/m/it/12 Gram-Schmidti
+ []
+
+[8]
+Overfull \hbox (11.9399pt too wide) in paragraph at lines 257--259
+\OT1/cmr/m/n/12 mille reaal-ar-vu-lis-te la-hen-di-te hulk on $\U/msb/m/n/12 R$
+\OT1/cmr/m/n/12 . Kui $\OML/cmm/m/it/12 g [] > \OT1/cmr/m/n/12 0$, siis on te-g
+u ruutv[]orratusega.
+ []
+
+[9] (D:\Kool\bakatoo\bakatoo.aux) ) 
 Here is how much of TeX's memory you used:
- 3523 strings out of 493921
- 41960 string characters out of 3154099
- 202840 words of memory out of 3000000
- 6761 multiletter control sequences out of 15000+200000
+ 4050 strings out of 493921
+ 50912 string characters out of 3154099
+ 214409 words of memory out of 3000000
+ 7277 multiletter control sequences out of 15000+200000
  12455 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,8n,24p,630b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Dev/TeX/fonts/t
-ype1/public/amsfonts/cm/cmmi12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Dev/TeX/fonts
-/type1/public/amsfonts/cm/cmr12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/
-cmr7.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Dev/TeX/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/
-cmsy8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Dev/TeX/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bakatoo.pdf (6 pages, 143410 bytes).
+ 27i,8n,24p,637b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Dev/TeX/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Dev/TeX/fon
+ts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Dev/TeX/f
+onts/type1/public/amsfonts/cm/cmr10.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts
+/cm/cmr12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Dev/TeX/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Dev/TeX/
+fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Dev/TeX/fonts/type1/public/amsfon
+ts/symbols/msbm10.pfb>
+Output written on bakatoo.pdf (10 pages, 176067 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
+ 87 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

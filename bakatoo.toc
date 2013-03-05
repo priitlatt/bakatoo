@@ -1,5 +1,12 @@
 \select@language {estonian}
-\contentsline {section}{\numberline {1}Vajalikud eelteadmised}{3}
-\contentsline {subsection}{\numberline {1.1}ptk}{3}
-\contentsline {section}{\numberline {2}Minkowski ruumi geomeetriline struktuur}{4}
-\contentsline {subsection}{\numberline {2.1}Skalaarkorrutise definitsioon ja omadused}{4}
+\contentsline {section}{\numberline {1}Sissejuhatus}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {section}{\numberline {2}Vajalikud eelteadmised}{3}
+\contentsline {subsection}{\numberline {2.1}ptk}{3}
+\contentsline {section}{\numberline {3}Minkowski ruumi geomeetriline struktuur}{4}
+\contentsline {subsection}{\numberline {3.1}Skalaarkorrutise definitsioon ja omadused}{4}
+\contentsline {subsection}{\numberline {3.2}Minkowski aegruumi m\IeC {\~o}iste}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {4}Lisa 1}{8}
+\contentsline {subsection}{\numberline {4.1}Skalaarkorrutisega seotud lisatulemused}{8}
+\contentsline {paragraph}{}{9}
