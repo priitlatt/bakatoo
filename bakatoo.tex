@@ -134,10 +134,10 @@ Vaatleme ruumi $\mathbb{R}^{n}$. Olgu $u = \left(u^1, u^2, \dots, u^n \right), v
 Näites 1 defineeritud skalaarkorrutis on \emph{positiivselt määratud}, see tähendab iga $v \neq 0$ korral $g \left(v, v \right) > 0$. Kui $g \left(v, v \right) < 0$ kõikide $v \neq 0$ korral, siis ütleme, et $g$ on \emph{negatiivselt määratud} ja kui $g$ pole ei positiivselt ega negatiivselt määratud, siis öeldakse, et $g$ on \emph{määramata}.
 
 \begin{definitsioon}
-Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt ortogonaalseteks, kui $g$ roll on kontekstist selge) kui $g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \mathbb{V}$ on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in V : \forall v \in  \mathbb{W} g \left(u, v \right) = 0 \right\rbrace$.
+Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt \emph{ortogonaalseteks}, kui $g$ roll on kontekstist selge), kui $g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \mathbb{V}$ on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in \mathbb{V} : \forall v \in  \mathbb{W} g \left(u, v \right) = 0 \right\rbrace$.
 \end{definitsioon}
 \begin{definitsioon}
-Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame kujutust $Q : \mathbb{V} \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$.
+Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame kujutust $Q : \mathbb{V} \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$, $v \in \mathbb{V}$.
 \end{definitsioon}
 
 \begin{lause}
@@ -167,6 +167,11 @@ Edasises eeldame, et ortonormeeritud baasid on indekseeritud nii, et baasivektor
 \[\left\lbrace e_1, e_2, \dots, e_{n-r}, e_{n-r+1}, \dots, e_n \right\rbrace\]
 korral $Q \left(e_i\right) = 1$, kui $i = 1, 2, \dots, n-r$, ja $Q \left(e_i\right) = -1$, kui $i = n-r+1, \dots, n$. Tähistades $u = u^i e_i$ ja $v = v^i e_i$ saame sellise baasi suhtes skalaarkorrutise $g$ arvutada järgmiselt:
 \[g\left(u, v\right) = u^1 v^1 + u^2 v^2 + \dots + u^{n-r} v^{n-r} - u^{n-r+1} v^{n-r+1} - \dots - u^n v^n.\]
+
+\begin{markus}
+Vektorruumi $\mathbb{V}$ skalaarkorrutisega $g$, mille indeks $r > 0$ nimetatakse \emph{pseudoeukleidiliseks ruumiks}.
+\end{markus}
+
 
 \subsection{Minkowski aegruumi mõiste}
 
@@ -209,7 +214,7 @@ Võtame nüüd vaatluse alla kaks sellist sündmust $x, x_0 \in \mathcal{M}$, $x
 \begin{equation}
 Q \left(x - x_0\right) = \left(x^1 - x_0^1\right)^2 + \left(x^2 - x_0^2\right)^2 + \left(x^3 - x_0^3\right)^2 - \left(x^4 - x_0^4\right)^2 = 0.
 \end{equation}
-Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus (3.1) täidetud nimetatakse \emph{nullkoonuseks} (või ka \emph{valguse koonuseks}) punktis $x_0$ ja tähistatakse $\mathcal{C}_N\left(x_0\right)$. Seega $\mathcal{C}_N\left(x_0\right) = \{x \in \mathcal{M} : \left(x- x_0\right) = 0 \}$. Kirjeldavalt võime öelda, et kõik hulga $\mathcal{C}_N\left(x_0\right)$ elemendid on ühendatavad sündmusega $x_0$ \emph{valguskiire} $R_{x_0, x}$ abil, mille me defineerime järgnevalt $R_{x_0, x} = \{x_0 + t\left(x - x_0\right) : t \in \mathbb{R} \}$.
+Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus (3.1) täidetud nimetatakse \emph{nullkoonuseks} (või ka \emph{valguse koonuseks}) punktis $x_0$ ja tähistatakse $\mathcal{C}_N\left(x_0\right)$. Seega $\mathcal{C}_N\left(x_0\right) = \{x \in \mathcal{M} : Q \left(x- x_0\right) = 0 \}$. Kirjeldavalt võime öelda, et kõik hulga $\mathcal{C}_N\left(x_0\right)$ elemendid on ühendatavad sündmusega $x_0$ \emph{valguskiire} $R_{x_0, x}$ abil, mille me defineerime kui $R_{x_0, x} = \{x_0 + t\left(x - x_0\right) : t \in \mathbb{R} \}$.
 
 \newpage
 \section{Lisa 1}
@@ -230,7 +235,7 @@ Otsime vektorit $a_n$ kujul
 a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \mathbb{R}.
 \end{equation}
 Paneme tähele, et kui $a_n$ on sellisel kujul, siis $a_n \neq 0$, sest vastasel korral $b_n \in \spn\{ b_1, b_2, \dots, b_{n-1}\}$, mis on vastuolus süsteemi $\spn\{ b_1, b_2, \dots, b_{n-1}\}$ lineaarse sõltumatusega.
-Kui $a_n$ on kujul $4.1$, siis kõikide $k \in \{1, 2, \dots, n-1\}$ korral
+Kui $a_n$ on kujul $(4.1)$, siis kõikide $k \in \{1, 2, \dots, n-1\}$ korral
 \begin{equation*}
 a_n \perp e_k \iff a_n \cdot e_k = 0 \iff \left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = 0
 \end{equation*}
@@ -249,7 +254,7 @@ Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega $g : \mathbb{V} \times \mathbb{V
 \begin{equation}
 g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
 \end{equation}
-kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltumatud.
+kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
 \end{teoreem}
 
 %
@@ -277,7 +282,7 @@ Kehtigu nüüd tingimuses $(4.1)$ võrdus. Veendume, et siis $u$ ja $v$ on linea
 \[g^2 \left(u, v \right) = g \left(u, u \right) g \left(v, v \right)\]
 on eelnevat arvestades samaväärne tingimusega
 \[\frac{g^2 \left(u, v \right) g \left(v, v \right)}{g^2 \left(v, v \right) } = g \left(u, u \right). \]
-Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest saame $u = av$.
+Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
 
 \end{proof}
 \vfill 
