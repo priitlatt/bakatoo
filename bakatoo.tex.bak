@@ -74,9 +74,7 @@
 \begin{flushleft}
 {\large
 Autor: \dotfill "....." juuni 2013\\
-Juhendaja: \dotfill "....." juuni 2013\\[0.5cm]
-Lubada kaitsmisele\\
-Mingi inimene \dotfill "....." juuni 2013\\[3cm]
+Juhendaja: \dotfill "....." juuni 2013\\[2cm]
 }
 \end{flushleft}
 {\large TARTU \the\year}
@@ -102,7 +100,7 @@ Vektori $u$ pikkust tähistame edaspidi $|u|$.
 
 \section{Vajalikud eelteadmised}
 
-Selles patükis toome välja definitsioonid ja tähtsamad tulemusedd, mida läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures tõestusteta.
+Selles peatükis toome välja definitsioonid ja tähtsamad tulemused, mida läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures tõestusteta.
 
 \subsection{ptk}
 
@@ -134,10 +132,10 @@ Vaatleme ruumi $\mathbb{R}^{n}$. Olgu $u = \left(u^1, u^2, \dots, u^n \right), v
 Näites 1 defineeritud skalaarkorrutis on \emph{positiivselt määratud}, see tähendab iga $v \neq 0$ korral $g \left(v, v \right) > 0$. Kui $g \left(v, v \right) < 0$ kõikide $v \neq 0$ korral, siis ütleme, et $g$ on \emph{negatiivselt määratud} ja kui $g$ pole ei positiivselt ega negatiivselt määratud, siis öeldakse, et $g$ on \emph{määramata}.
 
 \begin{definitsioon}
-Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt ortogonaalseteks, kui $g$ roll on kontekstist selge) kui $g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \mathbb{V}$ on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in V : \forall v \in  \mathbb{W} g \left(u, v \right) = 0 \right\rbrace$.
+Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt \emph{ortogonaalseteks}, kui $g$ roll on kontekstist selge), kui $g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \mathbb{V}$ on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in \mathbb{V} : \forall v \in  \mathbb{W} g \left(u, v \right) = 0 \right\rbrace$.
 \end{definitsioon}
 \begin{definitsioon}
-Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame kujutust $Q : \mathbb{V} \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$.
+Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame kujutust $Q : \mathbb{V} \rightarrow \mathbb{R}$, kus $Q \left( v \right) = g\left(v, v\right) = v \cdot v$, $v \in \mathbb{V}$.
 \end{definitsioon}
 
 \begin{lause}
@@ -154,7 +152,7 @@ Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} 
 \end{teoreem}
 
 \begin{proof}
-Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks\footnote{Vaata Lisa 1, Algoritm 4.1}.
+Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks\footnote{Vaata Lisa 1, Märkus 4.1}.
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
 
@@ -167,6 +165,11 @@ Edasises eeldame, et ortonormeeritud baasid on indekseeritud nii, et baasivektor
 \[\left\lbrace e_1, e_2, \dots, e_{n-r}, e_{n-r+1}, \dots, e_n \right\rbrace\]
 korral $Q \left(e_i\right) = 1$, kui $i = 1, 2, \dots, n-r$, ja $Q \left(e_i\right) = -1$, kui $i = n-r+1, \dots, n$. Tähistades $u = u^i e_i$ ja $v = v^i e_i$ saame sellise baasi suhtes skalaarkorrutise $g$ arvutada järgmiselt:
 \[g\left(u, v\right) = u^1 v^1 + u^2 v^2 + \dots + u^{n-r} v^{n-r} - u^{n-r+1} v^{n-r+1} - \dots - u^n v^n.\]
+
+\begin{markus}
+Vektorruumi $\mathbb{V}$ skalaarkorrutisega $g$, mille indeks $r > 0$ nimetatakse \emph{pseudoeukleidiliseks ruumiks}.
+\end{markus}
+
 
 \subsection{Minkowski aegruumi mõiste}
 
@@ -202,24 +205,23 @@ Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullvektorid. Vektorid $u$ ja $v$ on
 \[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
 ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
 \\
-\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
+\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}\footnote{Vaata Lisa 1, Teoreem 4.2} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
 \end{proof}
 
 Võtame nüüd vaatluse alla kaks sellist sündmust $x, x_0 \in \mathcal{M}$, $x \neq x_0$, mida ühendav vektor on nullvektor, see tähendab $Q \left(x- x_0\right) = 0$. Seda asjaolu arvesse võttes saame, et kui $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas ja me tähistame $x = x^a e_a$, $x_0 = x_0^a e_a$, siis kehtib võrdus
 \begin{equation}
 Q \left(x - x_0\right) = \left(x^1 - x_0^1\right)^2 + \left(x^2 - x_0^2\right)^2 + \left(x^3 - x_0^3\right)^2 - \left(x^4 - x_0^4\right)^2 = 0.
 \end{equation}
-Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus (3.1) täidetud nimetatakse \emph{nullkoonuseks} (või ka \emph{valguse koonuseks}) punktis $x_0$ ja tähistatakse $\mathcal{C}_N\left(x_0\right)$. Seega $\mathcal{C}_N\left(x_0\right) = \{x \in \mathcal{M} : \left(x- x_0\right) = 0 \}$. Kirjeldavalt võime öelda, et kõik hulga $\mathcal{C}_N\left(x_0\right)$ elemendid on ühendatavad sündmusega $x_0$ \emph{valguskiire} $\mathcal{R}_{x_0, x}$ abil, mille me defineerime järgnevalt $\mathcal{R}_{x_0, x} = \{x_0 + t\left(x - x_0\right) : t \in \mathbb{R} \}$.
+Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus (3.1) täidetud nimetatakse \emph{nullkoonuseks} (või ka \emph{valguse koonuseks}) punktis $x_0$ ja tähistatakse $\mathcal{C}_N\left(x_0\right)$. Seega $\mathcal{C}_N\left(x_0\right) = \{x \in \mathcal{M} : Q \left(x- x_0\right) = 0 \}$. Kirjeldavalt võime öelda, et kõik hulga $\mathcal{C}_N\left(x_0\right)$ elemendid on ühendatavad sündmusega $x_0$ \emph{valguskiire} $R_{x_0, x}$ abil, mille me defineerime kui $R_{x_0, x} = \{x_0 + t\left(x - x_0\right) : t \in \mathbb{R} \}$.
 
 \newpage
 \section{Lisa 1}
 \subsection{Skalaarkorrutisega seotud lisatulemused}
 
-\begin{algoritm}[Gram-Schmidti algoritm]
+\begin{teoreem}
 Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
-\end{algoritm}
-Järgnevaga anname eeskirja sellise baasi konstrueermiseks.
-\newline
+\end{teoreem}
+\begin{proof}
 Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.\\
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
 \[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
@@ -231,7 +233,7 @@ Otsime vektorit $a_n$ kujul
 a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \mathbb{R}.
 \end{equation}
 Paneme tähele, et kui $a_n$ on sellisel kujul, siis $a_n \neq 0$, sest vastasel korral $b_n \in \spn\{ b_1, b_2, \dots, b_{n-1}\}$, mis on vastuolus süsteemi $\spn\{ b_1, b_2, \dots, b_{n-1}\}$ lineaarse sõltumatusega.
-Kui $a_n$ on kujul $4.1$, siis kõikide $k \in \{1, 2, \dots, n-1\}$ korral
+Kui $a_n$ on kujul $(4.1)$, siis kõikide $k \in \{1, 2, \dots, n-1\}$ korral
 \begin{equation*}
 a_n \perp e_k \iff a_n \cdot e_k = 0 \iff \left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = 0
 \end{equation*}
@@ -240,14 +242,17 @@ Samas, kuna
 \left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = b_n \cdot e_k + \sum_{j = 1}^{n-1} \alpha^j \left(e_j \cdot e_k \right) = b_n \cdot e_k + \alpha_k,
 \end{equation*}
 siis $a_n \perp e_k \iff \alpha_k = - \left(b_n \cdot e_k \right)$. Järelikult võime võtta $a_n := b_n - \sum_{j=1}^{n-1}\left(b_n \cdot e_j\right)e_j$.
-Kirjeldatud protsessi teel ortonormeetirud baasi leidmist nimetatakse \emph{Gram-Schmidti algoritmiks}.
+\end{proof}
+\begin{markus}
+Teoreemi 4.1 tõestuses antud algortimi ortonormeetirud baasi leidmiseks nimetatakse \emph{Gram-Schmidti algoritmiks} või \emph{ortogonaliseerimisprotsessiks}.
+\end{markus}
 
 \begin{teoreem}[Cauchy-Schwartz-Bunjakowski võrratus]
 Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$. Sellisel juhul kehtib võrratus
 \begin{equation}
 g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
 \end{equation}
-kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltumatud.
+kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
 \end{teoreem}
 
 %
@@ -275,7 +280,7 @@ Kehtigu nüüd tingimuses $(4.1)$ võrdus. Veendume, et siis $u$ ja $v$ on linea
 \[g^2 \left(u, v \right) = g \left(u, u \right) g \left(v, v \right)\]
 on eelnevat arvestades samaväärne tingimusega
 \[\frac{g^2 \left(u, v \right) g \left(v, v \right)}{g^2 \left(v, v \right) } = g \left(u, u \right). \]
-Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest saame $u = av$.
+Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
 
 \end{proof}
 \vfill 
