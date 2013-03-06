@@ -154,7 +154,7 @@ Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} 
 \end{teoreem}
 
 \begin{proof}
-Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks\footnote{Vaata Lisa 1, Algoritm 4.1}.
+Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks\footnote{Vaata Lisa 1, Märkus 4.1}.
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
 
@@ -202,18 +202,23 @@ Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullvektorid. Vektorid $u$ ja $v$ on
 \[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
 ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
 \\
-\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
+\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}\footnote{Vaata Lisa 1, Teoreem 4.2} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
 \end{proof}
+
+Võtame nüüd vaatluse alla kaks sellist sündmust $x, x_0 \in \mathcal{M}$, $x \neq x_0$, mida ühendav vektor on nullvektor, see tähendab $Q \left(x- x_0\right) = 0$. Seda asjaolu arvesse võttes saame, et kui $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas ja me tähistame $x = x^a e_a$, $x_0 = x_0^a e_a$, siis kehtib võrdus
+\begin{equation}
+Q \left(x - x_0\right) = \left(x^1 - x_0^1\right)^2 + \left(x^2 - x_0^2\right)^2 + \left(x^3 - x_0^3\right)^2 - \left(x^4 - x_0^4\right)^2 = 0.
+\end{equation}
+Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus (3.1) täidetud nimetatakse \emph{nullkoonuseks} (või ka \emph{valguse koonuseks}) punktis $x_0$ ja tähistatakse $\mathcal{C}_N\left(x_0\right)$. Seega $\mathcal{C}_N\left(x_0\right) = \{x \in \mathcal{M} : \left(x- x_0\right) = 0 \}$. Kirjeldavalt võime öelda, et kõik hulga $\mathcal{C}_N\left(x_0\right)$ elemendid on ühendatavad sündmusega $x_0$ \emph{valguskiire} $R_{x_0, x}$ abil, mille me defineerime järgnevalt $R_{x_0, x} = \{x_0 + t\left(x - x_0\right) : t \in \mathbb{R} \}$.
 
 \newpage
 \section{Lisa 1}
 \subsection{Skalaarkorrutisega seotud lisatulemused}
 
-\begin{algoritm}[Gram-Schmidti algoritm]
+\begin{teoreem}
 Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
-\end{algoritm}
-Järgnevaga anname eeskirja sellise baasi konstrueermiseks.
-\newline
+\end{teoreem}
+\begin{proof}
 Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.\\
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
 \[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
@@ -234,7 +239,10 @@ Samas, kuna
 \left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = b_n \cdot e_k + \sum_{j = 1}^{n-1} \alpha^j \left(e_j \cdot e_k \right) = b_n \cdot e_k + \alpha_k,
 \end{equation*}
 siis $a_n \perp e_k \iff \alpha_k = - \left(b_n \cdot e_k \right)$. Järelikult võime võtta $a_n := b_n - \sum_{j=1}^{n-1}\left(b_n \cdot e_j\right)e_j$.
-Kirjeldatud protsessi teel ortonormeetirud baasi leidmist nimetatakse \emph{Gram-Schmidti algoritmiks}.
+\end{proof}
+\begin{markus}
+Teoreemi 4.1 tõestuses antud algortimi ortonormeetirud baasi leidmiseks nimetatakse \emph{Gram-Schmidti algoritmiks} või \emph{ortogonaliseerimisprotsessiks}.
+\end{markus}
 
 \begin{teoreem}[Cauchy-Schwartz-Bunjakowski võrratus]
 Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$. Sellisel juhul kehtib võrratus
