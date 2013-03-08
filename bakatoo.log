@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  6 MAR 2013 17:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  8 MAR 2013 08:26
 entering extended mode
 **bakatoo.tex
 (D:\Kool\bakatoo\bakatoo.tex
@@ -555,8 +555,15 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
- [4] [5] [6] [7]
-Overfull \hbox (8.12256pt too wide) in paragraph at lines 243--245
+ [4]
+Overfull \hbox (6.8152pt too wide) in paragraph at lines 160--161
+[]\OT1/cmr/m/n/12 Kujutuse $\OML/cmm/m/it/12 g$ \OT1/cmr/m/n/12 s[]ummeetrilisu
+s on $\OML/cmm/m/it/12 g[]$ \OT1/cmr/m/n/12 ja $\OML/cmm/m/it/12 g[]$ \OT1/cmr/
+m/n/12 s[]ummeetrilisust ar-ves-ta-des ilm-ne. T[]oestuse
+ []
+
+[5] [6] [7]
+Overfull \hbox (8.12256pt too wide) in paragraph at lines 266--268
 \OT1/cmr/m/n/12 siis $\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ? \OML/cmm/m/it/12 
 e[]  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/
 n/12   []$\OT1/cmr/m/n/12 . J[]arelikult v[]oime v[]otta $\OML/cmm/m/it/12 a[] 
@@ -565,7 +572,7 @@ t/12 e[]$\OT1/cmr/m/n/12 .
  []
 
 [8]
-Overfull \hbox (11.9399pt too wide) in paragraph at lines 268--270
+Overfull \hbox (11.9399pt too wide) in paragraph at lines 291--293
 \OT1/cmr/m/n/12 mille reaal-ar-vu-lis-te la-hen-di-te hulk on $\U/msb/m/n/12 R$
 \OT1/cmr/m/n/12 . Kui $\OML/cmm/m/it/12 g [] > \OT1/cmr/m/n/12 0$, siis on te-g
 u ruutv[]orratusega.
@@ -575,7 +582,7 @@ u ruutv[]orratusega.
 Here is how much of TeX's memory you used:
  4050 strings out of 493921
  50912 string characters out of 3154099
- 214409 words of memory out of 3000000
+ 215409 words of memory out of 3000000
  7277 multiletter control sequences out of 15000+200000
  12455 words of font info for 48 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -590,7 +597,7 @@ onts/type1/public/amsfonts/cm/cmr7.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/
 cm/cmr8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Dev/TeX/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts
 /cm/cmti12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on bakatoo.pdf (10 pages, 186031 bytes).
+Output written on bakatoo.pdf (10 pages, 186937 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

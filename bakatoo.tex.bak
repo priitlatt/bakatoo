@@ -144,7 +144,30 @@ Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\mathbb{V}$, mis rahulda
 
 % SIIA TULEB PÄRIS TÕESTUS KIRJUTADA!!!
 \begin{proof}
-\lipsum[7]
+Olgu $\mathbb{V}$ vektorruum ning olgu $u, v \in \mathbb{V}$ ja kehtigu võrdus $g_1 \left(u, u\right) = g_2 \left(u, u\right)$ iga $u$ korral. Defineerime uue kujutuse
+\begin{equation*}
+g: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R} \text{, } g\left(u, v\right) \mapsto g_1\left(u, v\right) - g_2\left(u, v\right).
+\end{equation*}
+Paneme esiteks tähele, et selliselt defineeritud $g$ on sümmeetriline ja bilineaarne. Tõepoolest, olgu $u_1, u_2 \in \mathbb{V}$. Siis
+\begin{eqnarray*}
+&& g\left( \alpha u_1 + \beta u_2, v \right) = g_1\left( \alpha u_1 + \beta u_2, v \right) - g_2\left( \alpha u_1 + \beta u_2, v \right) \\
+&=& \alpha g_1 \left(u_1, v\right) + \beta g_1 \left(u_2, v \right) -\alpha g_2 \left(u_1, v\right)  \beta g_2 \left(u_2, v \right) \\
+&=& \alpha \left( g_1 \left(u_1, v\right) - g_2 \left(u_1, v \right)\right) + \beta \left( g_1 \left(u_2, v\right) - g_2 \left(u_2, v \right)\right) \\
+&=& \alpha g\left( u_1, v \right) + \beta g\left( u_2, v\right) \text{ ja analoogiliselt} \\
+&& g\left( u, \alpha v_1 + \beta v_2 \right) = \alpha g\left( u, v_1 \right) + \beta g\left( u, v_2\right).
+\end{eqnarray*}
+
+Kujutuse $g$ sümmeetrilisus on $g_1$ ja $g_2$ sümmeetrilisust arvestades ilmne. Tõestuse lõpetamiseks piisab nüüd näidata, et $g = 0$. Ühelt poolt paneme tähele, et
+\begin{equation*}
+g \left(u+v, u+v\right) = g_1 \left(u+v, u+v\right) - g_2 \left(u+v, u+v\right) = 0.
+\end{equation*}
+Teisalt
+\begin{eqnarray*}
+&& g \left(u+v, u+v\right) = g \left(u, u+v\right) + g \left(v, u+v\right) \\
+&=& g \left(u, u\right) + g \left(u, v\right) + g \left(v, u\right) + g \left(v, v\right) \\
+&=& g \left(u, u\right) + 2g \left(u, v\right) + g \left(v, v\right) = 2g \left(u, v\right).
+\end{eqnarray*}
+Kokkuvõttes saime $2g\left(u, v\right) = 0$ ehk $g\left(u, v\right) = 0$, mida oligi tarvis.
 \end{proof}
 
 \begin{teoreem}
@@ -216,7 +239,7 @@ Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus (3.1) täide
 
 \newpage
 \section{Lisa 1}
-\subsection{Skalaarkorrutisega seotud lisatulemused}
+\subsection{Skalaarkorrutisega seotud abitulemused}
 
 \begin{teoreem}
 Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
