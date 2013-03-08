@@ -285,11 +285,11 @@ ja mille elemente tähistame vastavalt vajadusele kas $\eta_{ab}$ või $\eta^{ab
 \begin{equation}
 e_i = \lambda\indices{^1_i} \hat{e}_1 + \lambda\indices{^2_i} \hat{e}_2 + \lambda\indices{^3_i} \hat{e}_3 + \lambda\indices{^4_i} \hat{e}_4 = \lambda\indices{^j_i} \hat{e}_j, \quad i,j = 1, 2, 3, 4,
 \end{equation}
-kus arvud $\lambda\indices{^j_i}$ on mingid reaalarvulised konstandid. Arvestades valemit $(3.2)$ võime nüüd ortogonaalsuse tingimuse $g \left(e_c, e_d\right) = \eta_{cd}$, $c, d = 1, 2, 3, 4$, kirjutada kujul
+kus arvud $\lambda\indices{^j_i}$ on mingid reaalarvulised konstandid. Arvestades valemit $(3.2)$ võime nüü ortogonaalsuse tingimuse $g \left(e_c, e_d\right) = \eta_{cd}$, $c, d = 1, 2, 3, 4$, kirjutada kujul
 \begin{equation}
 \lambda\indices{^1_c} \lambda\indices{^1_d} + \lambda\indices{^2_c} \lambda\indices{^2_d} + \lambda\indices{^3_c} \lambda\indices{^3_d} - \lambda\indices{^4_c} \lambda\indices{^4_d} = \eta_{cd}
 \end{equation}
-või kasutades summeerimiskokkulepet, siis lühidalt
+või kasutades summeerimiskokkulepet lühidalt
 \begin{equation}
 \lambda\indices{^a_c} \lambda\indices{^b_d} \eta_{ab} = \eta_{cd}.
 \end{equation}

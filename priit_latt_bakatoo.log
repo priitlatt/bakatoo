@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  8 MAR 2013 08:38
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  8 MAR 2013 23:41
 entering extended mode
 **priit_latt_bakatoo.tex
 (D:\Kool\bakatoo\priit_latt_bakatoo.tex
@@ -464,8 +464,7 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen129
 \l_MT_above_shortintertext_sep=\dimen130
 \l_MT_below_shortintertext_sep=\dimen131
-)
-No file priit_latt_bakatoo.aux.
+) (D:\Kool\bakatoo\priit_latt_bakatoo.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
@@ -529,18 +528,17 @@ LaTeX Font Info:    ... okay on input line 53.
 [1
 
 {C:/Users/Priit/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-No file priit_latt_bakatoo.toc.
-\tf@toc=\write3
-[1]
-LaTeX Font Info:    Try loading font information for U+msa on input line 89.
+(D:\Kool\bakatoo\priit_latt_bakatoo.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
  (D:\Dev\TeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 89.
-
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 (D:\Dev\TeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+))
+\tf@toc=\write3
+ [1]
 Overfull \hbox (0.2083pt too wide) in paragraph at lines 89--90
 \OT1/cmr/m/n/12 pet. See t[]ahendab, kui meil on in-deksid $\OML/cmm/m/it/12 i$
  \OT1/cmr/m/n/12 ja $\OML/cmm/m/it/12 j$\OT1/cmr/m/n/12 , mis oma-vad v[]a[]art
@@ -562,8 +560,8 @@ s on $\OML/cmm/m/it/12 g[]$ \OT1/cmr/m/n/12 ja $\OML/cmm/m/it/12 g[]$ \OT1/cmr/
 m/n/12 s[]ummeetrilisust ar-ves-ta-des ilm-ne. T[]oestuse
  []
 
-[5] [6] [7]
-Overfull \hbox (8.12256pt too wide) in paragraph at lines 266--268
+[5] [6] [7] [8] [9]
+Overfull \hbox (8.12256pt too wide) in paragraph at lines 326--328
 \OT1/cmr/m/n/12 siis $\OML/cmm/m/it/12 a[] \OMS/cmsy/m/n/12 ? \OML/cmm/m/it/12 
 e[]  \OMS/cmsy/m/n/12 ([])  \OML/cmm/m/it/12 [] \OT1/cmr/m/n/12 = \OMS/cmsy/m/
 n/12   []$\OT1/cmr/m/n/12 . J[]arelikult v[]oime v[]otta $\OML/cmm/m/it/12 a[] 
@@ -571,36 +569,36 @@ n/12   []$\OT1/cmr/m/n/12 . J[]arelikult v[]oime v[]otta $\OML/cmm/m/it/12 a[]
 t/12 e[]$\OT1/cmr/m/n/12 .
  []
 
-[8]
-Overfull \hbox (11.9399pt too wide) in paragraph at lines 291--293
+[10]
+Overfull \hbox (11.9399pt too wide) in paragraph at lines 351--353
 \OT1/cmr/m/n/12 mille reaal-ar-vu-lis-te la-hen-di-te hulk on $\U/msb/m/n/12 R$
 \OT1/cmr/m/n/12 . Kui $\OML/cmm/m/it/12 g [] > \OT1/cmr/m/n/12 0$, siis on te-g
 u ruutv[]orratusega.
  []
 
-[9] (D:\Kool\bakatoo\priit_latt_bakatoo.aux) ) 
+[11] (D:\Kool\bakatoo\priit_latt_bakatoo.aux) ) 
 Here is how much of TeX's memory you used:
- 4046 strings out of 493921
- 50892 string characters out of 3154099
+ 4055 strings out of 493921
+ 51123 string characters out of 3154099
  215409 words of memory out of 3000000
- 7277 multiletter control sequences out of 15000+200000
- 12455 words of font info for 48 fonts, out of 3000000 for 9000
+ 7282 multiletter control sequences out of 15000+200000
+ 13702 words of font info for 53 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 27i,8n,24p,648b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
-<D:/Dev/TeX/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/
-Dev/TeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Dev/TeX/fonts/type1/publi
-c/amsfonts/cm/cmmi6.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D
-:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Dev/TeX/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><D
-:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Dev/TeX/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D
-:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Dev/TeX/fonts/type1/publ
-ic/amsfonts/cm/cmti12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb>
-Output written on priit_latt_bakatoo.pdf (10 pages, 186381 bytes).
+ 27i,12n,24p,648b,226s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/Dev/TeX/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:
+/Dev/TeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Dev/TeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi6.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Dev/TeX/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Dev/TeX/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Dev/TeX/fonts/type1/pub
+lic/amsfonts/cm/cmti12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on priit_latt_bakatoo.pdf (12 pages, 196216 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 97 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
