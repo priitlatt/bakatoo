@@ -98,11 +98,11 @@ Juhendaja: \dotfill "....." juuni 2013\\[2cm]
 
 \section{Sissejuhatus}
 Töös kasutame summade tähistamisel sageli Einstein'i summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, mis omavad väärtusi $1, \dots, n \left( n \in \mathbb{N} \right)$, siis kirjutame 
-
-
-\[ x^{i} e_{a} = \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n},\]
-\[ \lambda\indices{^i_j} x^{j} = \sum_{j=1}^{n} \lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n}, \]
-\[ \eta_{ij} u^{i} v^{j} = \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n}, \]
+\begin{eqnarray*}
+x^{i} e_{a} &=& \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n},\\
+\lambda\indices{^i_j} x^{j} &=& \sum_{j=1}^{n} \lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n},\\
+\eta_{ij} u^{i} v^{j} &=& \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
+\end{eqnarray*}
 ja nii edasi.
 
 \paragraph{}
@@ -374,15 +374,15 @@ Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}_{GH}$. Veendume esiteks, et 
 \end{equation*}
 ja seega $\Lambda_1 \Lambda_2 \in \mathcal{L}_{GH}$ nagu tarvis. \\
 Jääb veel näidata, et ka $\Lambda^{-1 } \in \mathcal{L}_{GH}$. Seose \ref{eq:lambda-1lambda-trans} ja võrduste $\eta = \eta^T$, $\eta \eta = E$ põjal saame kirjutada
-\begin{equation*}
-\left(\Lambda^{-1}\right)^T \eta \Lambda^{-1} = \left(\eta \Lambda^T \eta \right)^T \eta \left(\eta \Lambda^T \eta\right) = \left(\eta^T \left(\Lambda^T\right)^T \eta^T \right) \eta \eta \Lambda^T \eta = \eta \Lambda \eta \Lambda^T \eta = \eta \eta \eta = \eta.
-\end{equation*}
+\begin{eqnarray*}
+&&\left(\Lambda^{-1}\right)^T \eta \Lambda^{-1} = \left(\eta \Lambda^T \eta \right)^T \eta \left(\eta \Lambda^T \eta\right) = \\
+&=&\left(\eta^T \left(\Lambda^T\right)^T \eta^T \right) \eta \eta \Lambda^T \eta = \eta \Lambda \eta \Lambda^T \eta = \eta \eta \eta = \eta.
+\end{eqnarray*}
 Viimane aga tähendabki, et $\Lambda^{-1} \in \mathcal{L}_{GH}$.
 \end{proof}
 
 \newpage
 \begin{appendices}
-%\renewcommand{\appendicestext}{Hurr durr}
 \section{Skalaarkorrutisega seotud abitulemused}
 \label{lisa:skalaar}
 
