@@ -310,10 +310,10 @@ Valem \ref{eq:lambdaeta1} on samaväärne valemiga
 \end{equation}
 \textcolor{red}{SEE TULEKS ÄRA KA NÄIDATA}
 \begin{definitsioon}
-Maatriksit $\Lambda = \left[\Lambda\indices{^a_b} \right]_{a,b=1,2,3,4}$ nimetame \emph{ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$} seotud maatriksiks.
+Maatriksit $\Lambda = \left[\Lambda\indices{^a_b} \right]_{a,b=1,2,3,4}$ nimetame \emph{ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$} assotsieeruvaks maatriksiks.
 \end{definitsioon}
 \begin{lause}
-Kui $\Lambda$ on ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ seotud maatriks, siis $\Lambda$ on ka ortogonaalteisenduse $L^{-1}$ ja baasiga $\{\hat{e}_a\}$ seotud maatriks, kus $Le_a = \hat{e}_a$.
+Kui $\Lambda$ on ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruv maatriks, siis $\Lambda$ on ka ortogonaalteisenduse $L^{-1}$ ja baasiga $\{\hat{e}_a\} = \{Le_a\}$ assotsieeruv maatriks.
 \end{lause}
 
 \begin{proof}
@@ -340,29 +340,26 @@ mille võime lühidalt kirja panna kui
 \begin{lemma} \label{lemma:lambdainvariant}
 Tingimus \ref{eq:lambdaeta1} (ja seega ka tingimus \ref{eq:lambdaeta2}) on samaväärne võrdusega
 \begin{equation} \label{eq:lambdainvariant}
-\Lambda^{\tau} \eta \Lambda = \eta,
+\Lambda^T \eta \Lambda = \eta.
 \end{equation}
-kus $\Lambda^\tau = \Lambda^T \eta$.
 \end{lemma}
 \begin{proof}
 \textcolor{red}
 {SIIA ON TÕESTUST VAJA!}
 \end{proof}
-Arvestades võrdusi $\Lambda^\tau = \Lambda^T \eta$ ja $\eta \eta = E$, kus $E$ tähistab ühikmaatriksit, on selge, et valemi \ref{eq:lambdainvariant} lemmast \ref{lemma:lambdainvariant} võib esitada kujul
-\begin{equation}
-\Lambda^T \Lambda = \eta.
-\end{equation}
 \begin{definitsioon}
+\textcolor{cyan}{
 $4 \times 4$ maatriksit $\Lambda$, mis rahuldab lemma \ref{lemma:lambdainvariant} tingimust \ref{eq:lambdainvariant} nimetatakse \emph{regulaarseks homogeenseks Lorentzi teisenduseks}.
+}
 \end{definitsioon}
 Kuna ruumi $\mathcal{M}$ ortogonaalsteisendus $L$ on isomorfism\footnote{\textcolor{red}{Vaata lisa \ref{lisa:ortogonaalteisendus} \nameref{lisa:ortogonaalteisendus}, Lause \ref{lause:ort.isom}}} 
 ja seega pööratav, siis temaga assotsieeruv maatriks $\Lambda$ on samuti pööratav, kusjuures
-\begin{equation}
-\Lambda^{-1} = \eta \Lambda^{\tau} \eta.
+\begin{equation} \label{eq:lambda-1lambda-trans}
+\Lambda^{-1} = \eta \Lambda^T \eta.
 \end{equation}
 Tõepoolest, arvestades tingimust \ref{eq:lambdainvariant} ja asjaolu, et $\eta = \eta^{-1}$, siis saame
 \begin{equation*}
-\eta = \Lambda^{\tau} \eta \Lambda \iff \eta \Lambda^{-1} = \Lambda^{\tau} \eta \iff \eta^{-1} \eta \Lambda^{-1} = \eta^{-1} \Lambda^{\tau} \eta \iff \Lambda^{-1} = \eta \Lambda^{\tau} \eta.
+\eta = \Lambda^T \eta \Lambda \iff \eta \Lambda^{-1} = \Lambda^T \eta \iff \eta^{-1} \eta \Lambda^{-1} = \eta^{-1} \Lambda^T \eta \iff \Lambda^{-1} = \eta \Lambda^T \eta.
 \end{equation*}
 
 \begin{teoreem}
@@ -370,9 +367,17 @@ Kõigi regulaarsete homogeensete Lorentzi teisenduste hulk on rühm maatriksite 
 \end{teoreem}
 
 \begin{proof}
-Veendumaks, et kõigi regulaarsete homogeensete Lorentzi teisenduste hulk $\mathcal{L}_{GH}$ on rühm peame näitama, et $\mathcal{L}_{GH}$ on kinnine korrutamise ja pöördelemendi võtmise suhtes.\\
-Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}_{GH}$. Veendume esiteks, et korrutis $\Lambda_1 \Lambda_2$ kuulub hulka $\mathcal{L}_{GH}$. Selleks piisab näidata, et $\left(\Lambda_1 \Lambda_2\right)^{\tau} \eta \left(\Lambda_1 \Lambda_2\right) = \eta$. \\
-\textcolor{red}{SIIN JÄI POOLELI!}
+Veendumaks, et kõigi regulaarsete homogeensete Lorentzi teisenduste hulk $\mathcal{L}_{GH}$ on rühm peame näitama, et $\mathcal{L}_{GH}$ on kinnine korrutamise ja pöörd\-elemendi võtmise suhtes.\\
+Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}_{GH}$. Veendume esiteks, et korrutis $\Lambda_1 \Lambda_2$ kuulub hulka $\mathcal{L}_{GH}$. Selleks piisab näidata, et $\left(\Lambda_1 \Lambda_2\right)^T \eta \left(\Lambda_1 \Lambda_2\right) = \eta$.
+\begin{equation*}
+\left(\Lambda_1 \Lambda_2\right)^T \eta \left(\Lambda_1 \Lambda_2\right) = \left(\Lambda_2^T \Lambda_1^T\right) \eta \left(\Lambda_1 \Lambda_2\right) = \Lambda_2^T \left(\Lambda_1^T \eta \Lambda_1 \right) \Lambda_2 = \Lambda_2^T \eta \Lambda_2 = \eta,
+\end{equation*}
+ja seega $\Lambda_1 \Lambda_2 \in \mathcal{L}_{GH}$ nagu tarvis. \\
+Jääb veel näidata, et ka $\Lambda^{-1 } \in \mathcal{L}_{GH}$. Seose \ref{eq:lambda-1lambda-trans} ja võrduste $\eta = \eta^T$, $\eta \eta = E$ põjal saame kirjutada
+\begin{equation*}
+\left(\Lambda^{-1}\right)^T \eta \Lambda^{-1} = \left(\eta \Lambda^T \eta \right)^T \eta \left(\eta \Lambda^T \eta\right) = \left(\eta^T \left(\Lambda^T\right)^T \eta^T \right) \eta \eta \Lambda^T \eta = \eta \Lambda \eta \Lambda^T \eta = \eta \eta \eta = \eta.
+\end{equation*}
+Viimane aga tähendabki, et $\Lambda^{-1} \in \mathcal{L}_{GH}$.
 \end{proof}
 
 \newpage

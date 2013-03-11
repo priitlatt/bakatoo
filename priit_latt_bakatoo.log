@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  10 MAR 2013 23:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  11 MAR 2013 23:19
 entering extended mode
 **priit_latt_bakatoo.tex
 (D:\Kool\bakatoo\priit_latt_bakatoo.tex
@@ -595,21 +595,23 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
  [4] [5] [6] [7] [8] [9]
 
 LaTeX Warning: Reference `lisa:ortogonaalteisendus' on page 10 undefined on inp
-ut line 358.
+ut line 355.
 
 
 LaTeX Warning: Reference `lisa:ortogonaalteisendus' on page 10 undefined on inp
-ut line 358.
+ut line 355.
 
 
 LaTeX Warning: Reference `lause:ort.isom' on page 10 undefined on input line 35
-8.
+5.
 
 
-Overfull \hbox (3.48021pt too wide) in paragraph at lines 373--376
-\OT1/cmr/m/n/12 hulk $\OMS/cmsy/m/n/12 L[]$ \OT1/cmr/m/n/12 on r[]uhm peame n[]
-aitama, et $\OMS/cmsy/m/n/12 L[]$ \OT1/cmr/m/n/12 on kin-ni-ne kor-ru-ta-mise j
-a p[]o[]ordelemendi
+Overfull \hbox (0.72829pt too wide) detected at line 379
+[][] \OML/cmm/m/it/12 \OT1/cmr/m/n/12 [] = [][] \OML/cmm/m/it/12  [] \OT1/cm
+r/m/n/12 = [] \OML/cmm/m/it/12 \OT1/cmr/m/n/12 []\OML/cmm/m/it/12  \OT1/cmr
+/m/n/12 = \OML/cmm/m/it/12 \OT1/cmr/m/n/12 \OML/cmm/m/it/12 \OT1/cmr/m/n/12 
+[]\OML/cmm/m/it/12  \OT1/cmr/m/n/12 = \OML/cmm/m/it/12  \OT1/cmr/m/n/12 = 
+\OML/cmm/m/it/12 :
  []
 
 [10] [11] [12] [13] [14] (D:\Kool\bakatoo\priit_latt_bakatoo.aux)
@@ -618,10 +620,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4583 strings out of 493921
- 59188 string characters out of 3154099
- 228125 words of memory out of 3000000
- 7779 multiletter control sequences out of 15000+200000
+ 4584 strings out of 493921
+ 59213 string characters out of 3154099
+ 228142 words of memory out of 3000000
+ 7780 multiletter control sequences out of 15000+200000
  14010 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  42i,12n,24p,648b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -636,7 +638,7 @@ ype1/public/amsfonts/cm/cmr8.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cms
 y10.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Dev/TeX/fonts/
 type1/public/amsfonts/cm/cmti12.pfb><D:/Dev/TeX/fonts/type1/public/amsfonts/sym
 bols/msbm10.pfb>
-Output written on priit_latt_bakatoo.pdf (15 pages, 216300 bytes).
+Output written on priit_latt_bakatoo.pdf (15 pages, 216781 bytes).
 PDF statistics:
  111 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
