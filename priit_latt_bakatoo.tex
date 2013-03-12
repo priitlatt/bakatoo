@@ -1,12 +1,4 @@
-\documentclass[a4paper,12pt]{article}
-
-%\setcounter{tocdepth}{3}% to get subsubsections in toc
-%\let\oldtocsection=\tocsection
-%\let\oldtocsubsection=\tocsubsection
-%\let\oldtocsubsubsection=\tocsubsubsection
-%\renewcommand{\tocsection}[2]{\hspace{0em}\oldtocsection{#1}{#2}}
-%\renewcommand{\tocsubsection}[2]{\hspace{2em}\oldtocsubsection{#1}{#2}}
-%\renewcommand{\tocsubsubsection}[2]{\hspace{4em}\oldtocsubsubsection{#1}{#2}}
+\documentclass[a4paper,12pt,fleqn]{article}
 
 \usepackage{tensor}
 \usepackage{lipsum}
@@ -30,26 +22,21 @@
   \renewcommand\appendixpagename{Lisad}
 }
 
+\theoremstyle{plain}
 \newtheorem{teoreem}{Teoreem}[section]
-%\theoremstyle{plain}
-\newtheorem{markus}{Märkus}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{lause}{Lause}[section]
 \newtheorem{algoritm}{Algoritm}[section]
-\newtheorem{aksioom}{Aksioom}
-\newtheorem{juht}{Juht}[section]
 \newtheorem{jareldus}{Järeldus}[section]
-\newtheorem{tingimus}{Tingimus}[section]
 \newtheorem{hupotees}{Hüpotees}[section]
-\newtheorem{kriteerium}{Kriteerium}[section]
+
+\theoremstyle{definition}
 \newtheorem{definitsioon}{Definitsioon}[section]
 \newtheorem{naide}{Näide}[section]
-\newtheorem{ulesanne}{Ülesanne}[section]
-\newtheorem{lemma}{Lemma}[section]
+\newtheorem{markus}{Märkus}[section]
 \newtheorem{tahistus}{Tähistus}[section]
-\newtheorem{probleem}{Probleem}[section]
-\newtheorem{lause}{Lause}[section]
 \newtheorem{kommentaar}{Kommentaar}[section]
-\newtheorem{lahendus}{Lahendus}[section]
-\newtheorem{kokkuvote}{Kokkuvõte}[section]
+
 \numberwithin{equation}{section}
 
 \usepackage{mathtools}
@@ -60,6 +47,7 @@
 %\email[P. Lätt]{lattpriit@gmail.com}
 
 \pagestyle{plain}
+%\pagestyle{headings}
 
 \begin{document}
 
@@ -75,7 +63,6 @@
 {\huge \textbf{Minkowski aegruumi geomeetriast}}\\[0.3cm]
 {\large Bakalaureusetöö (6 EAP)}\\[3cm]
 
-% Author and supervisor
 \begin{flushright}
 {\large Juhendaja: Viktor Abramov}
 \end{flushright}
@@ -97,12 +84,14 @@ Juhendaja: \dotfill "....." juuni 2013\\[2cm]
 \newpage
 
 \section{Sissejuhatus}
+
+Bakalaureusetöö on referatiivne ja selle aluseks on~\cite{Naber}. \\
 Töös kasutame summade tähistamisel sageli Einstein'i summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, mis omavad väärtusi $1, \dots, n \left( n \in \mathbb{N} \right)$, siis kirjutame 
-\begin{eqnarray*}
-x^{i} e_{a} &=& \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n},\\
-\lambda\indices{^i_j} x^{j} &=& \sum_{j=1}^{n} \lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n},\\
-\eta_{ij} u^{i} v^{j} &=& \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
-\end{eqnarray*}
+\begin{align*}
+x^{i} e_{a} &= \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n}, \\
+\lambda\indices{^i_j} x^{j} &= \sum_{j=1}^{n} \lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n},\\
+\eta_{ij} u^{i} v^{j} &= \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
+\end{align*}
 ja nii edasi.
 
 \paragraph{}
@@ -160,23 +149,23 @@ Olgu $\mathbb{V}$ vektorruum ning olgu $u, v \in \mathbb{V}$ ja kehtigu võrdus 
 g: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R} \text{, } g\left(u, v\right) \mapsto g_1\left(u, v\right) - g_2\left(u, v\right).
 \end{equation*}
 Paneme esiteks tähele, et selliselt defineeritud $g$ on sümmeetriline ja bilineaarne. Tõepoolest, olgu $u_1, u_2 \in \mathbb{V}$. Siis
-\begin{eqnarray*}
-&& g\left( \alpha u_1 + \beta u_2, v \right) = g_1\left( \alpha u_1 + \beta u_2, v \right) - g_2\left( \alpha u_1 + \beta u_2, v \right) \\
-&=& \alpha g_1 \left(u_1, v\right) + \beta g_1 \left(u_2, v \right) -\alpha g_2 \left(u_1, v\right)  \beta g_2 \left(u_2, v \right) \\
-&=& \alpha \left( g_1 \left(u_1, v\right) - g_2 \left(u_1, v \right)\right) + \beta \left( g_1 \left(u_2, v\right) - g_2 \left(u_2, v \right)\right) \\
-&=& \alpha g\left( u_1, v \right) + \beta g\left( u_2, v\right) \text{ ja analoogiliselt} \\
-&& g\left( u, \alpha v_1 + \beta v_2 \right) = \alpha g\left( u, v_1 \right) + \beta g\left( u, v_2\right).
-\end{eqnarray*}
+\begin{align*}
+g\left( \alpha u_1 + \beta u_2, v \right) &= g_1\left( \alpha u_1 + \beta u_2, v \right) - g_2\left( \alpha u_1 + \beta u_2, v \right) = \\
+&= \alpha g_1 \left(u_1, v\right) + \beta g_1 \left(u_2, v \right) -\alpha g_2 \left(u_1, v\right)  \beta g_2 \left(u_2, v \right) = \\
+&= \alpha \left( g_1 \left(u_1, v\right) - g_2 \left(u_1, v \right)\right) + \beta \left( g_1 \left(u_2, v\right) - g_2 \left(u_2, v \right)\right) = \\
+&= \alpha g\left( u_1, v \right) + \beta g\left( u_2, v\right) \text{ ja analoogiliselt} \\
+g\left( u, \alpha v_1 + \beta v_2 \right) &= \alpha g\left( u, v_1 \right) + \beta g\left( u, v_2\right).
+\end{align*}
 Kujutuse $g$ sümmeetrilisus on $g_1$ ja $g_2$ sümmeetrilisust arvestades ilmne. Tõestuse lõpetamiseks piisab nüüd näidata, et $g = 0$. Ühelt poolt paneme tähele, et
 \begin{equation*}
 g \left(u+v, u+v\right) = g_1 \left(u+v, u+v\right) - g_2 \left(u+v, u+v\right) = 0.
 \end{equation*}
-Teisalt
-\begin{eqnarray*}
-&& g \left(u+v, u+v\right) = g \left(u, u+v\right) + g \left(v, u+v\right) \\
-&=& g \left(u, u\right) + g \left(u, v\right) + g \left(v, u\right) + g \left(v, v\right) \\
-&=& g \left(u, u\right) + 2g \left(u, v\right) + g \left(v, v\right) = 2g \left(u, v\right).
-\end{eqnarray*}
+Teisalt,
+\begin{align*}
+& g \left(u+v, u+v\right) = g \left(u, u+v\right) + g \left(v, u+v\right) = \\
+&= g \left(u, u\right) + g \left(u, v\right) + g \left(v, u\right) + g \left(v, v\right) = \\
+&= g \left(u, u\right) + 2g \left(u, v\right) + g \left(v, v\right) = 2g \left(u, v\right).
+\end{align*}
 Kokkuvõttes saime $2g\left(u, v\right) = 0$ ehk $g\left(u, v\right) = 0$, mida oligi tarvis.
 \end{proof}
 
@@ -185,7 +174,7 @@ Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} 
 \end{teoreem}
 
 \begin{proof}
-Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti \footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks\footnote{Vaata lisa \ref{lisa:skalaar} \nameref{lisa:skalaar}, Märkus \ref{markus:gram-schmidt}}.
+Arvestades \textit{Gram~\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti ~\footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi muutub teoreemi tõestus ilmseks~\footnote{Vaata lisa \ref{lisa:skalaar} \nameref{lisa:skalaar}, Märkus \ref{markus:gram-schmidt}}.
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
 
@@ -221,12 +210,12 @@ Kuna Lorentzi skalaarkorrutis $g$ ei ole ruumil $\mathcal{M}$ positiivselt mää
 \begin{naide}
 Üheks ruumi $\mathcal{M}$ baasiks, mis koosneb vaid nullvektoritest on näiteks $\{e_1^0, e_2^0, e_3^0, e_4^0\}$, kus $e_1^0 = \left(1, 0, 0, 1\right)$, $e_2^0 = \left(0, 1, 0, 1\right)$, $e_3^0 = \left(0, 0, 1, 1\right)$ ja $e_4^0 = \left(-1, 0, 0, 1\right).$
 Tõepoolest, süsteemi $\{e_1^0, e_2^0, e_3^0, e_4^0\}$ lineaarne sõltumatus on vahetult kontrollitav ja $e_1^0, \dots, e_4^0$ on nullvektorid, sest
-\begin{eqnarray*}
-Q\left(e_1^0\right) &=& 1^2 + 0 + 0 - 1^2 = 0, \\
-Q\left(e_2^0\right) &=& 0 + 1^2 + 0 - 1^2 = 0, \\
-Q\left(e_3^0\right) &=& 0 + 0 + 1^2 - 1^2 = 0, \\
-Q\left(e_4^0\right) &=& (-1)^2 + 0 + 0 - 1^2 = 0.
-\end{eqnarray*}
+\begin{align*}
+Q\left(e_1^0\right) &= 1^2 + 0 + 0 - 1^2 = 0, \\
+Q\left(e_2^0\right) &= 0 + 1^2 + 0 - 1^2 = 0, \\
+Q\left(e_3^0\right) &= 0 + 0 + 1^2 - 1^2 = 0, \\
+Q\left(e_4^0\right) &= (-1)^2 + 0 + 0 - 1^2 = 0.
+\end{align*}
 \end{naide}
 
 Samas paneme tähele, et selline baas ei saa koosneda paarikaupa ortogonaalsetest vektoritest.
@@ -238,7 +227,7 @@ Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullvektorid. Vektorid $u$ ja $v$ on
 \[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
 ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
 \\
-\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}\footnote{Vaata Lisa 1, Teoreem 4.2} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
+\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}~\footnote{Vaata Lisa 1, Teoreem 4.2} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullvektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdud $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
 \end{proof}
 
 Võtame nüüd vaatluse alla kaks sellist sündmust $x, x_0 \in \mathcal{M}$, $x \neq x_0$, mida ühendav vektor on nullvektor, see tähendab $Q \left(x- x_0\right) = 0$. Seda asjaolu arvesse võttes saame, et kui $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas ja me tähistame $x = x^a e_a$, $x_0 = x_0^a e_a$, siis kehtib võrdus
@@ -282,12 +271,12 @@ Q\left(x\right) = Q\left(x^i e_i\right) = x^i Q\left(e_i\right) = x^i Q\left(Le_
 
 Ruumi kokkuhoiu mõttes toome sisse $4 \times 4$ maatriksi $\eta$, mille me defineerime kui
 \begin{equation*}
-\eta = \left( \begin{tabular}{cccc} 
+\eta = \begin{pmatrix}
 1 & 0 & 0 & 0 \\ 
 0 & 1 & 0 & 0 \\  
 0 & 0 & 1 & 0 \\ 
 0 & 0 & 0 & -1 \\ 
-\end{tabular} \right),
+\end{pmatrix},
 \end{equation*}
 ja mille elemente tähistame vastavalt vajadusele kas $\eta_{ab}$ või $\eta^{ab}$, $a, b = 1, 2, 3, 4$. Sellise tähistuse korral $\eta_{ab} = 1$, kui $a = b = 1, 2, 3$ ja $\eta_{ab} = -1$, kui $a = b = 4$ ning $\eta_{ab} = 0$ muudel juhtudel. Seega saame kirjutada $g\left(e_a, e_b\right) = \eta_{ab}$, kus $\{e_a\}$ on mingi $\mathcal{M}$ ortonormeeritud baas. Enamgi veel, avaldades vektorid $u, v \in \mathcal{M}$ baasivektorite kaudu $u = u^i e_i$ ja $v = v^i e_i$, saame summeerimiskokkulepet arvestades kirjutada $g \left(u, v\right) = u \cdot v = \eta_{ab} u^a v^b$.
 
@@ -312,26 +301,20 @@ Valem \ref{eq:lambdaeta1} on samaväärne valemiga
 \begin{definitsioon}
 Maatriksit $\Lambda = \left[\Lambda\indices{^a_b} \right]_{a,b=1,2,3,4}$ nimetame \emph{ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$} assotsieeruvaks maatriksiks.
 \end{definitsioon}
+Kuna ortogonaalteisenduse maatriks mistahes ortonormeeritud baasi suhtes on ortogonaalmaatriks, ja vastupidi, kui ortogonaalteisenduse maatriks mingi ortonormeeritud baasi suhtes on ortogonaalmaatriks, siis sellest järeldub kergesti järgmine lause. \cite[lk 271]{Kilp}
+
 \begin{lause}
 Kui $\Lambda$ on ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruv maatriks, siis $\Lambda$ on ka ortogonaalteisenduse $L^{-1}$ ja baasiga $\{\hat{e}_a\} = \{Le_a\}$ assotsieeruv maatriks.
 \end{lause}
 
-\begin{proof}
-Olgu $\Lambda$ ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ seotud maatriks ning tähistme $\hat{e}_a = Le_a$. Tingimusest \ref{eq:baasideseos} ja $L$ lineaarsusest saame, et 
-\begin{equation*}
-e_i = \Lambda\indices{^j_i} \hat{e}_j \iff e_i = \Lambda\indices{^j_i} Le_j \iff L^{-1} \left(e_i\right) = \Lambda\indices{^j_i} e_j
-\end{equation*}
-\textcolor{red}{SIIN ON MINGI JAMA VEEL}
-\end{proof}
-
 Me vaatleme ortogonaal teisendusega $L$ ja baasiga $\{e_a\}$ seotud maatriksit $\Lambda$ kui koordinaatide teisenemise maatriksit tavalisel viisil. Seega, kui $x \in \mathcal{M}$ on esitub koordinaatides baasi $\{e_i\}$ kujul $x = x^i e_i$, $i = 1, 2, 3, 4$, siis tema koordinaadid baasi $\{\hat{e}_i\} = \{Le_i\}$ suhtes on kui $x = \hat{x}^i \hat{e}_i$, kus
-\begin{eqnarray*}
-\hat{x}^1 = \Lambda\indices{^1_1} x^1 + \Lambda\indices{^1_2} x^2 + \Lambda\indices{^1_3} x^3 + \Lambda\indices{^1_4} x^4, \\
-\hat{x}^2 = \Lambda\indices{^2_1} x^1 + \Lambda\indices{^2_2} x^2 + \Lambda\indices{^2_3} x^3 + \Lambda\indices{^2_4} x^4, \\
-\hat{x}^3 = \Lambda\indices{^3_1} x^1 + \Lambda\indices{^3_2} x^2 + \Lambda\indices{^3_3} x^3 + \Lambda\indices{^3_4} x^4, \\
-\hat{x}^4 = \Lambda\indices{^4_1} x^1 + \Lambda\indices{^4_2} x^2 + \Lambda\indices{^4_3} x^3 + 
+\begin{align*}
+\hat{x}^1 &= \Lambda\indices{^1_1} x^1 + \Lambda\indices{^1_2} x^2 + \Lambda\indices{^1_3} x^3 + \Lambda\indices{^1_4} x^4, \\
+\hat{x}^2 &= \Lambda\indices{^2_1} x^1 + \Lambda\indices{^2_2} x^2 + \Lambda\indices{^2_3} x^3 + \Lambda\indices{^2_4} x^4, \\
+\hat{x}^3 &= \Lambda\indices{^3_1} x^1 + \Lambda\indices{^3_2} x^2 + \Lambda\indices{^3_3} x^3 + \Lambda\indices{^3_4} x^4, \\
+\hat{x}^4 &= \Lambda\indices{^4_1} x^1 + \Lambda\indices{^4_2} x^2 + \Lambda\indices{^4_3} x^3 + 
 \Lambda\indices{^4_4} x^4,
-\end{eqnarray*}
+\end{align*}
 mille võime lühidalt kirja panna kui
 \begin{equation}
 \hat{x}^i = \Lambda\indices{^i_j} x^j \text{, kus } i,j=1, 2, 3, 4.
@@ -352,7 +335,7 @@ Tingimus \ref{eq:lambdaeta1} (ja seega ka tingimus \ref{eq:lambdaeta2}) on samav
 $4 \times 4$ maatriksit $\Lambda$, mis rahuldab lemma \ref{lemma:lambdainvariant} tingimust \ref{eq:lambdainvariant} nimetatakse \emph{regulaarseks homogeenseks Lorentzi teisenduseks}.
 }
 \end{definitsioon}
-Kuna ruumi $\mathcal{M}$ ortogonaalsteisendus $L$ on isomorfism\footnote{\textcolor{red}{Vaata lisa \ref{lisa:ortogonaalteisendus} \nameref{lisa:ortogonaalteisendus}, Lause \ref{lause:ort.isom}}} 
+Kuna ruumi $\mathcal{M}$ ortogonaalsteisendus $L$ on isomorfism~\footnote{\textcolor{red}{Vaata lisa \ref{lisa:ortogonaalteisendus} \nameref{lisa:ortogonaalteisendus}, Lause \ref{lause:ort.isom}}} 
 ja seega pööratav, siis temaga assotsieeruv maatriks $\Lambda$ on samuti pööratav, kusjuures
 \begin{equation} \label{eq:lambda-1lambda-trans}
 \Lambda^{-1} = \eta \Lambda^T \eta.
@@ -374,10 +357,10 @@ Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}_{GH}$. Veendume esiteks, et 
 \end{equation*}
 ja seega $\Lambda_1 \Lambda_2 \in \mathcal{L}_{GH}$ nagu tarvis. \\
 Jääb veel näidata, et ka $\Lambda^{-1 } \in \mathcal{L}_{GH}$. Seose \ref{eq:lambda-1lambda-trans} ja võrduste $\eta = \eta^T$, $\eta \eta = E$ põjal saame kirjutada
-\begin{eqnarray*}
-&&\left(\Lambda^{-1}\right)^T \eta \Lambda^{-1} = \left(\eta \Lambda^T \eta \right)^T \eta \left(\eta \Lambda^T \eta\right) = \\
-&=&\left(\eta^T \left(\Lambda^T\right)^T \eta^T \right) \eta \eta \Lambda^T \eta = \eta \Lambda \eta \Lambda^T \eta = \eta \eta \eta = \eta.
-\end{eqnarray*}
+\begin{align*}
+\left(\Lambda^{-1}\right)^T \eta \Lambda^{-1} &= \left(\eta \Lambda^T \eta \right)^T \eta \left(\eta \Lambda^T \eta\right) = \left(\eta^T \left(\Lambda^T\right)^T \eta^T \right) \eta \eta \Lambda^T \eta = \\
+&= \eta \Lambda \eta \Lambda^T \eta = \eta \eta \eta = \eta.
+\end{align*}
 Viimane aga tähendabki, et $\Lambda^{-1} \in \mathcal{L}_{GH}$.
 \end{proof}
 
@@ -387,7 +370,7 @@ Viimane aga tähendabki, et $\Lambda^{-1} \in \mathcal{L}_{GH}$.
 \label{lisa:skalaar}
 
 \begin{teoreem}
-Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
+Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas. \textnormal{\cite[teoreem II.7.3]{FA2}}
 \end{teoreem}
 \begin{proof}
 Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.\\
@@ -421,12 +404,9 @@ Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega $g : \mathbb{V} \times \mathbb{V
 \begin{equation} \label{eq:C-S-B}
 g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
 \end{equation}
-kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
+kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad. \textnormal{\cite[teoreem II.1.1.]{FA2}}
 \end{teoreem}
 
-%
-% Viita FA2 konspektile!!!
-%
 \begin{proof}
 Olgu $\mathbb{V}$ reaalne vektorruum skalaarkorrutisega $g$ ning olgu $u, v \in \mathbb{V}$. Siis iga $\lambda \in \mathbb{R}$ korral
 \begin{eqnarray*}
@@ -459,8 +439,11 @@ Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, e
 \end{proof}
 
 \section{Mingi teine lisa}
+Testing citing \cite{Super}
 
 \end{appendices}
 
-\vfill 
+\newpage
+\bibliography{references}
+\bibliographystyle{alpha}
 \end{document}
