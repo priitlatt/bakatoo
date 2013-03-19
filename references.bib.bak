@@ -1,0 +1,60 @@
+@book{Naber,
+author		= "G. L. Naber",
+title		= "The geometry of Minkowski spacetime: an introduction to the mathematics of the special theory of relativity",
+edition		= "2nd",
+publisher	= "Springer",
+address		= "New York, NY",
+series		= "Applied mathematical sciences",
+year		= "2012",
+}
+
+@Misc{FA2,
+author 		= "M. P{\~o}ldvere",
+title		= "Funktsionaalanal{\"u}{\"u}s 2 loengukonspekt",
+year 		= "2012",
+address		= "Tartu",
+}
+
+
+@book{Kilp,
+title		= "Algebra I",
+author		= "M. Kilp",
+publisher	= "Eesti Matemaatika Selts",
+address		= "Tartu",
+year		= "2005",
+}
+
+@book{Super,
+author		= "Abramov, V. and Kuusk, P.",
+title		= "Supers{\"u}mmeetria f{\"u}{\"u}sikas ja matemaatikas",
+publisher	= "Tartu {\"U}likooli kirjastus",
+address		= "Tartu",
+year		= "1994",
+}
+
+@book{Keres,
+author		= "H. Keres",
+title		= "Vektor ja tensor ruumid",
+publisher	= "Valgus",
+address		= "Tallinn",
+year		= "1989",
+}
+
+@book{BergerI,
+title		= "Geometry I",
+author		= "Berger, M.,
+series		= "Universitext",
+year		= "1994",
+edition		= "2nd"
+publisher	= "Springer-Verlang",
+address		= "Berlin",
+}
+
+@book{BergerII,
+title		= "Geometry II",
+author		= "Berger, M.,
+series		= "Universitext",
+year		= "1987",
+publisher	= "Springer-Verlang",
+address		= "Berlin",
+}

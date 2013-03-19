@@ -112,7 +112,7 @@ Selles peatükis toome välja definitsioonid ja tähtsamad tulemused, mida lähe
 
 Olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. Me ütleme, et kujutus $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ on \emph{bilineaarvorm}, kui $g$ on mõlema muutuja järgi lineaarne, see tähendab $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = \alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right)$ ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = \alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning $u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $\mathbb{V}$ elemendid. 
 \\
-Olgu $u, v \in \mathbb{V}$. Bilineaarvormi $g$ nimetatakse \emph{sümmeetriliseks}, kui $g \left( u, v \right) = g \left(v, u \right)$ ja \emph{mittekidunuks}, kui tingumusest $g \left( u, v \right) = 0$ iga $v \in \mathbb{V}$ korral järeldub  $u = 0$.
+Olgu $u, v \in \mathbb{V}$. Bilineaarvormi $g$ nimetatakse \emph{sümmeetriliseks}, kui $g \left( u, v \right) = g \left(v, u \right)$ ja \emph{mittekidunuks}, kui $u = 0$ järeldub tingumusest iga $v \in \mathbb{V}$ korral $g \left( u, v \right) = 0$.
 
 \begin{definitsioon}
 Mittekidunud sümmeetrilist bilineaarvormi $g: \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$ nimetatakse \emph{skalaarkorrutiseks}. Vektorite $u$ ja $v$ skalaarkorrutist tähistame sageli ka kujul $u \cdot v$.
@@ -120,7 +120,7 @@ Mittekidunud sümmeetrilist bilineaarvormi $g: \mathbb{V} \times \mathbb{V} \rig
 
 Tänu skalaarkorrutise bilineaarsusele on kergesti tuletatavad järgmised omadused:
 \begin{itemize}
-\item $u \cdot 0 = 0 \cdot v = 0$ kõikide $u, v \in \mathbb{V}$ korral, sest $g$ bilineaarsuse tõttu $0 \cdot v = \left(0*0\right) \cdot v = 0*\left(0 \cdot v \right) = 0$,
+\item $u \cdot 0 = 0 \cdot v = 0$ kõikide $u, v \in \mathbb{V}$ korral, sest bilineaarsuse ingumusest saame $0 \cdot v = \left(0*0\right) \cdot v = 0*\left(0 \cdot v \right) = 0$,
 \item kui $u_1, u_2, \dots, u_n, u, v_1, v_2, \dots, v_n \in \mathbb{V}$, siis $\left( \sum_{i = 1}^{n} u_i \right) \cdot v = \sum_{i = 1}^{n}  \left( u_i \cdot v \right)$ ja $u \cdot \left( \sum_{i = 1}^{n} v_i \right) = \sum_{i = 1}^{n}  \left( u \cdot v_i \right)$,
 \item kui $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ on vektorruumi $\mathbb{V}$ baas ning kui tähistame $\eta_{ij} = e_i \cdot e_j$, $i,j = 1, 2, \dots, n$, siis $u \cdot v = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \eta_{ij} u^i v^j = \eta_{ij} u^i v^j$, kus $u = u^i e_i$ ja $v = v^i e_i$.
 \end{itemize}
