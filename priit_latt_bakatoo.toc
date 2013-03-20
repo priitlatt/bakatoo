@@ -6,10 +6,11 @@
 \contentsline {section}{\numberline {3}Minkowski ruumi geomeetriline struktuur}{4}
 \contentsline {subsection}{\numberline {3.1}Skalaarkorrutise definitsioon ja omadused}{4}
 \contentsline {subsection}{\numberline {3.2}Minkowski aegruumi m\IeC {\~o}iste}{6}
-\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{7}
 \contentsline {subsection}{\numberline {3.3}Ortogonaalteisendus ruumis $\mathcal {M}$ }{8}
 \contentsline {paragraph}{}{9}
-\contentsline {section}{Lisad}{12}
-\contentsline {section}{Lisa \numberline {A}Skalaarkorrutisega seotud abitulemused}{12}
-\contentsline {paragraph}{}{13}
-\contentsline {section}{Lisa \numberline {B}Ortogonaalsed teisendused}{14}
+\contentsline {subsection}{\numberline {3.4}Lorentzi r\IeC {\"u}hm}{12}
+\contentsline {section}{Lisad}{15}
+\contentsline {section}{Lisa \numberline {A}Skalaarkorrutisega seotud abitulemused}{15}
+\contentsline {paragraph}{}{16}
+\contentsline {section}{Lisa \numberline {B}Ortogonaalsed teisendused}{17}
