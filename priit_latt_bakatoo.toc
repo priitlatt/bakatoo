@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {3.3}Ortogonaalteisendus ruumis $\mathcal {M}$ }{8}
 \contentsline {paragraph}{}{9}
 \contentsline {subsection}{\numberline {3.4}Lorentzi r\IeC {\"u}hm}{12}
-\contentsline {section}{Lisad}{16}
-\contentsline {section}{Lisa \numberline {A}Skalaarkorrutisega seotud abitulemused}{16}
-\contentsline {paragraph}{}{17}
-\contentsline {section}{Lisa \numberline {B}Ortogonaalsed teisendused}{18}
+\contentsline {section}{Lisad}{17}
+\contentsline {section}{Lisa \numberline {A}Skalaarkorrutisega seotud abitulemused}{17}
+\contentsline {paragraph}{}{18}
+\contentsline {section}{Lisa \numberline {B}Ortogonaalsed teisendused}{19}

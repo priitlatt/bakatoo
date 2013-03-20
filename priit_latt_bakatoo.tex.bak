@@ -491,12 +491,88 @@ Meenutades veel seost \ref{eq:lambdaetamat1}, siis saame kirjutada $\det\left(\L
 \end{equation*}
 ja seejuures ütleme, et $\Lambda$ on \emph{tegelik Lorentzi teisendus}, kui $\det \Lambda = 1$.
 
-\begin{lause}
+\begin{lause} \label{lause:ryhmL}
 Hulk $\mathcal{L} := \{\Lambda \in \mathcal{L}_{GH} : \det \Lambda = 1,\ \Lambda\indices{^4_4} \geq 1\}$ on korrutamise suhtes rühma $\mathcal{L}_{GH}$ alamrühm, see tähendab tegelikud ortokroonilised Lorentzi teisendusused moodustavad rühma.
 \end{lause}
 \begin{proof}
-Veendumaks, et hulk $\mathcal{L}$ on rühm näitame, et ta on kinnine korrutamise ja pöördelemendi võtmise suhtes. Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}$. 
+Veendumaks, et hulk $\mathcal{L}$ on rühm näitame, et ta on kinnine korrutamise ja pöördelemendi võtmise suhtes. Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}$.
+Paneme tähele, et $\det \left(\Lambda_1 \Lambda_2 \right) = \det \Lambda_1 \cdot \det \Lambda_2 = 1$ ja seose \ref{eq:lambda-1lambda-trans} põhjal $\det \Lambda^{-1} = \det \left(\eta \Lambda^T \eta\right) = (-1)^2 \det \Lambda^T = \det \Lambda = 1$. \\
+\textcolor{red}{KAHJUKS ORTOKROONILISUST EI OSKA NÄIDATA!}
 \end{proof}
+\begin{markus}
+Rühma $\mathcal{L}$ lausest \ref{lause:ryhmL} nimetatakse sageli \emph{Lorentzi rühmaks}, nagu ka rühma $\mathcal{L}_{GH}$.
+\end{markus}
+Vaatleme järgnevalt lähemalt hulga $\mathcal{L}$ alamhulka $\mathcal{R}$, mille elemendid avalduvad kujul
+\[R = \begin{pmatrix}
+R\indices{^1_1} & R\indices{^1_2} & R\indices{^1_3} & 0 \\ 
+R\indices{^2_1} & R\indices{^2_2} & R\indices{^2_3} & 0 \\  
+R\indices{^3_1} & R\indices{^3_2} & R\indices{^3_3} & 0 \\ 
+0 & 0 & 0 & 1 \\ 
+\end{pmatrix},\]
+kus $\left(R\indices{^i_j}\right)_{i,j = 1,2,3}$ on ortogonaalne ja $det \left(R\indices{^i_j}\right) = 1$, see tähendab $R$ on unimodulaarne. Märgime, et tõepoolest $R \in \mathcal{L}$, sest $R\indices{^4_4} = 1$ definitsiooni järgi ning kasutades Laplace'i teoreemi saame $\det R = 1 \cdot (-1)^{4+4} \cdot \det \left(R\indices{^i_j}\right) = 1$. Samuti on täidetud ortogonaalsuse tingimus \ref{eq:lambdaetamat1} kuna
+\begin{align*}
+R^T \eta R = 
+\begin{pmatrix}
+\left(R\indices{^i_j}\right) & 0 \\ 
+0 & 1 \\ 
+\end{pmatrix}^T \eta \begin{pmatrix}
+\left(R\indices{^i_j}\right) & 0 \\ 
+0 & 1 \\ 
+\end{pmatrix} = \begin{pmatrix}
+\left(R\indices{^i_j}\right)^T & 0 \\ 
+0 & 1 \\ 
+\end{pmatrix} \begin{pmatrix}
+\left(R\indices{^i_j}\right) & 0 \\ 
+0 & -1 \\ 
+\end{pmatrix} = \\
+= \begin{pmatrix}
+\left(R\indices{^i_j}\right)^T \left(R\indices{^i_j}\right) & 0 \cdot 0 \\ 
+0 \cdot 0  & -1 \cdot 1 \\ 
+\end{pmatrix} = 
+\begin{pmatrix}
+\left(R\indices{^i_j}\right)^{-1} \left(R\indices{^i_j}\right) & 0 \\ 
+0  & -1 \\ 
+\end{pmatrix} = \begin{pmatrix}
+E & 0 \\ 
+0  & -1 \\ 
+\end{pmatrix} = \eta.
+\end{align*}
+Paneme veel tähele, et hulk $\mathcal{R}$ on rühm. Tõepoolest, kui $R_1, R_2 \in \mathcal{R}$, siis 
+\begin{align*}
+R_1 R_2 = \begin{pmatrix}
+\left(\left(R_1\right)\indices{^i_j}\right) & 0 \\ 
+0 & 1 \\ \end{pmatrix} \begin{pmatrix}
+\left(\left(R_2\right)\indices{^i_j}\right) & 0 \\ 
+0 & 1 \\ \end{pmatrix} = 
+\begin{pmatrix}
+\left(\left(R_1\right)\indices{^i_j}\right) \left(\left(R_2\right)\indices{^i_j}\right) & 0 \\ 
+0 & 1 \\ \end{pmatrix}
+\end{align*}
+ja seega $(R_1 R_2)\indices{^4_4} = 1$ ning $\det \left(\left(\left(R_1\right)\indices{^i_j}\right) \left(\left(R_2\right)\indices{^i_j}\right) \right) = \det \left(\left(R_1\right)\indices{^i_j}\right) \det \left(\left(R_1\right)\indices{^i_j}\right) = 1$.
+Teisalt, kui $R \in \mathcal{R}$, siis valemist \ref{eq:lambda-1lambda-trans} saame
+\begin{align*}
+R^{-1} = \eta R^T \eta = \eta \begin{pmatrix}
+\left(R\indices{^i_j}\right) & 0 \\ 
+0 & 1 \\ \end{pmatrix}^T \eta = 
+\eta \begin{pmatrix}
+\left(R\indices{^i_j}\right)^T & 0 \\ 
+0 & -1 \\ \end{pmatrix} = \begin{pmatrix}
+\left(R\indices{^i_j}\right)^T & 0 \\ 
+0 & -1 \\ \end{pmatrix}.
+\end{align*}
+Järelikult $R\indices{^4_4} = 1$ ning $\det \left(\left(R^{-1}\right)\indices{^i_j}\right) = \det \left(\left(R^{-1}\right)\indices{^i_j}\right)$
+Et hulga $\mathcal{R}$ elemendid kirjeldavad koordinaatide teisendusi, mis pööravad ruumikoordinaate, siis ütleme teisenduse $R \in \mathcal{R}$ kohta \emph{pööre} ja rühma $\mathcal{R}$ nimetame rühma $\mathcal{L}$ \emph{pöörete alamrühmaks}.
+
+\begin{lause}
+Olgu $\Lambda \in \mathcal{L}$. Siis on järgmised väited samaväärsed:
+\begin{itemize}
+\item[(i)] $\Lambda$ on pööre, see tähendab $\Lambda \in \mathcal{R}$;
+\item[(ii)] $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = 0$;
+\item[(iii)] $\Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$;
+\item[(iv)] $\Lambda\indices{^4_4} = 1$.
+\end{itemize}
+\end{lause}
+
 
 \newpage
 \begin{appendices}
@@ -590,7 +666,7 @@ Teisalt, kuna $g$ on skalaarkorrutis ja et $x \neq y$, siis leidub selline $z' \
 mis on vastuolu. \\
 Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. Meie eesmärk on leida $y \in \mathbb{V}$ selliselt, et $Ly = x$. Tähistame teisenduse $L$ maatriksi tähega $\Lambda$. Siis
 \[Ly = L\left(y^a e_a\right) = y^a \Lambda\indices{^b_a}e_b = x^b e_b, \text{ kus } a,b = 1,2,3,4.\]
-Saime v
+Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta $y = (y_1, y_2, y_3, y_4)$.
 \end{proof}
 \end{appendices}
 
