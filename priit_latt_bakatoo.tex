@@ -573,6 +573,45 @@ Olgu $\Lambda \in \mathcal{L}$. Siis on järgmised väited samaväärsed:
 \end{itemize}
 \end{lause}
 
+\begin{proof}
+Implikatsioonid $(i) \Longrightarrow (ii), (i) \Longrightarrow (iii)$ ja $(i) \Longrightarrow (ii)$ on pöörde definitsiooni arvestades ilmsed. \\
+Näitamaks, et $(ii), (iii)$ ja $(iv)$ on samaväärsed märgime, et fikseerides seostes \ref{eq:lambdaeta1} ja \ref{eq:lambdaeta2} sobivalt indeksid saame
+\begin{align*}
+\left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1, \\
+\left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1.
+\end{align*}
+Arvestades, et $\Lambda$ on ortokrooniline, siis $\Lambda\indices{^4_4} = 1$ ja seega  
+\begin{align*}
+\left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - 1 = -1, \\
+\left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - 1 = -1,
+\end{align*}
+mis saab võimalik olla vaid siis, kui $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = \Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$. \\
+Tõestuse lõpetamiseks jääb veel näidata, et kui $\Lambda \in \mathcal{L}$ ja kehtib $(ii)$ (ja seega ka $(ii)$ ning $(iv)$), siis $\left(\Lambda\indices{^i_j}\right)_{i,j = 1, 2, 3}$ on ortogonaalne ja unimodulaarne. Võrdus $\det \left(\Lambda\indices{^i_j}\right) = 1$ on tõestatud osas kus näitasime, et $\mathcal{R}$ on rühm ja seega on $\left(\Lambda\indices{^i_j}\right)$ ortogonaalne. Jääb veel näidata, et $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$. Selleks märgmine, et blokkmaatriksi pööramise eeskirja kohaselt
+\begin{align*}
+\Lambda^{-1} = 
+\begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right) & 0 \\
+0 & 1 \\ 
+\end{pmatrix}^{-1} = \qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\\
+\begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right)^{-1} + \left(\Lambda\indices{^i_j}\right)^{-1} 0  \left(1-0 \left(\Lambda\indices{^i_j}\right)
+^{-1} 0 \right)^{-1} 0 \left(\Lambda\indices{^i_j}\right)^{-1} & -\left(\Lambda\indices{^i_j}\right)^{-1} 0 \left(1 - 0 \left
+(\Lambda\indices{^i_j}\right)^{-1} 0 \right)^{-1} \\
+-\left(1 - 0 \left(\Lambda\indices{^i_j}\right)^{-1} 0\right)^{-1} 0 \left(\Lambda\indices{^i_j}\right)^{-1} & \left(1 - 0 \left
+(\Lambda\indices{^i_j}\right)^{-1} 0 \right)^{-1} \\
+\end{pmatrix} = \\
+ = \begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right)^{-1} & 0 \\
+0 & 1^{-1} \\ 
+\end{pmatrix} = 
+\begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right)^{-1} & 0 \\
+0 & 1 \\ 
+\end{pmatrix}. \qquad\qquad\qquad\qquad\qquad\qquad
+\end{align*}
+
+Osas kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et $\Lambda^{-1} = \begin{pmatrix} \left(\Lambda\indices{^i_j}\right)^T & 0 \\ 0 & 1 \\ \end{pmatrix}$, mis tähendab, et $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$ ehk $\left(\Lambda\indices{^i_j}\right)$ on ortogonaalne. Kokkuvõttes saime, et $\Lambda$ on pööre, nagu tarvis.
+\end{proof}
 
 \newpage
 \begin{appendices}
