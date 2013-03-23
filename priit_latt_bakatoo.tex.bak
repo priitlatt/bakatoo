@@ -11,6 +11,7 @@
 \usepackage[estonian]{babel}
 \usepackage[a4paper]{geometry}
 \usepackage{nameref}
+\usepackage[stable]{footmisc}
 \usepackage{hyperref}
 \usepackage{verbatim}
 \usepackage[titletoc, toc, page]{appendix}
@@ -198,9 +199,49 @@ Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. Meie e
 Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta $y = (y_1, y_2, y_3, y_4)$.
 \end{proof}
 
+\begin{teoreem}[Blokkmaatriksite korrutamine]
+Olgu meil $m \times p$ maatriks $A$ ja olgu meil $p \times n$ maatriks $B$. Jagame maatriksi $A$ blokkideks, kus on $q$ rea blokki ja $s$ veeru blokki ning jagame maatriksi $B$ blokkideks, kus on $s$ rea blokki ja $r$ veeru blokki kujul
+\begin{align*}
+A = \begin{pmatrix}
+A_{11} & A_{12} & \dots & A_{1s} \\
+A_{21} & A_{22} & \dots & A_{2s} \\
+\vdots & \vdots & \ddots & \vdots \\
+A_{q1} & A_{q2} & \dots & A_{qs} \\
+\end{pmatrix} \text{ ja }
+B = \begin{pmatrix}
+B_{11} & B_{12} & \dots & B_{1r} \\
+B_{21} & B_{22} & \dots & B_{2r} \\
+\vdots & \vdots & \ddots & \vdots \\
+B_{s1} & B_{s2} & \dots & B_{sr} \\
+\end{pmatrix}.
+\end{align*}
+Siis saame arvutada $m \times n$ maatriksi $C = AB$, kus on $q$ rea blokki ja $r$ veeru blokki kujul
+\begin{align*}
+C = \begin{pmatrix}
+C_{11} & C_{12} & \dots & C_{1r} \\
+C_{21} & C_{22} & \dots & C_{2r} \\
+\vdots & \vdots & \ddots & \vdots \\
+C_{q1} & C_{q2} & \dots & C_{qr} \\
+\end{pmatrix}
+\end{align*}
+ning $C_{ab} = \sum_{i = 1}^{s} A_{ai} B_{ib}$.
+\end{teoreem}
+
+\begin{teoreem}[Blokkmaatriksi pöördmaatriks]
+Olgu $M$ regulaarne maatriks, mis on esitatud blokkmaatriksina kujul $M = \begin{pmatrix} A & B \\ C & D \\ \end{pmatrix}$, kus $A, B, C, D$ on suvalise suurusega alammaatriksid, kusjuures $A$ ja $D$ on ruutmaatriksid. Siis saame maatriksi $M$ pöördmaatriksi $M^{-1}$ arvutada blokkidena järgmise eeskirja alusel:
+\begin{align*}
+M^{-1} = \begin{pmatrix}
+A & B \\ C & D \\
+\end{pmatrix}^{-1} = \qquad\qquad\qquad\qquad\qquad \\
+= \begin{pmatrix}
+A^{-1}+A^{-1}B\left(D-CA^{-1}B\right)^{-1}CA^{-1} & -A^{-1}B\left(D-CA^{-1}B\right)^{-1} \\
+-\left(D- CA^{-1}B\right)^{-1}CA^{-1} & \left(D-CA^{-1}B\right)^{-1}
+\end{pmatrix}.
+\end{align*}
+\end{teoreem}
 \newpage
 
-\section{Minkowski ruumi geomeetriline struktuur}
+\section{Minkowski\footnote{Hermann Minkowski (1864 - 1909) - poola matemaatik} ruumi geomeetriline struktuur}
 
 \subsection{Skalaarkorrutise definitsioon ja omadused}
 
@@ -268,7 +309,7 @@ Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} 
 \end{teoreem}
 
 \begin{proof}
-Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti\footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi ortonormeeritud baasi leidmiseks, muutub teoreemi tõestus ilmseks\footnote{Vaata \ref{eelteadmised:skalaar} \nameref{eelteadmised:skalaar}, Märkus \ref{markus:gram-schmidt}}.
+Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti\footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksa matemaatik}} algoritmi ortonormeeritud baasi leidmiseks, muutub teoreemi tõestus ilmseks\footnote{Vaata \ref{eelteadmised:skalaar} \nameref{eelteadmised:skalaar}, Märkus \ref{markus:gram-schmidt}}.
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
 
@@ -417,8 +458,9 @@ Definitsioonile eelnevas arutelus tõestasime maatriksi $\Lambda$ kohta järgmis
 Pseudoortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruva maatriksi $\Lambda$ korral on tingimused \ref{eq:lambdaeta1}, \ref{eq:lambdaetamat1}, \ref{eq:lambdaetamat2} ja \ref{eq:lambdaeta2} samaväärsed.
 \end{lemma}
 
+\textcolor{red}{
 Kuna ortogonaalteisenduse maatriks mistahes ortonormeeritud baasi suhtes on ortogonaalmaatriks, ja vastupidi, kui ortogonaalteisenduse maatriks mingi ortonormeeritud baasi suhtes on ortogonaalmaatriks, siis sellest järeldub kergesti järgmine lause.
-
+}
 \begin{lause}\textnormal{\cite[lk 271]{Kilp}}
 Kui $\Lambda$ on pseudoortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruv maatriks, siis $\Lambda$ on ka pseudoortogonaalteisenduse $L^{-1}$ ja baasiga $\{\hat{e}_a\} = \{Le_a\}$ assotsieeruv maatriks.
 \end{lause}
@@ -532,7 +574,7 @@ g\left(u,v\right) < 0 \text{ või} \tag{1} \\
 g\left(u,v\right) > 0. \tag{2}
 \end{align}
 Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$. \\
-Neid kahte ekvivalentsiklassi tähistame edasises $\tau^+$ ja $\tau^-$.
+Neid kahte ekvivalentsiklassi tähistatakse $\tau^+$ ja $\tau^-$. Märgime, et see kuidas elemendid ekvivalentsiklassidesse $\tau^+$ ja $\tau^-$ jagatakse on 
 
 \begin{teoreem}\textnormal{\cite[teoreem 1.3.3]{Naber}}
 Olgu $\Lambda = \left[\Lambda\indices{^a_b}\right]_{a,b = 1,2,3,4}$ Lorentzi teisendus, see tähendab $\Lambda \in \mathcal{L}_{GH}$ ja olgu $\{e_a\}$ ruumi $\mathcal{M}$ orto\-normeeritud baas. Siis on järgmised väited samaväärsed:
@@ -715,6 +757,9 @@ Tõestuse lõpetamiseks jääb veel näidata, et kui $\Lambda \in \mathcal{L}$ j
 \end{align*}
 Osas kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et $\Lambda^{-1} = \begin{pmatrix} \left(\Lambda\indices{^i_j}\right)^T & 0 \\ 0 & 1 \\ \end{pmatrix}$, millest $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$ ehk $\left(\Lambda\indices{^i_j}\right)$ on ortogonaalne. Kokkuvõttes oleme näidanud, et $\Lambda$ on pööre, nagu tarvis.
 \end{proof}
+
+\newpage
+\section{Minkowski superruum}
 
 \newpage
 \section*{Summary}
