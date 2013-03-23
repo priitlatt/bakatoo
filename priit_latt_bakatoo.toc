@@ -1,16 +1,16 @@
 \select@language {estonian}
-\contentsline {section}{\numberline {1}Sissejuhatus}{2}
-\contentsline {paragraph}{}{2}
-\contentsline {section}{\numberline {2}Vajalikud eelteadmised}{3}
-\contentsline {subsection}{\numberline {2.1}ptk}{3}
-\contentsline {section}{\numberline {3}Minkowski ruumi geomeetriline struktuur}{4}
-\contentsline {subsection}{\numberline {3.1}Skalaarkorrutise definitsioon ja omadused}{4}
-\contentsline {subsection}{\numberline {3.2}Minkowski aegruumi m\IeC {\~o}iste}{6}
-\contentsline {paragraph}{}{7}
-\contentsline {subsection}{\numberline {3.3}Ortogonaalteisendus ruumis $\mathcal {M}$ }{8}
-\contentsline {paragraph}{}{9}
-\contentsline {subsection}{\numberline {3.4}Lorentzi r\IeC {\"u}hm}{12}
-\contentsline {section}{Lisad}{17}
-\contentsline {section}{Lisa \numberline {A}Skalaarkorrutisega seotud abitulemused}{17}
-\contentsline {paragraph}{}{18}
-\contentsline {section}{Lisa \numberline {B}Ortogonaalsed teisendused}{19}
+\contentsline {section}{\numberline {1}Sissejuhatus}{2}{section.1}
+\contentsline {paragraph}{}{2}{section*.2}
+\contentsline {section}{\numberline {2}Vajalikud eelteadmised}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Skalaarkorrutisega seotud abitulemused}{3}{subsection.2.1}
+\contentsline {paragraph}{}{4}{section*.3}
+\contentsline {subsection}{\numberline {2.2}Tulemusi lineaaralgebrast}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Minkowski ruumi geomeetriline struktuur}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Skalaarkorrutise definitsioon ja omadused}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Minkowski aegruumi m\IeC {\~o}iste}{8}{subsection.3.2}
+\contentsline {paragraph}{}{9}{section*.4}
+\contentsline {subsection}{\numberline {3.3}Ortogonaalteisendus ruumis $\mathcal {M}$}{10}{subsection.3.3}
+\contentsline {paragraph}{}{11}{section*.5}
+\contentsline {subsection}{\numberline {3.4}Lorentzi r\IeC {\"u}hm}{14}{subsection.3.4}
+\contentsline {section}{Summary}{20}{section*.10}
+\contentsline {section}{Viited}{21}{section*.10}

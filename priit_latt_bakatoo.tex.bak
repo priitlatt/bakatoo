@@ -11,6 +11,8 @@
 \usepackage[estonian]{babel}
 \usepackage[a4paper]{geometry}
 \usepackage{nameref}
+\usepackage{hyperref}
+\usepackage{verbatim}
 \usepackage[titletoc, toc, page]{appendix}
 \usepackage{color}
 
@@ -103,7 +105,98 @@ Vektori $u$ pikkust tähistame edaspidi $|u|$.
 
 Selles peatükis toome välja definitsioonid ja tähtsamad tulemused, mida läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures tõestusteta.
 
-\subsection{ptk}
+\subsection{Skalaarkorrutisega seotud abitulemused}
+\label{eelteadmised:skalaar}
+
+\begin{teoreem} \textnormal{\cite[teoreem II.7.3]{FA2}}
+Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
+\end{teoreem}
+\begin{proof}
+Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.\\
+Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
+\[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
+Seega tarvitseb meil leida veel $a_n \in \mathbb{V} \setminus \{0\}$ omadusega
+\[a_n \perp \spn\{ e_1, e_2, \dots, e_{n-1}\},\]
+sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{1}{|a_n|}a_n\}$ on ruumi $\mathbb{V}$ ortonormeeritud baas.\\
+Otsime vektorit $a_n$ kujul
+\begin{equation} \label{eq:otsitav-a_n}
+a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \mathbb{R}.
+\end{equation}
+Paneme tähele, et kui $a_n$ on sellisel kujul, siis $a_n \neq 0$, sest vastasel korral $b_n \in \spn\{ b_1, b_2, \dots, b_{n-1}\}$, mis on vastuolus süsteemi $\spn\{ b_1, b_2, \dots, b_{n-1}\}$ lineaarse sõltumatusega.
+Kui $a_n$ on kujul \ref{eq:otsitav-a_n}, siis kõikide $k \in \{1, 2, \dots, n-1\}$ korral
+\begin{equation*}
+a_n \perp e_k \iff a_n \cdot e_k = 0 \iff \left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = 0
+\end{equation*}
+Samas, kuna
+\begin{equation*}
+\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = b_n \cdot e_k + \sum_{j = 1}^{n-1} \alpha^j \left(e_j \cdot e_k \right) = b_n \cdot e_k + \alpha_k,
+\end{equation*}
+siis $a_n \perp e_k \iff \alpha_k = - \left(b_n \cdot e_k \right)$. \newline
+Järelikult võime võtta $a_n := b_n - \sum_{j=1}^{n-1}\left(b_n \cdot e_j\right)e_j$.
+\end{proof}
+\begin{markus} \label{markus:gram-schmidt}
+Teoreemi 4.1 tõestuses antud algortimi ortonormeetirud baasi leidmiseks nimetatakse \emph{Gram-Schmidti algoritmiks} või \emph{ortogonaliseerimisprotsessiks}.
+\end{markus}
+
+\begin{teoreem}[Cauchy-Schwartz-Bunjakowski võrratus] \textnormal{\cite[teoreem II.1.1.]{FA2}}
+Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega $g : \mathbb{V} \times \mathbb{V} \rightarrow \mathbb{R}$. Sellisel juhul kehtib võrratus
+\begin{equation} \label{eq:C-S-B}
+g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
+\end{equation}
+kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
+\end{teoreem}
+
+\begin{proof}
+Olgu $\mathbb{V}$ reaalne vektorruum skalaarkorrutisega $g$ ning olgu $u, v \in \mathbb{V}$. Siis iga $\lambda \in \mathbb{R}$ korral
+\begin{align*}
+0 &\leq g\left(u+\lambda v,u+\lambda v\right) = g\left(u,u\right) + 2g\left(u, \lambda v \right) + g\left(\lambda v, \lambda v\right) = \\
+&= g\left(u,u\right) + 2\lambda g\left(u, v \right) + \lambda^2 g\left(v,v\right) \leq g\left(u,u\right) + 2\lambda | g\left(u, v \right)| + \lambda^2 g\left(v,v\right).
+\end{align*}
+Saime $\lambda$ suhtes võrratuse
+\begin{equation*}
+g\left(v,v\right)\lambda^2 + 2|g\left(u, v \right)|\lambda + g\left(u,u\right) \geq 0,
+\end{equation*}
+mille reaalarvuliste lahendite hulk on $\mathbb{R}$. Kui $g\left(v,v\right) > 0$, siis on tegu ruut\-võrratusega. Seega vastava ruutvõrrandi diskriminandi jaoks kehtib
+\begin{equation*}
+4|g\left(u,v\right)|^2 - 4g\left(u,u\right)g\left(v,v\right) \leq 0,
+\end{equation*}
+millest järeldub vahetult võrratus \ref{eq:C-S-B}. Juhul $g\left(v,v\right) = 0$ peab kõikide $\lambda \in \mathbb{R}$ korral kehtima $2|g\left(u,v\right)|\lambda + g\left(u,u\right) \geq 0$, mis on võimalik vaid siis, kui $g\left(u,v\right) = 0$. Sellisel juhul on tingimuse \ref{eq:C-S-B} kehtivus aga ilmne.
+\paragraph{}
+Veendume veel, et võrratuses \ref{eq:C-S-B} kehtib võrdus parajasti siis, kui $u$ ja $v$ on lineaarselt sõltuvad. \\
+Oletame esiteks, et vektorid $u$ ja $v$ on lineaarselt sõltuvad. Siis leidub $\alpha \in \mathbb{R}$ selliselt, et $u = \alpha v$. Seega
+\begin{align*}
+g^2\left(u,v\right) &= g^2 \left(\alpha v,v\right) = \alpha^2 g^2 \left(v,v\right) = \alpha^2 g \left(v,v\right) g \left(v,v\right) \\
+&= g \left(\alpha v,\alpha v\right)g \left( v,v\right) = g \left(u,u\right)g \left(v,v\right),
+\end{align*}
+nagu tarvis.
+\newline
+Kehtigu nüüd tingimuses \ref{eq:C-S-B} võrdus. Veendume, et siis $u$ ja $v$ on lineaarselt sõltuvad. Üldistust kitsendamata võime eeldada, et $u \neq 0$ ja $v \neq 0$. Siis ka $g \left(u,u\right) \neq 0$ ja $g \left(v,v\right) \neq 0$. Paneme tähele, et
+\[g^2 \left(u, v \right) = g \left(u, u \right) g \left(v, v \right)\]
+on eelnevat arvestades samaväärne tingimusega
+\[\frac{g^2 \left(u, v \right) g \left(v, v \right)}{g^2 \left(v, v \right) } = g \left(u, u \right). \]
+Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
+\end{proof}
+
+\subsection{Tulemusi lineaaralgebrast} \label{eelteadmised:algebra}
+\begin{lemma} \label{lemma:ort-skalaar-on-isomorfism}
+Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarne teisendus ning $g$ skalaarkorrutis ruumil $\mathbb{V}$. Kui $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide $x, y \in \mathbb{V}$ korral, siis $L$ on isomorfism ruumil $\mathbb{V}$.
+\end{lemma}
+
+\begin{proof}
+Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarne teisendus ja kehtigu $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide $x, y \in \mathbb{V}$ korral. Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on injektiivne ja sürjektiivne. Veendume kõigepealt kujutuse $L$ üksühesuses.\\
+Olgu $x, y \in \mathbb{V}$, $x \neq y$. Oletame vastuväiteliselt, et $Lx = Ly$, siis $Lx - Ly = 0$ ja seega iga $z \in \mathbb{V}$ korral
+\begin{equation*}
+g \left( Lx - Ly, Lz \right) = 0.
+\end{equation*}
+Teisalt, kuna $g$ on skalaarkorrutis ja et $x \neq y$, siis leidub selline $z' \in \mathbb{V}$, et $g \left( x - y, z' \right) \neq 0$. Kokkuvõttes saime
+\begin{equation*}
+0 \neq g \left (x-y,z'\right ) = g\left (Lx - Ly, Lz'\right ) = 0,
+\end{equation*}
+mis on vastuolu. \\
+Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. Meie eesmärk on leida $y \in \mathbb{V}$ selliselt, et $Ly = x$. Tähistame teisenduse $L$ maatriksi tähega $\Lambda$. Siis
+\[Ly = L\left(y^a e_a\right) = y^a \Lambda\indices{^b_a}e_b = x^b e_b, \text{ kus } a,b = 1,2,3,4.\]
+Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta $y = (y_1, y_2, y_3, y_4)$.
+\end{proof}
 
 \newpage
 
@@ -175,7 +268,7 @@ Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu $g : \mathbb{V} 
 \end{teoreem}
 
 \begin{proof}
-Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti\footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi ortonormeeritud baasi leidmiseks, muutub teoreemi tõestus ilmseks\footnote{Vaata lisa \ref{lisa:skalaar} \nameref{lisa:skalaar}, Märkus \ref{markus:gram-schmidt}}.
+Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850 – 1916) - taani matemaatik}-Schmidti\footnote{Erhard Schmidt (1876 – 1959) - Tartus sündinud saksma matemaatik}} algoritmi ortonormeeritud baasi leidmiseks, muutub teoreemi tõestus ilmseks\footnote{Vaata \ref{eelteadmised:skalaar} \nameref{eelteadmised:skalaar}, Märkus \ref{markus:gram-schmidt}}.
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
 
@@ -209,13 +302,13 @@ Ilmselt on Minkowski ruum pseudoeukleidiline ruum. Vahetult Minkowski ruumi defi
 \[g\left(u, v\right) = u^1 v^1 + u^2 v^2 + u^3 v^3 - u^4 v^4.\]
 
 Olgugi $\{e_1, e_2, e_3, e_4\}$ või lühidalt $\{e_a\}$ ruumi $\mathcal{M}$ ortonormeeritud baas. 
-Kui $x = x^1 e_1 + x^2 e_2 + x^3 e_3 + x^4 e_4$, siis tähistame sündmuse $x$ koordinaadid baasi $\{b_a\}$ suhtes $\left( x^1, x^2, x^3, x^4 \right)$ ja seejuures ütleme, et $\left( x^1, x^2, x^3 \right)$ on \emph{ruumikoordinaadid} ning $\left(x^4\right)$ on \emph{ajakoordinaat}.
+Kui $x = x^1 e_1 + x^2 e_2 + x^3 e_3 + x^4 e_4$, siis tähistame sündmuse $x$ koordinaadid baasi $\{e_a\}$ suhtes $\left( x^1, x^2, x^3, x^4 \right)$ ja seejuures ütleme, et $\left( x^1, x^2, x^3 \right)$ on \emph{ruumikoordinaadid} ning $\left(x^4\right)$ on \emph{ajakoordinaat}.
 \paragraph{}
-Kuna Lorentzi skalaarkorrutis $g$ ei ole ruumil $\mathcal{M}$ positiivselt määratud, siis leiduvad vektorid $u \in \mathcal{M} \setminus \{0\}$ nii, et $g \left(u, u\right) = 0$. Selliseid vektoreid nimetatakse \emph{nullivektoriteks}. Osutub, et ruumis $\mathcal{M}$ leidub koguni baase, mis koosnevad vaid nullivektoritest.
+Kuna Lorentzi skalaarkorrutis $g$ ei ole ruumil $\mathcal{M}$ positiivselt määratud, siis leiduvad vektorid $u \in \mathcal{M} \setminus \{0\}$ nii, et $g \left(u, u\right) = 0$. Selliseid vektoreid nimetatakse \emph{nullpikkusega vektoriteks}. Kui aga $g \left(u, u\right) < 0$, siis ütleme, et $u$ on \emph{ajasarnane} ning kui $g \left(u, u\right) > 0$, siis nimetame vektorit $u$ \emph{ruumisarnaseks}. Osutub, et ruumis $\mathcal{M}$ leidub koguni baase, mis koosnevad vaid nullpikkusega vektoritest.
 
 \begin{naide}
-Üheks ruumi $\mathcal{M}$ baasiks, mis koosneb vaid nullivektoritest on näiteks $\{e_1^0, e_2^0, e_3^0, e_4^0\}$, kus $e_1^0 = \left(1, 0, 0, 1\right)$, $e_2^0 = \left(0, 1, 0, 1\right)$, $e_3^0 = \left(0, 0, 1, 1\right)$ ja $e_4^0 = \left(-1, 0, 0, 1\right).$
-Tõepoolest, süsteemi $\{e_1^0, e_2^0, e_3^0, e_4^0\}$ lineaarne sõltumatus on vahetult kontrollitav ja $e_1^0, \dots, e_4^0$ on nullivektorid, sest
+Üheks ruumi $\mathcal{M}$ baasiks, mis koosneb vaid nullpikkusega vektoritest on näiteks $\{e_1^0, e_2^0, e_3^0, e_4^0\}$, kus $e_1^0 = \left(1, 0, 0, 1\right)$, $e_2^0 = \left(0, 1, 0, 1\right)$, $e_3^0 = \left(0, 0, 1, 1\right)$ ja $e_4^0 = \left(-1, 0, 0, 1\right).$
+Tõepoolest, süsteemi $\{e_1^0, e_2^0, e_3^0, e_4^0\}$ lineaarne sõltumatus on vahetult kontrollitav ja $e_1^0, \dots, e_4^0$ on nullpikkusega, sest
 \begin{align*}
 Q\left(e_1^0\right) &= 1^2 + 0 + 0 - 1^2 = 0, \\
 Q\left(e_2^0\right) &= 0 + 1^2 + 0 - 1^2 = 0, \\
@@ -226,17 +319,17 @@ Q\left(e_4^0\right) &= (-1)^2 + 0 + 0 - 1^2 = 0.
 
 Samas paneme tähele, et selline baas ei saa koosneda paarikaupa ortogonaalsetest vektoritest.
 \begin{teoreem}
-Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullivektorid. Vektorid $u$ ja $v$ on ortogonaalsed siis ja ainult siis, kui nad on paralleelsed, st leidub $t \in \mathbb{R}$ nii, et $u = tv$.
+Olgu $u, v \in \mathcal{M} \setminus \{0\}$ nullpikkusega vektorid. Vektorid $u$ ja $v$ on ortogonaalsed siis ja ainult siis, kui nad on paralleelsed, st leidub $t \in \mathbb{R}$ nii, et $u = tv$.
 \end{teoreem}
 \begin{proof}
-\emph{Piisavus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ paralleelsed nullivektorid. Siis leidub $t \in \mathbb{R}$ nii, et $u = tv$. Seega
+\emph{Piisavus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ paralleelsed nullpikkusega vektorid. Siis leidub $t \in \mathbb{R}$ nii, et $u = tv$. Seega
 \[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
 ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
 \\
-\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullvoktorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}\footnote{Vaata Lisa 1, Teoreem 4.2} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullivektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdus $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
+\emph{Tarvilikkus.} Olgu $u, v \in \mathcal{M} \setminus \{0\}$ ortogonaalsed nullpikkusega vektorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}\footnote{Vaata Lisa 1, Teoreem 4.2} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullpikkusega vektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdus $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
 \end{proof}
 
-Võtame nüüd vaatluse alla kaks sellist sündmust $x, x_0 \in \mathcal{M}$, $x \neq x_0$, mida ühendav vektor on nullivektor, see tähendab $Q \left(x- x_0\right) = 0$. Seda asjaolu arvesse võttes saame, et kui $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas ja me tähistame $x = x^a e_a$, $x_0 = x_0^a e_a$, siis kehtib võrdus
+Võtame nüüd vaatluse alla kaks sellist sündmust $x, x_0 \in \mathcal{M}$, $x \neq x_0$, mida ühendab nullpikkusega vektor, see tähendab $Q \left(x- x_0\right) = 0$. Seda asjaolu arvesse võttes saame, et kui $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas ja me tähistame $x = x^a e_a$, $x_0 = x_0^a e_a$, siis kehtib võrdus
 \begin{equation} \label{eq:nullkoonus}
 Q \left(x - x_0\right) = \left(x^1 - x_0^1\right)^2 + \left(x^2 - x_0^2\right)^2 + \left(x^3 - x_0^3\right)^2 - \left(x^4 - x_0^4\right)^2 = 0.
 \end{equation}
@@ -244,20 +337,16 @@ Kõigi selliste $x \in \mathcal{M}$ hulka, mille korral on tingimus \ref{eq:null
 \[\mathcal{C}_N\left(x_0\right) = \{x \in \mathcal{M} : Q \left(x- x_0\right) = 0 \}.\]
 Piltlikult võime öelda, et hulga $\mathcal{C}_N\left(x_0\right)$ elemendid on ühendatavad sündmusega $x_0$ \emph{valguskiire} $R_{x_0, x} = \{x_0 + t\left(x - x_0\right) : t \in \mathbb{R} \}$ abil.
 
-\subsection{Ortogonaalteisendus ruumis $\mathcal{M}$ }
+\subsection{Ortogonaalteisendus ruumis $\mathcal{M}$}
 
-Olgu $\left\lbrace e_1, e_2, e_3, e_4 \right\rbrace$ ja $\left\lbrace \hat{e}_1, \hat{e}_2, \hat{e}_3, \hat{e}_4 \right\rbrace$ ruumi $\mathcal{M}$ kaks ortonormaalset baasi. Leidub parajasti üks selline lineaarne kujutus $L : \mathcal{M} \rightarrow \mathcal{M}$, et $L\left(e_a\right) = \hat{e}_a$, $a = 1, 2, 3, 4$. Järgnevaga uurime kujutuse $L$ omadusi veidi lähemalt.
-
-\begin{markus}
-\textcolor{red}{Kas ei peaks näitama, miks leidub parajasti üks?}
-\end{markus}
+Olgu $\left\lbrace e_1, e_2, e_3, e_4 \right\rbrace$ ja $\left\lbrace \hat{e}_1, \hat{e}_2, \hat{e}_3, \hat{e}_4 \right\rbrace$ ruumi $\mathcal{M}$ kaks ortonormaalset baasi. Osutub, et leidub parajasti üks selline lineaarne kujutus $L : \mathcal{M} \rightarrow \mathcal{M}$, et $L\left(e_a\right) = \hat{e}_a$, $a = 1, 2, 3, 4$. Tõepoolest, leiduvad arvud $\Lambda\indices{^a_b}$ nii, et baasi $\{\hat{e}_a\}$ vektorid avalduvad baasi $\{e_a\}$ suhtes üheselt kujul $\hat{e}_b = \Lambda\indices{^a_b} e_a$. Arvudest $\Lambda\indices{^a_b}$ tekkiva maatriksiga assotsieeruv Lorentzi teisendus sobibki otsitavaks teisenduseks $L$. Järgnevaga uurime kujutuse $L$ omadusi veidi lähemalt.
 
 \begin{definitsioon}
 Ruumi $\mathcal{M}$ lineaarset kujutust $L : \mathcal{M} \rightarrow \mathcal{M}$ nimetatakse \emph{pseudo\-ortogonaalteisenduseks}, kui ta säilitab skalaarkorrutise $g$, see tähendab iga $x$ ja $y$ korral ruumist $\mathcal{M}$ kehtib võrdus $g \left(Lx, Ly \right) = g \left(x, y\right)$.
 \end{definitsioon}
 
 \begin{lause} \label{lause:ortogonaalteisendus}
-Olgu $L:\mathcal{M} \rightarrow \mathcal{M}$ lineaarne kujutus. Siis on järgmised väited samaväärsed:
+Olgu $L:\mathcal{M} \rightarrow \mathcal{M}$ lineaarne kujutus. Siis järgmised väited on samaväärsed:
 \begin{itemize}
 \item[(i)] $L$ on pseudoortogonaalteisendus;
 \item[(ii)] $L$ säilitab ruumi $\mathcal{M}$ ruutvormi, see tähendab $Q\left(Lx\right) = Q\left(x\right)$ iga $x \in \mathcal{M}$ korral;
@@ -348,11 +437,10 @@ mille võime lühidalt kirja panna kui
 \end{equation*}
 
 \begin{definitsioon}
-\textcolor{cyan}{
-$4 \times 4$ maatriksit $\Lambda$, mis rahuldab tingimust \ref{eq:lambdaetamat1} (ja lemma \ref{lemma:lambdainvariant} põhjal siis ka tingimusi \ref{eq:lambdaeta1}, \ref{eq:lambdaetamat2} ja \ref{eq:lambdaeta2}) nimetatakse \emph{regulaarseks homogeenseks Lorentzi teisenduseks}.
-}
+$4 \times 4$ maatriksit $\Lambda$, mis rahuldab tingimust \ref{eq:lambdaetamat1} (ja lemma \ref{lemma:lambdainvariant} põhjal siis ka tingimusi \ref{eq:lambdaeta1}, \ref{eq:lambdaetamat2} ja \ref{eq:lambdaeta2}) nimetatakse \emph{tavaliseks homogeenseks Lorentzi teisenduseks}.
 \end{definitsioon}
-Kuna ruumi $\mathcal{M}$ ortogonaalsteisendus $L$ on isomorfism\footnote{\textcolor{red}{Vaata lisa \ref{lisa:ortogonaalteisendus} \nameref{lisa:ortogonaalteisendus}, Lause \ref{lisa:lause:ort.isom}}} 
+
+Kuna ruumi $\mathcal{M}$ ortogonaalsteisendus $L$ on isomorfism\footnote{{Vaata \ref{eelteadmised:algebra} \nameref{eelteadmised:algebra}, Lause \ref{lemma:ort-skalaar-on-isomorfism}}} 
 ja seega pööratav, siis temaga assotsieeruv maatriks $\Lambda$ on samuti pööratav, kusjuures
 \begin{equation} \label{eq:lambda-1lambda-trans}
 \Lambda^{-1} = \eta \Lambda^T \eta.
@@ -392,15 +480,15 @@ Arvestades võrdust \ref{eq:lambda-1lambda-trans} võime välja arvutada maatrik
 \subsection{Lorentzi rühm}
 
 \begin{definitsioon}
-Me ütleme, et $\Lambda \in \mathcal{L}_{GH}$ on \emph{\textcolor{red}{ortokrooniline}}, kui $\Lambda\indices{^4_4} \geq 1$ ja \emph{\textcolor{red}{mitteortokrooniliseks}}, kui $\Lambda\indices{^4_4} \leq -1$.
+Me ütleme, et $\Lambda \in \mathcal{L}_{GH}$ on \emph{ortokroonne}, kui $\Lambda\indices{^4_4} \geq 1$ ja \emph{mitteortokroonne}, kui $\Lambda\indices{^4_4} \leq -1$.
 \end{definitsioon}
 
 Edasise teooriaarenduse seisukohalt on otstarbekas tõestada järgmine teoreem.
-\begin{teoreem} \textnormal{\cite[teoreem 1.3.1]{Naber}} \label{teoreem:ajalaadsed_vektorid}
-Olgu $u, v \in \mathcal{M}$, kusjuures $u$ on ajalaadne ja $v$ ajalaadne või nullivektor ning olgu $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas, mille suhtes $u$ ja $v$ avalduvad kujul $u = u^a e_a$ ja $v = v^a e_a$. Siis kehtib parajasti üks järgmistest tingimusest:
+\begin{teoreem} \textnormal{\cite[teoreem 1.3.1]{Naber}} \label{teoreem:ajasarnased_vektorid}
+Olgu $u, v \in \mathcal{M}$, kusjuures $u$ on ajasarnane ja $v$ ajasarnane või nullpikkusega ning olgu $\{e_a\}$ ruumi $\mathcal{M}$ ortonormaalne baas, mille suhtes $u$ ja $v$ avalduvad kujul $u = u^a e_a$ ja $v = v^a e_a$. Siis kehtib parajasti üks järgmistest tingimusest:
 \begin{itemize}
-\item[(a)] $u^4 v^4 > 0$, mis tähendab, et $g\left(u, v\right) < 0$,
-\item[(b)] $u^4 v^4 < 0$, mis tähendab, et $g\left(u, v\right) > 0$.
+\item[(a)] $u^4 v^4 > 0$, mille korral $g\left(u, v\right) < 0$,
+\item[(b)] $u^4 v^4 < 0$, mille korral $g\left(u, v\right) > 0$.
 \end{itemize}
 \end{teoreem}
 \begin{proof}
@@ -412,7 +500,7 @@ g \left(v, v\right) &= \left(v^1\right)^2 + \left(v^2\right)^2 + \left(v^3\right
 Niisiis
 \begin{align*}
 \left(u^4 v^4\right)^2 &> \left( \left(u^1\right)^2 + \left(u^2\right)^2 + \left(u^3\right)^2 \right) \left( \left(v^1\right)^2 + \left(v^2\right)^2 + \left(v^3\right)^2 \right) \overset{(*)}{\geq} \\
-&\geq \left( \left(u^1\right)^2 \left(v^1\right)^2 + \left(u^2\right)^2 \left(v^2\right)^2 + \left(u^3\right)^2 \left(v^3\right)^2 \right),
+&\geq u^1 v^1 + u^2 v^2 + u^3 v^3,
 \end{align*}
 kus võrratus $(*)$ tuleneb Cauchy-Scwartz-Bunjakowski võrratusest ruumi $\mathbb{R}^3$ jaoks.
 Nüüd aga $|u^4 v^4| > |u^1 v^1 + u^2 v^2 + u^3 v^3|$, millest saame, et $u^4 v^4 \neq 0$ ja $g\left (u, v\right ) \neq 0$.
@@ -425,79 +513,94 @@ Kui aga $u^4 v^4 > 0$, siis $g\left (u, -v\right ) < 0$ ja seega $g \left (u, v\
 \end{proof}
 
 \begin{jareldus}
-Kui $u \in \mathcal{M} \setminus \{0\}$ on ortogonaalne ajalaadse vektoriga $v \in \mathcal{M}$, siis $u$ on ruumilaadne.
+Kui $u \in \mathcal{M} \setminus \{0\}$ on ortogonaalne ajasarnase vektoriga $v \in \mathcal{M}$, siis $u$ on ruumisarnane.
 \end{jareldus}
 \begin{proof}
-Olgu $v \in \mathcal{M}$ ajalaadne ja olgu $u \in \mathcal{M}$ nullist erinev ning ortogonaalne vektoriga $v$. Oletame vastuväiteliselt, et $u$ on ajalaadne. Siis eelmise teoreemi põhjal kehtib kas $g\left(u,v\right) > 0$ või $g\left(u,v\right) < 0$. Et $u$ ja $v$ on ortogonaalsed, siis $g\left(u,v\right) = 0$, mis on vastuolus eelnevaga. Järelikult on $u$ ruumilaadne.
+Olgu $v \in \mathcal{M}$ ajasarnane ja olgu $u \in \mathcal{M}$ nullist erinev ning ortogonaalne vektoriga $v$. Oletame vastuväiteliselt, et $u$ on ajasarnane. Siis eelmise teoreemi põhjal kehtib kas $g\left(u,v\right) > 0$ või $g\left(u,v\right) < 0$. Et $u$ ja $v$ on ortogonaalsed, siis $g\left(u,v\right) = 0$, mis on vastuolus eelnevaga. Järelikult on $u$ ruumisarnane.
 \end{proof}
 
-Tähistame ruumi $\mathcal{M}$ kõigi ajalaadsete vektorite hulga tähega $\tau$ ja defineerime hulgas $\tau$ seose $\sim$ järgnevalt. Kui $u,v \in \tau$, siis $u \sim v$ parajasti siis, kui $g\left(u,v\right) < 0$. Sedasi defineeritud seos $\sim$ on ekvivalents:
+Tähistame ruumi $\mathcal{M}$ kõigi ajasarnaste vektorite hulga tähega $\tau$ ja defineerime hulgas $\tau$ seose $\sim$ järgnevalt. Kui $u,v \in \tau$, siis $u \sim v$ parajasti siis, kui $g\left(u,v\right) < 0$. Sedasi defineeritud seos $\sim$ on ekvivalents:
 \begin{itemize}
-\item[(a)] \textbf{refleksiivsus} järeldub vahetult ajalaadse vektori definitsioonist;
+\item[(a)] \textbf{refleksiivsus} järeldub vahetult ajasarnase vektori definitsioonist;
 \item[(b)] seose $\sim$ \textbf{sümmeetrilisus} tuleneb skalaarkorrutise sümmeetrilisusest;
-\item[(c)] \textbf{refleksiivsuseks} märgime, et kui $g\left(u,v\right) < 0$ ja $g\left(v, w\right) < 0$, siis teoreemi \ref{teoreem:ajalaadsed_vektorid} põhjal $u^4 v^4 > 0$ ja $v^4 w^4 > 0$ ehk $u^4$ ja $v^4$ ning $v^4$ ja $w^4$ on sama märgiga ja seega $\sign u^4 = \sign w^4$, millest saame $u^4 w^4 > 0$. Rakendades nüüd veelkord teoreemi \ref{teoreem:ajalaadsed_vektorid}, siis saame, et $g\left(u, w\right) < 0$.
+\item[(c)] \textbf{refleksiivsuseks} märgime, et kui $g\left(u,v\right) < 0$ ja $g\left(v, w\right) < 0$, siis teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal $u^4 v^4 > 0$ ja $v^4 w^4 > 0$ ehk $u^4$ ja $v^4$ ning $v^4$ ja $w^4$ on sama märgiga ja seega $\sign u^4 = \sign w^4$, millest saame $u^4 w^4 > 0$. Rakendades nüüd veelkord teoreemi \ref{teoreem:ajasarnased_vektorid}, siis saame, et $g\left(u, w\right) < 0$.
 \end{itemize}
 Paneme tähele, et seos $\sim$ jagab hulga $\tau$ täpselt kaheks ekvivalentsiklassiks. Tõe\-poolest,
-kui $u, v \in \mathcal{M}$ on ajalaadsed, siis on meil teoreemi \ref{teoreem:ajalaadsed_vektorid} põhjal kaks varianti. Peab kehtima kas 
+kui $u, v \in \mathcal{M}$ on ajasarnased, siis on meil teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal kaks varianti. Peab kehtima kas 
 \begin{align}
 g\left(u,v\right) < 0 \text{ või} \tag{1} \\
 g\left(u,v\right) > 0. \tag{2}
 \end{align}
-Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajalaadsed_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$. \\
+Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$. \\
 Neid kahte ekvivalentsiklassi tähistame edasises $\tau^+$ ja $\tau^-$.
 
 \begin{teoreem}\textnormal{\cite[teoreem 1.3.3]{Naber}}
-Olgu $\Lambda = \left[\Lambda\indices{^a_b}\right]_{a,b = 1,2,3,4}$ regulaarne homogeenne Lorentzi teisendus, see tähendab $\Lambda \in \mathcal{L}_{GH}$ ja olgu $\{e_a\}$ ruumi $\mathcal{M}$ ortogonaalne baas. Siis järgmised väited on samaväärsed:
+Olgu $\Lambda = \left[\Lambda\indices{^a_b}\right]_{a,b = 1,2,3,4}$ homogeenne Lorentzi teisendus, see tähendab $\Lambda \in \mathcal{L}_{GH}$ ja olgu $\{e_a\}$ ruumi $\mathcal{M}$ orto\-normeeritud baas. Siis on järgmised väited samaväärsed:
 \begin{itemize}
-\item[(i)] $\Lambda$ on ortokrooniline;
-\item[(ii)] $\Lambda$ säilitab kõikide nullivektorite ajakoordinaadi märgi, see tähendab, kui $u = u^a e_a$ on nullivektor, siis arvud $u^4$ ja $\hat{u}^4 = \Lambda\indices{^4_b} u^b$ on sama märgiga;
-\item[(iii)] $\Lambda$ säilitab kõikide ajalaadsete vektorite ajakoordinaadi märgi.
+\item[(i)] $\Lambda$ on ortokroonne;
+\item[(ii)] $\Lambda$ säilitab kõikide nullpikkusega vektorite ajakoordinaadi märgi, see tähendab, kui $u = u^a e_a$ on nullpikkusega, siis arvud $u^4$ ja $\hat{u}^4 = \Lambda\indices{^4_b} u^b$ on sama märgiga;
+\item[(iii)] $\Lambda$ säilitab kõikide ajasarnaste vektorite ajakoordinaadi märgi.
 \end{itemize}
 \end{teoreem}
-\textcolor{red}{SEE TÕESTUS TULEKS ÜLE VAADATA!}
+
 \begin{proof}
-Olgu $u = u^a e_a \in \mathcal{M}$ ajalaadne vektor või nullivektor. Cauchy-Schwartz-Bunjakowski võrratusest ruumis $\mathbb{R}^{3}$ saame
+Olgu $u = u^a e_a \in \mathcal{M}$ ajasarnane või nullpikkusega vektor. Cauchy-Schwartz-Bunjakowski võrratusest ruumis $\mathbb{R}^{3}$ saame
 \begin{align} \label{eq:ortokronkrit1}
-\left(\Lambda\indices{^4_1} v^1 + \Lambda\indices{^4_2} v^2 + \Lambda\indices{^4_3} v^3\right)^2 \leq \left(\sum_{i = 1}^{3} \left(\Lambda\indices{^4_1}\right)^2 \right) \left(\sum_{i = 1}^{3} \left(v^i\right)^2 \right).
+\left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3\right)^2 \leq \left(\sum_{i = 1}^{3} \left(\Lambda\indices{^4_1}\right)^2 \right) \left(\sum_{i = 1}^{3} \left(u^i\right)^2 \right).
 \end{align}
 Sooritades nüüd võrduses \ref{eq:lambdaeta2} asenduse $a = b = 4$ saame
 \begin{align} \label{eq:ortokronkrit2}
 \left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 &+ \left(\Lambda\indices{^4_3}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1 \text{, milllest järleldub} \nonumber \\
 \left(\Lambda\indices{^4_4}\right)^2 &> \left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2.
 \end{align}
-Et $v \neq 0$, siis tingimustest \ref{eq:ortokronkrit1} ja \ref{eq:ortokronkrit2} saame $\left(\Lambda\indices{^4_1} v^1 + \Lambda\indices{^4_2} v^2 + \Lambda\indices{^4_3} v^3\right)^2 < \left(\Lambda\indices{^4_4} v^4\right)^2$, mille võime ruutude vahe valemit kasutades kirjutada kujul
+Et $u \neq 0$, siis tingimustest \ref{eq:ortokronkrit1} ja \ref{eq:ortokronkrit2} saame $\left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3\right)^2 < \left(\Lambda\indices{^4_4} u^4\right)^2$, mille võime ruutude vahe valemit kasutades kirjutada kujul
 \begin{align} \label{eq:ortokronkrit3}
-\left(\Lambda\indices{^4_1} v^1 + \Lambda\indices{^4_2} v^2 + \Lambda\indices{^4_3} v^3 - \Lambda\indices{^4_4} v^4\right)\left(\Lambda\indices{^4_1} v^1 + \Lambda\indices{^4_2} v^2 + \Lambda\indices{^4_3} v^3 + \Lambda\indices{^4_4} v^4\right) < 0.
+\left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3 - \Lambda\indices{^4_4} u^4\right)\left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3 + \Lambda\indices{^4_4} u^4\right) < 0.
 \end{align}
-Defineerides $v \in \mathcal{M}$ võrdusega $v = \Lambda\indices{^4_1} e^1 + \Lambda\indices{^4_2} e^2 + \Lambda\indices{^4_3} e^3 - \Lambda\indices{^4_4} e^4$ on $v$ ajalaadne vektor, kusjuures seose \ref{eq:ortokronkrit3} saame esitada kujul
+Defineerides $v \in \mathcal{M}$ võrdusega $v = \Lambda\indices{^4_1} e^1 + \Lambda\indices{^4_2} e^2 + \Lambda\indices{^4_3} e^3 - \Lambda\indices{^4_4} e^4$ on $v$ ajasarnane vektor, kusjuures seose \ref{eq:ortokronkrit3} saame esitada kujul
 \begin{align} \label{eq:ortokronkrit4}
 g\left(u , v\right)\hat{u}^4 < 0.
 \end{align}
 Viimane võrratus ütleb meile, et arvudel $g\left(u,v\right)$ ja $\hat{u}^4$ on erinevad märgid.
 Näitame viimaks, et $\Lambda\indices{^4_4} \geq 1$ siis ja ainult siis, kui arvudel $u^4$ ja $\hat{u}^4$ on samad märgid.
-Selleks oletame esmalt, et $\Lambda\indices{^4_4} \geq 1$. Kui $u^4 > 0$, siis teoreemi \ref{teoreem:ajalaadsed_vektorid} järgi $g\left(u, v\right) < 0$ ja seega \ref{eq:ortokronkrit4} põhjal $\hat{u}^4 >0$. Kui $u^4 < 0$, siis $g\left(u, v\right) > 0$, ja seega $\hat{u}^4 < 0$. Kokkuvõttes järeldub võrratusest $\Lambda\indices{^4_4} \geq 1$, et $u^4$ ja $\hat{u}^4$ on samamärgilised. Analoogiliselt saab näidata, et kui $\Lambda\indices{^4_4} \leq -1$, siis $u^4$ ja $\hat{u}^4$ on erimärgilised.
+Selleks oletame esmalt, et $\Lambda\indices{^4_4} \geq 1$. Kui $u^4 > 0$, siis teoreemi \ref{teoreem:ajasarnased_vektorid} järgi $g\left(u, v\right) < 0$ ja seega \ref{eq:ortokronkrit4} põhjal $\hat{u}^4 >0$. Kui $u^4 < 0$, siis $g\left(u, v\right) > 0$, ja seega $\hat{u}^4 < 0$. Kokkuvõttes järeldub võrratusest $\Lambda\indices{^4_4} \geq 1$, et $u^4$ ja $\hat{u}^4$ on samamärgilised. Analoogiliselt saab näidata, et kui $\Lambda\indices{^4_4} \leq -1$, siis $u^4$ ja $\hat{u}^4$ on erimärgilised.
 \end{proof}
 
 Teoreemi tõestusest saame teha järgmise olulise järelduse.
 \begin{jareldus}
-Kui $\Lambda$ on mitteortokrooniline, siis ta muudab kõikide ajalaadsete vektorite ja nullivektorite ajakoordinaadi märgi.
+Kui $\Lambda$ on mitteortokroonne, siis ta muudab kõikide ajasarnaste ja nullpikkusega vektorite ajakoordinaadi märgi.
 \end{jareldus}
 
-Järelduse tulemust arvestades on mõistlik edasises uurida vaid hulga $\mathcal{L}_{GH}$ elemente, mis on ortokroonsed. Kuna sellised Lorentzi teisendused ei muuda nullivektorite ega ajalaadsete vektorite ajakoordinaadi märki, siis võime konkreetsuse mõttes piirduda vaid selliste ortonormaalsete baasidega $\{e_1, e_2, e_3, e_4\}$ ning $\{\hat{e}_1, \hat{e}_2, \hat{e}_3, \hat{e}_4\}$, kus $e_4 \sim \hat{e}_4$. Märgime, et siinjuures ei ole vahet kumba faktorhulga $\mathcal{M} / {\sim}$ ekvivalentsiklassi elemendid $e_4$ ja $\hat{e}_4$ kuuluvad, sest nende ekvivalentsiklasside täpne fikseerimine on meelevaldne.
+Järelduse tulemust arvestades on mõistlik edasises uurida vaid hulga $\mathcal{L}_{GH}$ elemente, mis on ortokroonsed. Kuna sellised Lorentzi teisendused ei muuda ajasarnaste ega nullpikkusega vektorite ajakoordinaadi märki, siis võime konkreetsuse mõttes piirduda vaid selliste ortonormaalsete baasidega $\{e_1, e_2, e_3, e_4\}$ ning $\{\hat{e}_1, \hat{e}_2, \hat{e}_3, \hat{e}_4\}$, kus $e_4 \sim \hat{e}_4$. Märgime, et siinjuures ei ole vahet kumba faktorhulga $\mathcal{M} / {\sim}$ ekvivalentsiklassi elemendid $e_4$ ja $\hat{e}_4$ kuuluvad, sest nende ekvivalentsiklasside täpne fikseerimine on meelevaldne.
 
 Meenutades veel seost \ref{eq:lambdaetamat1}, siis saame kirjutada $\det\left(\Lambda^T \eta \Lambda\right) = \det \eta$, millest tuleneb $\left(\det \Lambda\right)^2 = 1$. Järelikult kehtib kas
 \begin{equation*}
 \det \Lambda = 1 \text{ või } \det \Lambda = -1,
 \end{equation*}
-ja seejuures ütleme, et $\Lambda$ on \emph{tegelik Lorentzi teisendus}, kui $\det \Lambda = 1$.
+ja seejuures ütleme, et $\Lambda$ on \emph{Lorentzi päristeisendus}, kui $\det \Lambda = 1$.
 
 \begin{lause} \label{lause:ryhmL}
-Hulk $\mathcal{L} := \{\Lambda \in \mathcal{L}_{GH} : \det \Lambda = 1,\ \Lambda\indices{^4_4} \geq 1\}$ on korrutamise suhtes rühma $\mathcal{L}_{GH}$ alamrühm, see tähendab tegelikud ortokroonilised Lorentzi teisendusused moodustavad rühma.
+Hulk $\mathcal{L} := \{\Lambda \in \mathcal{L}_{GH} : \det \Lambda = 1,\ \Lambda\indices{^4_4} \geq 1\}$ on korrutamise suhtes rühma $\mathcal{L}_{GH}$ alamrühm, see tähendab ortokroonsed Lorentzi päristeisendusused moodustavad rühma.
 \end{lause}
 \begin{proof}
-Veendumaks, et hulk $\mathcal{L}$ on rühm näitame, et ta on kinnine korrutamise ja pöördelemendi võtmise suhtes. Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}$.
+Veendumaks, et hulk $\mathcal{L}$ on rühm näitame, et ta on kinnine kor\-rutamise ja pöördelemendi võtmise suhtes. Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \mathcal{L}$.
 Paneme tähele, et $\det \left(\Lambda_1 \Lambda_2 \right) = \det \Lambda_1 \cdot \det \Lambda_2 = 1$ ja seose \ref{eq:lambda-1lambda-trans} põhjal $\det \Lambda^{-1} = \det \left(\eta \Lambda^T \eta\right) = (-1)^2 \det \Lambda^T = \det \Lambda = 1$. \\
-\textcolor{red}{KAHJUKS ORTOKROONILISUST EI OSKA NÄIDATA!}
+Seose \ref{eq:lambda-1lambda-trans} põhjal on ilmne ka $\left(\Lambda^{-1}\right)\indices{^4_4} = \left(\Lambda^T\right)\indices{^4_4} = \Lambda\indices{^4_4} \geq 1$.
+Veendumaks, et $\left(\Lambda_1 \Lambda_2\right)\indices{^4_4} \geq 1$ tähistame $\vec{a} = \left(\left(\Lambda_1\right)\indices{^4_1}, \left(\Lambda_1\right)\indices{^4_2}, \left(\Lambda_1\right)\indices{^4_2}\right)$ 
+ja $\vec{b} = \left(\left(\Lambda_2\right)\indices{^1_4}, \left(\Lambda_2\right)\indices{^2_4}, \left(\Lambda_2\right)\indices{^3_4}\right)$ ning skalaarkorrustise $\vec{a} \cdot \vec{b}$ all mõtleme eukleidilist skalaarkorrutist ruumis $\mathbb{R}^3$. Selliseid tähistusi arvestades võime kirjutada
+\begin{align*}
+\left(\Lambda_1 \Lambda_2\right)\indices{^4_4} &= \left(\Lambda_1\right)\indices{^4_1}\left(\Lambda_2\right)\indices{^1_4} +  \left(\Lambda_1\right)\indices{^4_2}\left(\Lambda_2\right)\indices{^2_4} + \left(\Lambda_1\right)\indices{^4_3}\left(\Lambda_2\right)\indices{^3_4} + \left(\Lambda_1\right)\indices{^4_4}\left(\Lambda_2\right)\indices{^4_4} = \\
+&= \vec{a} \cdot \vec{b} + \left(\Lambda_1\right)\indices{^4_4}\left(\Lambda_2\right)\indices{^4_4}.
+\end{align*}
+Võttes valemis \ref{eq:lambdaeta1} $a = b = 4$ saame $\left(\left(\Lambda_1\right)\indices{^4_4}\right)^2 - \vec{a}\cdot\vec{a} = 1$, millest 
+\[|\vec{a}| = \sqrt{\left(\left(\Lambda_1\right)\indices{^4_4}\right)^2 - 1} \leq \left(\Lambda_1\right)\indices{^4_4}.\]
+Analoogiliselt saame valemist \ref{eq:lambdaeta2}, et $|\vec{b}| \leq \left(\Lambda_2\right)\indices{^4_4}$ ja seega kokkuvõttes $|\vec{a}\cdot\vec{b}| \leq |\vec{a}||\vec{b}| \leq \left(\Lambda_1\right)\indices{^4_4} \left(\Lambda_2\right)\indices{^4_4}$. Viimane aga tähendab, et $\left(\Lambda_1 \Lambda_2\right) \geq 0$, millest piisab, et kehtiks $\left(\Lambda_1 \Lambda_2\right) \geq 1$. Tõepoolest, kui $\hat{\Lambda} \in \mathcal{L}_{GH}$ ja tähistame 
+$\vec{c} = \left(\frac{\hat{\Lambda}\indices{^4_1}}{\hat{\Lambda}\indices{^4_4}}, \frac{\hat{\Lambda}\indices{^4_2}}{\hat{\Lambda}\indices{^4_4}}, \frac{\hat{\Lambda}\indices{^4_3}}{\hat{\Lambda}\indices{^4_4}}\right)$, 
+siis \ref{eq:lambdaeta1} põhjal
+\[ -1 = \left(\hat{\Lambda}\indices{^4_1}\right)^2 + \left(\hat{\Lambda}\indices{^4_2}\right)^2 + \left(\hat{\Lambda}\indices{^4_3}\right)^2 - \left(\hat{\Lambda}\indices{^4_4}\right)^2 = - \left(\hat{\Lambda}\indices{^4_4}\right)^2 \left(1 - \vec{c} \cdot \vec{c}\right). \]
+Viimane võrdus saab kehtida vaid juhul, kui $1 - \vec{c} \cdot \vec{c} > 0$. Järelikult
+\[\left(\left(\hat{\Lambda}\right)\indices{^4_4}\right)^2 = \frac{1}{1 - \vec{c}\cdot\vec{c}} \geq 1\]
+ehk kehtib kas $\left(\hat{\Lambda}\right)\indices{^4_4} \geq 1$ või $\left(\hat{\Lambda}\right)\indices{^4_4} \leq 1$. Sellega oleme näidanud, et $\mathcal{L}$ on rühm.
 \end{proof}
 \begin{markus}
 Rühma $\mathcal{L}$ lausest \ref{lause:ryhmL} nimetatakse sageli \emph{Lorentzi rühmaks}, nagu ka rühma $\mathcal{L}_{GH}$.
@@ -509,7 +612,7 @@ R\indices{^2_1} & R\indices{^2_2} & R\indices{^2_3} & 0 \\
 R\indices{^3_1} & R\indices{^3_2} & R\indices{^3_3} & 0 \\ 
 0 & 0 & 0 & 1 \\ 
 \end{pmatrix},\]
-kus $\left(R\indices{^i_j}\right)_{i,j = 1,2,3}$ on ortogonaalne ja $det \left(R\indices{^i_j}\right) = 1$, see tähendab $R$ on unimodulaarne. Märgime, et tõepoolest $R \in \mathcal{L}$, sest $R\indices{^4_4} = 1$ definitsiooni järgi ning kasutades Laplace'i teoreemi saame $\det R = 1 \cdot (-1)^{4+4} \cdot \det \left(R\indices{^i_j}\right) = 1$. Samuti on täidetud ortogonaalsuse tingimus \ref{eq:lambdaetamat1} kuna
+kus $\left(R\indices{^i_j}\right)_{i,j = 1,2,3}$ on ortogonaalne ja unimodulaarne, see tähendab $\left(R\indices{^i_j}\right)^{-1} = \left(R\indices{^i_j}\right)^T$ ja $det \left(R\indices{^i_j}\right) = 1$. Märgime, et tõepoolest $R \in \mathcal{L}$, sest $R\indices{^4_4} = 1$ definitsiooni järgi ning kasutades Laplace'i teoreemi saame $\det R = 1 \cdot (-1)^{4+4} \cdot \det \left(R\indices{^i_j}\right) = 1$. Samuti on täidetud ortogonaalsuse tingimus \ref{eq:lambdaetamat1} kuna
 \begin{align*}
 R^T \eta R = 
 \begin{pmatrix}
@@ -558,9 +661,9 @@ R^{-1} = \eta R^T \eta = \eta \begin{pmatrix}
 \left(R\indices{^i_j}\right)^T & 0 \\ 
 0 & -1 \\ \end{pmatrix} = \begin{pmatrix}
 \left(R\indices{^i_j}\right)^T & 0 \\ 
-0 & -1 \\ \end{pmatrix}.
+0 & 1 \\ \end{pmatrix}.
 \end{align*}
-Järelikult $R\indices{^4_4} = 1$ ning $\det \left(\left(R^{-1}\right)\indices{^i_j}\right) = \det \left(\left(R^{-1}\right)\indices{^i_j}\right)$
+Järelikult $\left(R^{-1}\right)\indices{^4_4} = 1$ ning $\det \left(\left(R^{-1}\right)\indices{^i_j}\right) = \det \left(R\indices{^i_j}\right)^T = \det \left(R\indices{^i_j}\right) = 1$. \\
 Et hulga $\mathcal{R}$ elemendid kirjeldavad koordinaatide teisendusi, mis pööravad ruumikoordinaate, siis ütleme teisenduse $R \in \mathcal{R}$ kohta \emph{pööre} ja rühma $\mathcal{R}$ nimetame rühma $\mathcal{L}$ \emph{pöörete alamrühmaks}.
 
 \begin{lause}
@@ -573,7 +676,47 @@ Olgu $\Lambda \in \mathcal{L}$. Siis on järgmised väited samaväärsed:
 \end{itemize}
 \end{lause}
 
+\begin{proof}
+Implikatsioonid $(i) \Longrightarrow (ii), (i) \Longrightarrow (iii)$ ja $(i) \Longrightarrow (ii)$ on pöörde definitsiooni arvestades ilmsed. \\
+Näitamaks, et $(ii), (iii)$ ja $(iv)$ on samaväärsed märgime, et fikseerides seostes \ref{eq:lambdaeta1} ja \ref{eq:lambdaeta2} sobivalt indeksid saame
+\begin{align*}
+\left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1, \\
+\left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1.
+\end{align*}
+Arvestades, et $\Lambda$ on ortokroonne, siis $\Lambda\indices{^4_4} = 1$ ja seega  
+\begin{align*}
+\left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - 1 = -1, \\
+\left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - 1 = -1,
+\end{align*}
+mis saab võimalik olla vaid siis, kui $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = \Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$. \\
+Tõestuse lõpetamiseks jääb veel näidata, et kui $\Lambda \in \mathcal{L}$ ja kehtib $(ii)$ (ja seega ka $(ii)$ ning $(iv)$), siis $\left(\Lambda\indices{^i_j}\right)_{i,j = 1, 2, 3}$ on ortogonaalne ja unimodulaarne. Võrdus $\det \left(\Lambda\indices{^i_j}\right) = 1$ on tõestatud osas kus näitasime, et $\mathcal{R}$ on rühm ja seega on $\left(\Lambda\indices{^i_j}\right)$ ortogonaalne. Jääb veel näidata, et $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$. Selleks märgmine, et blokkmaatriksi pööramise eeskirja kohaselt
+\begin{align*}
+\Lambda^{-1} = 
+\begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right) & 0 \\
+0 & 1 \\ 
+\end{pmatrix}^{-1} = \qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad\\
+\begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right)^{-1} + \left(\Lambda\indices{^i_j}\right)^{-1} 0  \left(1-0 \left(\Lambda\indices{^i_j}\right)
+^{-1} 0 \right)^{-1} 0 \left(\Lambda\indices{^i_j}\right)^{-1} & -\left(\Lambda\indices{^i_j}\right)^{-1} 0 \left(1 - 0 \left
+(\Lambda\indices{^i_j}\right)^{-1} 0 \right)^{-1} \\
+-\left(1 - 0 \left(\Lambda\indices{^i_j}\right)^{-1} 0\right)^{-1} 0 \left(\Lambda\indices{^i_j}\right)^{-1} & \left(1 - 0 \left
+(\Lambda\indices{^i_j}\right)^{-1} 0 \right)^{-1} \\
+\end{pmatrix} \\
+ = \begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right)^{-1} & 0 \\
+0 & 1^{-1} \\ 
+\end{pmatrix} = 
+\begin{pmatrix}
+\left(\Lambda\indices{^i_j}\right)^{-1} & 0 \\
+0 & 1 \\ 
+\end{pmatrix}. \qquad\qquad\qquad\qquad\qquad\qquad
+\end{align*}
 
+Osas kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et $\Lambda^{-1} = \begin{pmatrix} \left(\Lambda\indices{^i_j}\right)^T & 0 \\ 0 & 1 \\ \end{pmatrix}$, millest $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$ ehk $\left(\Lambda\indices{^i_j}\right)$ on ortogonaalne. Kokkuvõttes oleme näidanud, et $\Lambda$ on pööre, nagu tarvis.
+\end{proof}
+
+\begin{comment}
 \newpage
 \begin{appendices}
 \section{Skalaarkorrutisega seotud abitulemused}
@@ -648,8 +791,8 @@ on eelnevat arvestades samaväärne tingimusega
 Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
 \end{proof}
 
-\section{Ortogonaalsed teisendused}
-\begin{lemma}
+\section{Tulemusi lineaaralgebrast} \label{lisa:algebra}
+\begin{lemma} \label{lemma:ort-skalaar-on-isomorfism}
 Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarne teisendus ning $g$ skalaarkorrutis ruumil $\mathbb{V}$. Kui $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide $x, y \in \mathbb{V}$ korral, siis $L$ on isomorfism ruumil $\mathbb{V}$.
 \end{lemma}
 
@@ -669,8 +812,14 @@ Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. Meie e
 Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta $y = (y_1, y_2, y_3, y_4)$.
 \end{proof}
 \end{appendices}
+\end{comment}
 
 \newpage
+\section*{Summary}
+Siia tuleb ingliskeelne kokkuvõte...
+
+\newpage
+\addcontentsline{toc}{section}{References}
 \bibliography{references}
 \bibliographystyle{alpha}
 \end{document}
