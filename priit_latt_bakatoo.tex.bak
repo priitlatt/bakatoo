@@ -45,6 +45,8 @@
 \usepackage{mathtools}
 \DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\Tr}{Tr}
 
 \title{Minkowski aegruumi geomeetriast}
 %\author[P. Lätt]{Priit Lätt}
@@ -239,6 +241,43 @@ A^{-1}+A^{-1}B\left(D-CA^{-1}B\right)^{-1}CA^{-1} & -A^{-1}B\left(D-CA^{-1}B\rig
 \end{pmatrix}.
 \end{align*}
 \end{teoreem}
+
+\subsection{Topoloogiline muutkond}
+
+\begin{definitsioon}
+Topoloogilist ruumi $\left(X, \tau\right)$ nimetatakse \emph{$n$-mõõtmeliseks topoloogilseks muutkonnaks}, kui
+\begin{itemize}
+\item[1)] $\left(X, \tau\right)$ on Hausdorffi topoloogiline ruum,
+\item[2)] topoloogial $\tau$ leidub loenduv baas,
+\item[3)] leidub hulga $X$ homöomorfism ruumi $\mathbb{R}^n$ lahtise alamhulgaga.
+\end{itemize}
+Muutkonda tähistame tähega $M$.
+\end{definitsioon}
+
+Muutkonda võime vaadelda kui geomeetrilise pinna üldistust. Vahetult muutkonna definitsiooni põhjal on selge ($\tau$ on Hausdorffi topoloogiline ruum), et muutkonna iga punkti mingit ümbrust võime vaadelda kui $n$-mõõtmelist eukleidilist ruumi.
+
+\begin{definitsioon}
+Olgu $M$ muutkond ja $B \subset \mathbb{R}^n$ lahtine alamhulk. Paari $\left(p, \psi\right)$, kus $p \in A \subset M$ ja $\psi : A \rightarrow B$ on homöomorfism nimetatakse muutkonna $M$ \emph{lokaalseks kaardiks} punktis $p$.\\
+Kui muutkonna $M$ saab katta ühe lokaalse kaardiga, siis öeldakse, et muutkond $M$ on \emph{triviaalne}.
+\end{definitsioon}
+
+\begin{naide}
+Järgmised hulgad on topoloogilised muutkonnad.
+\begin{itemize}
+\item[(a)] Ringjoon on $1$-mõõtmeline mittetriviaalne topoloogiline muutukond.
+\begin{itemize}
+\item[1)] Võime võtta topoloogiaks alamruumi topoloogia, see on Hausdorffi topoloogiline ruum.
+\item[2)] Alamruumi topoloogial on samuti loenduv baas.
+\item[3)] Homöomorfismiks sobib võtta neli lokaalset kaarti, mille saame, kui proijtseerime ülemise ja alumise poolringi $x$-teljele ja vasak- ning parempoolse poolringi $y$-teljele.
+\end{itemize}
+\item[(b)] Sfäär on topoloogiline muutkond. (Põhjendus on analoogline osaga (a).)
+\end{itemize}
+\end{naide}
+
+\begin{definitsioon}
+Me ütleme, et muutkond $M$ on \emph{ühelisidus}, kui suvalise kinnise joone võib pideva deformatsiooni abil tõmmata üheks punktiks.
+\end{definitsioon}
+
 \newpage
 
 \section{Minkowski\footnote{Hermann Minkowski (1864 - 1909) - poola matemaatik} ruumi geomeetriline struktuur}
@@ -345,7 +384,7 @@ Ilmselt on Minkowski ruum pseudoeukleidiline ruum. Vahetult Minkowski ruumi defi
 Olgugi $\{e_1, e_2, e_3, e_4\}$ või lühidalt $\{e_a\}$ ruumi $\mathcal{M}$ ortonormeeritud baas. 
 Kui $x = x^1 e_1 + x^2 e_2 + x^3 e_3 + x^4 e_4$, siis tähistame sündmuse $x$ koordinaadid baasi $\{e_a\}$ suhtes $\left( x^1, x^2, x^3, x^4 \right)$ ja seejuures ütleme, et $\left( x^1, x^2, x^3 \right)$ on \emph{ruumikoordinaadid} ning $\left(x^4\right)$ on \emph{ajakoordinaat}.
 \paragraph{}
-Kuna Lorentzi skalaarkorrutis $g$ ei ole ruumil $\mathcal{M}$ positiivselt määratud, siis leiduvad vektorid $u \in \mathcal{M} \setminus \{0\}$ nii, et $g \left(u, u\right) = 0$. Selliseid vektoreid nimetatakse \emph{nullpikkusega vektoriteks}. Kui aga $g \left(u, u\right) < 0$, siis ütleme, et $u$ on \emph{ajasarnane} ning kui $g \left(u, u\right) > 0$, siis nimetame vektorit $u$ \emph{ruumisarnaseks}. Osutub, et ruumis $\mathcal{M}$ leidub koguni baase, mis koosnevad vaid nullpikkusega vektoritest.
+Kuna Lorentzi skalaarkorrutis $g$ ei ole ruumil $\mathcal{M}$ positiivselt määratud, siis leiduvad vektorid $u \in \mathcal{M} \setminus \{0\}$ nii, et $g \left(u, u\right) = 0$. Selliseid vektoreid nimetatakse \emph{nullpikkusega vektoriteks}. Kui aga $g \left(u, u\right) < 0$, siis ütleme, et $u$ on \emph{ajasarnane}\footnote{inglise keeles \textit{timelike}} ning kui $g \left(u, u\right) > 0$, siis nimetame vektorit $u$ \emph{ruumisarnaseks}\footnote{inglise keeles \textit{spacelike}}. Osutub, et ruumis $\mathcal{M}$ leidub koguni baase, mis koosnevad vaid nullpikkusega vektoritest.
 
 \begin{naide}
 Üheks ruumi $\mathcal{M}$ baasiks, mis koosneb vaid nullpikkusega vektoritest on näiteks $\{e_1^0, e_2^0, e_3^0, e_4^0\}$, kus $e_1^0 = \left(1, 0, 0, 1\right)$, $e_2^0 = \left(0, 1, 0, 1\right)$, $e_3^0 = \left(0, 0, 1, 1\right)$ ja $e_4^0 = \left(-1, 0, 0, 1\right).$
@@ -408,9 +447,10 @@ g \left(Le_i, Le_j\right) = g\left(e_i, e_j\right) = \begin{cases}
 \end{equation*}
 ja arvestades kujutuse $L$ lineaarsust, on ka süsteem $\left\lbrace Le_1, Le_2, Le_3, Le_4 \right\rbrace$ lineaarselt sõltumatu. \\
 $(iii) \implies (ii)$. Olgu $\left\lbrace e_1, e_2, e_3, e_4 \right\rbrace$ ruumi $\mathcal{M}$ ortonormeeritud baas ja kehtigu tingimus $(iii)$. Veendume, et alati $Q\left(Lx\right) = Q\left(x\right)$, kus $x \in \mathcal{M}$ on suvaline. Fikseerime $x \in \mathcal{M}$ ning esitugu ta koordinaatides kujul $x = x^i e_i$, $i = 1, 2, 3, 4$.
-\begin{equation*}
-Q\left(x\right) = Q\left(x^i e_i\right) = x^i Q\left(e_i\right) = x^i Q\left(Le_i\right) = Q\left(x^i L e_i\right) = Q\left(L\left(x^i e_i\right)\right) = Q\left(Lx\right).
-\end{equation*}
+\begin{align*}
+Q\left(x\right) &= Q\left(x^i e_i\right) = x^i Q\left(e_i\right) = x^i Q\left(Le_i\right) = \\
+&= Q\left(x^i L e_i\right) = Q\left(L\left(x^i e_i\right)\right) = Q\left(Lx\right). \qedhere
+\end{align*}
 \end{proof}
 %
 Ruumi kokkuhoiu mõttes toome sisse $4 \times 4$ maatriksi $\eta$, mille me defineerime kui
@@ -422,7 +462,8 @@ Ruumi kokkuhoiu mõttes toome sisse $4 \times 4$ maatriksi $\eta$, mille me defi
 0 & 0 & 0 & -1 \\ 
 \end{pmatrix},
 \end{equation*}
-ja mille elemente tähistame vastavalt vajadusele kas $\eta_{ab}$ või $\eta^{ab}$, $a, b = 1, 2, 3, 4$. Sellise tähistuse korral $\eta_{ab} = 1$, kui $a = b = 1, 2, 3$ ja $\eta_{ab} = -1$, kui $a = b = 4$ ning $\eta_{ab} = 0$ muudel juhtudel. Vahetult on kontrollitav, et $\eta = \eta^T$ ja $\eta \eta^{-1} = \eta^{-1} \eta = E$, kus $E$ on ühiksmaatriks.
+ja mille elemente tähistame vastavalt vajadusele kas $\eta_{ab}$ või $\eta^{ab}$, $a, b = 1, 2, 3, 4$. Loomulik on maatriksit $\eta$ nimetada \emph{Miknowski ruumi meetrikaks}.\\
+Sellise tähistuse korral $\eta_{ab} = 1$, kui $a = b = 1, 2, 3$ ja $\eta_{ab} = -1$, kui $a = b = 4$ ning $\eta_{ab} = 0$ muudel juhtudel. Vahetult on kontrollitav, et $\eta = \eta^T$ ja $\eta \eta^{-1} = \eta^{-1} \eta = E$, kus $E$ on ühiksmaatriks.
 \newline
 Arvestades sissetoodud tähistusi saame nüüd kirjutada $g\left(e_a, e_b\right) = \eta_{ab}$, kus $\{e_a\}$ on ruumi $\mathcal{M}$ ortonormeeritud baas. Enamgi veel, avaldades vektorid $u, v \in \mathcal{M}$ baasivektorite kaudu $u = u^i e_i$ ja $v = v^i e_i$, saame summeerimiskokkulepet kasutades kirjutada $g \left(u, v\right) = \eta_{ab} u^a v^b$.
 
@@ -458,13 +499,14 @@ Definitsioonile eelnevas arutelus tõestasime maatriksi $\Lambda$ kohta järgmis
 Pseudoortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruva maatriksi $\Lambda$ korral on tingimused \ref{eq:lambdaeta1}, \ref{eq:lambdaetamat1}, \ref{eq:lambdaetamat2} ja \ref{eq:lambdaeta2} samaväärsed.
 \end{lemma}
 
-\textcolor{red}{
 Kuna ortogonaalteisenduse maatriks mistahes ortonormeeritud baasi suhtes on ortogonaalmaatriks, ja vastupidi, kui ortogonaalteisenduse maatriks mingi ortonormeeritud baasi suhtes on ortogonaalmaatriks, siis sellest järeldub kergesti järgmine lause.
-}
+
 \begin{lause}\textnormal{\cite[lk 271]{Kilp}}
-Kui $\Lambda$ on pseudoortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruv maatriks, siis $\Lambda$ on ka pseudoortogonaalteisenduse $L^{-1}$ ja baasiga $\{\hat{e}_a\} = \{Le_a\}$ assotsieeruv maatriks.
+Kui $\Lambda$ on ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ assotsieeruv maatriks, siis $\Lambda$ on ka ortogonaalteisenduse $L^{-1}$ ja baasiga $\{\hat{e}_a\} = \{Le_a\}$ assotsieeruv maatriks.
 \end{lause}
 
+Lihtne on veenduda, et lause väide jääb kehtimaka juhul kui asendame lause sõnastuses \emph{ortogonaalteisenduse} ja \emph{ortogonaalmaatriksi} vastavalt \emph{pseudoortogonaalteisenduse} ja \emph{pseudoortogonaalmaatriksiga}.\footnote{\cite{Kilp} antud tõestuses tuleb asendada eukleidiline meetrika $\delta_{ij}$ Minkowski meetrikaga $\eta_{ij}$ ja seega jääb tulemus kehtima ka pseudoortogonaalsel juhul.}
+\paragraph*{}
 Me vaatleme ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ seotud maatriksit $\Lambda$ kui koordinaatide teisenemise maatriksit tavalisel viisil. Seega, kui $x \in \mathcal{M}$ on esitub koordinaatides baasi $\{e_i\}$ suhtes kujul $x = x^i e_i$, $i = 1, 2, 3, 4$, siis tema koordinaadid baasi $\{\hat{e}_i\} = \{Le_i\}$ suhtes avalduvad kujul $x = \hat{x}^i \hat{e}_i$, kus
 \begin{align*}
 \hat{x}^1 &= \Lambda\indices{^1_1} x^1 + \Lambda\indices{^1_2} x^2 + \Lambda\indices{^1_3} x^3 + \Lambda\indices{^1_4} x^4, \\
@@ -574,7 +616,7 @@ g\left(u,v\right) < 0 \text{ või} \tag{1} \\
 g\left(u,v\right) > 0. \tag{2}
 \end{align}
 Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$. \\
-Neid kahte ekvivalentsiklassi tähistatakse $\tau^+$ ja $\tau^-$. Märgime, et see kuidas elemendid ekvivalentsiklassidesse $\tau^+$ ja $\tau^-$ jagatakse on 
+Neid kahte ekvivalentsiklassi tähistatakse $\tau^+$ ja $\tau^-$. Märgime, et elementide ekvivalentsiklassidesse $\tau^+$ ja $\tau^-$ jaotamine toimub meie postuleerimise täpsusega ja on meelevaldne.
 
 \begin{teoreem}\textnormal{\cite[teoreem 1.3.3]{Naber}}
 Olgu $\Lambda = \left[\Lambda\indices{^a_b}\right]_{a,b = 1,2,3,4}$ Lorentzi teisendus, see tähendab $\Lambda \in \mathcal{L}_{GH}$ ja olgu $\{e_a\}$ ruumi $\mathcal{M}$ orto\-normeeritud baas. Siis on järgmised väited samaväärsed:
@@ -588,7 +630,7 @@ Olgu $\Lambda = \left[\Lambda\indices{^a_b}\right]_{a,b = 1,2,3,4}$ Lorentzi tei
 \begin{proof}
 Olgu $u = u^a e_a \in \mathcal{M}$ ajasarnane või nullpikkusega vektor. Cauchy-Schwartz-Bunjakowski võrratusest ruumis $\mathbb{R}^{3}$ saame
 \begin{align} \label{eq:ortokronkrit1}
-\left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3\right)^2 \leq \left(\sum_{i = 1}^{3} \left(\Lambda\indices{^4_1}\right)^2 \right) \left(\sum_{i = 1}^{3} \left(u^i\right)^2 \right).
+\left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3\right)^2 \leq \left(\sum_{i = 1}^{3} \left(\Lambda\indices{^4_i}\right)^2 \right) \left(\sum_{j = 1}^{3} \left(u^j\right)^2 \right).
 \end{align}
 Sooritades nüüd võrduses \ref{eq:lambdaeta2} asenduse $a = b = 4$ saame
 \begin{align} \label{eq:ortokronkrit2}
@@ -613,7 +655,7 @@ Teoreemi tõestusest saame teha järgmise olulise järelduse.
 Kui $\Lambda$ on mitteortokroonne, siis ta muudab kõikide ajasarnaste ja nullpikkusega vektorite ajakoordinaadi märgi.
 \end{jareldus}
 
-Järelduse tulemust arvestades on mõistlik edasises uurida vaid hulga $\mathcal{L}_{GH}$ elemente, mis on ortokroonsed. Kuna sellised Lorentzi teisendused ei muuda ajasarnaste ega nullpikkusega vektorite ajakoordinaadi märki, siis võime konkreetsuse mõttes piirduda vaid selliste ortonormaalsete baasidega $\{e_1, e_2, e_3, e_4\}$ ning $\{\hat{e}_1, \hat{e}_2, \hat{e}_3, \hat{e}_4\}$, kus $e_4 \sim \hat{e}_4$. Märgime, et siinjuures ei ole vahet kumba faktorhulga $\mathcal{M} / {\sim}$ ekvivalentsiklassi elemendid $e_4$ ja $\hat{e}_4$ kuuluvad, sest nende ekvivalentsiklasside täpne fikseerimine on meelevaldne.
+Järelduse tulemust arvestades on mõistlik edasises uurida vaid hulga $\mathcal{L}_{GH}$ elemente, mis on ortokroonsed. Kuna sellised Lorentzi teisendused ei muuda ajasarnaste ega nullpikkusega vektorite ajakoordinaadi märki, siis võime konkreetsuse mõttes piirduda vaid selliste ortonormaalsete baasidega $\{e_1, e_2, e_3, e_4\}$ ning $\{\hat{e}_1, \hat{e}_2, \hat{e}_3, \hat{e}_4\}$, kus $e_4 \sim \hat{e}_4$. Tuletame meelde, et siinjuures ei ole vahet kumba faktorhulga $\mathcal{M} / {\sim}$ ekvivalentsiklassi elemendid $e_4$ ja $\hat{e}_4$ kuuluvad, sest nende ekvivalentsiklasside täpne fikseerimine on meelevaldne.
 
 Meenutades veel seost \ref{eq:lambdaetamat1}, siis saame kirjutada $\det\left(\Lambda^T \eta \Lambda\right) = \det \eta$, millest tuleneb $\left(\det \Lambda\right)^2 = 1$. Järelikult kehtib kas
 \begin{equation*}
@@ -725,12 +767,12 @@ Näitamaks, et $(ii), (iii)$ ja $(iv)$ on samaväärsed märgime, et fikseerides
 \left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1, \\
 \left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1.
 \end{align*}
-Arvestades, et $\Lambda$ on ortokroonne, siis $\Lambda\indices{^4_4} = 1$ ja seega  
+Võttes arvesse, et $\Lambda$ on ortokroonne, siis $\Lambda\indices{^4_4} = 1$ ja seega saame kirjutada
 \begin{align*}
 \left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - 1 = -1, \\
 \left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - 1 = -1,
 \end{align*}
-mis saab võimalik olla vaid siis, kui $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = \Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$. \\
+mis saab aga võimalik olla vaid juhul, kui $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = \Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$. \\
 
 Tõestuse lõpetamiseks jääb veel näidata, et kui $\Lambda \in \mathcal{L}$ ja kehtib $(ii)$ (ja seega ka $(ii)$ ning $(iv)$), siis $\left(\Lambda\indices{^i_j}\right)_{i,j = 1, 2, 3}$ on ortogonaalne ja unimodulaarne. Võrdus $\det \left(\Lambda\indices{^i_j}\right) = 1$ on tõestatud osas kus näitasime, et $\mathcal{R}$ on rühm ja seega on $\left(\Lambda\indices{^i_j}\right)$ ortogonaalne. Jääb veel näidata, et $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$. Selleks märgmine, et blokkmaatriksi pööramise eeskirja kohaselt
 \begin{align*}
@@ -759,7 +801,55 @@ Osas kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et $\Lambda^{-1} 
 \end{proof}
 
 \newpage
-\section{Minkowski superruum}
+%
+% Mõtle siia mingi tabavam pealkiri!
+%
+\section{Teine peatükk}
+\subsection{Lie rühm}
+
+\begin{definitsioon}
+Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on topoloogiline muutkond ja tema (rühma) tehe on diferentseeruv.
+\end{definitsioon}
+
+
+\subsection{Lie algebra}
+
+\begin{definitsioon}
+Vektorruumi $L$ nimetatakse \emph{Lie algebraks}, kui on määratud bilineaarvorm $\left[\phantom{u};\phantom{u}\right] : L \times L \rightarrow L$, mis on antikommuteeruv, see tähendab kõikide $u, v \in L$ korral $\left[u, v\right] = - \left[v, u\right]$ ja iga $u, v, w \in L$ puhul kehtib Jacobi samasust ehk $\left[u, \left[v, w\right]\right] + \left[v, \left[w, u\right]\right] + \left[w, \left[u, v\right]\right] = 0$.
+\end{definitsioon}
+
+\begin{definitsioon}
+Bilineaarvormi $\left[\phantom{u};\phantom{u}\right] : L \times L \rightarrow L$ Lie algebra definitsioonist nimetatakse \emph{kommutaatoriks}.
+\end{definitsioon}
+
+Piltlikult võib öelda, et kommutaator mõõdab kui palju on Lia algebra elemendid mittekommuteeruvad.
+
+\begin{definitsioon}
+Olgu $L$ Lie algebra ja $\{t_i\}_{i = 1}^{r}$ selle algebra bass. Kui tähistame $\left[t_i, t_j\right] = c_{ij}^{k} t_{k}$, kus $i,j \in \{1, 2, \ldots, r\}$, siis arve $c_{ij}^{k}$ nimetame Lie algebra \emph{struktuurikonstantideks}.
+\end{definitsioon}
+
+Lie algebra struktuurikonstantide definitsiooni põhjal on selge, et struktuurikonstantide väärtus sõltub Lie algebra baasi valikust. Lisaks saame vahetult kommutaatori antikommuteeruvusest omaduse
+\begin{align} \label{eq:struktuurikonst-antikomm}
+c_{ij}^{k} = \left[t_i, t_j\right] = - \left[t_j, t_i\right] = - c_{ji}^{k},
+\end{align}
+kus $t_i, t_j$ on Lie algebra baasivektorid. Tuletame nüüd Jacobi samasuse struktuurikonstantide jaoks:
+\begin{align*}
+\left[t_i, \left[t_j, t_k\right]\right] + \left[t_j, \left[t_k, t_i\right]\right] + \left[t_k, \left[t_i, t_j\right]\right] = 0 \\
+\left[t_i, c_{jk}^{l}t_l\right] + \left[t_j, c_{ki}^{l}t_l\right] + \left[t_k, c_{ij}^{l}t_l\right] = 0 \\
+c_{jk}^{l} \left[t_i, t_l\right] + c_{ki}^{l} \left[t_j, t_l\right] + c_{ij}^{l} \left[t_k, t_l\right] = 0 \\
+c_{jk}^{l} c_{il}^{m} t_m + c_{ki}^{l} c_{jl}^{m} t_m + c_{ij}^{l} c_{kl}^{m} t_m = 0 \\
+c_{jk}^{l} c_{il}^{m} + c_{ki}^{l} c_{jl}^{m} + c_{ij}^{l} c_{kl}^{m} = 0
+\end{align*}
+
+\begin{naide}
+Teist järku ruutmaatriksite hulk $su\left(2\right) \subset \Mat_2 \mathbb{C}$, kus $u \in su\left(2\right)$ rahuldab tingimusi
+\begin{align}
+u + u^t &= 0, \text{ kus } u^t = \bar{u}^T, \label{eq:hermitian-mat} \\
+\Tr u &= 0.
+\end{align}
+\end{naide}
+
+
 
 \newpage
 \section*{Summary}
