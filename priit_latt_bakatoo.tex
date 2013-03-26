@@ -47,6 +47,7 @@
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Mat}{Mat}
 \DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\ad}{ad}
 
 \title{Minkowski aegruumi geomeetriast}
 %\author[P. Lätt]{Priit Lätt}
@@ -98,15 +99,15 @@ x^{i} e_{a} &= \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + 
 \lambda\indices{^i_j} x^{j} &= \sum_{j=1}^{n} \lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n},\\
 \eta_{ij} u^{i} v^{j} &= \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
 \end{align*}
-ja nii edasi.
+ja nii edasi.\\
+Vektori $u$ pikkust tähistame edaspidi $|u|$. \\
+Seda teksti pole tegelikutl vaja.\footnote{Hermann Minkowski (1864 - 1909) - poola matemaatik}
 
-\paragraph{}
-Vektori $u$ pikkust tähistame edaspidi $|u|$.
+
 \newpage
-
 \section{Vajalikud eelteadmised}
 
-Selles peatükis toome välja definitsioonid ja tähtsamad tulemused, mida läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures tõestusteta.
+Selles peatükis toome välja definitsioonid ja tulemused, mida läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures tõestusteta.
 
 \subsection{Skalaarkorrutisega seotud abitulemused}
 \label{eelteadmised:skalaar}
@@ -201,6 +202,13 @@ Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. Meie e
 Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta $y = (y_1, y_2, y_3, y_4)$.
 \end{proof}
 
+\begin{teoreem} \label{teor:trace}
+Olgu $A$ ja $B$ $n$-järku ruutmaatriksid. Siis $\Tr AB = \Tr BA$.
+\end{teoreem}
+\begin{proof}
+Vahetu kontroll.
+\end{proof}
+
 \begin{teoreem}[Blokkmaatriksite korrutamine]
 Olgu meil $m \times p$ maatriks $A$ ja olgu meil $p \times n$ maatriks $B$. Jagame maatriksi $A$ blokkideks, kus on $q$ rea blokki ja $s$ veeru blokki ning jagame maatriksi $B$ blokkideks, kus on $s$ rea blokki ja $r$ veeru blokki kujul
 \begin{align*}
@@ -280,7 +288,7 @@ Me ütleme, et muutkond $M$ on \emph{ühelisidus}, kui suvalise kinnise joone v�
 
 \newpage
 
-\section{Minkowski\footnote{Hermann Minkowski (1864 - 1909) - poola matemaatik} ruumi geomeetriline struktuur}
+\section{Minkowski ruumi geomeetriline struktuur}
 
 \subsection{Skalaarkorrutise definitsioon ja omadused}
 
@@ -336,7 +344,7 @@ g \left(u+v, u+v\right) = g_1 \left(u+v, u+v\right) - g_2 \left(u+v, u+v\right) 
 \end{equation*}
 Teisalt,
 \begin{align*}
-& g \left(u+v, u+v\right) = g \left(u, u+v\right) + g \left(v, u+v\right) = \\
+g \left(u+v, u+v\right) &= g \left(u, u+v\right) + g \left(v, u+v\right) = \\
 &= g \left(u, u\right) + g \left(u, v\right) + g \left(v, u\right) + g \left(v, v\right) = \\
 &= g \left(u, u\right) + 2g \left(u, v\right) + g \left(v, v\right) = 2g \left(u, v\right).
 \end{align*}
@@ -612,8 +620,8 @@ Tähistame ruumi $\mathcal{M}$ kõigi ajasarnaste vektorite hulga tähega $\tau$
 Paneme tähele, et seos $\sim$ jagab hulga $\tau$ täpselt kaheks ekvivalentsiklassiks. Tõe\-poolest,
 kui $u, v \in \mathcal{M}$ on ajasarnased, siis on meil teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal kaks varianti. Peab kehtima kas 
 \begin{align}
-g\left(u,v\right) < 0 \text{ või} \tag{1} \\
-g\left(u,v\right) > 0. \tag{2}
+g\left(u,v\right) &< 0 \text{ või} \tag{1} \\
+g\left(u,v\right) &> 0. \tag{2}
 \end{align}
 Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$. \\
 Neid kahte ekvivalentsiklassi tähistatakse $\tau^+$ ja $\tau^-$. Märgime, et elementide ekvivalentsiklassidesse $\tau^+$ ja $\tau^-$ jaotamine toimub meie postuleerimise täpsusega ja on meelevaldne.
@@ -767,12 +775,12 @@ Näitamaks, et $(ii), (iii)$ ja $(iv)$ on samaväärsed märgime, et fikseerides
 \left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1, \\
 \left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - \left(\Lambda\indices{^4_4}\right)^2 = -1.
 \end{align*}
-Võttes arvesse, et $\Lambda$ on ortokroonne, siis $\Lambda\indices{^4_4} = 1$ ja seega saame kirjutada
+Võttes arvesse, et $\Lambda$ on ortokroonne, siis $\Lambda\indices{^4_4} \geq 1$ ja seega saame kirjutada
 \begin{align*}
-\left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - 1 = -1, \\
-\left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - 1 = -1,
+\left(\Lambda\indices{^1_4}\right)^2 + \left(\Lambda\indices{^2_4}\right)^2 + \left(\Lambda\indices{^3_4}\right)^2 - 1 \geq -1, \\
+\left(\Lambda\indices{^4_1}\right)^2 + \left(\Lambda\indices{^4_2}\right)^2 + \left(\Lambda\indices{^4_3}\right)^2 - 1 \geq -1,
 \end{align*}
-mis saab aga võimalik olla vaid juhul, kui $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = \Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$. \\
+mis saab aga võimalik olla vaid juhul, kui $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = \Lambda\indices{^3_4} = \Lambda\indices{^4_1} = \Lambda\indices{^4_2} = \Lambda\indices{^4_3} = 0$.
 
 Tõestuse lõpetamiseks jääb veel näidata, et kui $\Lambda \in \mathcal{L}$ ja kehtib $(ii)$ (ja seega ka $(ii)$ ning $(iv)$), siis $\left(\Lambda\indices{^i_j}\right)_{i,j = 1, 2, 3}$ on ortogonaalne ja unimodulaarne. Võrdus $\det \left(\Lambda\indices{^i_j}\right) = 1$ on tõestatud osas kus näitasime, et $\mathcal{R}$ on rühm ja seega on $\left(\Lambda\indices{^i_j}\right)$ ortogonaalne. Jääb veel näidata, et $\left(\Lambda\indices{^i_j}\right)^{-1} = \left(\Lambda\indices{^i_j}\right)^T$. Selleks märgmine, et blokkmaatriksi pööramise eeskirja kohaselt
 \begin{align*}
@@ -814,8 +822,8 @@ Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on topoloogiline muutkond ja 
 
 \subsection{Lie algebra}
 
-\begin{definitsioon}
-Vektorruumi $L$ nimetatakse \emph{Lie algebraks}, kui on määratud bilineaarvorm $\left[\phantom{u};\phantom{u}\right] : L \times L \rightarrow L$, mis on antikommuteeruv, see tähendab kõikide $u, v \in L$ korral $\left[u, v\right] = - \left[v, u\right]$ ja iga $u, v, w \in L$ puhul kehtib Jacobi samasust ehk $\left[u, \left[v, w\right]\right] + \left[v, \left[w, u\right]\right] + \left[w, \left[u, v\right]\right] = 0$.
+\begin{definitsioon} \label{def:lie-algebra}
+Vektorruumi $L$ nimetatakse \emph{Lie algebraks}, kui on määratud bilineaarvorm $\left[\phantom{u};\phantom{u}\right] : L \times L \rightarrow L$, mis on antikommuteeruv, see tähendab kõikide $u, v \in L$ korral $\left[u, v\right] = - \left[v, u\right]$ ja iga $u, v, w \in L$ puhul kehtib Jacobi samasus ehk $\left[u, \left[v, w\right]\right] + \left[v, \left[w, u\right]\right] + \left[w, \left[u, v\right]\right] = 0$.
 \end{definitsioon}
 
 \begin{definitsioon}
@@ -841,9 +849,61 @@ c_{jk}^{l} c_{il}^{m} t_m + c_{ki}^{l} c_{jl}^{m} t_m + c_{ij}^{l} c_{kl}^{m} t_
 c_{jk}^{l} c_{il}^{m} + c_{ki}^{l} c_{jl}^{m} + c_{ij}^{l} c_{kl}^{m} = 0
 \end{align*}
 
-\begin{naide}
-Teist järku ruutmaatriksite hulk $su\left(2\right) \subset \Mat_2 \mathbb{C}$, kus $u \in su\left(2\right)$ rahuldab tingimusi , kus $u^t = \bar{u}^T$ ja $\Tr u = 0$, on Lie algebra.\footnote{Tingimus $u + u^t = 0$ tähendab, et $u$ on anti-Hermite'i maatriks}
+\begin{naide} \label{naide:su2}
+Vaatleme teist järku ruutmaatriksite hulka $\mathfrak{su}\left(2\right) \subset \Mat_2 \mathbb{C}$, kus $u \in \mathfrak{su}\left(2\right)$ rahuldab tingimusi
+\begin{align}
+\Tr u &= 0 \text{ ja} \label{eq:su2-tr=0}\\ 
+u^t &= \bar{u}^T. \label{eq:su2-antihermitian}
+\end{align}
+Hulk $\mathfrak{su}\left(2\right)$ koos tavalise Lie sulgude kommutaatoriga $\left[u,v\right] = uv - vu$, $u, v \in \mathfrak{su}\left(2\right)$, on Lie algebra.\footnote{Tingimus $u + u^t = 0$ tähendab, et $u$ on anti-Hermite'i maatriks}
+
+Olgu $u, v, w \in \mathfrak{su}\left(2\right)$. Kõigepealt märgime, et $\left(u + v\right) + \left(u + v\right)^t = u + v + u^t + v^t = 0$ ning $\Tr \left(u + v\right) = 0$ ehk $u + v \in \mathfrak{su}\left(2\right)$. Veendumaks, et $su\left(2\right)$ on Lie algebra piisab nüüd näidata, et kommutaator $\left[\phantom{u}, \phantom{u}\right]$ rahuldab definitsioonis \ref{def:lie-algebra} antud tingimusi ning $\left[u,v\right] \in \mathfrak{su}\left(2\right)$ ja $\Tr \left[u,v\right] = 0$. \\
+Paneme tähele, et definitsiooni järgi $\left[u,v\right] = uv - vu = - \left(vu - uv\right) = - \left[v,u\right]$ ning 
+kehtib Jacobi samasus, sest
+\begin{align*}
+&\left[u, \left[v, w\right]\right] + \left[v, \left[w, u\right]\right] + \left[w, \left[u, v\right]\right] = \\
+&= \left[u, vw - wv \right] + \left[v, wu - uw \right] + \left[w, uv - vu \right] = \\
+&= \left[u, vw\right] - \left[u, wv\right] + \left[v, wu\right] - \left[u, uw\right] + \left[w, uv\right] - \left[w, vu\right] = \\
+&= uvw - vwu - uwv + wvu + vwu - wuv - \\
+&- vuw + uwv + wuv - uvw - wvu + vuw = 0.
+\end{align*}
+Seega definitsiooni \ref{def:lie-algebra} eeldused on täidetud. Teoreemi \ref{teor:trace} põhjal $\Tr \left(uv\right) = \Tr \left(vu\right)$ ja seega $\Tr \left[u,v\right] = 0$. Lõpuks paneme veel tähele, et $\left[u,v\right] + \left[u,v\right]^t = 0$. Tõepoolest,
+\begin{align*}
+\left[u,v\right] + \left[u,v\right]^t &= uv - vu + \left(uv - vu\right)^t = uv - vu + \left(uv\right)^t - \left(vu\right)^t = \\
+&= uv - vu + v^t u^t - u^t v^t = uv - vu + vu - uv = 0.
+\end{align*}
 \end{naide}
+
+Näites \ref{naide:su2} toodud Lie algebrat $\mathfrak{su}\left(2\right)$ nimetatakse \emph{teist järku spetsiaalsete unitaarsete maatriksite} Lie algebraks. \textcolor{red}{Siin tuleks juttu teha miks su(2) nii oluline on ja kuidas ta käesoleva tööga seotud on.} \\
+Uurime edasises veel pisut Lie algebra $\mathfrak{su}\left(2\right)$ omadusi. Tingimusest \ref{eq:su2-tr=0} saame, et $u \in \mathfrak{su}\left(2\right)$ peab omama kuju $u = \begin{pmatrix} a & b \\ c & -a\end{pmatrix}$ ning arvestades ka tingimust \ref{eq:su2-antihermitian}, peab seega kehtima $\begin{pmatrix} a & b \\ c & -a\end{pmatrix} + \begin{pmatrix} \overline{a} & \overline{c} \\ \overline{b} & \overline{-a} \end{pmatrix} = 0$, millest saame järgmised tingimused:
+\begin{align*}
+\begin{cases}
+    a + \overline{a} = 0, \\
+    b + \overline{c} = 0. \\
+  \end{cases}
+\end{align*}
+Võttes $a = x + iy$, siis peab kehtima $x + iy + x - iy = 0$ ehk $x = 0$, millest $a = i\varphi$. Võttes veel arvesse, et $c = -\overline{b}$, siis saab maatriks $u$ kuju $u = \begin{pmatrix} i\varphi & b \\ -\overline{b} & -i\varphi \end{pmatrix}$, kus $b \in \mathbb{C}$ ja $x, y, \varphi \in \mathbb{R}$. Viimane aga tähendab, et maatriksi $u$ saab moodustada kolmest erinevast reaalarvust ehk $\dim_{\mathbb{R}} \mathfrak{su}\left(2\right) = 3$. Kui tähistame $b = x + iy$, siis saame kirjutada
+\begin{align*}
+u = \varphi \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix} + x \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} + y \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}.
+\end{align*}
+Sellega oleme leidnud Lie algebra $\mathfrak{su}\left(2\right)$ baasi ehk \emph{generaatorid} (nagu öeldakse Lie algebrate kontekstis)
+\begin{align*}
+\rho_1 = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix},\ \rho_2 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix},\ \rho_3 = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}.
+\end{align*}
+\begin{definitsioon}
+Kujutust $\psi : L \rightarrow Mat\left(n, \mathbb{R}\right)$ nimetatske Lie algebra $L$ \emph{esituseks}, kui $\left[\psi\left(u\right), \psi\left(v\right)\right] = \psi\left(\left[u, v\right]\right)$ kõikide $u, v \in L$ korral. 
+\end{definitsioon}
+
+\begin{definitsioon}
+Lie algebra \emph{adjungeeritud esituseks} nimetatakse esitust $\ad$, kus $\ad u \left(v\right) = \left[u, v\right]$.
+\end{definitsioon}
+Veendumaks, et Lie algebra adjungeeritud esituse definitsioon on korrektne tuleb veenduda, et kehtib võrdus $\left[\ad u_1, \ad u_2 \right] \left(v\right) = \ad \left[u_1, u_2 \right] \left(v\right)$. Selle saame Jacobi samasusest:
+\begin{align*}
+\left[\ad u_1, \ad u_2 \right] \left(v\right) = \left[u_1, \left[u_2, v\right]\right ] - \left[u_2, \left[u_1, v\right]\right] = \left[\left[u_1, u_2\right], v\right] = 
+\ad \left[u_1, u_2 \right] \left(v\right).
+\end{align*}
+Seega on meie antud definitsioon korrektne.
+
 
 
 
