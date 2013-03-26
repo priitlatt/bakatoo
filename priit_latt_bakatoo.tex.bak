@@ -302,7 +302,7 @@ Mittekidunud sümmeetrilist bilineaarvormi $g: \mathbb{V} \times \mathbb{V} \rig
 
 Tänu skalaarkorrutise bilineaarsusele on kergesti tuletatavad järgmised omadused:
 \begin{itemize}
-\item $u \cdot 0 = 0 \cdot v = 0$ kõikide $u, v \in \mathbb{V}$ korral, sest $g$ bilineaarsuse tõttu $0 \cdot v = \left(0*0\right) \cdot v = 0*\left(0 \cdot v \right) = 0$,
+\item $u \cdot 0 = 0 \cdot v = 0$ kõikide $u, v \in \mathbb{V}$ korral, sest $g$ bilineaarsuse tõttu $g \left(0, v\right) = g \left(0 \cdot 0, v \right) = 0 \cdot g \left(0, v \right) = 0$,
 \item kui $u_1, u_2, \dots, u_n, u, v_1, v_2, \dots, v_n \in \mathbb{V}$, siis $\left( \sum_{i = 1}^{n} u_i \right) \cdot v = \sum_{i = 1}^{n}  \left( u_i \cdot v \right)$ ja $u \cdot \left( \sum_{i = 1}^{n} v_i \right) = \sum_{i = 1}^{n}  \left( u \cdot v_i \right)$,
 \item kui $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ on vektorruumi $\mathbb{V}$ baas ning kui tähistame $\eta_{ij} = e_i \cdot e_j$, $i,j = 1, 2, \dots, n$, siis $u \cdot v = \sum_{i = 1}^{n} \sum_{j = 1}^{n} \eta_{ij} u^i v^j = \eta_{ij} u^i v^j$, kus $u = u^i e_i$ ja $v = v^i e_i$.
 \end{itemize}
@@ -882,7 +882,7 @@ Uurime edasises veel pisut Lie algebra $\mathfrak{su}\left(2\right)$ omadusi. Ti
     b + \overline{c} = 0. \\
   \end{cases}
 \end{align*}
-Võttes $a = x + iy$, siis peab kehtima $x + iy + x - iy = 0$ ehk $x = 0$, millest $a = i\varphi$. Võttes veel arvesse, et $c = -\overline{b}$, siis saab maatriks $u$ kuju $u = \begin{pmatrix} i\varphi & b \\ -\overline{b} & -i\varphi \end{pmatrix}$, kus $b \in \mathbb{C}$ ja $x, y, \varphi \in \mathbb{R}$. Viimane aga tähendab, et maatriks $u$ koosneb kolmest sõltumatutust reaalarvust ehk $\dim_{\mathbb{R}} \mathfrak{su}\left(2\right) = 3$. Kui tähistame $b = x + iy$, siis saame kirjutada
+Võttes $a = x + iy$, siis peab kehtima $x + iy + x - iy = 0$ ehk $x = 0$, millest $a = i\varphi$. Võttes veel arvesse, et $c = -\overline{b}$, siis saab maatriks $u$ kuju $u = \begin{pmatrix} i\varphi & b \\ -\overline{b} & -i\varphi \end{pmatrix}$, kus $b \in \mathbb{C}$ ja $x, y, \varphi \in \mathbb{R}$. Viimane aga tähendab, et maatriksi $u$ saab moodustada kolmest erinevast reaalarvust ehk $\dim_{\mathbb{R}} \mathfrak{su}\left(2\right) = 3$. Kui tähistame $b = x + iy$, siis saame kirjutada
 \begin{align*}
 u = \varphi \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix} + x \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} + y \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}.
 \end{align*}
@@ -897,8 +897,12 @@ Kujutust $\psi : L \rightarrow Mat\left(n, \mathbb{R}\right)$ nimetatske Lie alg
 \begin{definitsioon}
 Lie algebra \emph{adjungeeritud esituseks} nimetatakse esitust $\ad$, kus $\ad u \left(v\right) = \left[u, v\right]$.
 \end{definitsioon}
-Veendumaks, et Lie algebra adjungeeritud esituse definitsioon on korrektne tuleb veenduda, et kehtib võrdus $\left[\ad u, \ad v\right] \left(w\right) = \ad \left[u, v\right] \left(w\right)$. Selle saame Jacobi samasusest:
-
+Veendumaks, et Lie algebra adjungeeritud esituse definitsioon on korrektne tuleb veenduda, et kehtib võrdus $\left[\ad u_1, \ad u_2 \right] \left(v\right) = \ad \left[u_1, u_2 \right] \left(v\right)$. Selle saame Jacobi samasusest:
+\begin{align*}
+\left[\ad u_1, \ad u_2 \right] \left(v\right) = \left[u_1, \left[u_2, v\right]\right ] - \left[u_2, \left[u_1, v\right]\right] = \left[\left[u_1, u_2\right], v\right] = 
+\ad \left[u_1, u_2 \right] \left(v\right).
+\end{align*}
+Seega on meie antud definitsioon korrektne.
 
 
 
