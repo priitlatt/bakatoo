@@ -857,7 +857,7 @@ u^t &= \bar{u}^T. \label{eq:su2-antihermitian}
 \end{align}
 Hulk $\mathfrak{su}\left(2\right)$ koos tavalise Lie sulgude kommutaatoriga $\left[u,v\right] = uv - vu$, $u, v \in \mathfrak{su}\left(2\right)$, on Lie algebra.\footnote{Tingimus $u + u^t = 0$ tähendab, et $u$ on anti-Hermite'i maatriks}
 
-Olgu $u, v, w \in \mathfrak{su}\left(2\right)$. Kõigepealt märgime, et $\left(u + v\right) + \left(u + v\right)^t = u + v + u^t + v^t = 0$ ning $\Tr \left(u + v\right) = 0$ ehk $u + v \in \mathfrak{su}\left(2\right)$. Veendumaks, et $su\left(2\right)$ on Lie algebra piisab nüüd näidata, et kommutaator $\left[\phantom{u}, \phantom{u}\right]$ rahuldab definitsioonis \ref{def:lie-algebra} antud tingimusi ning $\left[u,v\right] \in \mathfrak{su}\left(2\right)$ ja $\Tr \left[u,v\right] = 0$. \\
+Olgu $u, v, w \in \mathfrak{su}\left(2\right)$. Kõigepealt märgime, et $\left(u + v\right) + \left(u + v\right)^t = u + v + u^t + v^t = 0$ ning $\Tr \left(u + v\right) = 0$ ehk $u + v \in \mathfrak{su}\left(2\right)$. Veendumaks, et $\mathfrak{su}\left(2\right)$ on Lie algebra piisab nüüd näidata, et kommutaator $\left[\phantom{u}, \phantom{u}\right]$ rahuldab definitsioonis \ref{def:lie-algebra} antud tingimusi ning $\left[u,v\right] \in \mathfrak{su}\left(2\right)$ ja $\Tr \left[u,v\right] = 0$. \\
 Paneme tähele, et definitsiooni järgi $\left[u,v\right] = uv - vu = - \left(vu - uv\right) = - \left[v,u\right]$ ning 
 kehtib Jacobi samasus, sest
 \begin{align*}
@@ -882,22 +882,31 @@ Uurime edasises veel pisut Lie algebra $\mathfrak{su}\left(2\right)$ omadusi. Ti
     b + \overline{c} = 0. \\
   \end{cases}
 \end{align*}
-Võttes $a = x + iy$, siis peab kehtima $x + iy + x - iy = 0$ ehk $x = 0$, millest $a = i\varphi$. Võttes veel arvesse, et $c = -\overline{b}$, siis saab maatriks $u$ kuju $u = \begin{pmatrix} i\varphi & b \\ -\overline{b} & -i\varphi \end{pmatrix}$, kus $b \in \mathbb{C}$ ja $x, y, \varphi \in \mathbb{R}$. Viimane aga tähendab, et maatriksi $u$ saab moodustada kolmest erinevast reaalarvust ehk $\dim_{\mathbb{R}} \mathfrak{su}\left(2\right) = 3$. Kui tähistame $b = x + iy$, siis saame kirjutada
+Võttes $a = \upsilon + i\varphi$, siis peab kehtima $\upsilon + i\varphi + \upsilon - i\varphi = 0$ ehk $\upsilon = 0$, millest $a = i\varphi$. Võttes veel arvesse, et $c = -\overline{b}$, siis saab maatriks $u$ kuju $u = \begin{pmatrix} i\varphi & b \\ -\overline{b} & -i\varphi \end{pmatrix}$, kus $b=x+iy \in \mathbb{C}$ ja $x, y, \varphi \in \mathbb{R}$. Viimane aga tähendab, et maatriksis $u$ lineaarselt sõltumatuid reaalseid komponente kolm ehk $\dim_{\mathbb{R}} \mathfrak{su}\left(2\right) = 3$. Arvestades tähistust $b = x + iy$saame kirjutada
 \begin{align*}
 u = \varphi \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix} + x \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} + y \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}.
 \end{align*}
-Sellega oleme leidnud Lie algebra $\mathfrak{su}\left(2\right)$ baasi ehk \emph{generaatorid} (nagu öeldakse Lie algebrate kontekstis)
+Sellega oleme leidnud Lie algebra $\mathfrak{su}\left(2\right)$ baasi
 \begin{align*}
 \rho_1 = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix},\ \rho_2 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix},\ \rho_3 = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}.
 \end{align*}
+\begin{markus}
+Sageli nimetatakse Lie algebrate kontekstis baasivektoreid kohta ka \emph{generaatoriteks}.
+\end{markus}
 \begin{definitsioon}
-Kujutust $\psi : L \rightarrow Mat\left(n, \mathbb{R}\right)$ nimetatske Lie algebra $L$ \emph{esituseks}, kui $\left[\psi\left(u\right), \psi\left(v\right)\right] = \psi\left(\left[u, v\right]\right)$ kõikide $u, v \in L$ korral. 
+Olgu $L$ Lie algebra. Kujutust $\psi : L \rightarrow Mat\left(n, \mathbb{R}\right)$ nimetatske Lie algebra $L$ \emph{esituseks}, kui $\left[\psi\left(u\right), \psi\left(v\right)\right] = \psi\left(\left[u, v\right]\right)$ kõikide $u, v \in L$ korral. 
 \end{definitsioon}
 
 \begin{definitsioon}
 Lie algebra \emph{adjungeeritud esituseks} nimetatakse esitust $\ad$, kus $\ad u \left(v\right) = \left[u, v\right]$.
 \end{definitsioon}
-Veendumaks, et Lie algebra adjungeeritud esituse definitsioon on korrektne tuleb kontrollida, et kehtib võrdus $\left[\ad u_1, \ad u_2 \right] \left(v\right) = \ad \left[u_1, u_2 \right] \left(v\right)$. Selle võrduse saame lihtsasti Jacobi samasusest:
+Veendumaks, et Lie algebra adjungeeritud esituse definitsioon on korrektne tuleb kontrollida, et kehtib võrdus $\left[\ad u_1, \ad u_2 \right] \left(v\right) = \ad \left[u_1, u_2 \right] \left(v\right)$. Selle võrduse saame lihtsasti Jacobi samasusest kuna
+\begin{align*}
+0 &= \left[ u_1, \left[u_2, v\right] \right] + \left[ u_2, \left[v, u_1 \right] \right] + \left[ v, \left[u_1, u_2\right] \right] = \\
+&= \left[ u_1, \left[u_2, v\right] \right] + \left[ u_2, -\left[u_1, v \right] \right] - \left[\left[u_1, u_2\right], v\right] = \\
+&= \left[ u_1, \left[u_2, v\right] \right] - \left[ u_2, \left[u_1, v \right] \right] - \left[\left[u_1, u_2\right], v\right],
+\end{align*}
+ehk $\left[ u_1, \left[u_2, v\right] \right] - \left[ u_2, \left[u_1, v \right] \right] = \left[\left[u_1, u_2\right], v\right]$ ja seega
 \begin{align*}
 \left[\ad u_1, \ad u_2 \right] \left(v\right) = \left[u_1, \left[u_2, v\right]\right ] - \left[u_2, \left[u_1, v\right]\right] = \left[\left[u_1, u_2\right], v\right] = 
 \ad \left[u_1, u_2 \right] \left(v\right).
