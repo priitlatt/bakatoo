@@ -810,13 +810,56 @@ Osas kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et $\Lambda^{-1} 
 
 \subsection{Poincar\'e rühm}
 
-Meenutame, et Minkowski ruumi pseudoortogonaalteisendus $L$ on defineeritud kui kujutus, mis säilitab skalaarkorrutise $g$. Piltlikult tähendab viimane, et kui meil on kaks sündmust $x, y \in \mathcal{M}$, siis on sündmuste $x$ ja $y$ vaheline kaugus sama, mis sündmustel $Lx$ ja $Ly$.
-
-Fikseerime vektori $A = \left(a^1, a^2, a^3, a^4\right) \in \mathbb{R}^4$ ning sündmused $x = x^i$ ja $y = y^i$, $i = 1, 2, 3, 4$, Minkowski aegruumis $\mathcal{M}$. Vaatleme kujutust
+Arvestades Pythagorase teoreemi kahemõõtmelisel tasandil toome sisse kauguse mõiste üldistatuna Minkowski aegruumile.
 
 \begin{definitsioon}
-Olgu $\Lambda \in \mathcal{L}_{GH}$ Lorentzi teisendus ja $A \in \mathbb{R}^4$ nihketeisendus. Kujutust $\mathcal{M} \ni x \mapsto \Lambda\indices{^a_b} x^b + a^b \in \mathcal{M}$ nimetatakse \emph{Poincar\'e teisenduseks\footnote{Vahel kasutatakse \emph{Poicate teisenduse} asemel terminit \emph{Mittehomogeenne Lorentzi teisendus}.}}. Kõikide Poincar\'e teisenduste hulka nimetame \emph{Poincar\'e rühmaks $P$}.
+Olgu $x = x^a$ ja $y = y^a$, $a = 1, 2, 3, 4$, kaks sündmust Minkowski ruumis $\mathcal{M}$. Sündmuste $x$ ja $y$ vaheliseks \emph{kauguseks} nimetame reaalarvu $s$, mis on defineeritud valemiga
+\begin{align*}
+s = s\left(x, y\right) = \eta_{ab} \left(x^a - y^a\right)\left(x^b - y^b\right), a,b = 1, 2, 3, 4,
+\end{align*}
+kus $\eta$ on Minkowski ruumi meetrika.
 \end{definitsioon}
+
+Meenutame, et Minkowski ruumi pseudoortogonaalteisendus $L$ on defineeritud kui kujutus, mis säilitab skalaarkorrutise $g$. Olgu $x, y \in \mathcal{M}$. Osutub, et kujutuse $L$ ortogonaalsusest järeldub lihtsasti, et sündmuste $x$ ja $y$ vaheline kaugus sama, mis sündmustel $Lx$ ja $Ly$, see tähendab $s\left(x, y\right) = s\left(Lx, Ly\right)$. Tõepoolest, kui $\Lambda$ on kujutuse $L$ maatriks, siis valemi \ref{eq:lambdaeta1} abil saame kirjutada
+\begin{align*}
+s\left(Lx, Ly\right) &= \eta_{ab} \left(\Lambda\indices{^a_c} x^c - \Lambda\indices{^a_c} y^a\right) \left(\Lambda\indices{^b_d} x^d - \Lambda\indices{^b_d} y^d\right) = \\
+&= \eta_{ab} \Lambda\indices{^a_c} \left(x^c - y^c\right) \Lambda\indices{^b_d} \left(x^d - y^d\right) = \\
+&= \eta \Lambda\indices{^a_c} \Lambda\indices{^b_d} \left(x^c - y^c\right) \left(x^d - y^d\right) = \\
+&= \eta \left(x^c - y^c\right) \left(x^d - y^d\right) = s(x, y).
+\end{align*}
+
+Olgu $n \in \Mat_{4, 1} \mathbb{R}$ komponentidega $n^a, a = 1, 2, 3, 4$ mingi fikseeritud $1 \times 4$ reaalne maatriks. On väga loomulik oletada, et sündmuste $x$ ja $y$ jäigal nihutamisel
+\begin{align} \label{eq:niked}
+\hat{x}^b = x^b + n^b, \quad \hat{y}^b = y^b + n^b, \quad b = 1, 2, 3, 4,
+\end{align}
+ruumis $\mathcal{M}$ nende sündmuste vaheline kaugus ei muutu. Arvestades meie antud kauguse definitsiooni see nii ilmselt ka on. Seejuures teisendusi \ref{eq:niked} nimetame \emph{nihketeisendusteks}.
+
+Kokkuvõttes oleme leidnud kaks kujutuste klassi, nihked ja (homogeensed) Lorentzi teisendused, mille suhtes ruumi $\mathcal{M}$ sündmuste vaheline kaugus on invariantne. Üldisemalt nimetame teisendust, mille suhtes sündmuste vaheline kaugus on invariantne suurus \emph{sümmeetriateisenduseks}. Pöörame järgnevas pisut tähelepanu sellistele sümmeetria\-teisendustele, mille me saame kui vaatleme nihkeid koos Lorentzi teisendustega.
+
+\begin{definitsioon}
+Olgu $\Lambda \in \mathcal{L}_{GH}$ Lorentzi teisendus ja $n \in \Mat_{4, 1}\mathbb{R}$ nihketeisenduse maatriks. Kujutust $\mathcal{M} \ni x \mapsto \Lambda\indices{^a_b} x^b + n^b \in \mathcal{M}$ nimetatakse \emph{Poincar\'e teisenduseks\footnote{Vahel kasutatakse \emph{Poicar\'e teisenduse} asemel terminit \emph{Mittehomogeenne Lorentzi teisendus}.}} ja tähistatakse paarina $\{n, \Lambda\}$.
+\end{definitsioon}
+
+\begin{definitsioon}
+Kõikide Poincar\'e teisenduste hulka
+\begin{align*}
+P = \left\lbrace \{n, \Lambda\} : n \in \Mat_{4, 1}\mathbb{R}, \Lambda \in \mathcal{L}_{GH} \right\rbrace
+\end{align*}
+koos tehtega $* : P \times P \rightarrow P,\ \{n_1, \Lambda_1\}*\{n_2, \Lambda_2\} \mapsto \{n_1 + \Lambda_1 n_2, \Lambda_1 \Lambda_2\}$, nimetame \emph{Poincar\'e rühmaks}, mida tähistatakse sümboliga $\mathcal{P}$.
+\end{definitsioon}
+
+Veendumaks Poincar\'e rühma defintsiooni korrektsuses piisab näidata, et hulk $P$ koos tehtega $* : P \times P \rightarrow P$ moodustab tõepoolest rühma.
+Selle tõestamiseks olgu meil fikseeritud kolm Poicar\'e teisendust $\{n_1, \Lambda_1\}, \{n_2, \Lambda_2\}$ ja $\{n_3, \Lambda_3\}$. Esiteks märgime, et $ \Lambda_1 n_2 \in \Mat_{4, 1}\mathbb{R}$ ja seega ka $n_1 + \Lambda_1 n_2 \in \Mat_{4, 1}\mathbb{R}$ ja $\Lambda_1 \Lambda_2 \in \mathcal{L}_{GH}$, sest $\mathcal{L}_{GH}$ on rühm maatriksite korrutamise suhtes ja seega $\{n_1, \Lambda_1\}*\{n_2, \Lambda_2\} \in P$.
+Assotsiatiivsus on vahetult kontrollitav:
+\begin{align*}
+\left(\{n_1, \Lambda_1\} \{n_2, \Lambda_2\}\right) \{n_3, \Lambda_3\} &= \{n_1 + \Lambda_1 n_2, \Lambda_1 \Lambda_2 \} \{n_3, \Lambda_3 \} = \\
+= \{n_1 + \Lambda_1 n_2 + \Lambda_1 \Lambda_2 n_3, \Lambda_1 \Lambda_2 \Lambda_3 \} &= \{n_1 + \Lambda_1 \left( n_2 + \Lambda_2 n_3 \right), \Lambda_1 \left( \Lambda_2 \Lambda_3 \right)\} = \\
+= \{n_1, \Lambda_1 \} \{n_2 + \Lambda_2 n_3, \Lambda_2 \Lambda_3 \} &= \{n_1, \Lambda_1\} \left( \{n_2, \Lambda_2\} \{n_3, \Lambda_3\} \right)
+\end{align*}
+Lihtne on näha, et ühikuks sobib võtta $\{0, E\}$ ja seega on Poincar\'e teisenduse $\{n_1, \Lambda_1\}$ pöördelemendiks teisendus $\{ -\left(\Lambda_1\right)^{-1} n_1, \left(\Lambda_1\right)^{-1} \}$, sest
+\[ n_1 + \Lambda_1 \left(-\left(\Lambda_1\right)^{-1}\right) n_1 = n_1 - E n_1 = 0 \text{ ja } \Lambda_1 \left(\Lambda_1\right)^{-1} = E. \]
+Kokkuvõttes oleme näidanud, et Poincar\'e rühm $\mathcal{P}$ on oma algebralistelt omadustelt tõepoolest rühm.
+
 
 \newpage
 %
