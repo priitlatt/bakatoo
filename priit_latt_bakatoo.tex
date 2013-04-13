@@ -41,6 +41,16 @@
 
 \numberwithin{equation}{section}
 
+\def\N{{\mathbb N}}
+\def\R{{\mathbb R}}
+\def\C{{\mathbb C}}
+\def\K{{\mathbb K}}
+\def\Z{{\mathbb Z}}
+\def\Q{{\mathbb Q}}
+\def\L{{\mathcal L}}
+\def\M{{\mathcal M}}
+\def\P{{\mathcal P}}
+
 \usepackage{mathtools}
 \DeclareMathOperator{\spn}{span}
 \DeclareMathOperator{\sign}{sign}
@@ -494,7 +504,7 @@ Korrutades võrduse \ref{eq:lambdaetamat1} mõlemaid pooli maatriksiga $\Lambda^
 \begin{equation} \label{eq:lambdaetamat2}
 \Lambda \eta \Lambda^T = \eta.
 \end{equation}
-Seos \ref{eq:lambdaetamat2} on koordinaatides välja kirjutatuna täpselt
+Seos \ref{eq:lambdaetamat2} on koordinaatides kirjutatuna täpselt
 \begin{equation} \label{eq:lambdaeta2}
 \Lambda\indices{^a_c} \eta^{cd} \Lambda\indices{^b_d} = \eta^{ab}.
 \end{equation}
@@ -567,6 +577,10 @@ Arvestades võrdust \ref{eq:lambda-1lambda-trans} võime välja arvutada maatrik
 \Lambda\indices{^1_3} & \Lambda\indices{^2_3} & \Lambda\indices{^3_3} & -\Lambda\indices{^4_3} \\ 
 -\Lambda\indices{^1_4} & -\Lambda\indices{^2_4} & -\Lambda\indices{^3_4} & \Lambda\indices{^4_4} \\ 
 \end{pmatrix}.\]
+
+\newpage
+
+\section{Lorentzi ja Poincar\'e rühmad}
 
 \subsection{Lorentzi rühm}
 
@@ -809,7 +823,7 @@ Osas kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et $\Lambda^{-1} 
 
 \subsection{Poincar\'e rühm}
 
-Arvestades Pythagorase teoreemi kahemõõtmelisel tasandil toome sisse kauguse mõiste üldistatuna Minkowski aegruumile.
+Arvestades Pythagorase teoreemi kahemõõtmelisel tasandil toome sisse sündmuste kauguse mõiste üldistatuna Minkowski aegruumile.
 
 \begin{definitsioon}
 Olgu $x = x^a$ ja $y = y^a$, $a = 1, 2, 3, 4$, kaks sündmust Minkowski ruumis $\mathcal{M}$. Sündmuste $x$ ja $y$ vaheliseks \emph{kauguseks} nimetame reaalarvu $s$, mis on defineeritud valemiga
@@ -836,7 +850,11 @@ ruumis $\mathcal{M}$ nende sündmuste vaheline kaugus ei muutu. Arvestades meie 
 Kokkuvõttes oleme leidnud kaks kujutuste klassi, nihked ja (homogeensed) Lorentzi teisendused, mille suhtes ruumi $\mathcal{M}$ sündmuste vaheline kaugus on invariantne. Üldisemalt nimetame teisendust, mille suhtes sündmuste vaheline kaugus on invariantne suurus \emph{sümmeetriateisenduseks}. Pöörame järgnevas pisut tähelepanu sellistele sümmeetria\-teisendustele, mille me saame kui vaatleme nihkeid koos Lorentzi teisendustega.
 
 \begin{definitsioon}
-Olgu $\Lambda \in \mathcal{L}_{GH}$ Lorentzi teisendus ja $n \in \Mat_{4, 1}\mathbb{R}$ nihketeisenduse maatriks. Kujutust $\mathcal{M} \ni x \mapsto \Lambda\indices{^a_b} x^b + n^b \in \mathcal{M}$ nimetatakse \emph{Poincar\'e teisenduseks\footnote{Vahel kasutatakse \emph{Poicar\'e teisenduse} asemel terminit \emph{Mittehomogeenne Lorentzi teisendus}.}} ja tähistatakse paarina $\{n, \Lambda\}$.
+Olgu $\Lambda \in \mathcal{L}_{GH}$ Lorentzi teisendus ja $n \in \Mat_{4, 1}\mathbb{R}$ mingi nihketeisenduse maatriks. \emph{Poincar\'e teisenduseks\footnote{Vahel kasutatakse \emph{Poicar\'e teisenduse} asemel terminit \emph{Mittehomogeenne Lorentzi teisendus}}} nimetame kujutust kujul
+\begin{align*}
+\mathcal{M} \ni x \mapsto \Lambda\indices{^a_b} x^b + n^b \in \mathcal{M}
+\end{align*}
+ja tähistame paarina $\{n, \Lambda\}$.
 \end{definitsioon}
 
 \begin{definitsioon} \textnormal{\cite{Barut}}
@@ -844,33 +862,34 @@ Kõikide Poincar\'e teisenduste hulka
 \begin{align*}
 P = \left\lbrace \{n, \Lambda\} : n \in \Mat_{4, 1}\mathbb{R}, \Lambda \in \mathcal{L}_{GH} \right\rbrace
 \end{align*}
-koos tehtega $* : P \times P \rightarrow P,\ \{n_1, \Lambda_1\}*\{n_2, \Lambda_2\} \mapsto \{n_1 + \Lambda_1 n_2, \Lambda_1 \Lambda_2\}$, nimetame \emph{Poincar\'e rühmaks}, mida tähistatakse sümboliga $\mathcal{P}$.
+koos tehtega $\circ : P \times P \rightarrow P,\ \{n_1, \Lambda_1\} \circ \{n_2, \Lambda_2\} \mapsto \{n_1 + \Lambda_1 n_2, \Lambda_1 \Lambda_2\}$, nimetame \emph{Poincar\'e rühmaks}. Seda rühma tähistatakse sümboliga $\mathcal{P}$.
 \end{definitsioon}
 
-Veendumaks Poincar\'e rühma defintsiooni korrektsuses piisab näidata, et hulk $P$ koos tehtega $* : P \times P \rightarrow P$ moodustab tõepoolest rühma.
-Selle tõestamiseks olgu meil fikseeritud kolm Poicar\'e teisendust $\{n_1, \Lambda_1\}, \{n_2, \Lambda_2\}$ ja $\{n_3, \Lambda_3\}$. Esiteks märgime, et $ \Lambda_1 n_2 \in \Mat_{4, 1}\mathbb{R}$ ja seega ka $n_1 + \Lambda_1 n_2 \in \Mat_{4, 1}\mathbb{R}$ ja $\Lambda_1 \Lambda_2 \in \mathcal{L}_{GH}$, sest $\mathcal{L}_{GH}$ on rühm maatriksite korrutamise suhtes ja seega $\{n_1, \Lambda_1\}*\{n_2, \Lambda_2\} \in P$.
+Veendumaks Poincar\'e rühma defintsiooni korrektsuses piisab näidata, et hulk $P$ varustatuna tehtega $\circ : P \times P \rightarrow P$ moodustab tõepoolest rühma.
+Selle tõestamiseks olgu meil fikseeritud kolm Poicar\'e teisendust $\{n_1, \Lambda_1\}, \{n_2, \Lambda_2\}$ ja $\{n_3, \Lambda_3\}$. Esiteks märgime, et $ \Lambda_1 n_2 \in \Mat_{4, 1}\mathbb{R}$ ja seega ka $n_1 + \Lambda_1 n_2 \in \Mat_{4, 1}\mathbb{R}$ ja $\Lambda_1 \Lambda_2 \in \mathcal{L}_{GH}$, sest $\mathcal{L}_{GH}$ on rühm maatriksite korrutamise suhtes ja seega $\{n_1, \Lambda_1\} \circ \{n_2, \Lambda_2\} \in P$.
 Assotsiatiivsus on vahetult kontrollitav:
 \begin{align*}
-\left(\{n_1, \Lambda_1\} \{n_2, \Lambda_2\}\right) \{n_3, \Lambda_3\} &= \{n_1 + \Lambda_1 n_2, \Lambda_1 \Lambda_2 \} \{n_3, \Lambda_3 \} = \\
+\left(\{n_1, \Lambda_1\} \circ \{n_2, \Lambda_2\}\right) \circ \{n_3, \Lambda_3\} &= \{n_1 + \Lambda_1 n_2, \Lambda_1 \Lambda_2 \} \circ \{n_3, \Lambda_3 \} = \\
 = \{n_1 + \Lambda_1 n_2 + \Lambda_1 \Lambda_2 n_3, \Lambda_1 \Lambda_2 \Lambda_3 \} &= \{n_1 + \Lambda_1 \left( n_2 + \Lambda_2 n_3 \right), \Lambda_1 \left( \Lambda_2 \Lambda_3 \right)\} = \\
-= \{n_1, \Lambda_1 \} \{n_2 + \Lambda_2 n_3, \Lambda_2 \Lambda_3 \} &= \{n_1, \Lambda_1\} \left( \{n_2, \Lambda_2\} \{n_3, \Lambda_3\} \right)
+= \{n_1, \Lambda_1 \} \circ \{n_2 + \Lambda_2 n_3, \Lambda_2 \Lambda_3 \} &= \{n_1, \Lambda_1\} \circ \left( \{n_2, \Lambda_2\} \circ \{n_3, \Lambda_3\} \right)
 \end{align*}
 Lihtne on näha, et ühikuks sobib võtta $\{0, E\}$ ja seega on Poincar\'e teisenduse $\{n_1, \Lambda_1\}$ pöördelemendiks teisendus $\{ -\left(\Lambda_1\right)^{-1} n_1, \left(\Lambda_1\right)^{-1} \}$, sest
 \[ n_1 + \Lambda_1 \left(-\left(\Lambda_1\right)^{-1}\right) n_1 = n_1 - E n_1 = 0 \text{ ja } \Lambda_1 \left(\Lambda_1\right)^{-1} = E. \]
 Kokkuvõttes oleme näidanud, et Poincar\'e rühm $\mathcal{P}$ on oma algebralistelt omadustelt tõepoolest rühm.
 
+\begin{markus}
+Paneme tähele, et kui vaatleme selliseid Poincar\'e teisndusi $\{n_1, \Lambda_1\}$ ja $\{n_2, \Lambda_2\}$, mille korral $n_1 = n_2 = 0$, siis on meil tegelikult tegu Lorentzi teisendustega ja seejuures nende teisenduste korrutised on samad Lorentzi ja Poincar\'e rühma kontekstis.
+\end{markus}
+
+Poincar\'e teisendusi, millel on kuju
+\begin{align*}
+\hat{x}^b = x^b + \delta x^b, \delta x^b = - \lambda\indices{^b_a} x^a + N^b,
+\end{align*}
+kus $\Lambda\indices{^b_d} \approx \delta^d_d - \lambda\indices{^b_d}$ ja $n^b \approx1 + N^b$, nimetame lõpmata väikesteks ehk \emph{infinitesimaalseteks}. 
+Tingimusest \ref{eq:lambdaeta1}
 
 \newpage
-%
-% Mõtle siia mingi tabavam pealkiri!
-%
-\section{Teine peatükk}
-\subsection{Lie rühm}
-
-\begin{definitsioon}
-Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on topoloogiline muutkond ja tema (rühma) tehe on diferentseeruv.
-\end{definitsioon}
-
+\section{Lie rühm ja Lie algebra}
 
 \subsection{Lie algebra}
 
@@ -888,6 +907,10 @@ Piltlikult võib öelda, et kommutaator mõõdab kui palju on Lia algebra elemen
 Olgu $L$ Lie algebra ja $\{t_i\}_{i = 1}^{r}$ selle algebra bass. Kui tähistame $\left[t_i, t_j\right] = c_{ij}^{k} t_{k}$, kus $i,j \in \{1, 2, \ldots, r\}$, siis arve $c_{ij}^{k}$ nimetame Lie algebra \emph{struktuurikonstantideks}.
 \end{definitsioon}
 
+\begin{markus}
+Lie algebrate kontekstis nimetatakse baasivektoreid sageli ka algebra \emph{generaatoriteks}.
+\end{markus}
+
 Lie algebra struktuurikonstantide definitsiooni põhjal on selge, et struktuurikonstantide väärtus sõltub Lie algebra baasi valikust. Lisaks saame vahetult kommutaatori antikommuteeruvusest omaduse
 \begin{align} \label{eq:struktuurikonst-antikomm}
 c_{ij}^{k} = \left[t_i, t_j\right] = - \left[t_j, t_i\right] = - c_{ji}^{k},
@@ -900,6 +923,11 @@ c_{jk}^{l} \left[t_i, t_l\right] + c_{ki}^{l} \left[t_j, t_l\right] + c_{ij}^{l}
 c_{jk}^{l} c_{il}^{m} t_m + c_{ki}^{l} c_{jl}^{m} t_m + c_{ij}^{l} c_{kl}^{m} t_m = 0 \\
 c_{jk}^{l} c_{il}^{m} + c_{ki}^{l} c_{jl}^{m} + c_{ij}^{l} c_{kl}^{m} = 0
 \end{align*}
+
+Kokkuvõttes saame Lie algebra generaatorite kohta sõnastada järgmise tähtsa tulemuse.
+\begin{lause}
+Lie algebra on täielikult määratud tema generaatorite kommutatsiooni\-eeskirjadega ehk struktuurikonstantidega.
+\end{lause}
 
 \begin{naide} \label{naide:su2}
 Vaatleme teist järku ruutmaatriksite hulka $\mathfrak{su}\left(2\right) \subset \Mat_2 \mathbb{C}$, kus $u \in \mathfrak{su}\left(2\right)$ rahuldab tingimusi
@@ -938,13 +966,11 @@ Võttes $a = \upsilon + i\varphi$, siis peab kehtima $\upsilon + i\varphi + \ups
 \begin{align*}
 u = \varphi \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix} + x \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix} + y \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix}.
 \end{align*}
-Sellega oleme leidnud Lie algebra $\mathfrak{su}\left(2\right)$ baasi
+Sellega oleme leidnud Lie algebra $\mathfrak{su}\left(2\right)$ baasi ehk generaatorid:
 \begin{align*}
 \rho_1 = \begin{pmatrix} 0 & i \\ i & 0 \end{pmatrix},\ \rho_2 = \begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix},\ \rho_3 = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}.
 \end{align*}
-\begin{markus}
-Sageli nimetatakse Lie algebrate kontekstis baasivektoreid kohta ka \emph{generaatoriteks}.
-\end{markus}
+
 \begin{definitsioon}
 Olgu $L$ Lie algebra. Kujutust $\psi : L \rightarrow Mat\left(n, \mathbb{R}\right)$ nimetatske Lie algebra $L$ \emph{esituseks}, kui $\left[\psi\left(u\right), \psi\left(v\right)\right] = \psi\left(\left[u, v\right]\right)$ kõikide $u, v \in L$ korral. 
 \end{definitsioon}
@@ -1013,6 +1039,13 @@ mis tähendab, Lie algebra $\mathfrak{su}\left(2\right)$ adjungeeritud esituse b
 \end{pmatrix} \right\rbrace.\]
 \end{naide}
 
+\subsection{Lie rühm}
+
+\begin{definitsioon}
+Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on topoloogiline muutkond ja tema (rühma) tehe on diferentseeruv.
+\end{definitsioon}
+
+\textcolor{red}{Näita, et Lorentzi ja Poincare rühmad on tegelikult koguni Lie rühmad.}
 
 \newpage
 \section*{Summary}
