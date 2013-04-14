@@ -259,6 +259,22 @@ A^{-1}+A^{-1}B\left(D-CA^{-1}B\right)^{-1}CA^{-1} & -A^{-1}B\left(D-CA^{-1}B\rig
 \end{align*}
 \end{teoreem}
 
+\subsubsection{Maatrikseksponentsiaal}
+
+Olgu $A \in \Mat_n\K$ mingi ruutmaatriks. Analoogilisest analüüsist tuttavale eksponentfunktsisoonile $e^x$ defineeritakse ka \emph{maatrikseksponent} $e^A = \sum_{k = 0}^{\infty} \frac{A^k}{k!}$, kus $A^0 = E$ ja $A^k$ tähendab korrutist, kus maatriksit $A$ korrutatakse iseendaga $k$ korda. Osutub, et $e^A$ on selles mõttes korrektselt defineeritud, et rida $\sum_{k = 0}^{\infty} \frac{A^k}{k!}$ koondub alati. Sageli kasutatakse $e^A$ asemel ka tähistust $\exp\left(A\right)$.\\
+Järgnevas lauses toome mõned lihtsamad maatrikseksponendi omadused.
+\begin{lause}
+Olgu $X, Y \in \Mat_n \K$ ruutmaatriksid ja $k, l \in \K$. Siis
+\begin{itemize}
+\item $e^0 = E$,
+\item $e^{aX}e^{bX} = e^{\left(a+b\right)X}$,
+\item $e^{X} e^{-X} = E$,
+\item kui $XY = YX$, siis $e^Y e^X = e^X e^Y = e^{\left(X + Y\right)}$,
+\item kui $Y$ on pööratav, siis $e^{YXY^{-1}} = Ye^XY^{-1}$,
+\item kui $e^X$ on pööratav, siis $\left(e^X\right)^{-1} = e^{-X}$.
+\end{itemize}
+\end{lause}
+
 \subsection{Topoloogiline muutkond}
 
 \begin{definitsioon}
@@ -877,6 +893,8 @@ Lihtne on näha, et ühikuks sobib võtta $\{0, E\}$ ja seega on Poincar\'e teis
 \[ n_1 + \Lambda_1 \left(-\left(\Lambda_1\right)^{-1}\right) n_1 = n_1 - E n_1 = 0 \text{ ja } \Lambda_1 \left(\Lambda_1\right)^{-1} = E. \]
 Kokkuvõttes oleme näidanud, et Poincar\'e rühm $\mathcal{P}$ on oma algebralistelt omadustelt tõepoolest rühm.
 
+Kuna teisendusi, mis säilitavad punktide vahelisi kaugusi nimetatakse isomeetriateisendusteks ja Poincar\'e teisendused säilitavad ruumi $\M$ sündmuste vahel kaugused, siis öeldakse Poincar\'e rühma kohta \emph{Minkowski ruumi isomeetirarühm}.
+
 \begin{markus}
 Paneme tähele, et kui vaatleme selliseid Poincar\'e teisndusi $\{n_1, \Lambda_1\}$ ja $\{n_2, \Lambda_2\}$, mille korral $n_1 = n_2 = 0$, siis on meil tegelikult tegu Lorentzi teisendustega ja seejuures nende teisenduste korrutised on samad Lorentzi ja Poincar\'e rühma kontekstis.
 \end{markus}
@@ -915,7 +933,7 @@ Lie algebra struktuurikonstantide definitsiooni põhjal on selge, et struktuurik
 \begin{align} \label{eq:struktuurikonst-antikomm}
 c_{ij}^{k} = \left[t_i, t_j\right] = - \left[t_j, t_i\right] = - c_{ji}^{k},
 \end{align}
-kus $t_i, t_j$ on Lie algebra baasivektorid. Tuletame nüüd Jacobi samasuse struktuurikonstantide jaoks:
+kus $t_i, t_j$ on Lie algebra generaatorid. Tuletame nüüd Jacobi samasuse struktuurikonstantide jaoks:
 \begin{align*}
 \left[t_i, \left[t_j, t_k\right]\right] + \left[t_j, \left[t_k, t_i\right]\right] + \left[t_k, \left[t_i, t_j\right]\right] = 0 \\
 \left[t_i, c_{jk}^{l}t_l\right] + \left[t_j, c_{ki}^{l}t_l\right] + \left[t_k, c_{ij}^{l}t_l\right] = 0 \\
@@ -994,18 +1012,23 @@ ehk $\left[ u_1, \left[u_2, v\right] \right] - \left[ u_2, \left[u_1, v \right] 
 Leiame Lie algebra $\mathfrak{su}\left(2\right)$ baasi $\{\rho_1, \rho_2, \rho_3\}$ adjungeeritud esituse
 \[\{\ad \rho_1, \ad \rho_2, \ad \rho_3\}.\]
 Arvestades adjungeeritud esituse definitsiooni, tuleb meil selleks arvutada maatriksid $\ad \rho_1 \left(\rho_1\right), \ad \rho_1 \left(\rho_2\right), \ldots, \ad \rho_3 \left(\rho_2\right)$ ja $\ad \rho_3 \left(\rho_3\right)$. Teemegi seda:
+
 \begin{align*}
 \ad \rho_1 \left(\rho_1\right) &= \left[\rho_1, \rho_1\right] = \rho_1 \rho_1 - \rho_1 \rho_1 = 0, \\
 \ad \rho_1 \left(\rho_2\right) &= \left[\rho_1, \rho_2\right] = \rho_1 \rho_2 - \rho_2 \rho_1 = -2\rho_3, \\
-\ad \rho_1 \left(\rho_3\right) &= \left[\rho_1, \rho_3\right] = \rho_1 \rho_2 - \rho_3 \rho_1 = 2\rho_2,  \\
+\ad \rho_1 \left(\rho_3\right) &= \left[\rho_1, \rho_3\right] = \rho_1 \rho_2 - \rho_3 \rho_1 = 2\rho_2, \\
 \ad \rho_2 \left(\rho_1\right) &= \left[\rho_2, \rho_1\right] = - \left[\rho_1, \rho_2\right] = - \ad \rho_1 \left(\rho_2\right) = 2\rho_3 \\
-\ad \rho_2 \left(\rho_2\right) &= \left[\rho_2, \rho_2\right] = \rho_2 \rho_2 - \rho_2 \rho_2 = 0, \\
+\ad \rho_2 \left(\rho_2\right) &= \left[\rho_2, \rho_2\right] = \rho_2 \rho_2 - \rho_2 \rho_2 = 0,
+\end{align*}
+\begin{align*}
 \ad \rho_2 \left(\rho_3\right) &= \left[\rho_2, \rho_3\right] = \rho_2 \rho_2 - \rho_3 \rho_2 = -2\rho_1, \\
 \ad \rho_3 \left(\rho_1\right) &= \left[\rho_3, \rho_1\right] = - \left[\rho_1, \rho_3\right] = - \ad \rho_1 \left(\rho_3\right) = -2\rho_2, \\
 \ad \rho_3 \left(\rho_2\right) &= \left[\rho_3, \rho_2\right] = - \left[\rho_2, \rho_3\right] = - \ad \rho_2 \left(\rho_3\right) = 2\rho_1, \\
 \ad \rho_3 \left(\rho_3\right) &= \left[\rho_3, \rho_3\right] = \rho_3 \rho_3 - \rho_3 \rho_3 = 0.
 \end{align*}
+
 Saadud võrduste põhjal võime nüüd kirjutada
+
 \begin{align*}
 \ad \rho_1 = 2\begin{pmatrix}
 0 & 0 & 0 \\
@@ -1023,6 +1046,7 @@ Saadud võrduste põhjal võime nüüd kirjutada
 0 & 0 & 0
 \end{pmatrix},
 \end{align*}
+
 mis tähendab, Lie algebra $\mathfrak{su}\left(2\right)$ adjungeeritud esituse baasiks sobib kolmandat järku antisümmeetriliste maatriksite süsteem 
 \[\left\lbrace \begin{pmatrix}
 0 & 0 & 0 \\
@@ -1045,7 +1069,37 @@ mis tähendab, Lie algebra $\mathfrak{su}\left(2\right)$ adjungeeritud esituse b
 Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on topoloogiline muutkond ja tema (rühma) tehe on diferentseeruv.
 \end{definitsioon}
 
-\textcolor{red}{Näita, et Lorentzi ja Poincare rühmad on tegelikult koguni Lie rühmad.}
+\begin{definitsioon}
+Olgu $G$ Lie rühm ühikelemendiga $e$. Rühma $G$ puutujatasandit $T_e G$ punktis $e$ nimetatakse Lie rühma $G$ (poolt määratud) \emph{Lie algebraks}.
+\end{definitsioon}
+
+\textcolor{red}{
+Osutub, et Lorentzi rühm $\L_{GH}$ ja Poincar\'e rühm $\P$ on oma matemaatilistelt omadustelt Lie rühmad. Et selle väite formaalne tõestamine nõuab palju tehnilist tööd ja tulemusi diferentsiaalgeomeetriast ning Lie algebrate teooriast, siis jätame siinkohal range tõestuse andmata ja piirume vaid ideega kuidas näidata, et $\L_{GH}$ on Lie rühm.}
+
+Edasise teooriaarenduse seisukohtalt on otstarbekas eeldada, et vaadeldavad Lie rühmad on maatriksrühmad. Teemegi seda.
+
+Järgnevalt uurime kuidas tekib Lie rühma poolt määratud Lie algebra kommutaator. Olgu $G$ Lie rühm ning $e$ selle rühma ühikelement. Kuna $G$ on Lie rühm, siis definitsiooni järgi on $G$ ka muutkond. Muutkonnal $G$ võime vaadelda parameetrilist joont $g\left(t\right) \in G$, $t \in \left(-\delta, \delta\right)$, kus $\delta \in \R$ on mingi fikseeritud arv ja nõuame, et $g\left(0\right) = e$. Sel viisil saame muutkonna $G$ puutujavektori $v = g'\left(0\right) \in T_e G$ punktis $e$.
+
+Fikseerime elemendi $h \in G$ ning tekitame loomuliku viisil automorfismi: $g \mapsto h \cdot g \cdot h^{-1}$. Nüüd saame vaadelda joone $h \cdot g\left(t\right) h^{-1}$ puutujavektorit $v_h$. Meie eesmärk oleks välja selgitada millises vahekorras on puutujavektorid $v$ ja $v_h$.
+
+Oletame järgnevalt, et meil on muutkonnal $G$ antud kaks parameetrilist joont $g\left(t\right)$ ja $h\left(t\right)$, $t \in \left(-\delta, \delta\right)$, selliselt, et $g\left(0\right) = h\left(0\right) = e$. Sel viisil võime vaadelda kommutanti $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right)$, kusjuures on selge, et kommutatiivse rühma korral annab selline kommutant tulemuseks alalti ühikelemendi $e$. Lie rühmade teooriast on hästi teada\footnote{Vaata näiteks \cite[Exponential map]{Kirillov}} fakt, et kui $G$ on Lie algebra, siis eksisteerib sürjektsioon $\exp : T_e G \rightarrow G$, kus $T_e G$ on rühma $G$ ühikelemendi puutujatasandi Lie algebra. Seega saame leida $A, B \in T_e G$ selliselt, et $g\left(t\right) = e^{tA}$ ja $h\left(t\right) = e^{tB}$. 
+
+Nõnda saame kommutandi $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right)$ arvutamise taandada juba Lie algebrale $T_e G$, sest arvestades eelnevat ja maatrikseksponendi omadusi, kehtib võrdus $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = e^{tA} e^{tB} e^{-tA} e^{-tB}$. Viimast oskame aga juba välja arvutada:
+\begin{align*}
+&\hphantom{=}\ \ g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = e^{tA} e^{tB} e^{-tA} e^{-tB} = \\
+&= \left(E + At + \frac{1}{2}A^2 t^2 + \ldots \right) \left(E + Bt + \frac{1}{2}B^2 t^2 + \ldots \right) \\
+&\hphantom{=}\ \left(E - At + \frac{1}{2}A^2 t^2 - \ldots \right) \left(E - Bt + \frac{1}{2}B^2 t^2 - \ldots \right) = \\
+&= E + \left(A + B - A - B\right)t + \\
+&+ \left(AB - A^2 - AB - BA - B^2 + AB + \frac{1}{2} A^2 + \frac{1}{2} B^2 + \frac{1}{2} A^2 + \frac{1}{2} B^2\right)t^2 \\
+&+ \ldots = E + 0 + \left(AB - BA\right)t^2 + \ldots = E + \left[A, B\right]t^2 + \ldots
+\end{align*}
+
+Niisiis, teises lähenduses peab kehtima $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = E + \left[A, B\right]t^2$.
+
+\textcolor{red}{Põhjenda siin natuke kirjapandut!}
+
+\subsection{Poincar\'e algebra kommutatsioonieeskirjad}
+
 
 \newpage
 \section*{Summary}
