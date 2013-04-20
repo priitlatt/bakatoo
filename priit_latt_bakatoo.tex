@@ -912,34 +912,38 @@ Tingimusest \ref{eq:lambdaeta1}
 \subsection{Lie algebra}
 
 \begin{definitsioon} \label{def:lie-algebra}
-Vektorruumi $L$ nimetatakse \emph{Lie algebraks}, kui on määratud bilineaarvorm $\left[\phantom{u};\phantom{u}\right] : L \times L \rightarrow L$, mis on antikommuteeruv, see tähendab kõikide $u, v \in L$ korral $\left[u, v\right] = - \left[v, u\right]$ ja iga $u, v, w \in L$ puhul kehtib Jacobi samasus ehk $\left[u, \left[v, w\right]\right] + \left[v, \left[w, u\right]\right] + \left[w, \left[u, v\right]\right] = 0$.
+Vektorruumi $L$ nimetatakse \emph{Lie algebraks}, kui on määratud bilineaarvorm $\left[\phantom{u},\phantom{u}\right] : L \times L \rightarrow L$, mis on antikommuteeruv, see tähendab kõikide $u, v \in L$ korral $\left[u, v\right] = - \left[v, u\right]$ ja iga $u, v, w \in L$ puhul kehtib Jacobi samasus ehk $\left[u, \left[v, w\right]\right] + \left[v, \left[w, u\right]\right] + \left[w, \left[u, v\right]\right] = 0$.
 \end{definitsioon}
 
-\begin{definitsioon}
-Bilineaarvormi $\left[\phantom{u};\phantom{u}\right] : L \times L \rightarrow L$ Lie algebra definitsioonist nimetatakse \emph{kommutaatoriks}.
-\end{definitsioon}
+Bilineaarvormi $\left[\phantom{u}, \phantom{u}\right] : L \times L \rightarrow L$ Lie algebra definitsioonist nimetatakse \emph{kommutaatoriks}.
 
 Piltlikult võib öelda, et kommutaator mõõdab kui palju on Lia algebra elemendid mittekommuteeruvad.
 
 \begin{definitsioon}
-Olgu $L$ Lie algebra ja $\{t_i\}_{i = 1}^{r}$ selle algebra bass. Kui tähistame $\left[t_i, t_j\right] = c_{ij}^{k} t_{k}$, kus $i,j \in \{1, 2, \ldots, r\}$, siis arve $c_{ij}^{k}$ nimetame Lie algebra \emph{struktuurikonstantideks}.
+Olgu $L$ lõplikumõõtmeline Lie algebra ja $\{t_i\}_{i = 1}^{r}$ selle Lie algebra vektoruumi bass. Kui tähistame $\left[t_i, t_j\right] = c_{ij}^{k} t_{k}$, kus $i,j \in \{1, 2, \ldots, r\}$, siis arve $c_{ij}^{k}$ nimetame Lie algebra \emph{struktuurikonstantideks}.
 \end{definitsioon}
 
 \begin{markus}
 Lie algebrate kontekstis nimetatakse baasivektoreid sageli ka algebra \emph{generaatoriteks}.
 \end{markus}
 
-Lie algebra struktuurikonstantide definitsiooni põhjal on selge, et struktuurikonstantide väärtus sõltub Lie algebra baasi valikust. Lisaks saame vahetult kommutaatori antikommuteeruvusest omaduse
-\begin{align} \label{eq:struktuurikonst-antikomm}
-c_{ij}^{k} = \left[t_i, t_j\right] = - \left[t_j, t_i\right] = - c_{ji}^{k},
-\end{align}
-kus $t_i, t_j$ on Lie algebra generaatorid. Tuletame nüüd Jacobi samasuse struktuurikonstantide jaoks:
+Lie algebra struktuurikonstantide definitsiooni põhjal on selge, et struktuurikonstantide väärtus sõltub Lie algebra baasi valikust. Lisaks saame vahetult kommutaatori antikommuteeruvusest
 \begin{align*}
-\left[t_i, \left[t_j, t_k\right]\right] + \left[t_j, \left[t_k, t_i\right]\right] + \left[t_k, \left[t_i, t_j\right]\right] = 0 \\
-\left[t_i, c_{jk}^{l}t_l\right] + \left[t_j, c_{ki}^{l}t_l\right] + \left[t_k, c_{ij}^{l}t_l\right] = 0 \\
-c_{jk}^{l} \left[t_i, t_l\right] + c_{ki}^{l} \left[t_j, t_l\right] + c_{ij}^{l} \left[t_k, t_l\right] = 0 \\
-c_{jk}^{l} c_{il}^{m} t_m + c_{ki}^{l} c_{jl}^{m} t_m + c_{ij}^{l} c_{kl}^{m} t_m = 0 \\
-c_{jk}^{l} c_{il}^{m} + c_{ki}^{l} c_{jl}^{m} + c_{ij}^{l} c_{kl}^{m} = 0
+c_{ij}^{k} t_k = \left[t_i, t_j\right] = - \left[t_j, t_i\right] = - c_{ji}^{k} t_k
+\end{align*}
+ehk
+\begin{align} \label{eq:struktuurikonst-antikomm}
+c_{ij}^{k} = -c_{ji}^{k},
+\end{align}
+kus $t_i, t_j, t_k$ on Lie algebra generaatorid.
+
+Kasutades Jacobi samasust baasivektoritele tuletame nüüd seosed struktuurikonstantide jaoks: 
+\begin{align*}
+\left[t_i, \left[t_j, t_k\right]\right] + \left[t_j, \left[t_k, t_i\right]\right] + \left[t_k, \left[t_i, t_j\right]\right] = 0, \\
+\left[t_i, c_{jk}^{l}t_l\right] + \left[t_j, c_{ki}^{l}t_l\right] + \left[t_k, c_{ij}^{l}t_l\right] = 0, \\
+c_{jk}^{l} \left[t_i, t_l\right] + c_{ki}^{l} \left[t_j, t_l\right] + c_{ij}^{l} \left[t_k, t_l\right] = 0, \\
+c_{jk}^{l} c_{il}^{m} t_m + c_{ki}^{l} c_{jl}^{m} t_m + c_{ij}^{l} c_{kl}^{m} t_m = 0, \\
+c_{jk}^{l} c_{il}^{m} + c_{ki}^{l} c_{jl}^{m} + c_{ij}^{l} c_{kl}^{m} = 0.
 \end{align*}
 
 Kokkuvõttes saame Lie algebra generaatorite kohta sõnastada järgmise tähtsa tulemuse.
@@ -950,12 +954,20 @@ Lie algebra on täielikult määratud tema generaatorite kommutatsiooni\-eeskirj
 \begin{naide} \label{naide:su2}
 Vaatleme teist järku ruutmaatriksite hulka $\mathfrak{su}\left(2\right) \subset \Mat_2 \mathbb{C}$, kus $u \in \mathfrak{su}\left(2\right)$ rahuldab tingimusi
 \begin{align}
-\Tr u &= 0 \text{ ja} \label{eq:su2-tr=0}\\ 
-u^t &= \bar{u}^T. \label{eq:su2-antihermitian}
+\Tr u &= 0, \label{eq:su2-tr=0}\\ 
+u^\dag + u &= 0. \label{eq:su2-antihermitian}
 \end{align}
-Hulk $\mathfrak{su}\left(2\right)$ koos tavalise Lie sulgude kommutaatoriga $\left[u,v\right] = uv - vu$, $u, v \in \mathfrak{su}\left(2\right)$, on Lie algebra.\footnote{Tingimus $u + u^t = 0$ tähendab, et $u$ on anti-Hermite'i maatriks}
+Siin $u^\dag = \bar{u}^T$ ja maatirksit $u$, mis rahuldab tingimust \ref{eq:su2-antihermitian} nimetatakse \emph{anti-Hermite'i maatriksiks}.
+ 
+Veenudme, et $\mathfrak{su}\left(2\right)$ koos tavalise maatrikskommutaatoriga $\left[u,v\right] = uv - vu$, $u, v \in \mathfrak{su}\left(2\right)$, on Lie algebra.
 
-Olgu $u, v, w \in \mathfrak{su}\left(2\right)$. Kõigepealt märgime, et $\left(u + v\right) + \left(u + v\right)^t = u + v + u^t + v^t = 0$ ning $\Tr \left(u + v\right) = 0$ ehk $u + v \in \mathfrak{su}\left(2\right)$. Veendumaks, et $\mathfrak{su}\left(2\right)$ on Lie algebra piisab nüüd näidata, et kommutaator $\left[\phantom{u}, \phantom{u}\right]$ rahuldab definitsioonis \ref{def:lie-algebra} antud tingimusi ning $\left[u,v\right] \in \mathfrak{su}\left(2\right)$ ja $\Tr \left[u,v\right] = 0$. \\
+Olgu $u, v, w \in \mathfrak{su}\left(2\right)$. Kõigepealt märgime, et 
+\begin{align*}
+\left(u + v\right) + \left(u + v\right)^\dag &= u + v + u^t + v^t = 0, \\
+\Tr \left(u + v\right) &= 0
+\end{align*}
+ehk $u + v \in \mathfrak{su}\left(2\right)$. Veendumaks, et $\mathfrak{su}\left(2\right)$ on Lie algebra piisab nüüd veel näidata, et kommutaator $\left[\phantom{u}, \phantom{u}\right]$ rahuldab definitsioonis \ref{def:lie-algebra} antud tingimusi ning $\left[u,v\right] \in \mathfrak{su}\left(2\right)$ ja $\Tr \left[u,v\right] = 0$. 
+
 Paneme tähele, et definitsiooni järgi $\left[u,v\right] = uv - vu = - \left(vu - uv\right) = - \left[v,u\right]$ ning 
 kehtib Jacobi samasus, sest
 \begin{align*}
@@ -965,15 +977,19 @@ kehtib Jacobi samasus, sest
 &= uvw - vwu - uwv + wvu + vwu - wuv - \\
 &- vuw + uwv + wuv - uvw - wvu + vuw = 0.
 \end{align*}
-Seega definitsiooni \ref{def:lie-algebra} eeldused on täidetud. Teoreemi \ref{teor:trace} põhjal $\Tr \left(uv\right) = \Tr \left(vu\right)$ ja seega $\Tr \left[u,v\right] = 0$. Lõpuks paneme veel tähele, et $\left[u,v\right] + \left[u,v\right]^t = 0$. Tõepoolest,
+Seega on definitsiooni \ref{def:lie-algebra} eeldused täidetud. Teoreemi \ref{teor:trace} põhjal $\Tr \left(uv\right) = \Tr \left(vu\right)$, millest saame $\Tr \left[u,v\right] = 0$. Lõpuks paneme veel tähele, et $\left[u,v\right] + \left[u,v\right]^\dag = 0$. Tõepoolest, kuna $u^\dag = -u$ ja $v^\dag = -v$, siis
 \begin{align*}
-\left[u,v\right] + \left[u,v\right]^t &= uv - vu + \left(uv - vu\right)^t = uv - vu + \left(uv\right)^t - \left(vu\right)^t = \\
-&= uv - vu + v^t u^t - u^t v^t = uv - vu + vu - uv = 0.
+\left[u,v\right] + \left[u,v\right]^\dag &= uv - vu + \left(uv - vu\right)^\dag = uv - vu + \left(uv\right)^\dag - \left(vu\right)^\dag = \\
+&= uv - vu + v^\dag u^\dag - u^\dag v^\dag = uv - vu + vu - uv = 0.
 \end{align*}
 \end{naide}
 
-Näites \ref{naide:su2} toodud Lie algebrat $\mathfrak{su}\left(2\right)$ nimetatakse \emph{teist järku spetsiaalsete unitaarsete maatriksite} Lie algebraks. \textcolor{red}{Siin tuleks juttu teha miks su(2) nii oluline on ja kuidas ta käesoleva tööga seotud on.} \\
-Uurime edasises veel pisut Lie algebra $\mathfrak{su}\left(2\right)$ omadusi. Tingimusest \ref{eq:su2-tr=0} saame, et $u \in \mathfrak{su}\left(2\right)$ peab omama kuju $u = \begin{pmatrix} a & b \\ c & -a\end{pmatrix}$ ning arvestades ka tingimust \ref{eq:su2-antihermitian}, peab seega kehtima $\begin{pmatrix} a & b \\ c & -a\end{pmatrix} + \begin{pmatrix} \overline{a} & \overline{c} \\ \overline{b} & \overline{-a} \end{pmatrix} = 0$, millest saame järgmised tingimused:
+Näites \ref{naide:su2} toodud Lie algebrat $\mathfrak{su}\left(2\right)$ nimetatakse \emph{teist järku spetsiaalsete unitaarsete maatriksite} Lie algebraks. Osutub, et Yang-Millsi väljateoorias on Lie algebral $\mathfrak{su}\left(2\right)$ väga tähtis roll seoses Lagrangian'i sümmeetriatega. Lisaks, käesoleva töö seisukohast on vahest isegi olulisem asjaolu, et Lie algebrat $\mathfrak{su}\left(2\right)$ kasutatakse Lorentzi rühma spiinoresituse konstrueerimiseks.
+
+Uurime edasises veel pisut Lie algebra $\mathfrak{su}\left(2\right)$ omadusi. Tingimusest \ref{eq:su2-tr=0} saame, et $u \in \mathfrak{su}\left(2\right)$ peab omama kuju 
+$u = \begin{pmatrix} a & b \\ c & -a\end{pmatrix}$. Arvestades ka tingimust \ref{eq:su2-antihermitian}, peab seega kehtima
+\[\begin{pmatrix} a & b \\ c & -a\end{pmatrix} + \begin{pmatrix} \overline{a} & \overline{c} \\ \overline{b} & \overline{-a} \end{pmatrix} = 0,\]
+millest saame järgmised tingimused:
 \begin{align*}
 \begin{cases}
     a + \overline{a} = 0, \\
