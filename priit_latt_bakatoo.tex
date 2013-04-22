@@ -272,11 +272,12 @@ Olgu $X, Y \in \Mat_n \K$ ruutmaatriksid ja $k, l \in \K$. Siis
 \item $e^{X} e^{-X} = E$,
 \item kui $XY = YX$, siis $e^Y e^X = e^X e^Y = e^{\left(X + Y\right)}$,
 \item kui $Y$ on pööratav, siis $e^{YXY^{-1}} = Ye^XY^{-1}$,
-\item kui $e^X$ on pööratav, siis $\left(e^X\right)^{-1} = e^{-X}$.
+\item kui $e^X$ on pööratav, siis $\left(e^X\right)^{-1} = e^{-X}$,
+\item $\det e^X = e^{\Tr X}$.
 \end{itemize}
 \end{lause}
 
-\subsection{Topoloogiline muutkond}
+\subsection{Muutkond}
 
 \begin{definitsioon}
 Topoloogilist ruumi $\left(X, \tau\right)$ nimetatakse \emph{$n$-mõõtmeliseks topoloogilseks muutkonnaks}, kui
@@ -291,8 +292,7 @@ Muutkonda tähistame tähega $M$.
 Muutkonda võime vaadelda kui geomeetrilise pinna üldistust. Vahetult muutkonna definitsiooni põhjal on selge ($\tau$ on Hausdorffi topoloogiline ruum), et muutkonna iga punkti mingit ümbrust võime vaadelda kui $n$-mõõtmelist eukleidilist ruumi.
 
 \begin{definitsioon}
-Olgu $M$ muutkond ja $B \subset \R^n$ lahtine alamhulk. Paari $\left(p, \psi\right)$, kus $p \in A \subset M$ ja $\psi : A \rightarrow B$ on homöomorfism nimetatakse muutkonna $M$ \emph{lokaalseks kaardiks} punktis $p$.\\
-Kui muutkonna $M$ saab katta ühe lokaalse kaardiga, siis öeldakse, et muutkond $M$ on \emph{triviaalne}.
+Me ütleme, et muutkond $M$ on \emph{ühelisidus}, kui suvalise kinnise joone võib pideva deformatsiooni abil sellel muutkonnal tõmmata üheks punktiks.
 \end{definitsioon}
 
 \begin{naide}
@@ -308,12 +308,51 @@ Järgmised hulgad on topoloogilised muutkonnad.
 \end{itemize}
 \end{naide}
 
+Arvestades käesoleva töö peatükis \ref{ptk:lie_ryhm} antud Lie rühma definitsiooni, tutvustame lühidalt ka diferentseeruva muutkonna mõistet.
+
 \begin{definitsioon}
-Me ütleme, et muutkond $M$ on \emph{ühelisidus}, kui suvalise kinnise joone võib pideva deformatsiooni abil tõmmata üheks punktiks.
+Olgu $M$ muutkond ja $B \subset \R^n$ lahtine alamhulk. Paari $\left(p, \psi\right)$, kus $p \in U \subset M$ ja $\psi : U \rightarrow B$ on homöomorfism nimetatakse muutkonna $M$ \emph{lokaalseks kaardiks punktis $p$}. Analoogliselt ütleme paari $\left(U, \psi\right)$ kohta \emph{piirkonna $U$ lokaalne kaart}. Kõikide muutkonna $M$ lokaalsete kaartide kogumit nimetatakse \emph{atlaseks}.\\
+Kui muutkonna $M$ saab katta ühe lokaalse kaardiga, siis öeldakse, et muutkond $M$ on \emph{triviaalne}.
+\end{definitsioon}
+
+Olgu meil $n$-mõõtmeline topoloogiline muutkond $M$ ja $U,V$ selle muutkonna piirkonnad, kusjuures $U \cap V \neq \emptyset$. Vaatleme muutkonna $M$ lokaalseid kaarte $\left(U, \phi\right)$ ja $\left(V, \psi\right)$. Kui $p \in U \cap V$, siis saame esitada punkti $p$ lokaalsed koordinaadid kahel järgmisel viisil:
+\begin{align*}
+\phi\left(p\right) &= \left(\phi^1\left(p\right), \phi^2\left(p\right), \ldots, \phi^n\left(p\right)\right) \in \R^n, \\
+\psi\left(p\right) &= \left(\psi^1\left(p\right), \psi^2\left(p\right), \ldots, \psi^n\left(p\right)\right) \in \R^n.
+\end{align*}
+
+Tekib loomulik küsimus kuidas avalduvad punkti $p$ ühed lokaalsed koordinaadid teiste kaudu. Et kujutused $\phi$ ja $\psi$ on homöomorfismid, siis leiduvad pöördkujutused $\phi^{-1}$ ja $\psi^{-1}$ ning seega saame koostada kompositsioonid
+\begin{align*}
+\phi \circ \psi^{-1} &: \psi\left(U \cap V\right) \rightarrow \phi\left(U \cap V\right), \\
+\psi \circ \phi^{-1} &: \phi\left(U \cap V\right) \rightarrow \psi\left(U \cap V\right).
+\end{align*}
+Selge, et kujutused $\phi \circ \psi^{-1}$ ja $\psi \circ \phi^{-1}$ on ruumi $\R^n$ lahtiste hulkade $\psi\left(U \cap V\right)$ ning $\phi \left(U \cap V\right)$ homöomorfismid, seejuures koguni üksteise pöördkujutused. Komponentides kirjutades saame
+\begin{align*}
+\phi \circ \psi^{-1} &: \phi^i = g^i \left(\psi^1, \psi^2, \ldots, \psi^n\right), \\
+\psi \circ \phi^{-1} &: \psi^i = h^i \left(\phi^1, \phi^2, \ldots, \phi^n\right),
+\end{align*}
+kus $i = 1, 2, \ldots, n$. Niisiis iga $i$ korral on funktsioonid $g^i$ ja $h^i$ pidevad ja kehtivad võrdused
+\begin{align*}
+g^i \left(h^1\left(\phi\right), h^2\left(\phi\right), \ldots, h^n\left(\phi\right)\right) &= \phi^i, \\
+h^i \left(g^1\left(\psi\right), g^2\left(\psi\right), \ldots, g^n\left(\psi\right)\right) &= \psi^i.
+\end{align*}
+Seejuures funktsioone $g^i$ ja $h^i$, $i = 1, 2, \ldots, n$, nimetatakse \emph{üleminekufunktsioonideks}. 
+
+Nüüd, kui $\left(U, \phi\right), \left(V, \psi\right)$ on muutkonna $M$ lokaalsed kaardid ja $U \cap V \neq \emptyset$ ning sellest järeldub, et üleminekufunktsioonid $g^i\left(\psi\right), h^i\left(\phi\right)$ on lõpmata diferentseeruvad ehk siledad, siis ütleme, et kaardid $\left(U, \phi\right)$ ja $\left(V, \psi\right)$ on $C^{\infty}$\emph{-kooskõlalised}.
+
+Olgu $\mathcal{A}$ on mingi indeksite hulk. Kui muutkonnal $M$ on määratud kogum $\mathfrak{U} = \left\lbrace \left(U_\alpha, \phi_\alpha\right) : \alpha \in \mathcal{A} \right\rbrace$, mis rahuldab tingimusi
+\begin{itemize}
+\item [$\left(i\right)$] $\cap_\alpha U_\alpha$ on muutkonna $M$ kate;
+\item [$\left(ii\right)$] suvaliste $\alpha, \beta \in \mathcal{A}$ korral on lokaalsed kaardid $\left(U_\alpha, \phi_\alpha\right), \left(U_\beta, \phi_\beta\right)$ $C^\infty$-kooskõlalised;
+\item [$\left(iii\right)$] kui $\left(V, \psi\right)$ on topoloogilise muutkonna $M$ lokaalne kaart, mis on $C^\infty$-kooskõlaline kogumi $\mathfrak{U}$ kõigi kaartidega, siis $\left(V, \psi\right) \in \mathfrak{U}$;
+\end{itemize}
+siis kogumit $\mathfrak{U}$ nimetatakse topoloogilisel muutkonnal $M$ määratud \emph{diferentseeruvaks struktuuriks}.
+
+\begin{definitsioon}
+Kui $n$-mõõtmelisel topoloogilised muutkonnal $M$ on määratud diferentseeruv struktuur $\mathfrak{U}$, siis nimetatakse muutkonda $M$ \emph{diferentseeruvaks muutkonnaks}.
 \end{definitsioon}
 
 \newpage
-
 \section{Minkowski ruumi geomeetriline struktuur}
 
 \subsection{Skalaarkorrutise definitsioon ja omadused}
@@ -1056,7 +1095,9 @@ maatrikskuju. Arvestades adjungeeritud esituse definitsiooni, tuleb meil selleks
 \ad \rho_1 \left(\rho_1\right) &= \left[\rho_1, \rho_1\right] = \rho_1 \rho_1 - \rho_1 \rho_1 = 0, \\
 \ad \rho_1 \left(\rho_2\right) &= \left[\rho_1, \rho_2\right] = \rho_1 \rho_2 - \rho_2 \rho_1 = -2\rho_3, \\
 \ad \rho_1 \left(\rho_3\right) &= \left[\rho_1, \rho_3\right] = \rho_1 \rho_2 - \rho_3 \rho_1 = 2\rho_2, \\
-\ad \rho_2 \left(\rho_1\right) &= \left[\rho_2, \rho_1\right] = - \left[\rho_1, \rho_2\right] = - \ad \rho_1 \left(\rho_2\right) = 2\rho_3, \\
+\ad \rho_2 \left(\rho_1\right) &= \left[\rho_2, \rho_1\right] = - \left[\rho_1, \rho_2\right] = - \ad \rho_1 \left(\rho_2\right) = 2\rho_3, 
+\end{align*}
+\begin{align*}
 \ad \rho_2 \left(\rho_2\right) &= \left[\rho_2, \rho_2\right] = \rho_2 \rho_2 - \rho_2 \rho_2 = 0, \\
 \ad \rho_2 \left(\rho_3\right) &= \left[\rho_2, \rho_3\right] = \rho_2 \rho_2 - \rho_3 \rho_2 = -2\rho_1, \\
 \ad \rho_3 \left(\rho_1\right) &= \left[\rho_3, \rho_1\right] = - \left[\rho_1, \rho_3\right] = - \ad \rho_1 \left(\rho_3\right) = -2\rho_2, \\
@@ -1102,7 +1143,7 @@ mis tähendab, Lie algebra $\su2$ adjungeeritud esituse baasiks sobib kolmandat 
 
 Osutub, et saadud maatriksid moodustavad $3$-mõõtmelise ruumi pöörete rühma Lie algebra baasi. Sellega oleme sisuliselt näidanud, et tegelikult on Lie algebra $\su2$ ja pöörete rühma vahel väga tähtis seos.
 
-\subsection{Lie rühm}
+\subsection{Lie rühm} \label{ptk:lie_ryhm}
 
 \begin{definitsioon}
 Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on diferentseeruv muutkond ja tema (rühma) tehe on diferentseeruv.
@@ -1112,29 +1153,28 @@ Rühma $G$ nimetatakse \emph{Lie rühmaks}, kui ta on diferentseeruv muutkond ja
 Olgu $G$ Lie rühm ja $e$ selle rühma ühikelement. Rühma $G$ puutujaruumi $T_e G$ punktis $e$ nimetatakse Lie rühma $G$ (poolt määratud) \emph{Lie algebraks}.
 \end{definitsioon}
 
-Osutub, et eespool vaatluse all olnud Lorentzi rühm $\L_{GH}$ ja Poincar\'e rühm $\P$ on oma matemaatilistelt omadustelt koguni Lie rühmad. Et selle väite formaalne tõestamine nõuab palju tehnilist tööd ja tulemusi diferentsiaalgeomeetriast ning Lie algebrate teooriast, siis jätame siinkohal range tõestuse andmata ning piirdume vaid fakultatiivse tulemusega.
+Osutub, et eespool vaatluse all olnud Lorentzi rühm $\L_{GH}$ ja Poincar\'e rühm $\P$ on oma matemaatilistelt omadustelt koguni Lie rühmad.\cite[Poincar\'e algebra]{Super} Et selle väite formaalne tõestamine nõuab palju tehnilist tööd ja tulemusi diferentsiaalgeomeetriast ning Lie algebrate teooriast, siis jätame siinkohal range tõestuse andmata ja piirdume vaid faktiga.
 
-Et edasist teooriaarendust oluliselt lihtsustada, on otstarbekas piirduda vaid Lie maatriksrühmade vaatlemisega. Samas märgime, et kuna maatriksrühmad moodustavad väga suure ja olulise rühmade klassi, siis kõik tähtsamad rühmad ja selles töös käsitletavad juhud jäävad kaetuks ka pärast sellise kitsenduse lisamist. Niisiis edasises eeldame, et kui tegelist on Lie rühmaga, siis see on maatriksrühm.
+Et edasist teooriaarendust oluliselt lihtsustada, on järgnevas otstarbekas piirduda vaid Lie maatriksrühmade vaatlemisega. Samas märgime, et kuna maatriksrühmad moodustavad väga suure ja olulise rühmade klassi, siis kõik tähtsamad rühmad, muuhulgas ka selles töös käsitletavad juhud jäävad kaetuks ka pärast sellise kitsenduse lisamist. Niisiis edasises eeldame, et kui tegelist on Lie rühmaga, siis see rühm on maatriksrühm.
 
-Järgnevalt uurime kuidas tekib Lie rühma poolt määratud Lie algebra kommutaator. Olgu $G$ Lie rühm ning $e$ selle rühma ühikelement. Kuna $G$ on Lie rühm, siis definitsiooni järgi on $G$ ka muutkond. Muutkonnal $G$ võime vaadelda parameetrilist joont $g\left(t\right) \in G$, $t \in \left(-\delta, \delta\right)$, kus $\delta \in \R$ on mingi fikseeritud arv ja nõuame, et $g\left(0\right) = e$. Sel viisil saame muutkonna $G$ puutujavektori $v = g'\left(0\right) \in T_e G$ punktis $e$.
+Lie rühmade teoorias nöidatakse, et igale Lie rühmale vastab tema Lie algebra. Meie uurime järgnevalt, kuidas tekib Lie rühma poolt määratud Lie algebra kommutaator. Olgu $G$ Lie maatriksrühm ning $E$ selle rühma ühikelement. Kuna $G$ on Lie rühm, siis definitsiooni järgi on $G$ ka muutkond. Muutkonnal $G$ võime vaadelda parameetrilist joont $g\left(t\right) \in G$, $t \in \left(-\delta, \delta\right)$, kus $\delta \in \R$ on mingi fikseeritud arv ja nõuame, et $g\left(0\right) = E$. Sel viisil saame muutkonna $G$ puutujavektori $v = g'\left(0\right) \in T_E G$ punktis $E$.
 
-Fikseerime elemendi $h \in G$ ning tekitame loomuliku viisil automorfismi: $g \mapsto h \cdot g \cdot h^{-1}$. Nüüd saame vaadelda joone $h \cdot g\left(t\right) h^{-1}$ puutujavektorit $v_h$. Meie eesmärk oleks välja selgitada millises vahekorras on puutujavektorid $v$ ja $v_h$.
+Fikseerime elemendi $h \in G$. Nüüd määrab meie fikseeritud $h$ loomulikul viisil automorfismi $g \mapsto h \cdot g \cdot h^{-1}$. Nii võime vaadelda joone $h \cdot g\left(t\right) h^{-1}$ puutujavektorit $v_h$. Meie eesmärk on välja selgitada millises vahekorras on puutujavektorid $v$ ja $v_h$.
 
-Oletame järgnevalt, et meil on muutkonnal $G$ antud kaks parameetrilist joont $g\left(t\right)$ ja $h\left(t\right)$, $t \in \left(-\delta, \delta\right)$, selliselt, et $g\left(0\right) = h\left(0\right) = e$. Sel viisil võime vaadelda kommutanti $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right)$, kusjuures on selge, et kommutatiivse rühma korral annab selline kommutant tulemuseks alalti ühikelemendi $e$. Lie rühmade teooriast on hästi teada\footnote{Vaata näiteks \cite[Exponential map]{Kirillov}} fakt, et kui $G$ on Lie algebra, siis eksisteerib sürjektsioon $\exp : T_e G \rightarrow G$, kus $T_e G$ on rühma $G$ ühikelemendi puutujatasandi Lie algebra. Seega saame leida $A, B \in T_e G$ selliselt, et $g\left(t\right) = e^{tA}$ ja $h\left(t\right) = e^{tB}$. 
+Oletame järgnevalt, et meil on muutkonnal $G$ antud kaks parameetrilist joont $g\left(t\right)$ ja $h\left(t\right)$, $t \in \left(-\delta, \delta\right)$, selliselt, et $g\left(0\right) = h\left(0\right) = E$. Sellisel juhul võime vaadelda kommutanti $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right)$, kusjuures on selge, et kommutatiivse rühma korral annab vaatuluse all olev kommutant tulemuseks alalti ühikelemendi $E$. Lie rühmade teooriast on hästi teada\footnote{Vaata näiteks \cite[Exponential map]{Kirillov}} fakt, et kui $G$ on Lie maatriksrühm, siis eksisteerib sürjektsioon $\exp : T_E G \rightarrow G$, kus $T_E G$ on rühma $G$ ühikelemendi puutujaruumi Lie algebra. Seega saame leida $A, B \in T_E G$ selliselt, et $g\left(t\right) = e^{tA}$ ja $h\left(t\right) = e^{tB}$. 
 
-Nõnda saame kommutandi $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right)$ arvutamise taandada juba Lie algebrale $T_e G$, sest arvestades eelnevat ja maatrikseksponendi omadusi, kehtib võrdus $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = e^{tA} e^{tB} e^{-tA} e^{-tB}$. Viimast oskame aga juba välja arvutada:
+Nõnda saame kommutandi $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right)$ arvutamise taandada juba Lie algebrale $T_E G$, sest arvestades eelnevat ja maatrikseksponendi omadusi, kehtib võrdus $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = e^{tA} e^{tB} e^{-tA} e^{-tB}$. Viimast oskame aga juba välja arvutada:
+
 \begin{align*}
 &\hphantom{=}\ \ g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = e^{tA} e^{tB} e^{-tA} e^{-tB} = \\
 &= \left(E + At + \frac{1}{2}A^2 t^2 + \ldots \right) \left(E + Bt + \frac{1}{2}B^2 t^2 + \ldots \right) \\
 &\hphantom{=}\ \left(E - At + \frac{1}{2}A^2 t^2 - \ldots \right) \left(E - Bt + \frac{1}{2}B^2 t^2 - \ldots \right) = \\
 &= E + \left(A + B - A - B\right)t + \\
 &+ \left(AB - A^2 - AB - BA - B^2 + AB + \frac{1}{2} A^2 + \frac{1}{2} B^2 + \frac{1}{2} A^2 + \frac{1}{2} B^2\right)t^2 \\
-&+ \ldots = E + 0 + \left(AB - BA\right)t^2 + \ldots = E + \left[A, B\right]t^2 + \ldots
+&+ \ldots = E + 0t + \left(AB - BA\right)t^2 + \ldots = E + \left[A, B\right]t^2 + \ldots
 \end{align*}
 
-Niisiis, teises lähenduses peab kehtima $g\left(t\right) h\left(t\right) g^{-1}\left(t\right) h^{-1}\left(t\right) = E + \left[A, B\right]t^2$.
-
-\textcolor{red}{Põhjenda siin natuke kirjapandut!}
+Meie arvutused näitavad, et esimeses lähenduses on Lie maatriksrühm kommutatiivne (see tuleneb asjaolust, et lineaarliikme $t$ kordaja on null). Kui aga arvestame saadud valemis ka ruutliikmeid, siis tekib avaldis $\left[A,B\right] = AB - BA$, millega saab mõõta rühma mittekommutatiivsust. See ongi vastava Lie algebra kommutaator. Kokkuvõttes oleme andnud skeemi kuidas konstrueerida Lie maatriksrühmale vastav Lie algebra.
 
 \subsection{Poincar\'e algebra kommutatsioonieeskirjad}
 
