@@ -102,15 +102,18 @@ Juhendaja: \dotfill "....." juuni 2013\\[2cm]
 
 \section{Sissejuhatus}
 
-Bakalaureusetöö on referatiivne ja selle aluseks on~\cite{Naber}. \\
+Bakalaureusetöö on referatiivne ja selle aluseks on~\cite{Naber}.
+
 Töös kasutame summade tähistamisel sageli Einstein'i summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, mis omavad väärtusi $1, \dots, n \left( n \in \N \right)$, siis kirjutame 
 \begin{align*}
 x^{i} e_{a} &= \sum_{a=1}^{n} x^{i} e_{i} = x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n}, \\
 \lambda\indices{^i_j} x^{j} &= \sum_{j=1}^{n} \lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + \lambda\indices{^i_2} x^{2} + \dots +\lambda\indices{^i_n} x^{n},\\
 \eta_{ij} u^{i} v^{j} &= \eta_{11} u^{1} v^{1} + \eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + \eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
 \end{align*}
-ja nii edasi.\\
-Vektori $u$ pikkust tähistame edaspidi $|u|$. \\
+ja nii edasi.
+
+Vektori $u$ pikkust tähistame edaspidi $|u|$.
+
 Seda teksti pole tegelikutl vaja.\footnote{Hermann Minkowski (1864 - 1909) - poola matemaatik}
 
 
@@ -126,12 +129,14 @@ Selles peatükis toome välja definitsioonid ja tulemused, mida läheb tarvis t�
 Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis $\mathbb{V}$ leidub ortonormeeritud baas.
 \end{teoreem}
 \begin{proof}
-Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.\\
+Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on ortonormeeritud baas.
+
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
 \[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
 Seega tarvitseb meil leida veel $a_n \in \mathbb{V} \setminus \{0\}$ omadusega
 \[a_n \perp \spn\{ e_1, e_2, \dots, e_{n-1}\},\]
-sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{1}{|a_n|}a_n\}$ on ruumi $\mathbb{V}$ ortonormeeritud baas.\\
+sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{1}{|a_n|}a_n\}$ on ruumi $\mathbb{V}$ ortonormeeritud baas.
+
 Otsime vektorit $a_n$ kujul
 \begin{equation} \label{eq:otsitav-a_n}
 a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \R.
@@ -176,14 +181,15 @@ mille reaalarvuliste lahendite hulk on $\R$. Kui $g\left(v,v\right) > 0$, siis o
 \end{equation*}
 millest järeldub vahetult võrratus \ref{eq:C-S-B}. Juhul $g\left(v,v\right) = 0$ peab kõikide $\lambda \in \R$ korral kehtima $2|g\left(u,v\right)|\lambda + g\left(u,u\right) \geq 0$, mis on võimalik vaid siis, kui $g\left(u,v\right) = 0$. Sellisel juhul on tingimuse \ref{eq:C-S-B} kehtivus aga ilmne.
 \paragraph{}
-Veendume veel, et võrratuses \ref{eq:C-S-B} kehtib võrdus parajasti siis, kui $u$ ja $v$ on lineaarselt sõltuvad. \\
+Veendume veel, et võrratuses \ref{eq:C-S-B} kehtib võrdus parajasti siis, kui $u$ ja $v$ on lineaarselt sõltuvad.
+
 Oletame esiteks, et vektorid $u$ ja $v$ on lineaarselt sõltuvad. Siis leidub $\alpha \in \R$ selliselt, et $u = \alpha v$. Seega
 \begin{align*}
 g^2\left(u,v\right) &= g^2 \left(\alpha v,v\right) = \alpha^2 g^2 \left(v,v\right) = \alpha^2 g \left(v,v\right) g \left(v,v\right) \\
 &= g \left(\alpha v,\alpha v\right)g \left( v,v\right) = g \left(u,u\right)g \left(v,v\right),
 \end{align*}
 nagu tarvis.
-\newline
+
 Kehtigu nüüd tingimuses \ref{eq:C-S-B} võrdus. Veendume, et siis $u$ ja $v$ on lineaarselt sõltuvad. Üldistust kitsendamata võime eeldada, et $u \neq 0$ ja $v \neq 0$. Siis ka $g \left(u,u\right) \neq 0$ ja $g \left(v,v\right) \neq 0$. Paneme tähele, et
 \[g^2 \left(u, v \right) = g \left(u, u \right) g \left(v, v \right)\]
 on eelnevat arvestades samaväärne tingimusega
@@ -197,7 +203,8 @@ Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarn
 \end{lause}
 
 \begin{proof}
-Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarne teisendus ja kehtigu $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide $x, y \in \mathbb{V}$ korral. Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on injektiivne ja sürjektiivne. Veendume kõigepealt kujutuse $L$ üksühesuses.\\
+Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarne teisendus ja kehtigu $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide $x, y \in \mathbb{V}$ korral. Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on injektiivne ja sürjektiivne. Veendume kõigepealt kujutuse $L$ üksühesuses.
+
 Olgu $x, y \in \mathbb{V}$, $x \neq y$. Oletame vastuväiteliselt, et $Lx = Ly$, siis $Lx - Ly = 0$ ja seega iga $z \in \mathbb{V}$ korral
 \begin{equation*}
 g \left( Lx - Ly, Lz \right) = 0.
@@ -206,7 +213,8 @@ Teisalt, kuna $g$ on skalaarkorrutis ja et $x \neq y$, siis leidub selline $z' \
 \begin{equation*}
 0 \neq g \left (x-y,z'\right ) = g\left (Lx - Ly, Lz'\right ) = 0,
 \end{equation*}
-mis on vastuolu. \\
+mis on vastuolu.
+
 Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. Meie eesmärk on leida $y \in \mathbb{V}$ selliselt, et $Ly = x$. Tähistame teisenduse $L$ maatriksi tähega $\Lambda$. Siis
 \[Ly = L\left(y^a e_a\right) = y^a \Lambda\indices{^b_a}e_b = x^b e_b, \text{ kus } a,b = 1,2,3,4.\]
 Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta $y = (y_1, y_2, y_3, y_4)$.
@@ -262,7 +270,8 @@ A^{-1}+A^{-1}B\left(D-CA^{-1}B\right)^{-1}CA^{-1} & -A^{-1}B\left(D-CA^{-1}B\rig
 
 \subsubsection{Maatrikseksponentsiaal}
 
-Olgu $A \in \Mat_n\K$ mingi ruutmaatriks. Analoogilisest analüüsist tuttavale eksponentfunktsisoonile $e^x$ defineeritakse ka \emph{maatrikseksponent} $e^A = \sum_{k = 0}^{\infty} \frac{A^k}{k!}$, kus $A^0 = E$ ja $A^k$ tähendab korrutist, kus maatriksit $A$ korrutatakse iseendaga $k$ korda. Osutub, et $e^A$ on selles mõttes korrektselt defineeritud, et rida $\sum_{k = 0}^{\infty} \frac{A^k}{k!}$ koondub alati. Sageli kasutatakse $e^A$ asemel ka tähistust $\exp\left(A\right)$.\\
+Olgu $A \in \Mat_n\K$ mingi ruutmaatriks. Analoogilisest analüüsist tuttavale eksponentfunktsisoonile $e^x$ defineeritakse ka \emph{maatrikseksponent} $e^A = \sum_{k = 0}^{\infty} \frac{A^k}{k!}$, kus $A^0 = E$ ja $A^k$ tähendab korrutist, kus maatriksit $A$ korrutatakse iseendaga $k$ korda. Osutub, et $e^A$ on selles mõttes korrektselt defineeritud, et rida $\sum_{k = 0}^{\infty} \frac{A^k}{k!}$ koondub alati. Sageli kasutatakse $e^A$ asemel ka tähistust $\exp\left(A\right)$.
+
 Järgnevas lauses toome mõned lihtsamad maatrikseksponendi omadused.
 \begin{lause}
 Olgu $X, Y \in \Mat_n \K$ ruutmaatriksid ja $k, l \in \K$. Siis
@@ -311,7 +320,8 @@ Järgmised hulgad on topoloogilised muutkonnad.
 Arvestades käesoleva töö peatükis \ref{ptk:lie_ryhm} antud Lie rühma definitsiooni, tutvustame lühidalt ka diferentseeruva muutkonna mõistet.
 
 \begin{definitsioon}
-Olgu $M$ muutkond ja $B \subset \R^n$ lahtine alamhulk. Paari $\left(p, \psi\right)$, kus $p \in U \subset M$ ja $\psi : U \rightarrow B$ on homöomorfism nimetatakse muutkonna $M$ \emph{lokaalseks kaardiks punktis $p$}. Analoogliselt ütleme paari $\left(U, \psi\right)$ kohta \emph{piirkonna $U$ lokaalne kaart}. Kõikide muutkonna $M$ lokaalsete kaartide kogumit nimetatakse \emph{atlaseks}.\\
+Olgu $M$ muutkond ja $B \subset \R^n$ lahtine alamhulk. Paari $\left(p, \psi\right)$, kus $p \in U \subset M$ ja $\psi : U \rightarrow B$ on homöomorfism nimetatakse muutkonna $M$ \emph{lokaalseks kaardiks punktis $p$}. Analoogliselt ütleme paari $\left(U, \psi\right)$ kohta \emph{piirkonna $U$ lokaalne kaart}. Kõikide muutkonna $M$ lokaalsete kaartide kogumit nimetatakse \emph{atlaseks}.
+
 Kui muutkonna $M$ saab katta ühe lokaalse kaardiga, siis öeldakse, et muutkond $M$ on \emph{triviaalne}.
 \end{definitsioon}
 
@@ -358,7 +368,7 @@ Kui $n$-mõõtmelisel topoloogilised muutkonnal $M$ on määratud diferentseeruv
 \subsection{Skalaarkorrutise definitsioon ja omadused}
 
 Olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. Me ütleme, et kujutus $g : \mathbb{V} \times \mathbb{V} \rightarrow \R$ on \emph{bilineaarvorm}, kui $g$ on mõlema muutuja järgi lineaarne, see tähendab $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = \alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right)$ ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = \alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning $u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $\mathbb{V}$ elemendid. 
-\\
+
 Olgu $u, v \in \mathbb{V}$. Bilineaarvormi $g$ nimetatakse \emph{sümmeetriliseks}, kui $g \left( u, v \right) = g \left(v, u \right)$ ja \emph{mittekidunuks}, kui tingumusest $g \left( u, v \right) = 0$ iga $v \in \mathbb{V}$ korral järeldub  $u = 0$.
 
 \begin{definitsioon}
@@ -389,7 +399,6 @@ Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame kujutust $Q : 
 Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\mathbb{V}$, mis rahuldavad tingimust $g_1 \left(u, u \right) = g_2 \left(u, u \right)$ iga $v \in \mathbb{V}$ korral. Siis kehtib $g_1 \left(u, v \right) = g_2 \left(u, v \right)$ kõikide $u, v \in \mathbb{V}$ korral, ehk teisi sõnu, $g_1 \equiv g_2$.
 \end{lause}
 
-% SIIA TULEB PÄRIS TÕESTUS KIRJUTADA!!!
 \begin{proof}
 Olgu $\mathbb{V}$ vektorruum ning olgu $u, v \in \mathbb{V}$ ja kehtigu võrdus $g_1 \left(u, u\right) = g_2 \left(u, u\right)$ iga $u$ korral. Defineerime uue kujutuse
 \begin{equation*}
@@ -443,7 +452,8 @@ Vektorruumi $\mathbb{V}$ skalaarkorrutisega $g$, mille indeks $r > 0$ nimetataks
 \subsection{Minkowski aegruumi mõiste}
 
 \begin{definitsioon}
-\emph{Minkowski aegruumiks} nimetatakse $4$-mõõtmelist reaalset vektorruumi $\M$, millel on defineeritud mittekidunud sümmeetriline bilineaarvorm g indeksiga $1$. \\
+\emph{Minkowski aegruumiks} nimetatakse $4$-mõõtmelist reaalset vektorruumi $\M$, millel on defineeritud mittekidunud sümmeetriline bilineaarvorm g indeksiga $1$.
+
 Ruumi $\M$ elemente nimetatakse \emph{sündmusteks} ja kujutust $g$ nimetatakse \emph{Lorentzi skalaarkorrutiseks} ruumil $\M$.
 \end{definitsioon}
 
@@ -478,7 +488,7 @@ Olgu $u, v \in \M \setminus \{0\}$ nullpikkusega vektorid. Vektorid $u$ ja $v$ o
 \emph{Piisavus.} Olgu $u, v \in \M \setminus \{0\}$ paralleelsed nullpikkusega vektorid. Siis leidub $t \in \R$ nii, et $u = tv$. Seega
 \[g\left(u, v\right) = g \left(tv, v\right) = t g \left(v, v\right) = 0\]
 ehk vektorid $u$ ja $v$ on ortogonaalsed, nagu tarvis.
-\\
+
 \emph{Tarvilikkus.} Olgu $u, v \in \M \setminus \{0\}$ ortogonaalsed nullpikkusega vektorid, st $g \left(u, v\right) = 0$. \emph{Cauchy-Schwartz-Bunjakowski võrratuse}\footnote{Vaata \ref{eelteadmised:skalaar} \nameref{eelteadmised:skalaar}, Teoreem \ref{teoreem:C-S-B}} $g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)$ põhjal $0 \leq g \left(u, u \right) g \left(v, v \right)$, sest $u$ ja $v$ on ortogonaalsed. Teisalt, et $u$ ja $v$ on nullpikkusega vektorid, siis $g \left(u, u \right) g \left(v, v \right) = 0$ ja järelikult kehtib Cauchy-Schwartz-Bunjakowski võrratuses võrdus $0 = 0$, mis tähendab, et $u$ ja $v$ on lineaarselt sõltuvad.
 \end{proof}
 
@@ -508,8 +518,10 @@ Olgu $L:\M \rightarrow \M$ lineaarne kujutus. Siis järgmised väited on samavä
 \end{lause} 
 
 \begin{proof}
-$(i) \implies (ii)$. Olgu $L$ pseudoortogonaalne teisendus. Siis definitsiooni põhjal $g\left(Lx, Ly\right) = g\left(x, y\right)$ iga $x, y \in \M$ korral. Seega kehtib ka $Q\left(Lx\right) = g\left(Lx, Lx\right) = g\left(x, x\right) = Q\left(x\right)$ kõikide $x \in \M$ korral ehk $L$ säilitab ruutvormi. \\
-$(ii) \implies (i)$ on täpselt lause \ref{lause:skalaarkorrutise-yhesus}. \\
+$(i) \implies (ii)$. Olgu $L$ pseudoortogonaalne teisendus. Siis definitsiooni põhjal $g\left(Lx, Ly\right) = g\left(x, y\right)$ iga $x, y \in \M$ korral. Seega kehtib ka $Q\left(Lx\right) = g\left(Lx, Lx\right) = g\left(x, x\right) = Q\left(x\right)$ kõikide $x \in \M$ korral ehk $L$ säilitab ruutvormi.
+
+$(ii) \implies (i)$ on täpselt lause \ref{lause:skalaarkorrutise-yhesus}.
+
 $(ii) \implies (iii)$. Kehtigu $(ii)$ (ja seega ka $(i)$) ning olgu $\left\lbrace e_1, e_2, e_3, e_4 \right\rbrace$ ortogonaalne baas ruumis $\M$. Siis ka $\left\lbrace Le_1, Le_2, Le_3, Le_4 \right\rbrace$ on ortonormaalne baas ruumis $\M$, sest
 \begin{equation*}
 g \left(Le_i, Le_j\right) = g\left(e_i, e_j\right) = \begin{cases}
@@ -518,7 +530,8 @@ g \left(Le_i, Le_j\right) = g\left(e_i, e_j\right) = \begin{cases}
     0,& \text{kui $i \neq j$}.
   \end{cases}
 \end{equation*}
-ja arvestades kujutuse $L$ lineaarsust, on ka süsteem $\left\lbrace Le_1, Le_2, Le_3, Le_4 \right\rbrace$ lineaarselt sõltumatu. \\
+ja arvestades kujutuse $L$ lineaarsust, on ka süsteem $\left\lbrace Le_1, Le_2, Le_3, Le_4 \right\rbrace$ lineaarselt sõltumatu.
+
 $(iii) \implies (ii)$. Olgu $\left\lbrace e_1, e_2, e_3, e_4 \right\rbrace$ ruumi $\M$ ortonormeeritud baas ja kehtigu tingimus $(iii)$. Veendume, et alati $Q\left(Lx\right) = Q\left(x\right)$, kus $x \in \M$ on suvaline. Fikseerime $x \in \M$ ning esitugu ta koordinaatides kujul $x = x^i e_i$, $i = 1, 2, 3, 4$.
 \begin{align*}
 Q\left(x\right) &= Q\left(x^i e_i\right) = x^i Q\left(e_i\right) = x^i Q\left(Le_i\right) = \\
@@ -535,7 +548,8 @@ Ruumi kokkuhoiu mõttes toome sisse $4 \times 4$ maatriksi $\eta$, mille me defi
 0 & 0 & 0 & -1 \\ 
 \end{pmatrix},
 \end{equation*}
-ja mille elemente tähistame vastavalt vajadusele kas $\eta_{ab}$ või $\eta^{ab}$, $a, b = 1, 2, 3, 4$. Loomulik on maatriksit $\eta$ nimetada \emph{Miknowski ruumi meetrikaks}.\\
+ja mille elemente tähistame vastavalt vajadusele kas $\eta_{ab}$ või $\eta^{ab}$, $a, b = 1, 2, 3, 4$. Loomulik on maatriksit $\eta$ nimetada \emph{Miknowski ruumi meetrikaks}.
+
 Sellise tähistuse korral $\eta_{ab} = 1$, kui $a = b = 1, 2, 3$ ja $\eta_{ab} = -1$, kui $a = b = 4$ ning $\eta_{ab} = 0$ muudel juhtudel. Vahetult on kontrollitav, et $\eta = \eta^T$ ja $\eta \eta^{-1} = \eta^{-1} \eta = E$, kus $E$ on ühiksmaatriks.
 \newline
 Arvestades sissetoodud tähistusi saame nüüd kirjutada $g\left(e_a, e_b\right) = \eta_{ab}$, kus $\{e_a\}$ on ruumi $\M$ ortonormeeritud baas. Enamgi veel, avaldades vektorid $u, v \in \M$ baasivektorite kaudu $u = u^i e_i$ ja $v = v^i e_i$, saame summeerimiskokkulepet kasutades kirjutada $g \left(u, v\right) = \eta_{ab} u^a v^b$.
@@ -612,12 +626,14 @@ Kõigi (homogeensete) Lorentzi teisenduste hulk on rühm maatriksite korrutamise
 \end{teoreem}
 
 \begin{proof}
-Veendumaks, et kõigi (homogeensete) Lorentzi teisenduste hulk $\L_{GH}$ on rühm peame näitama, et $\L_{GH}$ on kinnine korrutamise ja pöörd\-elemendi võtmise suhtes.\\
+Veendumaks, et kõigi (homogeensete) Lorentzi teisenduste hulk $\L_{GH}$ on rühm peame näitama, et $\L_{GH}$ on kinnine korrutamise ja pöörd\-elemendi võtmise suhtes.
+
 Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \L_{GH}$. Veendume esiteks, et korrutis $\Lambda_1 \Lambda_2$ kuulub hulka $\L_{GH}$. Selleks piisab näidata, et $\left(\Lambda_1 \Lambda_2\right)^T \eta \left(\Lambda_1 \Lambda_2\right) = \eta$.
 \begin{equation*}
 \left(\Lambda_1 \Lambda_2\right)^T \eta \left(\Lambda_1 \Lambda_2\right) = \left(\Lambda_2^T \Lambda_1^T\right) \eta \left(\Lambda_1 \Lambda_2\right) = \Lambda_2^T \left(\Lambda_1^T \eta \Lambda_1 \right) \Lambda_2 = \Lambda_2^T \eta \Lambda_2 = \eta,
 \end{equation*}
-ja seega $\Lambda_1 \Lambda_2 \in \L_{GH}$ nagu tarvis. \\
+ja seega $\Lambda_1 \Lambda_2 \in \L_{GH}$ nagu tarvis.
+
 Jääb veel näidata, et ka $\Lambda^{-1 } \in \L_{GH}$. Seose \ref{eq:lambda-1lambda-trans} ja võrduste $\eta = \eta^T$, $\eta \eta = E$ põjal saame kirjutada
 \begin{align*}
 \left(\Lambda^{-1}\right)^T \eta \Lambda^{-1} &= \left(\eta \Lambda^T \eta \right)^T \eta \left(\eta \Lambda^T \eta\right) = \left(\eta^T \left(\Lambda^T\right)^T \eta^T \right) \eta \eta \Lambda^T \eta = \\
@@ -635,7 +651,6 @@ Arvestades võrdust \ref{eq:lambda-1lambda-trans} võime välja arvutada maatrik
 \end{pmatrix}.\]
 
 \newpage
-
 \section{Lorentzi ja Poincar\'e rühmad}
 
 \subsection{Lorentzi rühm}
@@ -686,13 +701,13 @@ Tähistame ruumi $\M$ kõigi ajasarnaste vektorite hulga tähega $\tau$ ja defin
 \item[(b)] seose $\sim$ \textbf{sümmeetrilisus} tuleneb skalaarkorrutise sümmeetrilisusest;
 \item[(c)] \textbf{refleksiivsuseks} märgime, et kui $g\left(u,v\right) < 0$ ja $g\left(v, w\right) < 0$, siis teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal $u^4 v^4 > 0$ ja $v^4 w^4 > 0$ ehk $u^4$ ja $v^4$ ning $v^4$ ja $w^4$ on sama märgiga ja seega $\sign u^4 = \sign w^4$, millest saame $u^4 w^4 > 0$. Rakendades nüüd veelkord teoreemi \ref{teoreem:ajasarnased_vektorid}, siis saame, et $g\left(u, w\right) < 0$.
 \end{itemize}
-Paneme tähele, et seos $\sim$ jagab hulga $\tau$ täpselt kaheks ekvivalentsiklassiks. Tõe\-poolest,
-kui $u, v \in \M$ on ajasarnased, siis on meil teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal kaks varianti. Peab kehtima kas 
+Paneme tähele, et seos $\sim$ jagab hulga $\tau$ täpselt kaheks ekvivalentsiklassiks. Tõe\-poolest, kui $u, v \in \M$ on ajasarnased, siis on meil teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal kaks varianti. Peab kehtima kas 
 \begin{align}
 g\left(u,v\right) &< 0 \text{ või} \tag{1} \\
 g\left(u,v\right) &> 0. \tag{2}
 \end{align}
-Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$. \\
+Kui kehtib võrratus (1), siis on $u \sim v$ ja korras. Vastupidi, kui $u$ ja $v$ jaoks kehtib (2), siis $u \nsim v$ ja piisab näidata, et kui $w \in \tau$ korral $g\left(u,w\right) > 0$, siis $v \sim w$. Võrratuse (2) kehtivuseks peavad $u, v$ ja $w$ teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal rahuldama võrratusi $u^4 v^4 < 0$ ja $u^4 w^4 < 0$, mis tähendab, et arvud $u^4, v^4$ ja $u^4, w^4$ on erinevate märkidega. Seega $v^4$ ja $w^4$ on samade märkidega ja järelikult $g\left(v,w\right) < 0$ ehk $v \sim w$.
+
 Neid kahte ekvivalentsiklassi tähistatakse $\tau^+$ ja $\tau^-$. Märgime, et elementide ekvivalentsiklassidesse $\tau^+$ ja $\tau^-$ jaotamine toimub meie postuleerimise täpsusega ja on meelevaldne.
 
 \begin{teoreem}\textnormal{\cite[teoreem 1.3.3]{Naber}}
@@ -745,7 +760,8 @@ Hulk $\L := \{\Lambda \in \L_{GH} : \det \Lambda = 1,\ \Lambda\indices{^4_4} \ge
 \end{lause}
 \begin{proof}
 Veendumaks, et hulk $\L$ on rühm näitame, et ta on kinnine kor\-rutamise ja pöördelemendi võtmise suhtes. Olgu $\Lambda, \Lambda_1, \Lambda_2 \in \L$.
-Paneme tähele, et $\det \left(\Lambda_1 \Lambda_2 \right) = \det \Lambda_1 \cdot \det \Lambda_2 = 1$ ja seose \ref{eq:lambda-1lambda-trans} põhjal $\det \Lambda^{-1} = \det \left(\eta \Lambda^T \eta\right) = (-1)^2 \det \Lambda^T = \det \Lambda = 1$. \\
+Paneme tähele, et $\det \left(\Lambda_1 \Lambda_2 \right) = \det \Lambda_1 \cdot \det \Lambda_2 = 1$ ja seose \ref{eq:lambda-1lambda-trans} põhjal $\det \Lambda^{-1} = \det \left(\eta \Lambda^T \eta\right) = (-1)^2 \det \Lambda^T = \det \Lambda = 1$.
+
 Seose \ref{eq:lambda-1lambda-trans} põhjal on ilmne ka $\left(\Lambda^{-1}\right)\indices{^4_4} = \left(\Lambda^T\right)\indices{^4_4} = \Lambda\indices{^4_4} \geq 1$.
 Veendumaks, et $\left(\Lambda_1 \Lambda_2\right)\indices{^4_4} \geq 1$ tähistame $\vec{a} = \left(\left(\Lambda_1\right)\indices{^4_1}, \left(\Lambda_1\right)\indices{^4_2}, \left(\Lambda_1\right)\indices{^4_2}\right)$ 
 ja $\vec{b} = \left(\left(\Lambda_2\right)\indices{^1_4}, \left(\Lambda_2\right)\indices{^2_4}, \left(\Lambda_2\right)\indices{^3_4}\right)$ ning skalaarkorrustise $\vec{a} \cdot \vec{b}$ all mõtleme eukleidilist skalaarkorrutist ruumis $\R^3$. Selliseid tähistusi arvestades võime kirjutada
