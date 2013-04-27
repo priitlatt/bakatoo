@@ -12,16 +12,8 @@
 \usepackage[stable]{footmisc}
 \usepackage{hyperref}
 \usepackage{verbatim}
-\usepackage[titletoc, toc, page]{appendix}
 \usepackage{color}
-
-\renewcommand{\appendixtocname}{Lisad}
-\renewcommand{\appendixname}{Lisa}
-
-\addto\captionsestonian{%
-  \renewcommand\appendixname{Lisa}
-  \renewcommand\appendixpagename{Lisad}
-}
+\usepackage{indentfirst} %esimene lõik taandega
 
 \theoremstyle{plain}
 \newtheorem{teoreem}{Teoreem}[section]
@@ -44,8 +36,10 @@
 \def\R{{\mathbb R}}
 \def\C{{\mathbb C}}
 \def\K{{\mathbb K}}
+\def\V{{\mathbb V}}
 \def\Z{{\mathbb Z}}
 \def\Q{{\mathbb Q}}
+\def\A{{\mathcal A}}
 \def\L{{\mathcal L}}
 \def\M{{\mathcal M}}
 \def\P{{\mathcal P}}
@@ -98,15 +92,16 @@ Juhendaja: \dotfill "....." juuni 2013\\[2cm]
 \end{titlepage}
 
 \tableofcontents
-\newpage
 
-\section{Sissejuhatus}
+\newpage
+\section*{Sissejuhatus}
+\addcontentsline{toc}{section}{Sissejuhatus}
 
 Bakalaureusetöö on referatiivne ja selle aluseks on~\cite{Naber}.
 
 Töös kasutame summade tähistamisel sageli Einstein'i 
 summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, 
-mis omavad väärtusi $1, \dots, n \left( n \in \N \right)$, siis 
+mis omavad väärtusi $1, \dots, n$, $n \in \N$, siis 
 kirjutame 
 \begin{align*}
 x^{i} e_{a} &= \sum_{a=1}^{n} x^{i} e_{i} = 
@@ -140,7 +135,7 @@ tõestusteta.
 
 \begin{teoreem} \textnormal{\cite[teoreem II.7.3]{FA2}}
 Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis 
-$\mathbb{V}$ leidub ortonormeeritud baas.
+$\V$ leidub ortonormeeritud baas.
 \end{teoreem}
 \begin{proof}
 Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib 
@@ -149,17 +144,17 @@ mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on
 ortonormeeritud baas.
 
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas 
-ortonormeeritud baas ning olgu $\mathbb{V}$ $n$-mõõtmeline 
+ortonormeeritud baas ning olgu $\V$ $n$-mõõtmeline 
 vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. 
-Eelduse järgi on ruumis $\mathbb{V}$ ortonormeeritud süsteem 
+Eelduse järgi on ruumis $\V$ ortonormeeritud süsteem 
 $\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
 \[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = 
 \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
-Seega tarvitseb meil leida veel $a_n \in \mathbb{V} \setminus \{0\}$ 
+Seega tarvitseb meil leida veel $a_n \in \V \setminus \{0\}$ 
 omadusega
 \[a_n \perp \spn\{ e_1, e_2, \dots, e_{n-1}\},\]
 sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{1}{|a_n|}a_n\}$ on 
-ruumi $\mathbb{V}$ ortonormeeritud baas.
+ruumi $\V$ ortonormeeritud baas.
 
 Otsime vektorit $a_n$ kujul
 \begin{equation} \label{eq:otsitav-a_n}
@@ -197,19 +192,19 @@ nimetatakse \emph{Gram-Schmidti algoritmiks} või
 
 \begin{teoreem}[Cauchy-Schwartz-Bunjakowski võrratus] 
 \textnormal{\cite[teoreem II.1.1.]{FA2}} \label{teoreem:C-S-B}
-Olgu $\mathbb{V}$ vektroruum skalaarkorrutisega 
-$g : \mathbb{V} \times \mathbb{V} \rightarrow \R$. Sellisel juhul 
+Olgu $\V$ vektroruum skalaarkorrutisega 
+$g : \V \times \V \rightarrow \R$. Sellisel juhul 
 kehtib võrratus
 \begin{equation} \label{eq:C-S-B}
 g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
 \end{equation}
-kõikide $u, v \in \mathbb{V}$ korral. Seejuures võrdus kehtib parajasti 
+kõikide $u, v \in \V$ korral. Seejuures võrdus kehtib parajasti 
 siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
 \end{teoreem}
 
 \begin{proof}
-Olgu $\mathbb{V}$ reaalne vektorruum skalaarkorrutisega $g$ ning olgu 
-$u, v \in \mathbb{V}$. Siis iga $\lambda \in \R$ korral
+Olgu $\V$ reaalne vektorruum skalaarkorrutisega $g$ ning olgu 
+$u, v \in \V$. Siis iga $\lambda \in \R$ korral
 \begin{align*}
 0 &\leq g\left(u+\lambda v,u+\lambda v\right) = 
 g\left(u,u\right) + 2g\left(u, \lambda v \right) + 
@@ -265,36 +260,36 @@ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
 
 \subsection{Tulemusi lineaaralgebrast} \label{eelteadmised:algebra}
 \begin{lause} \label{lemma:ort-skalaar-on-isomorfism}
-Olgu $\mathbb{V}$ vektorruum ja 
-$L : \mathbb{V} \rightarrow \mathbb{V}$ lineaarne teisendus ning 
-$g$ skalaarkorrutis ruumil $\mathbb{V}$. Kui 
+Olgu $\V$ vektorruum ja 
+$L : \V \rightarrow \V$ lineaarne teisendus ning 
+$g$ skalaarkorrutis ruumil $\V$. Kui 
 $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide 
-$x, y \in \mathbb{V}$ korral, siis $L$ on isomorfism ruumil 
-$\mathbb{V}$.
+$x, y \in \V$ korral, siis $L$ on isomorfism ruumil 
+$\V$.
 \end{lause}
 
 \begin{proof}
-Olgu $\mathbb{V}$ vektorruum ja $L : \mathbb{V} \rightarrow \mathbb{V}$ 
+Olgu $\V$ vektorruum ja $L : \V \rightarrow \V$ 
 lineaarne teisendus ja kehtigu $g \left(x, y\right) = 
-g \left(Lx, Ly\right)$ kõikide $x, y \in \mathbb{V}$ korral. 
+g \left(Lx, Ly\right)$ kõikide $x, y \in \V$ korral. 
 Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on injektiivne 
 ja sürjektiivne. Veendume kõigepealt kujutuse $L$ üksühesuses.
 
-Olgu $x, y \in \mathbb{V}$, $x \neq y$. Oletame vastuväiteliselt, 
-et $Lx = Ly$, siis $Lx - Ly = 0$ ja seega iga $z \in \mathbb{V}$ korral
+Olgu $x, y \in \V$, $x \neq y$. Oletame vastuväiteliselt, 
+et $Lx = Ly$, siis $Lx - Ly = 0$ ja seega iga $z \in \V$ korral
 \begin{equation*}
 g \left( Lx - Ly, Lz \right) = 0.
 \end{equation*}
 Teisalt, kuna $g$ on skalaarkorrutis ja et $x \neq y$, siis leidub 
-selline $z' \in \mathbb{V}$, et $g \left( x - y, z' \right) \neq 0$. 
+selline $z' \in \V$, et $g \left( x - y, z' \right) \neq 0$. 
 Kokkuvõttes saime
 \begin{equation*}
 0 \neq g \left (x-y,z'\right ) = g\left (Lx - Ly, Lz'\right ) = 0,
 \end{equation*}
 mis on vastuolu.
 
-Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \mathbb{V}$. 
-Meie eesmärk on leida $y \in \mathbb{V}$ selliselt, et $Ly = x$. 
+Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \V$. 
+Meie eesmärk on leida $y \in \V$ selliselt, et $Ly = x$. 
 Tähistame teisenduse $L$ maatriksi tähega $\Lambda$. Siis
 \[Ly = L\left(y^a e_a\right) = y^a \Lambda\indices{^b_a}e_b = 
 x^b e_b, \text{ kus } a,b = 1,2,3,4.\]
@@ -360,7 +355,7 @@ A^{-1}+A^{-1}B\left(D-CA^{-1}B\right)^{-1}CA^{-1} &
 \end{align*}
 \end{teoreem}
 
-\subsubsection{Maatrikseksponentsiaal}
+\subsubsection*{Maatrikseksponentsiaal}
 
 Olgu $A \in \Mat_n\K$ mingi ruutmaatriks. Analoogilisest analüüsist 
 tuttavale eksponentfunktsisoonile $e^x$ defineeritakse ka 
@@ -445,6 +440,12 @@ Kui muutkonna $M$ saab katta ühe lokaalse kaardiga, siis öeldakse,
 et muutkond $M$ on \emph{triviaalne}.
 \end{definitsioon}
 
+Tuginedes aine Globaalanalüüs loengukonspektile \cite{globanal} 
+anname järgnevas lühi\-kese (kuid samas käesoleva töö vajadusi silmas 
+pidades\footnote{Vaata näiteks peatükk \ref{ptk:lie_ryhm}, 
+\nameref{ptk:lie_ryhm}.} piisava) ülevaate diferentseeruva muutkonna 
+mõistest.
+
 Olgu meil $n$-mõõtmeline topoloogiline muutkond $M$ ja $U,V$ selle 
 muutkonna piirkonnad, kusjuures $U \cap V \neq \emptyset$. Vaatleme 
 muutkonna $M$ lokaalseid kaarte $\left(U, \phi\right)$ ja 
@@ -486,8 +487,8 @@ h^n\left(\phi\right)\right) &= \phi^i, \\
 h^i \left(g^1\left(\psi\right), g^2\left(\psi\right), \ldots, 
 g^n\left(\psi\right)\right) &= \psi^i.
 \end{align*}
-Seejuures funktsioone $g^i$ ja $h^i$, $i = 1, 2, \ldots, n$, 
-nimetatakse \emph{üleminekufunktsioonideks}. 
+Seejuures funktsioone $g^i$ ja $h^i$, kus $i = 1, 2, \ldots, n$, 
+nimetatakse \emph{üleminekufunktsioo\-nideks}. 
 
 Nüüd, kui $\left(U, \phi\right), \left(V, \psi\right)$ on muutkonna 
 $M$ lokaalsed kaardid ja $U \cap V \neq \emptyset$ ning sellest 
@@ -504,18 +505,18 @@ mis rahuldab tingimusi
 \begin{itemize}
 \item [$\left(i\right)$] $\cap_\alpha U_\alpha$ on muutkonna $M$ kate;
 \item [$\left(ii\right)$] suvaliste $\alpha, \beta \in \mathcal{A}$ 
-korral on lokaalsed kaardid $\left(U_\alpha, \phi_\alpha\right), 
-\left(U_\beta, \phi_\beta\right)$ $C^\infty$-kooskõlalised;
+korral on lokaalsed kaardid $\left(U_\alpha, \phi_\alpha\right)$ ning 
+$\left(U_\beta, \phi_\beta\right)$ $C^\infty$-kooskõlalised;
 \item [$\left(iii\right)$] kui $\left(V, \psi\right)$ on topoloogilise 
-muutkonna $M$ lokaalne kaart, mis on $C^\infty$-kooskõlaline kogumi 
-$\mathfrak{U}$ kõigi kaartidega, siis 
+muutkonna $M$ lokaalne kaart, mis on kogumi $\mathfrak{U}$ kõigi 
+kaartidega $C^\infty$-kooskõlaline , siis 
 $\left(V, \psi\right) \in \mathfrak{U}$;
 \end{itemize}
 siis kogumit $\mathfrak{U}$ nimetatakse topoloogilisel muutkonnal 
 $M$ määratud \emph{diferentseeruvaks struktuuriks}.
 
 \begin{definitsioon}
-Kui $n$-mõõtmelisel topoloogilised muutkonnal $M$ on määratud 
+Kui $n$-mõõtmelisel topoloogilised muutkonnal $M$ on mää\-ratud 
 diferentseeruv struktuur $\mathfrak{U}$, siis nimetatakse muutkonda 
 $M$ \emph{diferentseeruvaks muutkonnaks}.
 \end{definitsioon}
@@ -525,8 +526,8 @@ $M$ \emph{diferentseeruvaks muutkonnaks}.
 
 \subsection{Skalaarkorrutise definitsioon ja omadused}
 
-Olgu $\mathbb{V}$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. 
-Me ütleme, et kujutus $g : \mathbb{V} \times \mathbb{V} 
+Olgu $\V$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. 
+Me ütleme, et kujutus $g : \V \times \V 
 \rightarrow \R$ on \emph{bilineaarvorm}, kui $g$ on mõlema muutuja 
 järgi lineaarne, see tähendab 
 $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = 
@@ -534,17 +535,17 @@ $g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) =
 ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = 
 \alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ 
 kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning 
-$u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $\mathbb{V}$ elemendid. 
+$u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $\V$ elemendid. 
 
-Olgu $u, v \in \mathbb{V}$. Bilineaarvormi $g$ nimetatakse 
+Olgu $u, v \in \V$. Bilineaarvormi $g$ nimetatakse 
 \emph{sümmeetriliseks}, kui $g \left( u, v \right) = 
 g \left(v, u \right)$ ja \emph{mittekidunuks}, kui tingumusest 
-$g \left( u, v \right) = 0$ iga $v \in \mathbb{V}$ korral järeldub  
+$g \left( u, v \right) = 0$ iga $v \in \V$ korral järeldub  
 $u = 0$.
 
 \begin{definitsioon}
 Mittekidunud sümmeetrilist bilineaarvormi 
-$g: \mathbb{V} \times \mathbb{V} \rightarrow \R$ 
+$g: \V \times \V \rightarrow \R$ 
 nimetatakse \emph{skalaarkorrutiseks}. Vektorite $u$ ja $v$ 
 skalaarkorrutist tähistame sageli ka kujul $u \cdot v$.
 \end{definitsioon}
@@ -552,16 +553,16 @@ skalaarkorrutist tähistame sageli ka kujul $u \cdot v$.
 Tänu skalaarkorrutise bilineaarsusele on kergesti tuletatavad 
 järgmised omadused:
 \begin{itemize}
-\item $u \cdot 0 = 0 \cdot v = 0$ kõikide $u, v \in \mathbb{V}$ 
+\item $u \cdot 0 = 0 \cdot v = 0$ kõikide $u, v \in \V$ 
 korral, sest $g$ bilineaarsuse tõttu $g \left(0, v\right) = 
 g \left(0 \cdot 0, v \right) = 0 \cdot g \left(0, v \right) = 0$,
 \item kui $u_1, u_2, \dots, u_n, u, v_1, v_2, \dots, v_n \in 
-\mathbb{V}$, siis $\left( \sum_{i = 1}^{n} u_i \right) \cdot v = 
+\V$, siis $\left( \sum_{i = 1}^{n} u_i \right) \cdot v = 
 \sum_{i = 1}^{n}  \left( u_i \cdot v \right)$ ja 
 $u \cdot \left( \sum_{i = 1}^{n} v_i \right) = 
 \sum_{i = 1}^{n}  \left( u \cdot v_i \right)$,
 \item kui $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ on 
-vektorruumi $\mathbb{V}$ baas ning kui tähistame $\eta_{ij} = 
+vektorruumi $\V$ baas ning kui tähistame $\eta_{ij} = 
 e_i \cdot e_j$, $i,j = 1, 2, \dots, n$, siis $u \cdot v = 
 \sum_{i = 1}^{n} \sum_{j = 1}^{n} \eta_{ij} u^i v^j = 
 \eta_{ij} u^i v^j$, kus $u = u^i e_i$ ja $v = v^i e_i$.
@@ -581,41 +582,41 @@ et $g$ on \emph{negatiivselt määratud} ja kui $g$ pole ei positiivselt
 ega negatiivselt määratud, siis öeldakse, et $g$ on \emph{määramata}.
 
 \begin{definitsioon}
-Kui $g$ on skalaarkorrutis vektorruumil $\mathbb{V}$, siis nimetame 
+Kui $g$ on skalaarkorrutis vektorruumil $\V$, siis nimetame 
 vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt 
 \emph{ortogonaalseteks}, kui $g$ roll on kontekstist selge), kui 
-$g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \mathbb{V}$ 
+$g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \V$ 
 on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend 
 $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in 
-\mathbb{V} : \forall v \in  \mathbb{W} \text{ korral } 
+\V : \forall v \in  \mathbb{W} \text{ korral } 
 g \left(u, v \right) = 0 \right\rbrace$.
 \end{definitsioon}
 \begin{definitsioon}
 Skalaarkorrutise $g$ poolt määratud \emph{ruutvormiks} nimetame 
-kujutust $Q : \mathbb{V} \rightarrow \R$, kus 
+kujutust $Q : \V \rightarrow \R$, kus 
 $Q \left( v \right) = g\left(v, v\right) = v \cdot v$, $v \in 
-\mathbb{V}$.
+\V$.
 \end{definitsioon}
 
 \begin{lause} \label{lause:skalaarkorrutise-yhesus}
-Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\mathbb{V}$, 
+Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\V$, 
 mis rahuldavad tingimust $g_1 \left(u, u \right) = 
-g_2 \left(u, u \right)$ iga $v \in \mathbb{V}$ korral. Siis kehtib 
+g_2 \left(u, u \right)$ iga $v \in \V$ korral. Siis kehtib 
 $g_1 \left(u, v \right) = g_2 \left(u, v \right)$ kõikide 
-$u, v \in \mathbb{V}$ korral, ehk teisi sõnu, $g_1 \equiv g_2$.
+$u, v \in \V$ korral, ehk teisi sõnu, $g_1 \equiv g_2$.
 \end{lause}
 
 \begin{proof}
-Olgu $\mathbb{V}$ vektorruum ning olgu $u, v \in \mathbb{V}$ ja 
+Olgu $\V$ vektorruum ning olgu $u, v \in \V$ ja 
 kehtigu võrdus $g_1 \left(u, u\right) = g_2 \left(u, u\right)$ 
 iga $u$ korral. Defineerime uue kujutuse
 \begin{equation*}
-g: \mathbb{V} \times \mathbb{V} \rightarrow \R \text{, } 
+g: \V \times \V \rightarrow \R \text{, } 
 g\left(u, v\right) \mapsto g_1\left(u, v\right) - g_2\left(u, v\right).
 \end{equation*}
 Paneme esiteks tähele, et selliselt defineeritud $g$ on 
 sümmeetriline ja bilineaarne. Tõepoolest, olgu 
-$u_1, u_2 \in \mathbb{V}$. Siis
+$u_1, u_2 \in \V$. Siis
 \begin{align*}
 g\left( \alpha u_1 + \beta u_2, v \right) &= 
 g_1\left( \alpha u_1 + \beta u_2, v \right) - 
@@ -652,9 +653,9 @@ $g\left(u, v\right) = 0$, mida oligi tarvis.
 \end{proof}
 
 \begin{teoreem}
-Olgu $\mathbb{V}$ reaalne $n$-mõõtmeline vektorruum ning olgu 
-$g : \mathbb{V} \times \mathbb{V} \rightarrow \R$ skalaarkorrutis. 
-Vektorruumil $\mathbb{V}$ leidub baas 
+Olgu $\V$ reaalne $n$-mõõtmeline vektorruum ning olgu 
+$g : \V \times \V \rightarrow \R$ skalaarkorrutis. 
+Vektorruumil $\V$ leidub baas 
 $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ nii, et 
 $g \left(e_i, e_j\right) = 0$ kui $i \neq j$ ja 
 $Q\left(e_i\right) = \pm 1$ iga $i = 1, 2, \dots, n$ korral. Enamgi 
@@ -673,7 +674,7 @@ Märkus \ref{markus:gram-schmidt}}.
 \end{proof}
 
 \begin{definitsioon}
-Vektorruumi $\mathbb{V}$ baasi teoreemist 4.2 nimetame ortonormeeritud 
+Vektorruumi $\V$ baasi teoreemist 4.2 nimetame ortonormeeritud 
 baasiks.
 \end{definitsioon}
 
@@ -695,7 +696,7 @@ skalaarkorrutise $g$ arvutada järgmiselt:
 u^{n-r+1} v^{n-r+1} - \ldots - u^n v^n.\]
 
 \begin{markus}
-Vektorruumi $\mathbb{V}$ skalaarkorrutisega $g$, mille indeks 
+Vektorruumi $\V$ skalaarkorrutisega $g$, mille indeks 
 $r > 0$ nimetatakse \emph{pseudoeukleidiliseks ruumiks}.
 \end{markus}
 
@@ -945,11 +946,15 @@ Seos \ref{eq:lambdaetamat2} on koordinaatides kirjutatuna täpselt
 \begin{equation} \label{eq:lambdaeta2}
 \Lambda\indices{^a_c} \eta^{cd} \Lambda\indices{^b_d} = \eta^{ab}.
 \end{equation}
+
 \begin{definitsioon}
 Maatriksit $\Lambda = \left[\Lambda\indices{^a_b} 
 \right]_{a,b=1,2,3,4}$ nimetame \emph{pseudoortogonaalteisendusega 
-$L$ ja baasiga $\{e_a\}$} assotsieeruvaks maatriksiks.
+$L$ ja baasiga $\{e_a\}$} assotsieeruvaks maatriksiks. Kui baasi 
+$\{e_a\}$ roll on kontekstist selge, siis nimetatakse maatriksit 
+$\Lambda$ ka lihtsalt teisenduse $L$ maatriksiks.
 \end{definitsioon}
+
 Definitsioonile eelnevas arutelus tõestasime maatriksi $\Lambda$ 
 kohta järgmise lemma.
 \begin{lemma} \label{lemma:lambdainvariant}
@@ -1544,8 +1549,9 @@ oleme näidanud, et $\Lambda$ on pööre, nagu tarvis.
 
 \subsection{Poincar\'e rühm}
 
-Arvestades Pythagorase teoreemi kahemõõtmelisel tasandil toome sisse 
-sündmuste kauguse mõiste üldistatuna Minkowski aegruumile.
+Arvestades Pythagorase teoreemi kahemõõtmelisel tasandil, üldistame 
+kahe punkti vahelise kauguse mõiste kahe sündmuse vaheliseks 
+kauguseks Minkowski aegruumis.
 
 \begin{definitsioon}
 Olgu $x = x^a$ ja $y = y^a$, $a = 1, 2, 3, 4$, kaks sündmust 
@@ -1666,7 +1672,7 @@ Poincar\'e rühma kontekstis.
 \end{markus}
 
 \newpage
-\section{Lie rühm ja Lie algebra}
+\section{Minkowski ruum teoreetilises füüsikas ja diferentsiaalgeomeetrias}
 
 \subsection{Lie algebra}
 
@@ -2015,18 +2021,18 @@ määratud) \emph{Lie algebraks}.
 
 Osutub, et eespool vaatluse all olnud Lorentzi rühm $\L_{GH}$ ja 
 Poincar\'e rühm $\P$ on oma matemaatilistelt omadustelt koguni Lie 
-rühmad.\cite[Poincar\'e algebra]{Super} Et selle väite formaalne 
+rühmad \cite[peatükk Poincar\'e algebra]{Super}. Et selle väite formaalne 
 tõestamine nõuab palju tehnilist tööd ja tulemusi 
 diferentsiaalgeomeetriast ning Lie algebrate teooriast, siis jätame 
-siinkohal range tõestuse andmata ja piirdume vaid faktiga.
+siinkohal range tõestuse andmata ja piirdume vaid faktilise teadmisega.
 
 Et edasist teooriaarendust oluliselt lihtsustada, on järgnevas 
 otstarbekas piirduda vaid Lie maatriksrühmade vaatlemisega. Samas 
 märgime, et kuna maatriksrühmad moodustavad väga suure ja olulise 
 rühmade klassi, siis kõik tähtsamad rühmad, muuhulgas ka selles töös 
 käsitletavad juhud jäävad kaetuks ka pärast sellise kitsenduse 
-lisamist. Niisiis edasises eeldame, et kui tegelist on Lie rühmaga, 
-siis see rühm on maatriksrühm.
+lisamist. Niisiis, kõikjal selles paragrahvis eeldame, et kui 
+tegelist on Lie rühmaga, siis see rühm on maatriksrühm.
 
 Lie rühmade teoorias nöidatakse, et igale Lie rühmale vastab tema 
 Lie algebra. Meie uurime järgnevalt, kuidas tekib Lie rühma poolt 
@@ -2090,8 +2096,73 @@ mittekommutatiivsust. See ongi vastava Lie algebra kommutaator.
 Kokkuvõttes oleme andnud skeemi kuidas konstrueerida Lie 
 maatriksrühmale vastav Lie algebra.
 
-\subsection{Poincar\'e algebra kommutatsioonieeskirjad}
+\subsection{Minkowski superruum}
 
+Teoreetilise füüsika vajadustest lähtudes on sageli otstarbekas 
+vaadelda sünd\-musi ja füüsikalisi protsesse mitte ainult 
+neljamõõtmelises aegruumis, vaid hoopis üldisemas $d$-mõõtmelises
+\emph{Minkowski superruumis}. Selles alapeatükis uurime pisut 
+vabamas vormis, mida Minkowski superruum endast kujutab ja kuidas on 
+ta setud tavalise Minkowski aegruumiga. Alustuseks defineerime 
+superruumi ja superalgebra.
+
+\begin{definitsioon}
+Vektorruumi $\V$ nimetatakse \emph{supervektorruumiks} ehk 
+\emph{superruumiks}, kui ta esitub otsesummana 
+$\V = \V_{\overline{0}} \oplus \V_{\overline{1}}$, kus 
+$\V_{\overline{0}}$ ja $\V_{\overline{1}}$ on vektorruumi $\V$ 
+alamruumid ja $\V_{\overline{0}}$ elemente nimetame 
+\emph{paarisvektoriteks} ning $\V_{\overline{1}}$ elemente 
+\emph{paarituteks} vektoriteks.
+\end{definitsioon}
+
+Kui vektor $x \in \V$ kuulub kas alamruumi $\V_{\overline{0}}$ või 
+alamruumi $\V_{\overline{1}}$, siis ütleme, et see vektor on 
+\emph{homogeenne}. Homogeense vektori $x$ korral võime vaadata 
+kujutust $p : \V \rightarrow \Z_2$, mida nimetame paarsuseks ja mille 
+defineerime järmiste võrdustega:
+\begin{align*}
+p\left(x\right) = \begin{cases}
+    \overline{0},& \text{kui $x \in \V_{\overline{0}}$},\\
+    \overline{1},& \text{kui $x \in \V_{\overline{1}}$}.
+  \end{cases}
+\end{align*}
+Viimast arvesse võttes on väga loomulik superruumi kohta öelda ka 
+\emph{$\Z_2$-graduee\-ritud vektorruum}. Tegelikult ongi 
+supermatemaatika põhilisteks uurimisobjektideks $\Z_2$-gradueeritud 
+struktuurid. Analoogiliselt nagu me defineerisime supervektroruumi 
+üldistame ka tavalise algebraga\footnote{
+Tuletame meelde, et algebraks nimetatakse 
+vektorruumi $\V$ temal defineeritud binaarse tehtega 
+$\circ : \V \times \V \rightarrow \V$, kui tehe $\circ$ on mõlema 
+argumendi suhtes lineaarne.}, 
+mõistet ja defineerime tema superanaloogi.
+
+\begin{definitsioon}
+Olgu supervektorruumil $\A$ antud binaarne lineaarne algebraline 
+tehe $\circ$ (see tähendab supervektorruum $\A$ on algebra). Me 
+ütleme, et supervektorruum $\A$ on \emph{superalgebra}, kui tehe 
+$\circ$ rahuldab tingimust
+\begin{align*}
+p\left(x \circ y\right) = p\left(x\right) + p\left(y\right),
+\end{align*}
+kus $x$ ja $y$ on supervektorruumi $\A$ suvalised homogeensed 
+elemendid.
+\end{definitsioon}
+
+Sageli kasutatakse kirjanduses superalgebra asemel ka terminit 
+\emph{$\Z_2$-gradueeritud algebra}. On ilmne, et superalgebra
+assotsiatiivsus ja ühikelement defineeritakse nagu tavaliselt. 
+Veidi teistsugune sitatsioon on kommutatiivsusega, siin seab 
+elementide paarsus kommutatiivsusele ühe lisatingimuse. Defineerime 
+superalgebra $\A$ homogeensete elementide kommutaatori seosega
+\begin{align*}
+\left[x, y\right] = x \circ y - 
+\left(-1\right)^{p\left(x\right) p\left(y\right)} y \circ x,
+\end{align*}
+kus $x, y \in \A$. Kui iga kahe suvalise elementie $a, b \in \A$ 
+korral $\left[a, b\right] = 0$, siis nimetame superalgebrat $\A$ 
+kommutatiivseks.
 
 \newpage
 \section*{Summary}
@@ -2099,8 +2170,9 @@ maatriksrühmale vastav Lie algebra.
 Siia tuleb ingliskeelne kokkuvõte...
 
 \newpage
-\addcontentsline{toc}{section}{Viited}
-\bibliographystyle{alpha}
+\addcontentsline{toc}{section}{Kirjandus}
+\bibliographystyle{alphaurl} %unsrturl
+%\bibliographystyle{alpha}
 \bibliography{references}
 
 \end{document}
