@@ -2359,7 +2359,7 @@ $\theta^2$ järgi.
 \frac{\partial}{\partial \theta^2} 
 	\left(-\theta^1 \theta^2 \theta^3 \right) = 
 \frac{\partial}{\partial \theta^2} 
-	\left(\theta^2 \theta^1 \theta^3 \right) = \theta^1 \theta^3, \\
+	\left(\theta^2 \theta^1 \theta^3 \right) = \theta^1 \theta^3,\\
 %
 \frac{\partial}{\partial \theta^2} 
 	\left( \theta^1 \theta^2 \theta^4 \theta^5 \right) &= 
@@ -2369,8 +2369,44 @@ $\theta^2$ järgi.
 \end{align*}
 \end{naide}
 
+Nagu varem juba mainitud, on Minkowski superruumis lisaks 
+diferentseerimisele defineeritud ka integreesimise operatsioon. 
+Integraaliks superruumis on nõnda\-nimetatud \emph{Berezini 
+integraal}\footnote{Felix Berezin ($1931 - 1980$) - vene 
+matemaatik.}, mis on lineaarkujutus $\int_{\SM} 
+\cdot \ \mathrm{d} \theta^{i_1} \theta^{i_2} \ldots \theta^{i_k}$ 
+omadusega
+\[\int_{\SM} \theta^{i_1} \theta^{i_2} 
+	\ldots \theta^{i_k} \ 
+	\mathrm{d} \theta^{i_1} \theta^{i_2} \ldots \theta^{i_k} = 1\]
+ning null muudel juhtudel.
 
-
+\begin{naide}
+Leida funktsiooni $F\left(x^{\mu}, \theta^{\alpha}\right)$ 
+Berezini integraal $\int_{\SM} F\left(x^{\mu}, 
+\theta^{\alpha}\right) \ \mathrm{d} \theta^1 \theta^2 
+\theta^3$, kui $F\left(x^{\mu}, \theta^{\alpha}\right) = 
+	\theta^5 + \theta^1 \theta^2 + 
+	\psi\left(x^{\mu}\right) \theta^1 \theta^2 \theta^3$.
+\begin{align*}
+&\int_{\SM} F\left(x^{\mu}, 
+	\theta^{\alpha}\right) \ \mathrm{d} 
+	\psi\left(x^{\mu}\right) \theta^1 \theta^2 \theta^3 = 
+\int_{\SM} \left(\theta^5 + \theta^1 \theta^2 + 
+	\theta^1 \theta^2 \theta^3\right) \ 
+	\mathrm{d} \theta^1 \theta^2 \theta^3 = \\
+&= \int_{\SM} \theta^5 \ \mathrm{d} \theta^1 \theta^2 \theta^3 +
+\int_{\SM} \theta^1 \theta^2 \ 
+	\mathrm{d} \theta^1 \theta^2 \theta^3 + 
+\int_{\SM} \psi\left(x^{\mu}\right) 
+	\theta^1 \theta^2 \theta^3 \ 
+	\mathrm{d} \theta^1 \theta^2 \theta^3 = \\
+&= 0 + 0 + \psi\left(x^{\mu}\right) 
+	\int_{\SM} \theta^1 \theta^2 \theta^3 \ 
+	\mathrm{d} \theta^1 \theta^2 \theta^3= 
+	\psi\left(x^{\mu}\right) \cdot 1 = \psi\left(x^{\mu}\right).
+\end{align*}
+\end{naide}
 
 \newpage
 \section*{Summary}
