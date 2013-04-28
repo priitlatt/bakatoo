@@ -125,10 +125,10 @@ Seda teksti pole tegelikutl vaja.\footnote{Hermann Minkowski
 \newpage
 \section{Vajalikud eelteadmised}
 
-Selles peatükis toome välja definitsioonid ja tulemused, mida läheb 
-tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud 
+Selles peatükis tuletame meelde definitsioonid ja tulemused, mida 
+läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud 
 tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures 
-tõestusteta.
+tõestusteta. 
 
 \subsection{Skalaarkorrutisega seotud abitulemused}
 \label{eelteadmised:skalaar}
@@ -305,6 +305,8 @@ Olgu $A$ ja $B$ $n$-järku ruutmaatriksid. Siis $\Tr AB = \Tr BA$.
 Vahetu kontroll.
 \end{proof}
 
+\subsubsection*{Blokkmaatriksid}
+
 \begin{teoreem}[Blokkmaatriksite korrutamine]
 Olgu meil $m \times p$ maatriks $A$ ja olgu meil $p \times n$ maatriks 
 $B$. Jagame maatriksi $A$ blokkideks, kus on $q$ rea blokki ja $s$ 
@@ -364,7 +366,7 @@ kus $A^0 = E$ ja $A^k$ tähendab korrutist, kus maatriksit $A$
 korrutatakse iseendaga $k$ korda. Osutub, et $e^A$ on selles mõttes 
 korrektselt defineeritud, et rida 
 $\sum_{k = 0}^{\infty} \frac{A^k}{k!}$ koondub alati. 
-Sageli kasutatakse $e^A$ asemel ka tähistust $\exp\left(A\right)$.
+Sageli kasutatakse $e^A$ asemel ka tähistust $\exp A$.
 
 Järgnevas lauses toome mõned lihtsamad maatrikseksponendi omadused.
 \begin{lause}
@@ -395,9 +397,10 @@ Muutkonda tähistame tähega $M$.
 \end{definitsioon}
 
 Muutkonda võime vaadelda kui geomeetrilise pinna üldistust. 
-Vahetult muutkonna definitsiooni põhjal on selge 
-($\tau$ on Hausdorffi topoloogiline ruum), et muutkonna iga punkti 
-mingit ümbrust võime vaadelda kui $n$-mõõtmelist eukleidilist ruumi.
+Vahetult muutkonna definitsiooni põhjal on selge , et muutkonna 
+iga punkti mingit ümbrust võime vaadelda kui $n$-mõõtmelist 
+eukleidilist ruumi. Seega muutkonna punktidel leiduvad lokaalselt 
+koordinaadid.
 
 \begin{definitsioon}
 Me ütleme, et muutkond $M$ on \emph{ühelisidus}, kui suvalise 
@@ -414,7 +417,7 @@ muutukond.
 \item[1)] Võime võtta topoloogiaks alamruumi topoloogia, see on 
 Hausdorffi topoloogiline ruum.
 \item[2)] Alamruumi topoloogial on samuti loenduv baas.
-\item[3)] Homöomorfismiks sobib võtta neli lokaalset kaarti, 
+\item[3)] Homöomorfismideks sobib võtta neli lokaalset kaarti, 
 mille saame, kui proijtseerime ülemise ja alumise poolringi 
 $x$-teljele ja vasak- ning parempoolse poolringi $y$-teljele.
 \end{itemize}
@@ -425,7 +428,8 @@ analoogline osaga (a).)
 
 Arvestades käesoleva töö peatükis \ref{ptk:lie_ryhm} antud Lie 
 rühma definitsiooni, tutvustame lühidalt ka diferentseeruva muutkonna 
-mõistet.
+mõistet. Teeme seda tuginedes aine Globaalanalüüs loengukonspektile 
+\cite{globanal}.
 
 \begin{definitsioon}
 Olgu $M$ muutkond ja $B \subset \R^n$ lahtine alamhulk. Paari 
@@ -439,12 +443,6 @@ kaart}. Kõikide muutkonna $M$ lokaalsete kaartide kogumit nimetatakse
 Kui muutkonna $M$ saab katta ühe lokaalse kaardiga, siis öeldakse, 
 et muutkond $M$ on \emph{triviaalne}.
 \end{definitsioon}
-
-Tuginedes aine Globaalanalüüs loengukonspektile \cite{globanal} 
-anname järgnevas lühi\-kese (kuid samas käesoleva töö vajadusi silmas 
-pidades\footnote{Vaata näiteks peatükk \ref{ptk:lie_ryhm}, 
-\nameref{ptk:lie_ryhm}.} piisava) ülevaate diferentseeruva muutkonna 
-mõistest.
 
 Olgu meil $n$-mõõtmeline topoloogiline muutkond $M$ ja $U,V$ selle 
 muutkonna piirkonnad, kusjuures $U \cap V \neq \emptyset$. Vaatleme 
@@ -1510,7 +1508,7 @@ näitasime, et $\mathcal{R}$ on rühm ja seega on
 $\left(\Lambda\indices{^i_j}\right)$ ortogonaalne. 
 Jääb veel näidata, et $\left(\Lambda\indices{^i_j}\right)^{-1} = 
 \left(\Lambda\indices{^i_j}\right)^T$. Selleks märgmine, et 
-blokkmaatriksi pööramise eeskirja kohaselt
+blokkmaatriksi pööramise eeskirja järgi
 \begin{align*}
 \Lambda^{-1} = 
 \begin{pmatrix}
@@ -1680,11 +1678,15 @@ Poincar\'e rühma kontekstis.
 Vektorruumi $L$ nimetatakse \emph{Lie algebraks}, kui on määratud 
 bilineaarvorm $\left[\phantom{u},\phantom{u}\right] : 
 L \times L \rightarrow L$, mis on antikommuteeruv, see tähendab 
-kõikide $u, v \in L$ korral $\left[u, v\right] = - \left[v, u\right]$ 
-ja iga $u, v, w \in L$ puhul kehtib Jacobi samasus ehk 
-$\left[u, \left[v, w\right]\right] + 
+suvaliste $u, v \in L$ korral 
+$\left[u, v\right] = - \left[v, u\right]$,
+ja kehtib Jacobi samasus 
+\begin{align*}
+\left[u, \left[v, w\right]\right] + 
 \left[v, \left[w, u\right]\right] + 
-\left[w, \left[u, v\right]\right] = 0$.
+\left[w, \left[u, v\right]\right] = 0,
+\end{align*}
+kus $u, v, w \in L$.
 \end{definitsioon}
 
 Bilineaarvormi $\left[\phantom{u}, \phantom{u}\right] : 
@@ -1704,7 +1706,7 @@ algebra \emph{struktuurikonstantideks}.
 
 \begin{markus}
 Lie algebrate kontekstis nimetatakse baasivektoreid sageli ka 
-algebra \emph{generaatoriteks}.
+Lie algebra \emph{generaatoriteks}.
 \end{markus}
 
 Lie algebra struktuurikonstantide definitsiooni põhjal on selge, et 
@@ -2171,7 +2173,7 @@ Siia tuleb ingliskeelne kokkuvõte...
 
 \newpage
 \addcontentsline{toc}{section}{Kirjandus}
-\bibliographystyle{alphaurl} %unsrturl
+\bibliographystyle{alphaurl} %show the url's in references
 %\bibliographystyle{alpha}
 \bibliography{references}
 
