@@ -44,6 +44,7 @@
 \def\L{{\mathcal L}}
 \def\M{{\mathcal M}}
 \def\P{{\mathcal P}}
+\def\SM{{\mathcal {SM}}}
 \def\su2{{\mathfrak{ su}\left(2\right)}}
 
 \usepackage{mathtools}
@@ -2138,8 +2139,11 @@ p\left(x\right) = \begin{cases}
 Viimast arvesse võttes on väga loomulik superruumi kohta öelda ka 
 \emph{$\Z_2$-graduee\-ritud vektorruum}. Tegelikult ongi 
 supermatemaatika põhilisteks uurimisobjektideks $\Z_2$-gradueeritud 
-struktuurid. Analoogiliselt nagu me defineerisime supervektroruumi 
-üldistame ka tavalise algebraga\footnote{
+struktuurid. Teoreetilise füüsika seisukohalt on superruumil 
+eriti tähtis roll, kuna see annab võimaluse ühes avaldises 
+siduda oma iseloomult täiesti erinevad fermionid ja bosonid, 
+see on aine- ja väljaosakesed. Analoogiliselt nagu me defineerisime 
+supervektroruumi üldistame ka tavalise algebraga\footnote{
 Tuletame meelde, et algebraks nimetatakse 
 vektorruumi $\V$ temal defineeritud binaarse tehtega 
 $\circ : \V \times \V \rightarrow \V$, kui tehe $\circ$ on mõlema 
@@ -2259,6 +2263,114 @@ $\G^{m}_{\overline{1}}$ otsesummaks. Niisiis
 \G^m = \G^{m}_{\overline{0}} \oplus \G^{m}_{\overline{1}}
 \end{align*}
 ja Grassmanni algebra on tõepoolest superalgebra.
+
+Sellega oleme kirjeldanud piisava aparatuuri, et defineerida
+klassikalise Minkowski ruumi superanaloog, Minkowski superruum. 
+
+\begin{definitsioon}
+Olgu $d \in \N$ ja 
+$\left\lbrace\theta^1, \theta^2, \ldots, \theta^m\right\rbrace$
+Grassmanni algebra $\G^m$ moodustajate süsteem. 
+Hulka $\{x^{\mu}, \theta^\alpha\}$, kus $\alpha = 1, \ldots, m$ ning 
+$x^{\mu}$, $\mu = 1, \ldots, d$, on klassikalised kommuteeruvad 
+koordinaadid, nimetatakse \emph{$d$-mõõtmeliseks Minkowski 
+superruumiks}, mida tähistame $\SM$.
+\end{definitsioon}
+
+Vahel eristatakse Minkowski superruumi definitsioonis
+konkreetsuse mõttes Grassmani algebra moodustajate paarsust ning 
+tähistuse $\{x^{\mu}, \theta^\alpha\}$ asemel kirjutatakse 
+$\left\lbrace x^{\mu}, \theta_{\overline{0}}^{\alpha}, 
+\theta_{\overline{1}}^{\alpha} \right\rbrace$, kus 
+$\theta_{\overline{0}}^{\alpha}$ 
+ja $\theta_{\overline{1}}^{\alpha}$ on vastavalt paaris- ja paaritud 
+moodustajad.
+
+Osutub, et Minkowski superruumis saab defineerida 
+funktsioonid, tuletised ja ka integraalid. Tutvustame 
+järgnevas näidete varal ja rangeid definitsioone andmata, 
+mida nende terminite all superruumis mõeldakse. Ruumi $\SM$ 
+funktsiooniks $F$ nimetame Grassmanni algebra väärtustega 
+funktsiooni, mille võime kirja panna kujul
+\begin{align*}
+F \left(x^{\mu}, \theta^{\alpha} \right) &= 
+\phi \left(x^{\mu}\right) + 
+\psi_{\alpha}^{1} \left(x^{\mu}\right) \theta^{\alpha} + 
+\psi_{\alpha_1 \alpha_2}^{2} \left(x^{\mu}\right) 
+	\theta^{\alpha_1} \theta^{\alpha_2} + \\
+&+ \psi_{\alpha_1 \alpha_2 \alpha_3}^{3} \left(x^{\mu}\right) 
+	\theta^{\alpha_1} \theta^{\alpha_2} \theta^{\alpha_3} + 
+\ldots + \\
+&+ \psi_{\alpha_1 \alpha_2 \ldots \alpha_m}^{m} 
+	\left(x^{\mu}\right) \theta^{\alpha_1} \theta^{\alpha_2} 
+	\ldots \theta^{\alpha_m}, 
+\end{align*}
+kus $\phi, \psi_{\alpha}^{1}, \psi_{\alpha_1 \alpha_2}^{2}, 
+\ldots, \psi_{\alpha_1 \alpha_2 \ldots \alpha_m}^{m}$ on mingid 
+(analüütilised) funktsioonid, mille muutumispiirkonnaks on 
+korpus, üle mille me vaatleme algebrat $\G^m$. Märkimist väärib 
+asjaolu, et nii saab kõik Minkowski superruumi 
+funktsioonid esitada lõplike summadena, mille liidetavateks on 
+monoomi ja korpuse elemendi korrutis. Ehk kokkuvõttes on 
+funktsioonidel võrdlemisi lihtne struktuur. 
+
+Üldistame nüüd meile analüüsist tuttavat funktsiooni 
+diferentseeruvuse mõistet ka superruumile. On loomulik eeldada, 
+et ka Minkowski superruumis on funktsioonide summa tuletis 
+nende funktsioonide tuletiste summa ja arvuga korrutatud funktsiooni 
+tuletiseks on see sama arv korda funktsiooni tuletis, just nagu 
+tavaliselt, see tähendab
+\begin{align*}
+\left(F + G\right)' = F' + G', \text{ ja } \left(aF\right)' = aF',
+\end{align*}
+kus $a \in \K$ ja $F$ ning $G$ on mingid Minkowski superruumi 
+funktsioonid. Samas võttes nüüd arvesse, et kõik funktsioonid 
+saab kirja panna summadena, mille liikmeteks arv korda mingi 
+monoom, siis piisab meil nüüd defineerida vaid monoomi 
+diferentseerimine. Viimane on aga väga lihtne. Nimelt 
+monoomi 
+\begin{align*}
+\theta^{i_1} \theta^{i_2} \ldots \theta^{i_{k-1}} 
+\theta^{i_k} \theta^{i_{k+1}} \ldots \theta^{i_n}
+\end{align*}
+tuletiseks Grassmanni algebra moodustaja $\theta^{i_k}$ järgi 
+nimetame monoomi, mille saame kui liigutame esialgses monoomis
+kommutatsioonieeskirju arvestades elemendi $\theta^{i_k}$ selles 
+monoomis esimesele kohale ja seejärel eemaldame ta sealt 
+säilitades märgi. See tähendab
+\begin{align*}
+\dfrac{\partial}{\partial \theta^{i_k}} \left(
+\theta^{i_1} \theta^{i_2} \ldots \theta^{i_{k-1}} 
+\theta^{i_k} \theta^{i_{k+1}} \ldots \theta^{i_n}
+\right) = 
+\left(-1\right)^{k-1} \theta^{i_1} \theta^{i_2} \ldots 
+\theta^{i_{k-1}} \theta^{i_{k+1}} \ldots \theta^{i_n}.
+\end{align*}
+\textcolor{red}{Mis juhtub siis, kui monoomis polegi sellist 
+moodustajat, mille järgi diferentseerimine käib?}
+
+\begin{naide}
+Leiame monoomide $\theta^1 \theta^3 \theta^2$ ja 
+$\theta^1 \theta^2 \theta^4 \theta^5$ tuletised elemendi 
+$\theta^2$ järgi.
+\begin{align*}
+\frac{\partial}{\partial \theta^2} 
+	\left( \theta^1 \theta^3 \theta^2\right) &= 
+\frac{\partial}{\partial \theta^2} 
+	\left(-\theta^1 \theta^2 \theta^3 \right) = 
+\frac{\partial}{\partial \theta^2} 
+	\left(\theta^2 \theta^1 \theta^3 \right) = \theta^1 \theta^3, \\
+%
+\frac{\partial}{\partial \theta^2} 
+	\left( \theta^1 \theta^2 \theta^4 \theta^5 \right) &= 
+\frac{\partial}{\partial \theta^2} 
+	\left(- \theta^2 \theta^1 \theta^4 \theta^5 \right) = 
+	- \theta^1 \theta^4 \theta^5.
+\end{align*}
+\end{naide}
+
+
+
 
 \newpage
 \section*{Summary}
