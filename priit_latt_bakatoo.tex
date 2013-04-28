@@ -40,6 +40,7 @@
 \def\Z{{\mathbb Z}}
 \def\Q{{\mathbb Q}}
 \def\A{{\mathcal A}}
+\def\G{{\mathcal G}}
 \def\L{{\mathcal L}}
 \def\M{{\mathcal M}}
 \def\P{{\mathcal P}}
@@ -126,9 +127,9 @@ Seda teksti pole tegelikutl vaja.\footnote{Hermann Minkowski
 \section{Vajalikud eelteadmised}
 
 Selles peatükis tuletame meelde definitsioonid ja tulemused, mida 
-läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on pööratud 
-tähelepanu kursustes Algebra I või Geomeetria II, esitame seejuures 
-tõestusteta. 
+läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on 
+pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame 
+seejuures tõestusteta. 
 
 \subsection{Skalaarkorrutisega seotud abitulemused}
 \label{eelteadmised:skalaar}
@@ -185,8 +186,8 @@ $a_n := b_n - \sum_{j=1}^{n-1}\left(b_n \cdot e_j\right)e_j$.
 \end{proof}
 
 \begin{markus} \label{markus:gram-schmidt}
-Teoreemi 4.1 tõestuses antud algortimi ortonormeetirud baasi leidmiseks 
-nimetatakse \emph{Gram-Schmidti algoritmiks} või 
+Teoreemi 4.1 tõestuses antud algortimi ortonormeetirud baasi 
+leidmiseks nimetatakse \emph{Gram-Schmidti algoritmiks} või 
 \emph{ortogonaliseerimisprotsessiks}.
 \end{markus}
 
@@ -196,7 +197,8 @@ Olgu $\V$ vektroruum skalaarkorrutisega
 $g : \V \times \V \rightarrow \R$. Sellisel juhul 
 kehtib võrratus
 \begin{equation} \label{eq:C-S-B}
-g^2 \left(u, v \right) \leq g \left(u, u \right) g \left(v, v \right)
+g^2 \left(u, v \right) \leq g \left(u, u \right) 
+g \left(v, v \right)
 \end{equation}
 kõikide $u, v \in \V$ korral. Seejuures võrdus kehtib parajasti 
 siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
@@ -218,8 +220,9 @@ Saime $\lambda$ suhtes võrratuse
 g\left(v,v\right)\lambda^2 + 2|g\left(u, v \right)|\lambda + 
 g\left(u,u\right) \geq 0,
 \end{equation*}
-mille reaalarvuliste lahendite hulk on $\R$. Kui $g\left(v,v\right) > 0$, 
-siis on tegu ruut\-võrratusega. Seega vastava ruutvõrrandi 
+mille reaalarvuliste lahendite hulk on $\R$. Kui 
+$g\left(v,v\right) > 0$, siis on tegu ruut\-võrratusega. 
+Seega vastava ruutvõrrandi 
 diskriminandi jaoks kehtib
 \begin{equation*}
 4|g\left(u,v\right)|^2 - 4g\left(u,u\right)g\left(v,v\right) \leq 0,
@@ -272,8 +275,9 @@ $\V$.
 Olgu $\V$ vektorruum ja $L : \V \rightarrow \V$ 
 lineaarne teisendus ja kehtigu $g \left(x, y\right) = 
 g \left(Lx, Ly\right)$ kõikide $x, y \in \V$ korral. 
-Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on injektiivne 
-ja sürjektiivne. Veendume kõigepealt kujutuse $L$ üksühesuses.
+Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on 
+injektiivne ja sürjektiivne. Veendume kõigepealt kujutuse 
+$L$ üksühesuses.
 
 Olgu $x, y \in \V$, $x \neq y$. Oletame vastuväiteliselt, 
 et $Lx = Ly$, siis $Lx - Ly = 0$ ja seega iga $z \in \V$ korral
@@ -388,9 +392,9 @@ Olgu $X, Y \in \Mat_n \K$ ruutmaatriksid ja $k, l \in \K$. Siis
 Topoloogilist ruumi $\left(X, \tau\right)$ nimetatakse 
 \emph{$n$-mõõtmeliseks topoloogilseks muutkonnaks}, kui
 \begin{itemize}
-\item[1)] $\left(X, \tau\right)$ on Hausdorffi topoloogiline ruum,
-\item[2)] topoloogial $\tau$ leidub loenduv baas,
-\item[3)] leidub hulga $X$ homöomorfism ruumi $\R^n$ lahtise 
+\item[$1)$] $\left(X, \tau\right)$ on Hausdorffi topoloogiline ruum,
+\item[$2)$] topoloogial $\tau$ leidub loenduv baas,
+\item[$3)$] leidub hulga $X$ homöomorfism ruumi $\R^n$ lahtise 
 alamhulgaga.
 \end{itemize}
 Muutkonda tähistame tähega $M$.
@@ -411,17 +415,17 @@ tõmmata üheks punktiks.
 \begin{naide}
 Järgmised hulgad on topoloogilised muutkonnad.
 \begin{itemize}
-\item[(a)] Ringjoon on $1$-mõõtmeline mittetriviaalne topoloogiline 
+\item[$(a)$] Ringjoon on $1$-mõõtmeline mittetriviaalne topoloogiline 
 muutukond.
 \begin{itemize}
-\item[1)] Võime võtta topoloogiaks alamruumi topoloogia, see on 
+\item[$1)$] Võime võtta topoloogiaks alamruumi topoloogia, see on 
 Hausdorffi topoloogiline ruum.
-\item[2)] Alamruumi topoloogial on samuti loenduv baas.
-\item[3)] Homöomorfismideks sobib võtta neli lokaalset kaarti, 
+\item[$2)$] Alamruumi topoloogial on samuti loenduv baas.
+\item[$3)$] Homöomorfismideks sobib võtta neli lokaalset kaarti, 
 mille saame, kui proijtseerime ülemise ja alumise poolringi 
 $x$-teljele ja vasak- ning parempoolse poolringi $y$-teljele.
 \end{itemize}
-\item[(b)] Sfäär on topoloogiline muutkond. (Põhjendus on 
+\item[$(b)$] Sfäär on topoloogiline muutkond. (Põhjendus on 
 analoogline osaga (a).)
 \end{itemize}
 \end{naide}
@@ -829,10 +833,10 @@ $\M$ kehtib võrdus $g \left(Lx, Ly \right) = g \left(x, y\right)$.
 Olgu $L:\M \rightarrow \M$ lineaarne kujutus. Siis järgmised väited 
 on samaväärsed:
 \begin{itemize}
-\item[(i)] $L$ on pseudoortogonaalteisendus;
-\item[(ii)] $L$ säilitab ruumi $\M$ ruutvormi, see tähendab 
+\item[$(i)$] $L$ on pseudoortogonaalteisendus;
+\item[$(ii)$] $L$ säilitab ruumi $\M$ ruutvormi, see tähendab 
 $Q\left(Lx\right) = Q\left(x\right)$ iga $x \in \M$ korral;
-\item[(iii)] $L$ kujutab suvalise ruumi $\M$ ortonormaalse baasi 
+\item[$(iii)$] $L$ kujutab suvalise ruumi $\M$ ortonormaalse baasi 
 ruumi $\M$ ortonormaalseks baasiks.
 \end{itemize}
 \end{lause} 
@@ -983,7 +987,7 @@ ka pseudoortogonaalsel juhul.}
 \paragraph*{}
 Me vaatleme ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ seotud 
 maatriksit $\Lambda$ kui koordinaatide teisenemise maatriksit 
-tavalisel viisil. Seega, kui $x \in \M$ on esitub koordinaatides 
+tavalisel viisil. Seega, kui $x \in \M$ esitub koordinaatides 
 baasi $\{e_i\}$ suhtes kujul $x = x^i e_i$, $i = 1, 2, 3, 4$, siis 
 tema koordinaadid baasi $\{\hat{e}_i\} = \{Le_i\}$ suhtes avalduvad 
 kujul $x = \hat{x}^i \hat{e}_i$, kus
@@ -1101,8 +1105,8 @@ või nullpikkusega ning olgu $\{e_a\}$ ruumi $\M$ ortonormaalne baas,
 mille suhtes $u$ ja $v$ avalduvad kujul $u = u^a e_a$ ja 
 $v = v^a e_a$. Siis kehtib parajasti üks järgmistest tingimusest:
 \begin{itemize}
-\item[(a)] $u^4 v^4 > 0$, mille korral $g\left(u, v\right) < 0$,
-\item[(b)] $u^4 v^4 < 0$, mille korral $g\left(u, v\right) > 0$.
+\item[$(a)$] $u^4 v^4 > 0$, mille korral $g\left(u, v\right) < 0$,
+\item[$(b)$] $u^4 v^4 < 0$, mille korral $g\left(u, v\right) > 0$.
 \end{itemize}
 \end{teoreem}
 \begin{proof}
@@ -1154,11 +1158,11 @@ $u,v \in \tau$, siis $u \sim v$ parajasti siis, kui
 $g\left(u,v\right) < 0$. Sedasi defineeritud seos $\sim$ on 
 ekvivalents:
 \begin{itemize}
-\item[(a)] \textbf{refleksiivsus} järeldub vahetult ajasarnase 
+\item[$(a)$] \textbf{refleksiivsus} järeldub vahetult ajasarnase 
 	vektori definitsioonist;
-\item[(b)] seose $\sim$ \textbf{sümmeetrilisus} tuleneb 
+\item[$(b)$] seose $\sim$ \textbf{sümmeetrilisus} tuleneb 
 	skalaarkorrutise sümmeetrilisusest;
-\item[(c)] \textbf{refleksiivsuseks} märgime, et kui 
+\item[$(c)$] \textbf{refleksiivsuseks} märgime, et kui 
 	$g\left(u,v\right) < 0$ ja $g\left(v, w\right) < 0$, siis 
 	teoreemi \ref{teoreem:ajasarnased_vektorid} põhjal 
 	$u^4 v^4 > 0$ ja $v^4 w^4 > 0$ ehk $u^4$ ja $v^4$ ning $v^4$ ja 
@@ -1194,12 +1198,12 @@ Lorentzi teisendus, see tähendab $\Lambda \in \L_{GH}$ ja olgu
 $\{e_a\}$ ruumi $\M$ orto\-normeeritud baas. Siis on järgmised 
 väited samaväärsed:
 \begin{itemize}
-\item[(i)] $\Lambda$ on ortokroonne;
-\item[(ii)] $\Lambda$ säilitab kõikide nullpikkusega vektorite 
+\item[$(i)$] $\Lambda$ on ortokroonne;
+\item[$(ii)$] $\Lambda$ säilitab kõikide nullpikkusega vektorite 
 ajakoordinaadi märgi, see tähendab, kui $u = u^a e_a$ on 
 nullpikkusega, siis arvud $u^4$ ja $\hat{u}^4 = 
 \Lambda\indices{^4_b} u^b$ on sama märgiga;
-\item[(iii)] $\Lambda$ säilitab kõikide ajasarnaste vektorite 
+\item[$(iii)$] $\Lambda$ säilitab kõikide ajasarnaste vektorite 
 ajakoordinaadi märgi.
 \end{itemize}
 \end{teoreem}
@@ -1456,13 +1460,13 @@ nimetame rühma $\L$ \emph{pöörete alamrühmaks}.
 \begin{lause}
 Olgu $\Lambda \in \L$. Siis on järgmised väited samaväärsed:
 \begin{itemize}
-\item[(i)] $\Lambda$ on pööre, see tähendab $\Lambda \in 
+\item[$(i)$] $\Lambda$ on pööre, see tähendab $\Lambda \in 
 \mathcal{R}$;
-\item[(ii)] $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = 
+\item[$(ii)$] $\Lambda\indices{^1_4} = \Lambda\indices{^2_4} = 
 \Lambda\indices{^3_4} = 0$;
-\item[(iii)] $\Lambda\indices{^4_1} = \Lambda\indices{^4_2} = 
+\item[$(iii)$] $\Lambda\indices{^4_1} = \Lambda\indices{^4_2} = 
 \Lambda\indices{^4_3} = 0$;
-\item[(iv)] $\Lambda\indices{^4_4} = 1$.
+\item[$(iv)$] $\Lambda\indices{^4_4} = 1$.
 \end{itemize}
 \end{lause}
 
@@ -1670,7 +1674,8 @@ Poincar\'e rühma kontekstis.
 \end{markus}
 
 \newpage
-\section{Minkowski ruum teoreetilises füüsikas ja diferentsiaalgeomeetrias}
+\section{Minkowski ruum teoreetilises füüsikas ja 
+diferentsiaalgeomeetrias}
 
 \subsection{Lie algebra}
 
@@ -2023,10 +2028,11 @@ määratud) \emph{Lie algebraks}.
 
 Osutub, et eespool vaatluse all olnud Lorentzi rühm $\L_{GH}$ ja 
 Poincar\'e rühm $\P$ on oma matemaatilistelt omadustelt koguni Lie 
-rühmad \cite[peatükk Poincar\'e algebra]{Super}. Et selle väite formaalne 
-tõestamine nõuab palju tehnilist tööd ja tulemusi 
+rühmad \cite[peatükk Poincar\'e algebra]{Super}. Et selle väite 
+formaalne tõestamine nõuab palju tehnilist tööd ja tulemusi 
 diferentsiaalgeomeetriast ning Lie algebrate teooriast, siis jätame 
-siinkohal range tõestuse andmata ja piirdume vaid faktilise teadmisega.
+siinkohal range tõestuse andmata ja piirdume vaid faktilise 
+teadmisega.
 
 Et edasist teooriaarendust oluliselt lihtsustada, on järgnevas 
 otstarbekas piirduda vaid Lie maatriksrühmade vaatlemisega. Samas 
@@ -2165,6 +2171,94 @@ superalgebra $\A$ homogeensete elementide kommutaatori seosega
 kus $x, y \in \A$. Kui iga kahe suvalise elementie $a, b \in \A$ 
 korral $\left[a, b\right] = 0$, siis nimetame superalgebrat $\A$ 
 kommutatiivseks.
+
+Tuntuim ja praktikas ilmselt enim kasutust leidev superalgebra näide 
+on Grassmanni algebra. Osutub, et 
+Grassmanni\footnote{Hermann Günther Grassmann $(1809 - 1877)$ - 
+saksa matemaatik.} algebral on oluline roll ka Minkowski 
+superruumi kontekstis. Seetõttu teeme siinkohal Grassmanni 
+algebraga ka pisut lähemalt tutvust.
+
+\begin{definitsioon} \label{def:grassmann}
+Me ütleme, et ühikelemendiga assotsiatiivne algebra on 
+\emph{Grassmanni algebra}, kui temas leidub lõplik moodustajate 
+süsteem $\left\lbrace\theta^1, \theta^2, \ldots, 
+\theta^m\right\rbrace$, $m \in \N$, mille elemendid rahuldavad 
+tingimusti \begin{itemize}
+\item[$(i)$] suvaliste $i, j \in \left\lbrace 1, 2 \ldots, 
+m \right\rbrace$ korral $\theta^i \theta^j = - \theta^j \theta^i$,
+\item[$(ii)$] $\theta^1 \theta^2 \ldots \theta^m \neq 0$.
+\end{itemize}
+Grassmanni algebrat, millemoodustajate süsteem koosneb $m$ 
+elemendist tähistame sümboliga $\G^m$.
+\end{definitsioon}
+
+Vahetult definitsioonist saame Grassmanni algebra $\G^m$ kohta 
+teha ühe olulise järelduse. Kui võtame definitsiooni 
+\ref{def:grassmann} tingimuses $(i)$ indeksid $i = j$, siis saame 
+$\theta^i \theta^i = -\theta^i \theta^i$, millest
+$\left(\theta^i\right)^2 = 0$. See tingimus ütleb väga palju 
+Grassmanni algebra elementide kuju kohta. Nimelt, kuna 
+$\left\lbrace\theta^1, \theta^2, \ldots, \theta^m\right\rbrace$ 
+on moodustajate süsteem, siis saame suvalise $\xi \in \G^m$ 
+panna kirja polünoomi kujul, ja et $\left(\theta^i\right)^2 = 0$ 
+kõikide $i \in \{1, 2, \ldots, m\}$ korral, siis moodustaja 
+$\theta^i$ kas kuulub selle polünoomi liidetavate hulka parajasti 
+üks kord, või üldse mitte. Niisiis elemendi $\xi$ üldkuju on
+\begin{align*}
+\xi = \alpha_0 e + \sum_{i = 1}^{m} \alpha_i \theta^i + \ldots + 
+\sum_{i_1 i_2 \ldots i_m} \alpha_{i_1 i_2 \ldots i_m} 
+\theta^i_1 \theta^i_2 \ldots \theta^i_m,
+\end{align*}
+kus $e$ on $\G^m$ ühikelement.
+
+Grassmanni algebra supervektorruumi struktuur tekib väga loomulikul 
+viisil. Kahte tüüpi homogeenseteks elementideks sobib võtta
+esiteks paarituarvuliste muutujate arvuga elementaarmonoomide 
+lineaarkombinatsioonid kujul
+\begin{align} \label{eq:grass_paaritu}
+\sum_{i_1, \ldots, i_{2r+1}} \alpha_{i_1 i_2 \ldots i_{2r+1}} 
+\theta^1 \theta^2 \ldots \theta^{2r+1},
+\end{align}
+ja teiseks paarisarvulise muutujate arvuga elementaarmonoomide 
+lineaarkombinatsioonid kujul
+\begin{align} \label{eq:grass_paaris}
+\sum_{i_1, \ldots, i_{2r}} \alpha_{i_1 i_2 \ldots i_{2r}} 
+\theta^1 \theta^2 \ldots \theta^{2r},
+\end{align}
+kusjuures mõlemas avaldises $r \in \{1, 2, \ldots, 
+\lfloor \frac{m}{2} \rfloor \}$. Seejuures elemente, mis on kujul 
+\ref{eq:grass_paaritu} nimetame algebra $\G^m$ paarituteks 
+elementideks ja elemente kujul \ref{eq:grass_paaris} 
+paaris\-elementideks. On kerge veenduda, et sel viisil 
+paariselemendid kommuteeruvad ja paaritud elemendid 
+antikommuteeruvad. Lisaks on selge, et kui $\xi$ ja $\eta$ on 
+algebra $\G^m$ mingid homogeensed elemendid, siis 
+\begin{align} \label{eq:grass_parity}
+p \left(\xi \cdot \eta \right) = p \left(\xi\right) 
++ p \left(\eta \right),
+\end{align}
+kus $p$ tähistab paarsust. Elementide $\xi$ ja $\eta$ 
+kommutatsioonieeskirjade kohta saame nüüd 
+märkida $\xi \cdot \eta = \left(-1\right)^{p\left(\xi\right) 
+p\left(\eta\right)} \eta \cdot \xi$, kus 
+$\left(-1\right)^{\overline{0}} = 1$ ja 
+$\left(-1\right)^{\overline{1}} = -1$.
+
+Paaris- ja paaritud elemendid moodustavad ruumis $\G^m$ alamruumid. 
+Tähistame neid vastavalt $\G^{m}_{\overline{0}}$ ja 
+$\G^{m}_{\overline{1}}$. Paneme tähele, et valemi
+\ref{eq:grass_parity} põhjal on alamruum $\G^{m}_{\overline{0}}$ 
+koguni algebra $\G^m$ alamalgebra. Nüüd, kuna 
+$\G^{m}_{\overline{0}} \cup \G^{m}_{\overline{1}} = \{0\}$, siis 
+saame suvalise $\xi \in \G^m$ lahutada paaris- ja paaritute 
+elementide summaks ehk teisi sõnu Grassmanni algebra $\G^m$ on 
+lahutatav alamruumide $\G^{m}_{\overline{0}}$ ja 
+$\G^{m}_{\overline{1}}$ otsesummaks. Niisiis 
+\begin{align*}
+\G^m = \G^{m}_{\overline{0}} \oplus \G^{m}_{\overline{1}}
+\end{align*}
+ja Grassmanni algebra on tõepoolest superalgebra.
 
 \newpage
 \section*{Summary}
