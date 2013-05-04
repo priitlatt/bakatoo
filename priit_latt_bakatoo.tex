@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[12pt]{article}
 
 \usepackage{tensor}
 \usepackage{amsmath}
@@ -13,7 +13,18 @@
 \usepackage{hyperref}
 \usepackage{verbatim}
 \usepackage{color}
-\usepackage{indentfirst} %esimene lõik taandega
+\usepackage{indentfirst}
+\usepackage{parskip}
+\setlength{\parindent}{15pt}
+
+\begingroup
+\makeatletter
+   \@for\theoremstyle:=definition,remark,plain\do{%
+     \expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{%
+        \addtolength\thm@preskip\parskip
+     }%
+   }
+\endgroup
 
 \theoremstyle{plain}
 \newtheorem{teoreem}{Teoreem}[section]
@@ -99,14 +110,127 @@ Juhendaja: \dotfill "....." juuni 2013\\[2cm]
 \section*{Sissejuhatus}
 \addcontentsline{toc}{section}{Sissejuhatus}
 
+Neljamõõtmeline reaalne vektorruum, mille kolme koordinaati 
+vaatleme kui ruumikoordinaate ja neljandat kui aega kirjeldavat 
+koordinaati nimetame Minkowski\footnote{Hermann Minkowski 
+(1864 - 1909) - poola matemaatik.} aegruumiks. Osutub, et 
+selline matemaatiline konstruktsioon loob väga sobivad 
+tööriistad Einstein'i erirelatiivsusteooria formuleerimiseks.
+
+ajaloost: minkowski ruumi esmakordne kasutamine, poincare 
+rühm...
+
+Käesoelva bakalaureusetöö esimeseks eesmärgiks on 
+tutvustada Minkowski aeg\-ruumi klassikalisi matemaatilisi 
+omadusi unustamata nende füüsikalist sisu. Vaadeldavate 
+omadustena peame siinkohal eelkõige silmas ruumi elementide 
+teisenemisi ja neid teisenemisi kirjeldavaid eeskirju. 
+Olulise erinevusena teiste samalaadsete käsitlustega võib 
+välja tuua asjaolu, et siin töös püüame pea kõik väited 
+põhjendada matemaatilise aruteluga. Kuna teemakohane kirjandus 
+on tavaliselt pigem füüsikaalane, siis tõestused üldjuhul kas 
+puuduvad täiesti või on võrdlemisi üldsõnalised. Sageli võib 
+monograafiates kohata selgitusi, mis on puhtfüüsikalised ega 
+põhjenda tegelikult probleemi matemaatilist sisu. Näiteks lause
+\ref{lause:ryhmL} tulemus loetakse tavaliselt ilmseks, kuna 
+tema füüsikaline sisu ongi äärmiselt loomulik, kuid range 
+tõestus nõuab mõnegi kavala nipi ning tehnilist nokitsemist. 
+
+töö viimane osa keskendub kaasaegsematele konstruktsioonidele...
+superruum...
+
 Bakalaureusetöö on referatiivne ja selle aluseks on~\cite{Naber}.
 
-Töös kasutame summade tähistamisel sageli Einstein'i 
-summeerimiskokkulepet. See tähendab, kui meil on indeksid $i$ ja $j$, 
-mis omavad väärtusi $1, \dots, n$, $n \in \N$, siis 
-kirjutame 
+Töö koosneb neljast peatükist.
+
+Esimene peatükk keskendub valdkondadele, mis ei ole otseselt 
+käesoleva töö teemaga seotud, kuid osutuvad vajalikuks 
+mõistmaks töö järgnevaid osi. Võrdlemisi lakoonilisel 
+viisil tuletame meelde, mida tähendab Gram-Schmidti algoritm 
+ortonormeeritud baasi leidmiseks skalaarkorrutisega ruumis ning 
+tõestame Cauchy-Schwartz-Bunjakowski võrratuse, ühe 
+fundamentaalse tulemuse skalaarkorrutiste teooriast. Lisaks 
+anname tõestustata eeskirjad blokkmaatriksite korrutamiseks 
+ja pööramiseks ning toome sisse maatrikseksponenstiaali kujutuse 
+mõiste märkides fakti tasemel ära tema tähtsamad omadused. 
+Nii blokkmaatriksid kui ma maatrikseksponentsiaal osutuvad väga 
+praktilisteks tööriistadeks, vaata näiteks lause 
+\ref{lause:rotation} või peatükk \ref{ptk:lie_ryhm} 
+\nameref{ptk:lie_ryhm}. Arvestades käesoleva 
+töö geomeetrilist sisu, on pisut rohkem ruumi pühendatud 
+muutkonna mõiste tutvustamisele. Toodud on näide lihtsamatest 
+muutkondadest ning on selgitatud, kuidas tekib diferentseeruva 
+muutkonna mõiste.
+
+Teise peatüki eesmärgiks on kirjeldada Minkowski aegruumi 
+elementide ehk \emph{sündmuste} ja nende sündmuste teisenemisega 
+seotud kujutuste olemust. Selleks anname kõigepealt range 
+skalaarkorrutise definitsiooni ja tuletame meelde 
+pseudoeukleidilise ruumi mõiste. Seejärel kirjeldame 
+Minkowski ruumis skalaarkorrutise, millest saame meetrika. 
+Osutub, et meetrika alusel on ruumi $\M$ elemendid võimalik 
+jaotada kolme lõikumatusse klassi, need on \emph{ajasarnased, 
+ruumisarnased} ja \emph{nullpikkusega} vektorid. 
+Peatüki viimane punkt on pühendatud ruumi $\M$ 
+(pseudo)ortogonaalteisendustele ehk \emph{Lorentzi 
+teisendustele}. Näitame kuidas saab selliseid 
+teisendusi maatrikskujul ja koordinaatides kirja panna ning 
+kuidas see esitus on seotud Minkowski aegruumi meetrikaga. 
+Lõpetuseks tõestame, et kõigi ortogonaalteisenduste hulk 
+omab väga lihtsat rühma struktuuri. Seda rühma nimetame 
+\emph{Lorentzi rühmaks}.
+
+Kolmandas peatükis jätkame ruumi $\M$ teisenduste omaduste 
+uurimisega. Esimeses alapunktis vaatleme veidi 
+kriitilisema pilguga otrogonaalteisenduste omadusi ning 
+keskendume neist vaid olulisimate uurimisele, mille 
+tulemusena sõelume kõigi ortogonaalteisenduste rümast välja 
+pöörete alamrühma. Punkti lõpetame tulemusega, mis näitab 
+ära millised tingimused peavad olema täidetud, et ruumi 
+$\M$ teisendus oleks pööre. Järgmises punktis paneme tähele, 
+et pseudoortogonaalteisendus Minkowski ruumis 
+säilitab kauguse ja see motiveerib uurima lisaks 
+pseudoortogonaalteisendustele ka kujutusi, mis on kauguse 
+suhtes invariantsed. Peale Lorenzi teisenduste osutuvad 
+kaugusi säilitavateks teisendusteks sündmuste nihked. Nihete 
+ja Lorentzi teisenduste koos vaatlemisel tekivad Minkowski 
+ruumi sümmeetriad ehk \emph{Poincar\'e teisendused}, mis 
+moodustavad üheskoos \emph{Poincar\'e rühma}.
+
+Neljanda peatüki eesmärgiks on populaarses vormis selgitada 
+Minkowski ruumi seotust diferentsiaalgeomeetriaga ning 
+tutvustada lugejale superruumi mõistet ning sellega seonduvat 
+matemaatilist aparatuuri. Diferentsiaalgeomeetria valdkonnast 
+toome sisse \emph{Lie algebra} ja tema esituse mõiste ning 
+rikastame mõlemat definitsiooni näidetega, mis on otseselt 
+seotud Minkowski aegruumi geomeetriaga. Edasi jõuame 
+\emph{Lie rühma} mõisteni, mille seome kirjeldaval viisil, 
+ranget matemaatilist formalismi vältides Lie algebraga. 
+Peatüki ja sellega ka töö lõpetame üldistades klassikalist 
+Minkowski aegruumi, tuues selleks sisse Minkowski superruumi 
+mõiste. Selle tarbeks defineerime superalgebra ja toome 
+viimasest tuntuima näite, \emph{Grassmanni algebra}. Jällegi 
+rangest formalismist hoidudes ja näidetega varustatuna 
+tutvustame lugejale kuidas on superruumil defineeritud 
+funktsioonid ja nende diferentseerimine ning integreerimine.
+
+Kõikjal selles töös tähistab $\K$ suvalist korpust. Kui 
+mõeldakse reaalarvude korpust $\R$, siis on see vastavalt 
+tähistatud. Analoogiliselt on sümboliga $\V$ tähistatud 
+suvaline vektorruumi. Konkreetsete ruumide korral kasutame 
+neile vastavat süm\-boolikat, näiteks $\M$ Minkowski ruumi 
+korral.
+
+Ruumi kokkuhoiu ja mugavuse mõttes kasutame töös sageli 
+summade tähista\-misel Einstein'i summeerimiskokkulepet. 
+See tähendab, kui meil on indeksid $i$ 
+ja $j$, mis omavad väärtusi $1, \dots, n$, $n \in \N$, siis 
+jätame summeerimisel vahel summamärgi kirjutamata 
+ning säilitame summeerimise tähistamiseks vaid indeksid. 
+Einstein'i summeeruvuskokkulepet arvestades kehtivad näiteks 
+järgmised võrdused:
 \begin{align*}
-x^{i} e_{a} &= \sum_{a=1}^{n} x^{i} e_{i} = 
+x^{i} e_{i} &= \sum_{a=1}^{n} x^{i} e_{i} = 
 	x^{1} e_{1} + x^{2} e_{2} + \dots + x^{n} e_{n}, \\
 \lambda\indices{^i_j} x^{j} &= \sum_{j=1}^{n} 
 	\lambda\indices{^i_j} x^{j} = \lambda\indices{^i_1} x^{1} + 
@@ -116,21 +240,23 @@ x^{i} e_{a} &= \sum_{a=1}^{n} x^{i} e_{i} =
 	\eta_{12} u^{1} v^{2} + \dots + \eta_{1n} u^{1} v^{n} + 
 	\eta_{21} u^{2} v^{1} + \dots + \eta_{nn} u^{n} v^{n},
 \end{align*}
-ja nii edasi.
+ja nii edasi. Loomulikult tuleb arvestada, et sellise 
+kirjutusviisi juures peab olema indeksite hulk kontekstist 
+selge.
 
-Vektori $u$ pikkust tähistame edaspidi $|u|$.
-
-Seda teksti pole tegelikutl vaja.\footnote{Hermann Minkowski 
-(1864 - 1909) - poola matemaatik}
-
+Kui vektorruumil $\V$ on baas $\{e_1, e_2, \ldots, e_n\}$, kus 
+$n \in \N$ ja kontekstist on selge, mis on $n$, siis selle 
+asemel, kirjutada pikalt $\{e_1, e_2, \ldots, e_n\}$, tähistame 
+seda baasi ka lühidalt $\{e_a\}$. Vajaduse korral märgime, mis 
+väärtuseid indeks $a$ võib omada.
 
 \newpage
 \section{Vajalikud eelteadmised}
 
 Selles peatükis tuletame meelde definitsioonid ja tulemused, mida 
-läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele on 
-pööratud tähelepanu kursustes Algebra I või Geomeetria II, esitame 
-seejuures tõestusteta. 
+läheb tarvis töö järgmistes osades. Lihtsamad tulemused, millele 
+on pööratud tähelepanu kursustes Algebra I või Geomeetria II, 
+esitame seejuures tõestusteta. 
 
 \subsection{Skalaarkorrutisega seotud abitulemused}
 \label{eelteadmised:skalaar}
@@ -263,6 +389,14 @@ ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
 \end{proof}
 
 \subsection{Tulemusi lineaaralgebrast} \label{eelteadmised:algebra}
+
+\begin{definitsioon}
+Öeldakse, et vektorruumid $\V_1$ ja $\V_2$ üle korpuse $\K$ on 
+\emph{isomorfsed}, kui leidub lineaarne bijektsioon 
+$f : \V_1 \rightarrow \V_2$. Kujutust $f$ nimetatakse sellisel 
+juhul vektorruumide $\V_1$ ja $\V_2$ \emph{isomorfismiks}.
+\end{definitsioon}
+
 \begin{lause} \label{lemma:ort-skalaar-on-isomorfism}
 Olgu $\V$ vektorruum ja 
 $L : \V \rightarrow \V$ lineaarne teisendus ning 
@@ -740,8 +874,10 @@ et $g \left(u, u\right) = 0$. Selliseid vektoreid nimetatakse
 siis ütleme, et $u$ on \emph{ajasarnane}\footnote{inglise keeles 
 \textit{timelike}} ning kui $g \left(u, u\right) > 0$, siis nimetame 
 vektorit $u$ \emph{ruumisarnaseks}\footnote{inglise keeles 
-\textit{spacelike}}. Osutub, et ruumis $\M$ leidub koguni baase, 
-mis koosnevad vaid nullpikkusega vektoritest.
+\textit{spacelike}}. Seejuures märgime, et nullpikkusega 
+vektoried võib füüsikaliselt interpreteerida kui valguse kiiri.
+Osutub, et ruumis $\M$ leidub koguni baase, mis koosnevad 
+vaid nullpikkusega vektoritest.
 
 \begin{naide}
 Üheks ruumi $\M$ baasiks, mis koosneb vaid nullpikkusega vektoritest 
@@ -1090,6 +1226,10 @@ elementide kaudu:
 \section{Lorentzi ja Poincar\'e rühmad}
 
 \subsection{Lorentzi rühm}
+
+Eelmise peatüki lõpus näitasime, et hulk $\L_{GH}$ on rühm 
+tavalise maatriksite korrutamise suhtes rühm. Järnevalt uurime 
+lähemalt selle rühma konkreetsemaid omadusi.
 
 \begin{definitsioon}
 Me ütleme, et $\Lambda \in \L_{GH}$ on \emph{ortokroonne}, kui 
@@ -1458,7 +1598,7 @@ teisendusi, mis pööravad ruumikoordinaate, siis ütleme teisenduse
 $R \in \mathcal{R}$ kohta \emph{pööre} ja rühma $\mathcal{R}$ 
 nimetame rühma $\L$ \emph{pöörete alamrühmaks}.
 
-\begin{lause}
+\begin{lause} \label{lause:rotation}
 Olgu $\Lambda \in \L$. Siis on järgmised väited samaväärsed:
 \begin{itemize}
 \item[$(i)$] $\Lambda$ on pööre, see tähendab $\Lambda \in 
@@ -1552,7 +1692,8 @@ oleme näidanud, et $\Lambda$ on pööre, nagu tarvis.
 
 \subsection{Poincar\'e rühm}
 
-Arvestades Pythagorase teoreemi kahemõõtmelisel tasandil, üldistame 
+Võttes arvesse Pythagorase teoreemi tähendust kahemõõtmelisel 
+tasandil üldi\-stame 
 kahe punkti vahelise kauguse mõiste kahe sündmuse vaheliseks 
 kauguseks Minkowski aegruumis.
 
@@ -1675,8 +1816,7 @@ Poincar\'e rühma kontekstis.
 \end{markus}
 
 \newpage
-\section{Minkowski ruum teoreetilises füüsikas ja 
-diferentsiaalgeomeetrias}
+\section{Minkowski ruum teoreetilises füüsikas ja diferentsiaalgeomeetrias}
 
 \subsection{Lie algebra}
 
@@ -1729,7 +1869,8 @@ c_{ij}^{k} = -c_{ji}^{k},
 kus $t_i, t_j, t_k$ on Lie algebra generaatorid.
 
 Kasutades Jacobi samasust baasivektoritele tuletame nüüd seosed 
-struktuurikonstantide jaoks: 
+struktuurikonstantide jaoks:
+
 \begin{align*}
 \left[t_i, \left[t_j, t_k\right]\right] + 
 	\left[t_j, \left[t_k, t_i\right]\right] + 
@@ -1955,9 +2096,7 @@ Teemegi seda:
 	\rho_1 \rho_2 - \rho_3 \rho_1 = 2\rho_2, \\
 \ad \rho_2 \left(\rho_1\right) &= \left[\rho_2, \rho_1\right] = 
 	-\left[\rho_1, \rho_2\right] = - \ad \rho_1 \left(\rho_2\right) 
-	= 2\rho_3, 
-\end{align*}
-\begin{align*}
+	= 2\rho_3, \\
 \ad \rho_2 \left(\rho_2\right) &= \left[\rho_2, \rho_2\right] = 
 	\rho_2 \rho_2 - \rho_2 \rho_2 = 0, \\
 \ad \rho_2 \left(\rho_3\right) &= \left[\rho_2, \rho_3\right] = 
@@ -2193,7 +2332,7 @@ tingimusti \begin{itemize}
 m \right\rbrace$ korral $\theta^i \theta^j = - \theta^j \theta^i$,
 \item[$(ii)$] $\theta^1 \theta^2 \ldots \theta^m \neq 0$.
 \end{itemize}
-Grassmanni algebrat, millemoodustajate süsteem koosneb $m$ 
+Grassmanni algebrat, mille moodustajate süsteem koosneb $m$ 
 elemendist tähistame sümboliga $\G^m$.
 \end{definitsioon}
 
@@ -2278,7 +2417,7 @@ superruumiks}, mida tähistame $\SM$.
 \end{definitsioon}
 
 Vahel eristatakse Minkowski superruumi definitsioonis
-konkreetsuse mõttes Grassmani algebra moodustajate paarsust ning 
+selguse mõttes Grassmani algebra moodustajate paarsust ning 
 tähistuse $\{x^{\mu}, \theta^\alpha\}$ asemel kirjutatakse 
 $\left\lbrace x^{\mu}, \theta_{\overline{0}}^{\alpha}, 
 \theta_{\overline{1}}^{\alpha} \right\rbrace$, kus 
@@ -2346,8 +2485,8 @@ säilitades märgi. See tähendab
 \left(-1\right)^{k-1} \theta^{i_1} \theta^{i_2} \ldots 
 \theta^{i_{k-1}} \theta^{i_{k+1}} \ldots \theta^{i_n}.
 \end{align*}
-\textcolor{red}{Mis juhtub siis, kui monoomis polegi sellist 
-moodustajat, mille järgi diferentseerimine käib?}
+Kui monoomis ei leidu moodustajat, mille järgi 
+diferentseerimine toimub, siis on tuletis loomulikult null.
 
 \begin{naide}
 Leiame monoomide $\theta^1 \theta^3 \theta^2$ ja 
@@ -2409,9 +2548,13 @@ Berezini integraal $\int_{\SM} F\left(x^{\mu},
 \end{naide}
 
 \newpage
-\section*{Summary}
+\section*{On the geometry of Minkowski spacetime}
 \addcontentsline{toc}{section}{Summary}
-Siia tuleb ingliskeelne kokkuvõte...
+
+\subsubsection*{Bachelor's Thesis}
+\subsubsection*{Priit Lätt}
+\subsubsection*{Summary}
+Summary written in english here...
 
 \newpage
 \addcontentsline{toc}{section}{Kirjandus}
