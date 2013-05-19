@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,a4paper,oneside]{article}
 
 \usepackage{tensor}
 \usepackage{amsmath}
@@ -8,6 +8,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage[estonian]{babel}
 \usepackage[a4paper]{geometry}
+%\geometry{bindingoffset=1cm}
+%\geometry{textwidth=390pt}
 \usepackage{nameref}
 \usepackage[stable]{footmisc}
 \usepackage{hyperref}
@@ -81,11 +83,15 @@
 {\large TARTU ÜLIKOOL}\\[0.3cm]
 {\large MATEMAATIKA-INFORMAATIKATEADUSKOND}\\[0.3cm]
 {\large Matemaatika instituut}\\[0.3cm]
-{\large Matemaatika eriala}\\[3cm]
+{\large Matemaatika eriala} %\\[3cm]
+
+\vfill
 
 {\large Priit Lätt}\\[0.3cm]
 {\huge \textbf{Minkowski aegruumi geomeetriast}}\\[0.3cm]
-{\large Bakalaureusetöö (6 EAP)}\\[3cm]
+{\large Bakalaureusetöö (6 EAP)} %\\[3cm]
+
+\vfill
 
 \begin{flushright}
 {\large Juhendaja: Viktor Abramov}
@@ -96,8 +102,11 @@
 \begin{flushleft}
 {\large
 Autor: \dotfill "....." juuni 2013\\
-Juhendaja: \dotfill "....." juuni 2013\\[2cm]
+Juhendaja: \dotfill "....." juuni 2013 %\\[2cm]
 }
+
+\vfill
+
 \end{flushleft}
 {\large TARTU \the\year}
 
@@ -1912,9 +1921,9 @@ Vaatleme teist järku ruutmaatriksite hulka $\su2 \subset \Mat_2 \C$,
 kus $u \in \su2$ rahuldab tingimusi
 \begin{align}
 \Tr u &= 0, \label{eq:su2-tr=0}\\ 
-u^\dag + u &= 0. \label{eq:su2-antihermitian}
+u^\dagger + u &= 0. \label{eq:su2-antihermitian}
 \end{align}
-Siin $u^\dag = \bar{u}^T$ ja maatirksit $u$, mille korral tingimus 
+Siin $u^\dagger = \bar{u}^T$ ja maatirksit $u$, mille korral tingimus 
 \ref{eq:su2-antihermitian} kehtib, nimetatakse \emph{anti-Hermite'i 
 maatriksiks}.
  
@@ -1923,8 +1932,8 @@ $\left[u,v\right] = uv - vu$, $u, v \in \su2$, on Lie algebra.
 
 Olgu $u, v, w \in \su2$. Kõigepealt märgime, et 
 \begin{align*}
-\left(u + v\right) + \left(u + v\right)^\dag &= 
-u + v + u^t + v^t = 0, \\
+\left(u + v\right) + \left(u + v\right)^\dagger &= 
+u + v + u^\dagger + v^\dagger = 0, \\
 \Tr \left(u + v\right) &= 0
 \end{align*}
 ehk $u + v \in \su2$. Veendumaks, et $\su2$ on Lie algebra, piisab 
@@ -1953,13 +1962,14 @@ Seega on definitsiooni \ref{def:lie-algebra} eeldused täidetud.
 Teoreemi \ref{teor:trace} põhjal $\Tr \left(uv\right) = 
 \Tr \left(vu\right)$, millest saame $\Tr \left[u,v\right] = 0$. 
 Lõpuks paneme veel tähele, et $\left[u,v\right] + 
-\left[u,v\right]^\dag = 0$. Tõepoolest, kuna $u^\dag = -u$ ja 
-$v^\dag = -v$, siis
+\left[u,v\right]^\dagger = 0$. Tõepoolest, kuna $u^\dagger = -u$ ja 
+$v^\dagger = -v$, siis
 \begin{align*}
-\left[u,v\right] + \left[u,v\right]^\dag &= uv - vu + 
-\left(uv - vu\right)^\dag = uv - vu + \left(uv\right)^\dag - 
-\left(vu\right)^\dag = \\
-&= uv - vu + v^\dag u^\dag - u^\dag v^\dag = uv - vu + vu - uv = 0.
+\left[u,v\right] + \left[u,v\right]^\dagger &= uv - vu + 
+\left(uv - vu\right)^\dagger = uv - vu + \left(uv\right)^\dagger - 
+\left(vu\right)^\dagger = \\
+&= uv - vu + v^\dagger u^\dagger - u^\dagger v^\dagger = 
+uv - vu + vu - uv = 0.
 \end{align*}
 \end{naide}
 
