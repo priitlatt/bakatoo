@@ -16,6 +16,7 @@
 \usepackage{verbatim}
 \usepackage{color}
 \usepackage{indentfirst}
+\usepackage{datetime}
 \usepackage{parskip}
 \setlength{\parindent}{15pt}
 
@@ -50,6 +51,7 @@
 \def\C{{\mathbb C}}
 \def\K{{\mathbb K}}
 \def\V{{\mathbb V}}
+\def\W{{\mathbb W}}
 \def\Z{{\mathbb Z}}
 \def\Q{{\mathbb Q}}
 \def\A{{\mathcal A}}
@@ -68,12 +70,14 @@
 \DeclareMathOperator{\ad}{ad}
 \DeclareMathOperator{\Lin}{Lin}
 
-\title{Minkowski aegruumi geomeetriast}
-%\author[P. Lätt]{Priit Lätt}
-%\email[P. Lätt]{lattpriit@gmail.com}
+\def\title{Minkowski aegruumi geomeetriast}
+\def\engtitle{On the geometry of Minkowski spacetime}
+\def\author{Priit Lätt}
 
 \pagestyle{plain}
 %\pagestyle{headings}
+
+\renewcommand{\dateseparator}{.}
 
 \begin{document}
 
@@ -86,9 +90,8 @@
 {\large Matemaatika eriala} %\\[3cm]
 
 \vfill
-
-{\large Priit Lätt}\\[0.3cm]
-{\huge \textbf{Minkowski aegruumi geomeetriast}}\\[0.3cm]
+{\large \author}\\[0.3cm]
+{\huge \textbf{\title}}\\[0.3cm]
 {\large Bakalaureusetöö (6 EAP)} %\\[3cm]
 
 \vfill
@@ -149,7 +152,7 @@ ja kirjeldab veidi vabamas vormis esiteks diferentsiaalgeomeetria
 peamisi vahendeid, millega on võimalik ka Minkowski ruumi 
 struktuuri kirjeldada. Teise poolena on püütud populaarses 
 vormis anda ülevaadet klassikalise Minkowski ruumi 
-esasiarendusest, mis leiab palju rakendust teoreetilises 
+edasiarendusest, mis leiab palju rakendust teoreetilises 
 füüsikas. Kõnealuseks edasiarenduseks on antikommuteeruvate 
 koordinaatitega Minkowski superruum.
 
@@ -203,7 +206,7 @@ omab väga lihtsat rühma struktuuri. Seda rühma nimetame
 
 Kolmandas peatükis jätkame ruumi $\M$ teisenduste omaduste 
 uurimisega. Esimeses alapunktis vaatleme veidi 
-kriitilisema pilguga ortogonaalteisenduste omadusi ning 
+põhjalikumalt ortogonaalteisenduste omadusi ning 
 keskendume neist vaid olulisimate uurimisele, mille 
 tulemusena sõelume kõigi ortogonaalteisenduste rühmast välja 
 pöörete alamrühma. Punkti lõpetame tulemusega, mis näitab 
@@ -211,36 +214,51 @@ pöörete alamrühma. Punkti lõpetame tulemusega, mis näitab
 $\M$ teisendus oleks pööre. Järgmises punktis paneme tähele, 
 et pseudoortogonaalteisendus Minkowski ruumis 
 säilitab kauguse ja see motiveerib uurima lisaks 
-pseudoortogonaalteisendustele ka kujutusi, mis on kauguse 
-suhtes invariantsed. Peale Lorentzi teisenduste osutuvad 
+pseudoortogonaalteisendustele ka kujutusi, mille suhtes kaugus 
+on invariantne suurus. Peale Lorentzi teisenduste osutuvad 
 kaugusi säilitavateks teisendusteks sündmuste nihked. Nihete 
 ja Lorentzi teisenduste koosvaatlemisel tekivad Minkowski 
 ruumi sümmeetriad ehk \emph{Poincar\'e teisendused}, mis 
 moodustavad üheskoos \emph{Poincar\'e rühma}.
 
-Neljanda peatüki eesmärgiks on populaarses vormis selgitada 
-Minkowski ruumi seotust diferentsiaalgeomeetriaga ning 
-tutvustada lugejale superruumi mõistet ning sellega seonduvat 
-matemaatilist aparatuuri. Diferentsiaalgeomeetria valdkonnast 
-toome sisse \emph{Lie algebra} ja tema esituse mõiste ning 
-rikastame mõlemat definitsiooni näidetega, mis on otseselt 
-seotud Minkowski aegruumi geomeetriaga. Edasi jõuame 
-\emph{Lie rühma} mõisteni, mille seome kirjeldaval viisil, 
-ranget matemaatilist formalismi vältides Lie algebraga. 
-Peatüki ja sellega ka töö lõpetame üldistades klassikalist 
-Minkowski aegruumi, tuues selleks sisse Minkowski superruumi 
-mõiste. Selle tarbeks defineerime superalgebra ja toome 
+\begin{comment}
+Parem oleks kirjutada, et kaasaegses teoreetilises füüsikas üheks 
+väga tähtsaks mõisteks on supersümmeetria. Supersümmeetriliste 
+teooriate matemaatiliseks kirjelduseks oli arendatud geomeetria 
+valdkond, mida võime nimetada supergeomeetriaks. Minkowski 
+superruum on supergeomeetria tähtsaim struktuur. Üldjoontes 
+Minkowski superruum on Minkowski ruumi laiend, kus neljale 
+harilikule koordinadile lisatakse uued koordinaadid nn 
+antikommuteeruvad koordinaadid.
+\end{comment}
+
+Neljandas peatükis tutvustame kaasaegse teoreetilise füüsika 
+keskset mõistet, \emph{supersümmeetriat}. 
+Supersümmeetriliste teooriate matemaatiliseks kirjelduseks 
+oli arendatud geomeetria valdkond, mida võime nimetada 
+supergeomeetriaks. Minkowski superruum on supergeomeetria tähtsaim 
+struktuur. Üldjoontes on Minkowski superruum Minkowski aegruumi 
+laiend, kus neljale harilikule koordinadile lisatakse uued 
+koordinaadid, nõndanimetatud antikommuteeruvad koordinaadid.
+Diferentsiaalgeomeetria valdkonnast toome sisse \emph{Lie algebra} 
+ja tema esituse mõiste ning rikastame mõlemat definitsiooni 
+näidetega, mis on otseselt seotud Minkowski aegruumi geomeetriaga. 
+Edasi jõuame \emph{Lie rühma} mõisteni, mille seome 
+kirjeldaval viisil, ranget matemaatilist formalismi vältides 
+Lie algebraga. Peatüki, ja sellega ka töö lõpetame üldistades 
+klassikalist Minkowski aegruumi, tuues selleks sisse Minkowski 
+superruumi mõiste. Selle tarbeks defineerime superalgebra ja toome 
 viimasest tuntuima näite, \emph{Grassmanni algebra}. Jällegi 
-rangest formalismist hoidudes ja näidetega varustatuna 
+üldistest formalismist hoidudes ja näidetega varustatuna 
 tutvustame lugejale kuidas on superruumil defineeritud 
 funktsioonid ja nende diferentseerimine ning integreerimine.
 
-Kõikjal selles töös tähistab $\K$ suvalist korpust. Kui 
-mõeldakse reaalarvude korpust $\R$, siis on see vastavalt 
-tähistatud. Analoogiliselt on sümboliga $\V$ tähistatud 
-suvaline vektorruum. Konkreetsete ruumide korral kasutame 
-neile vastavat süm\-boolikat, näiteks $\M$ Minkowski ruumi 
-korral.
+Kõikjal selles töös tähistab $\K$ suvalist korpust, mille
+karakteristika on null. Kui mõeldakse reaalarvude korpust 
+$\R$, siis on see vastavalt tähistatud. Analoogiliselt on 
+sümboliga $\V$ tähistatud suvaline vektorruum. Konkreetsete 
+ruumide korral kasutame neile vastavat süm\-boolikat, näiteks 
+$\M$ Minkowski ruumi korral.
 
 Ruumi kokkuhoiu ja mugavuse mõttes kasutame töös sageli 
 summade tähista\-misel Einsteini summeerimiskokkulepet. 
@@ -281,54 +299,63 @@ läheb tarvis töö järgmistes osades.
 \label{eelteadmised:skalaar}
 
 \begin{teoreem} \textnormal{\cite[teoreem II.7.3]{FA2}}
-Lõplikumõõtmelises skalaarkorrutisega $g$ varustatud vektorruumis 
+Lõplikumõõtmelises skalaarkorrutisega varustatud vektorruumis 
 $\V$ leidub ortonormeeritud baas.
 \end{teoreem}
 \begin{proof}
+Tähistame vektorruumi $\V$ skalaarkorrutise tähega $g$.
+
 Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib 
 ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on 
-mingi baas, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on 
-ortonormeeritud baas.
+mingi baas, kus $b \neq 0$ on ühemõõtmelise vektorruumi mingi 
+element, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on 
+ortonormeeritud baas, kus $|b|$ tähistab vektori $b$ pikkust.
 
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas 
-ortonormeeritud baas ning olgu $\V$ $n$-mõõtmeline 
-vektorruum baasiga $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. 
-Eelduse järgi on ruumis $\V$ ortonormeeritud süsteem 
-$\left\lbrace e_1, e_2, \dots, e_{n-1} \right\rbrace$, kusjuures
+ortonormeeritud baas ja olgu $n$-mõõtmelise vektorruumi 
+$\V$ baas $\left\lbrace b_1, b_2, \dots, b_n \right\rbrace$. 
+Olgu $\W$ baasivektorite $\{b_1,b_2,...,b_{n-1}\}$ lineaarne kate 
+ning tähistame $\W = \spn\{b_1,b_2,...,b_{n-1}\}$. 
+On ilmne, et $\W$ on $(n-1)$-mõõtmeline alamruum vektorruumis 
+$\V$. Eelduse kohaselt leidub $\W$ ortonormeeritud baas 
+$\{e_1,e_2,...,e_{n-1}\}$, kusjuures kehtib
 \[ \spn\{ e_1, e_2, \dots, e_{n-1}\} = 
 \spn\{ b_1, b_2, \dots, b_{n-1}\}. \]
 Seega tarvitseb meil leida veel $a_n \in \V \setminus \{0\}$ 
 omadusega
-\[a_n \perp \spn\{ e_1, e_2, \dots, e_{n-1}\},\]
+\begin{align} \label{eq:a_n-ting}
+a_n \perp \{ e_1, e_2, \dots, e_{n-1}\},
+\end{align}
 sest siis $\{ e_1, e_2, \dots, e_{n-1}, \frac{1}{|a_n|}a_n\}$ on 
 ruumi $\V$ ortonormeeritud baas.
 
 Otsime vektorit $a_n$ kujul
 \begin{equation} \label{eq:otsitav-a_n}
 a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, 
-\text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \R.
+\text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \K.
 \end{equation}
 Paneme tähele, et kui $a_n$ on sellisel kujul, siis $a_n \neq 0$, 
 sest vastasel korral $b_n \in \spn\{ b_1, b_2, \dots, b_{n-1}\}$, 
-mis on vastuolus süsteemi $\spn\{ b_1, b_2, \dots, b_{n-1}\}$ 
-lineaarse sõltumatusega.
-Kui $a_n$ on kujul \ref{eq:otsitav-a_n}, siis kõikide 
-$k \in \{1, 2, \dots, n-1\}$ korral
-\begin{equation*}
-a_n \perp e_k \iff a_n \cdot e_k = 0 \iff 
-\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = 0
-\end{equation*}
+mis on vastuolus süsteemi $\{ b_1, b_2, \dots, b_{n-1}\}$ 
+lineaarse sõltu\-matusega.
+Kuna otsitav $a_n$ on kujul \ref{eq:otsitav-a_n} ja peab kehtima 
+tingimus \ref{eq:a_n-ting}, siis nõuame, et 
+kõikide $k \in \{1, 2, \dots, n-1\}$ korral kehtiks 
+$a_n \perp e_k$. Viiamne on aga samaväärne tingimusega 
+$g\left(a_n, e_k\right) = 0$, mille võime kirjutada kujul 
+$g\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, e_k \right) = 0$.
 Samas, kuna
 \begin{equation*}
-\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j\right) \cdot e_k = 
-b_n \cdot e_k + \sum_{j = 1}^{n-1} 
-\alpha^j \left(e_j \cdot e_k \right) 
-= b_n \cdot e_k + \alpha_k,
+g\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, e_k \right)= 
+g\left(b_n, e_k\right) + \sum_{j = 1}^{n-1} 
+	\alpha^j g\left(e_j, e_k \right) 
+= g\left(b_n, e_k\right) + \alpha_k,
 \end{equation*}
-siis $a_n \perp e_k \iff \alpha_k = - \left(b_n \cdot e_k \right)$. 
+siis $a_n \perp e_k$ parajasti siis, kui 
+$\alpha_k = - g\left(b_n, e_k\right)$. 
 
 Järelikult võime võtta 
-$a_n := b_n - \sum_{j=1}^{n-1}\left(b_n \cdot e_j\right)e_j$.
+$a_n = b_n - \sum_{j=1}^{n-1}g\left(b_n, e_j\right)e_j$.
 \end{proof}
 
 \begin{markus} \label{markus:gram-schmidt}
@@ -343,7 +370,7 @@ Olgu $\V$ vektroruum skalaarkorrutisega
 $g : \V \times \V \rightarrow \R$. Sellisel juhul 
 kehtib võrratus
 \begin{equation} \label{eq:C-S-B}
-g^2 \left(u, v \right) \leq g \left(u, u \right) 
+|g\left(u, v \right)|^2 \leq g \left(u, u \right) 
 g \left(v, v \right)
 \end{equation}
 kõikide $u, v \in \V$ korral. Seejuures võrdus kehtib parajasti 
@@ -385,8 +412,8 @@ siis, kui $u$ ja $v$ on lineaarselt sõltuvad.
 Oletame esiteks, et vektorid $u$ ja $v$ on lineaarselt sõltuvad. 
 Siis leidub $\alpha \in \R$ selliselt, et $u = \alpha v$. Seega
 \begin{align*}
-g^2\left(u,v\right) &= g^2 \left(\alpha v,v\right) = 
-\alpha^2 g^2 \left(v,v\right) = 
+|g\left(u,v\right)|^2 &= |g\left(\alpha v,v\right)|^2 = 
+\left(\alpha g\left(v,v\right)\right)^2 = 
 \alpha^2 g \left(v,v\right) g \left(v,v\right) \\
 &= g \left(\alpha v,\alpha v\right)g \left( v,v\right) = 
 g \left(u,u\right)g \left(v,v\right),
@@ -398,11 +425,11 @@ $u$ ja $v$ on lineaarselt sõltuvad. Üldistust kitsendamata võime
 eeldada, et $u \neq 0$ ja $v \neq 0$. Siis ka 
 $g \left(u,u\right) \neq 0$ ja $g \left(v,v\right) \neq 0$. 
 Paneme tähele, et
-\[g^2 \left(u, v \right) = g \left(u, u \right) g \left(v, v \right)\]
+\[|g \left(u, v \right)|^2 = g \left(u, u \right) g \left(v, v \right)\]
 on eelnevat arvestades samaväärne tingimusega
-\[\frac{g^2 \left(u, v \right) g \left(v, v \right)}
+\[\frac{|g \left(u, v \right)|^2 g \left(v, v \right)}
 {g^2 \left(v, v \right) } = g \left(u, u \right). \]
-Tähistades $a := \frac{g \left(u, v \right) }{g \left(v, v \right) }$, 
+Tähistades $a := \frac{|g \left(u, v \right)| }{g \left(v, v \right) }$, 
 saame, et $a^2 g \left(v, v \right) = g \left(u, u \right)$ 
 ehk $g \left(av, av \right) = g \left(u, u \right)$, millest $u = av$.
 \end{proof}
@@ -421,15 +448,15 @@ Olgu $\V$ vektorruum ja
 $L : \V \rightarrow \V$ lineaarne teisendus ning 
 $g$ skalaarkorrutis ruumil $\V$. Kui 
 $g \left(x, y\right) = g \left(Lx, Ly\right)$ kõikide 
-$x, y \in \V$ korral, siis $L$ on isomorfism ruumil 
-$\V$.
+$x, y \in \V$ korral, see tähendab $L$ on 
+(pseudo)ortogonaalteisendus, siis $L$ on bijektsioon.
 \end{lause}
 
 \begin{proof}
 Olgu $\V$ vektorruum ja $L : \V \rightarrow \V$ 
-lineaarne teisendus ja kehtigu $g \left(x, y\right) = 
+lineaarne teisendus ning kehtigu $g \left(x, y\right) = 
 g \left(Lx, Ly\right)$ kõikide $x, y \in \V$ korral. 
-Veendumaks, et $L$ on isomorfism piisab näidata, et $L$ on 
+Veendumaks, et $L$ on bijektsioon, tuleb näidata, et $L$ on 
 injektiivne ja sürjektiivne. Veendume kõigepealt kujutuse 
 $L$ üksühesuses.
 
@@ -448,20 +475,33 @@ mis on vastuolu.
 
 Veendume nüüd teisenduse $L$ sürjektiivsuses. Olgu $x \in \V$. 
 Meie eesmärk on leida $y \in \V$ selliselt, et $Ly = x$. 
-Tähistame teisenduse $L$ maatriksi tähega $\Lambda$. Siis
+Fikseerime vektorruumi $\V$ baasi $\{e_1, e_2, \ldots, e_n\}$ 
+ja tähistame teisenduse $L$ maatriksi selle baasi suhtes 
+tähega $\Lambda$. Siis
 \[Ly = L\left(y^a e_a\right) = y^a \Lambda\indices{^b_a}e_b = 
-x^b e_b, \text{ kus } a,b = 1,2,3,4.\]
+x^b e_b, \text{ kus } a,b = 1, 2, \ldots, n.\]
 Saime võrrandisüsteemi $y^a \Lambda\indices{^b_a} = x^b$, mis on 
-üheselt lahenduv, kuna $\det \Lambda = \pm 1$. Seega võime võtta 
-$y = (y_1, y_2, y_3, y_4)$.
+üheselt lahenduv, kuna $\det \Lambda = \pm 1$. 
+Tõepoolest, kuna $L$ on (pseudo)ortogonaalteisendus, siis 
+$\Lambda$ on (pseudo)ortogonaal\-maatriks ja seega 
+$\Lambda \eta \Lambda^T = \eta$, millest saame 
+$\det\left(\Lambda \eta \Lambda^T\right) = \det \eta = 1$ 
+ehk
+\[\det\left(\Lambda \eta \Lambda^T\right) = 
+	\det\Lambda \cdot \det\eta \cdot \det\Lambda^T = 
+	\det\Lambda \cdot \det\Lambda^T = \left(\det\Lambda\right)^2 = 1.\]
+Seega võime võtta 
+$y = (y_1, y_2, \ldots, y_n)$.
 \end{proof}
 
-\begin{teoreem} \label{teor:trace}
-Olgu $A$ ja $B$ $n$-järku ruutmaatriksid. Siis $\Tr AB = \Tr BA$.
-\end{teoreem}
-\begin{proof}
-Vahetu kontroll.
-\end{proof}
+\begin{markus} \label{markus:trace}
+Tuletame meelde, et maatriksarvutuses on tähtsaks funktsiooniks  
+maatriksi jälg. Kui $A=(a_{ij})_{i,j = 1}^{n}$ on $n$-järku 
+ruutmaatriks, siis maatriksi $A$ jälg $\Tr A$ on peadiagonaali 
+elementide summa, see tähendab $\Tr A=\sum_{i = 1}^{n} a_{ii}$. 
+Vahetult on kontrollitav, et kui $A,B \in \Mat_n \K$, siis kehtib 
+võrdus $\Tr AB= \Tr BA$.
+\end{markus}
 
 \subsubsection*{Blokkmaatriksid}
 
@@ -540,6 +580,7 @@ Olgu $X, Y \in \Mat_n \K$ ruutmaatriksid ja $k, l \in \K$. Siis
 \end{itemize}
 \end{lause}
 
+\newpage
 \subsection{Muutkond}
 
 \begin{definitsioon}
@@ -548,8 +589,8 @@ Topoloogilist ruumi $\left(X, \tau\right)$ nimetatakse
 \begin{itemize}
 \item[$1)$] $\left(X, \tau\right)$ on Hausdorffi topoloogiline ruum,
 \item[$2)$] topoloogial $\tau$ leidub loenduv baas,
-\item[$3)$] leidub hulga $X$ homöomorfism ruumi $\R^n$ lahtise 
-alamhulgaga.
+\item[$3)$] iga punkti $x \in X$ korral leidub tema ümbrus, mis on 
+	homöomorfne mingi $\R^n$ lahtise alamhulgaga.
 \end{itemize}
 Muutkonda tähistame tähega $M$.
 \end{definitsioon}
@@ -576,7 +617,7 @@ muutukond.
 Hausdorffi topoloogiline ruum.
 \item[$2)$] Alamruumi topoloogial on samuti loenduv baas.
 \item[$3)$] Homöomorfismideks sobib võtta neli lokaalset kaarti, 
-mille saame, kui proijtseerime ülemise ja alumise poolringi 
+mille saame, kui projekteerime ülemise ja alumise poolringi 
 $x$-teljele ja vasak- ning parempoolse poolringi $y$-teljele.
 \end{itemize}
 \item[$(b)$] Sfäär on topoloogiline muutkond. (Põhjendus on 
@@ -593,7 +634,7 @@ mõistet. Teeme seda tuginedes aine Globaalanalüüs loengukonspektile
 Olgu $M$ muutkond ja $B \subset \R^n$ lahtine alamhulk. Paari 
 $\left(p, \psi\right)$, kus $p \in U \subset M$ ja 
 $\psi : U \rightarrow B$ on homöomorfism nimetatakse muutkonna 
-$M$ \emph{lokaalseks kaardiks punktis $p$}. Analoogliselt ütleme 
+$M$ \emph{lokaalseks kaardiks punktis $p$}. Analoogiliselt ütleme 
 paari $\left(U, \psi\right)$ kohta \emph{piirkonna $U$ lokaalne 
 kaart}. Kõikide muutkonna $M$ lokaalsete kaartide kogumit nimetatakse 
 \emph{atlaseks}.
@@ -659,7 +700,7 @@ määratud kogum $\mathfrak{U} = \left\lbrace \left(U_\alpha,
 \phi_\alpha\right) : \alpha \in \mathcal{A} \right\rbrace$, 
 mis rahuldab tingimusi
 \begin{itemize}
-\item [$\left(i\right)$] $\cap_\alpha U_\alpha$ on muutkonna $M$ kate;
+\item [$\left(i\right)$] $\cup_\alpha U_\alpha$ on muutkonna $M$ kate;
 \item [$\left(ii\right)$] suvaliste $\alpha, \beta \in \mathcal{A}$ 
 korral on lokaalsed kaardid $\left(U_\alpha, \phi_\alpha\right)$ ning 
 $\left(U_\beta, \phi_\beta\right)$ $C^\infty$-kooskõlalised;
@@ -1171,7 +1212,7 @@ ja \ref{eq:lambdaeta2}) nimetatakse \emph{(homogeenseks) Lorentzi
 teisenduseks}.
 \end{definitsioon}
 
-Kuna ruumi $\M$ ortogonaalteisendus $L$ on isomorfism\footnote{
+Kuna ruumi $\M$ ortogonaalteisendus $L$ on bijektsioon{
 {Vaata \ref{eelteadmised:algebra} 
 \nameref{eelteadmised:algebra}, Lause 
 \ref{lemma:ort-skalaar-on-isomorfism}.}} 
@@ -1825,7 +1866,7 @@ algebralistelt omadustelt tõepoolest rühm.
 Kuna teisendusi, mis säilitavad punktide vahelisi kaugusi 
 nimetatakse isomeetriateisendusteks ja Poincar\'e teisendused 
 säilitavad ruumi $\M$ sündmuste vahel kaugused, siis öeldakse 
-Poincar\'e rühma kohta \emph{Minkowski ruumi isomeetirarühm}.
+Poincar\'e rühma kohta \emph{Minkowski ruumi isomeetriarühm}.
 
 \begin{markus}
 Paneme tähele, et kui vaatleme selliseid Poincar\'e teisndusi 
@@ -1959,7 +2000,7 @@ kehtib Jacobi samasus, sest
 &- vuw + uwv + wuv - uvw - wvu + vuw = 0.
 \end{align*}
 Seega on definitsiooni \ref{def:lie-algebra} eeldused täidetud. 
-Teoreemi \ref{teor:trace} põhjal $\Tr \left(uv\right) = 
+Märkuse \ref{markus:trace} põhjal $\Tr \left(uv\right) = 
 \Tr \left(vu\right)$, millest saame $\Tr \left[u,v\right] = 0$. 
 Lõpuks paneme veel tähele, et $\left[u,v\right] + 
 \left[u,v\right]^\dagger = 0$. Tõepoolest, kuna $u^\dagger = -u$ ja 
@@ -2570,13 +2611,13 @@ Berezini integraal $\int_{\SM} F\left(x^{\mu},
 \end{naide}
 
 \newpage
-\section*{On the geometry of Minkowski spacetime}
+\section*{\engtitle}
 \addcontentsline{toc}{section}{Summary}
 
 \subsubsection*{Bachelor's Thesis}
-\subsubsection*{Priit Lätt}
+\subsubsection*{\author}
 \subsubsection*{Summary}
-Lets consider a four-dimentional real vector space in which 
+We consider a four-dimentional real vector space in which 
 three coordinates describe the space, and the fourth coordinate 
 describes time. Such a vector space, equipped with Minkowski 
 metric, is said to be a Minkowski spacetime, denoted $\M$ and 
@@ -2599,7 +2640,7 @@ they are avoided entirely. Sometimes physical discussion
 is considered as a proof, but as shown in proposition 
 \ref{lause:ryhmL} for example, things are not so obvious 
 after all in a mathematical point of view. In contrary, 
-this thesis tries to fill this gap by giving rigorous 
+the aim of this thesis is to fill this gap by giving rigorous 
 proof to all the statements that are made.
 
 The last part of the thesis takes a new course and tries 
@@ -2676,10 +2717,46 @@ mathematical formalism, we show what are functions on
 superspace and how to find integral or derivative of such 
 functions.
 
+\newpage
+\section*{Litsents}
+\addcontentsline{toc}{section}{Litsents}
+
+\textbf{Lihtlitsents lõputöö reprodutseerimiseks ja 
+	lõputöö üldsusele kätte\-saadavaks tegemiseks.}
+
+
+Mina, \author\ (sünnikuupäev: 14.08.1991)
+\begin{enumerate}
+	\item annan Tartu Ülikoolile tasuta loa (lihtlitsentsi) 
+	enda loodud teose
+	\begin{center}
+	\title,
+	\end{center}
+	mille juhendaja on Viktor Abramov,
+	\begin{enumerate}
+		\item reprodutseerimiseks säilitamise ja üldsusele 
+		kättesaadavaks tegemise eesmärgil, sealhulgas 
+		digitaalarhiivi DSpace'is lisamise eesmärgil kuni 
+		autoriõiguse kehtivuse tähtaja lõppemiseni;
+		\item üldsusele kättesaadavaks tegemiseks Tartu Ülikooli 
+		veebikeskkonna kaudu, sealhulgas digitaalarhiivi 
+		DSpace'i kaudu kuni autoriõiguse kehtivuse tähtaja lõppemiseni.
+	\end{enumerate}
+	\item olen teadlik, et punktis 1 nimetatud õigused jäävad 
+	alles ka autorile.
+	\item kinnitan, et lihtlitsentsi andmisega ei rikuta teiste 
+	isikute intellektuaalomandi ega isikuandmete kaitse 
+	seadusest tulenevaid õigusi.
+\end{enumerate}
+
+\vfill
+
+\begin{center}
+Tartu, \ddmmyyyydate \today
+\end{center}
 
 \newpage
 \bibliographystyle{ieeetran}
-%\bibliographystyle{alphaurl}
 \bibliography{references}
 \addcontentsline{toc}{section}{Kirjandus}
 
