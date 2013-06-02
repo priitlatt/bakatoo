@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside, draft]{article}
+\documentclass[12pt,a4paper,oneside]{article}
 
 \usepackage{tensor}
 \usepackage{amsmath}
@@ -80,6 +80,7 @@
 \renewcommand{\dateseparator}{.}
 
 \begin{document}
+\selectlanguage{estonian}
 
 \begin{titlepage}
 \begin{center}
@@ -137,7 +138,7 @@ eelkõige silmas ruumi elementide teisenemisi ja neid
 teisenemisi kirjeldavaid eeskirju. 
 Olulise erinevusena teiste samalaadsete käsitlustega võib 
 välja tuua asjaolu, et siin töös püüame pea kõiki väiteid 
-põhjendada matemaatilise aruteluga. Teemakohane kirjandus 
+põhjendada matemaatilise aruteluga. Et teemakohane kirjandus 
 on tavaliselt pigem füüsikaalane, siis tõestused üldjuhul kas 
 puuduvad täiesti või on võrdlemisi üldsõnalised. Sageli võib 
 monograafiates kohata selgitusi, mis on puhtfüüsikalised ega 
@@ -217,7 +218,7 @@ säilitab kauguse ja see motiveerib uurima lisaks
 pseudoortogonaalteisendustele ka kujutusi, mille suhtes kaugus 
 on invariantne suurus. Peale Lorentzi teisenduste osutuvad 
 kaugusi säilitavateks teisendusteks sündmuste nihked. Nihete 
-ja Lorentzi teisenduste koosvaatlemisel tekivad Minkowski 
+ja Lorentzi teisenduste koos vaatlemisel tekivad Minkowski 
 \mbox{ruumi} sümmeetriad ehk \emph{Poincar\'e teisendused}, mis 
 moodustavad \emph{Poincar\'e rühma}.
 
@@ -236,10 +237,10 @@ Neljandas peatükis tutvustame kaasaegse teoreetilise füüsika
 keskset mõistet, \emph{supersümmeetriat}. 
 Supersümmeetriliste teooriate matemaatiliseks kirjelduseks 
 oli arendatud geomeetria valdkond, mida võime nimetada 
-supergeomeetriaks, \mbox{mille} tähtsaimaks struktuuriks on \mbox{Minkowski} superruum. 
-Üldjoontes on \mbox{Minkowski} superruum Minkowski aegruumi 
-laiend, kus neljale harilikule koordinadile \mbox{lisatakse} uued 
-koordinaadid, nõndanimetatud antikommuteeruvad koordinaadid.
+supergeomeetriaks. \mbox{Viimase} tähtsaimaks struktuuriks on \mbox{Minkowski} superruum, 
+mis on üldjoontes klassi\-kalise Minkowski aegruumi 
+laiend, kus neljale harilikule koordinadile \mbox{lisatakse} uued, 
+nõndanimetatud antikommuteeruvad koordinaadid.
 Diferentsiaalgeomeetria valdkonnast toome sisse \emph{Lie algebra} 
 ja tema esituse mõiste ning rikastame mõlemat definitsiooni 
 näidetega, mis on otseselt seotud Minkowski aeg\-ruumi geomeetriaga. 
@@ -298,7 +299,7 @@ läheb tarvis töö järgmistes osades.
 \subsection{Skalaarkorrutisega seotud abitulemused}
 \label{eelteadmised:skalaar}
 
-\begin{teoreem}
+\begin{teoreem} \label{teoreem:gram-schmidt}
 Lõplikumõõtmelises skalaarkorrutisega \mbox{varustatud} vektorruumis 
 $\V$ leidub ortonormeeritud baas.
 \end{teoreem}
@@ -362,14 +363,14 @@ $a_n = b_n - \sum_{j=1}^{n-1}g\left(b_n, e_j\right)e_j$.
 \end{proof}
 
 \begin{markus} \label{markus:gram-schmidt}
-Teoreemi 4.1 tõestuses antud algortimi ortonormeeritud baasi 
+Teoreemi \ref{teoreem:gram-schmidt} tõestuses antud algortimi ortonormeeritud baasi 
 leidmiseks nimetatakse \emph{Gram--Schmidti algoritmiks} või 
 \emph{ortogonaliseerimisprotsessiks}.
 \end{markus}
 
 \begin{teoreem}[Cauchy--Schwartz--Bunjakowski võrratus, vt
 \cite{FA}] \label{teoreem:C-S-B}
-Olgu $\V$ vektor\-ruum skalaarkorrutisega 
+Olgu $\V$ vektorruum skalaarkorrutisega 
 $g \colon\, \V \times \V \rightarrow \R$. Sellisel juhul 
 kehtib võrratus
 \begin{equation} \label{eq:C-S-B}
@@ -658,7 +659,7 @@ punkti $p$ lokaalsed koordinaadid kahel järgmisel viisil:
 \psi^2\left(p\right), \ldots, \psi^n\left(p\right)\right) \in \R^n.
 \end{align*}
 
-Tekib loomulik küsimus kuidas avalduvad punkti $p$ ühed lokaalsed 
+Tekib loomulik küsimus, kuidas avalduvad punkti $p$ ühed lokaalsed 
 koordinaadid teiste kaudu. Et kujutused $\phi$ ja $\psi$ on 
 homöomorfismid, siis leiduvad pöördkujutused $\phi^{-1}$ ja 
 $\psi^{-1}$ ning seega saame koostada kompositsioonid
@@ -726,7 +727,7 @@ $M$ \emph{diferentseeruvaks muutkonnaks}.
 
 \subsection{Skalaarkorrutise definitsioon ja omadused}
 
-Olgu $\V$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse. 
+Olgu $\V$ reaalne $n$-mõõtmeline vektorruum. 
 Me ütleme, et kujutus $g \colon\, \V \times \V 
 \rightarrow \R$ on \emph{bilineaarvorm}, kui $g$ on mõlema muutuja 
 järgi lineaarne, see tähendab 
@@ -770,7 +771,7 @@ e_i \cdot e_j$, $i,j = 1, 2, \dots, n$, siis $u \cdot v =
 \eta_{ij} u^i v^j$, kus $u = u^i e_i$ ja $v = v^i e_i$.
 \end{itemize}
 
-\begin{naide}
+\begin{naide} \label{naide:skalaarkorrutis}
 Vaatleme ruumi $\R^{n}$. Olgu 
 \[u = \left(u^1, u^2, \dots, u^n \right), \quad
 v = \left(v^1, v^2, \dots, v^n \right) \in \R^{n}.\] 
@@ -778,7 +779,7 @@ Lihtne on veenduda, et kujutus $g \left(u, v \right) =
 u^1v^1 + u^2v^2 + \dots + u^n v^n$ on skalaarkorrutis.
 \end{naide}
 
-Näites 1 defineeritud skalaarkorrutis on \emph{positiivselt määratud}, 
+Näites \ref{naide:skalaarkorrutis} defineeritud skalaarkorrutis on \emph{positiivselt määratud}, 
 see tähendab iga $v \neq 0$ korral $g \left(v, v \right) > 0$. Kui 
 $g \left(v, v \right) < 0$ kõikide $v \neq 0$ korral, siis ütleme, 
 et $g$ on \emph{negatiivselt määratud} ja kui $g$ pole ei positiivselt 
@@ -786,12 +787,13 @@ ega negatiivselt määratud, siis öeldakse, et $g$ on \emph{määramata}.
 
 \begin{definitsioon}
 Kui $g$ on skalaarkorrutis vektorruumil $\V$, siis nimetame 
-vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks} (või lihtsalt 
-\emph{ortogonaalseteks}, kui $g$ roll on kontekstist selge), kui 
-$g \left( u, v \right) = 0$ . Kui $\mathbb{W} \subset \V$ 
+vektoreid $u$ ja $v$ \emph{$g$-ortogonaalseteks}, kui 
+$g \left( u, v \right) = 0$ (või lihtsalt 
+\emph{ortogonaalseteks}, kui $g$ roll on kontekstist selge). 
+Kui $\mathbb{W} \subset \V$ 
 on alamruum, siis ruumi $\mathbb{W}$ ortogonaalne täiend 
 $\mathbb{W}^{\perp}$ on hulk $\mathbb{W}^{\perp} = \left\lbrace u \in 
-\V \colon\, \forall v \in  \mathbb{W} \text{ korral } 
+\V \colon\, \text{ iga } v \in  \mathbb{W} \text{ korral } 
 g \left(u, v \right) = 0 \right\rbrace$.
 \end{definitsioon}
 \begin{definitsioon}
@@ -804,7 +806,7 @@ $Q \left( v \right) = g\left(v, v\right) = v \cdot v$, $v \in
 \begin{lause} \label{lause:skalaarkorrutise-yhesus}
 Olgu $g_1$ ja $g_2$ kaks skalaarkorrutist vektorruumil $\V$, 
 mis rahuldavad tingimust $g_1 \left(u, u \right) = 
-g_2 \left(u, u \right)$ iga $v \in \V$ korral. Siis kehtib 
+g_2 \left(u, u \right)$ iga $u \in \V$ korral. Siis kehtib 
 $g_1 \left(u, v \right) = g_2 \left(u, v \right)$ kõikide 
 $u, v \in \V$ korral, ehk teisi sõnu, $g_1 \equiv g_2$.
 \end{lause}
@@ -814,7 +816,7 @@ Olgu $\V$ vektorruum ning olgu $u, v \in \V$ ja
 kehtigu võrdus $g_1 \left(u, u\right) = g_2 \left(u, u\right)$ 
 iga $u$ korral. Defineerime uue kujutuse
 \begin{equation*}
-g \colon\, \V \times \V \rightarrow \R \text{, } 
+g \colon\, \V \times \V \rightarrow \R, \quad 
 g\left(u, v\right) \mapsto g_1\left(u, v\right) - g_2\left(u, v\right).
 \end{equation*}
 Paneme esiteks tähele, et selliselt defineeritud $g$ on 
@@ -856,7 +858,7 @@ Kokkuvõttes saime $2g\left(u, v\right) = 0$ ehk
 $g\left(u, v\right) = 0$, mida oligi tarvis.
 \end{proof}
 
-\begin{teoreem}
+\begin{teoreem} \label{teoreem:ortbaas}
 Olgu $\V$ reaalne $n$-mõõtmeline vektorruum ning olgu 
 $g \colon\, \V \times \V \rightarrow \R$ skalaarkorrutis. 
 Vektorruumil $\V$ leidub baas 
@@ -864,7 +866,7 @@ $\left\lbrace e_1, e_2, \dots, e_n \right\rbrace$ nii, et
 $g \left(e_i, e_j\right) = 0$ kui $i \neq j$ ja 
 $Q\left(e_i\right) = \pm 1$ iga $i = 1, 2, \dots, n$ korral. Enamgi 
 veel, baasivektorite arv, mille korral $Q \left(e_i\right) = -1$ on 
-sama kõikide neid tingimusi rahuldavate baaside korral sama.
+kõikide neid tingimusi rahuldavate baaside korral sama.
 \end{teoreem}
 
 \begin{proof}
@@ -877,7 +879,7 @@ konstrueerimiseks, muutub teoreemi tõestus ilmseks (vt märkus
 \end{proof}
 
 \begin{definitsioon}
-Vektorruumi $\V$ baasi teoreemist 4.2 nimetame ortonormeeritud 
+Vektorruumi $\V$ baasi teoreemist \ref{teoreem:ortbaas} nimetame ortonormeeritud 
 baasiks.
 \end{definitsioon}
 
@@ -909,14 +911,14 @@ $r > 0$ nimetatakse \emph{pseudoeukleidiliseks ruumiks}.
 \begin{definitsioon}
 \emph{Minkowski aegruumiks} nimetatakse neljamõõtmelist reaalset 
 vektorruumi $\M$, millel on defineeritud mittekidunud sümmeetriline 
-bilineaarvorm g indeksiga $1$.
+bilineaarvorm $g$ indeksiga $1$.
 
 Ruumi $\M$ elemente nimetatakse \emph{sündmusteks} ja kujutust $g$ 
 nimetatakse \emph{Lorentzi skalaarkorrutiseks} ruumil $\M$.
 \end{definitsioon}
 
 \begin{markus}
-Edasises ütleme Minkowski ruumi kontekstis Lorentzi skalaarkorrutise 
+Edasises ütleme Minkowski ruumi kontekstis Lorentzi\footnote{Hendrik Antoon Lorentz (1853--1928) --- hollandi füüsik.} skalaarkorrutise 
 $g$ kohta lihtsalt skalaarkorrutis.
 \end{markus}
 
@@ -948,9 +950,9 @@ vaid nullpikkusega vektoritest.
 \begin{naide}
 Üheks ruumi $\M$ baasiks, mis koosneb vaid nullpikkusega vektoritest, 
 on näiteks $\{e_1^0, e_2^0, e_3^0, e_4^0\}$, kus 
-$e_1^0 = \left(1, 0, 0, 1\right)$, $e_2^0 = \left(0, 1, 0, 1\right)$, 
-$e_3^0 = \left(0, 0, 1, 1\right)$ ja $e_4^0 = 
-\left(-1, 0, 0, 1\right).$
+\[e_1^0 = \left(1, 0, 0, 1\right),\quad e_2^0 = \left(0, 1, 0, 1\right),\quad 
+e_3^0 = \left(0, 0, 1, 1\right),\quad e_4^0 = 
+\left(-1, 0, 0, 1\right).\]
 Tõepoolest, süsteemi $\{e_1^0, e_2^0, e_3^0, e_4^0\}$ lineaarne 
 sõltumatus on vahetult kontrollitav ja $e_1^0, \dots, e_4^0$ on 
 nullpikkusega, sest
@@ -1001,8 +1003,8 @@ Q \left(x - x_0\right) = \left(x^1 - x_0^1\right)^2 +
 \left(x^4 - x_0^4\right)^2 = 0.
 \end{equation}
 Kõigi selliste $x \in \M$ hulka, mille korral on tingimus 
-(\ref{eq:nullkoonus}) täidetud nimetatakse \emph{nullkoonuseks}
-\footnote{Füüsikas öeldakse sageli \emph{nullkoonuse} asemel 
+(\ref{eq:nullkoonus}) täidetud nimetatakse \emph{nullkoonuseks}\footnote{
+Füüsikas öeldakse sageli \emph{nullkoonuse} asemel 
 \emph{valguse koonus}.} punktis $x_0$ ja tähistatakse 
 $\mathcal{C}_N\left(x_0\right)$. Seega 
 \[\mathcal{C}_N\left(x_0\right) = \{x \in \M \colon\, Q \left(x- x_0\right) 
@@ -1193,7 +1195,7 @@ ja \emph{pseudoortogonaalmaatriksiga}.\footnote{\cite{Kilp} antud
 tõestuses tuleb asendada eukleidiline meetrika $\delta_{ij}$ 
 Minkowski meetrikaga $\eta_{ij}$ ja seega jääb tulemus kehtima 
 ka pseudoortogonaalsel juhul.}
-\paragraph*{}
+
 Me vaatleme ortogonaalteisendusega $L$ ja baasiga $\{e_a\}$ seotud 
 maatriksit $\Lambda$ kui koordinaatide teisenemise maatriksit 
 tavalisel viisil. Seega, kui $x \in \M$ esitub koordinaatides 
@@ -1213,7 +1215,7 @@ kujul $x = \hat{x}^i \hat{e}_i$, kus
 \end{align*}
 mille võime lühidalt kirja panna kui
 \begin{equation*}
-\hat{x}^i = \Lambda\indices{^i_j} x^j \text{, kus } i,j=1, 2, 3, 4.
+\hat{x}^i = \Lambda\indices{^i_j} x^j,\quad \text{kus}\ i,j=1, 2, 3, 4.
 \end{equation*}
 
 \begin{definitsioon}
@@ -2636,6 +2638,7 @@ Berezini integraal $\int_{\SM} F\left(x^{\mu},
 \end{naide}
 
 \newpage
+\selectlanguage{english}
 \section*{\engtitle}
 \addcontentsline{toc}{section}{Summary}
 
@@ -2743,12 +2746,13 @@ superspace and how to find integral or derivative of such
 functions.
 
 \newpage
-\bibliographystyle{plainurl}
+\bibliographystyle{alpha}
 \bibliography{references}
 \addcontentsline{toc}{section}{Kirjandus}
 
 \newpage
 \pagestyle{empty}
+\selectlanguage{estonian}
 \section*{Litsents}
 \addcontentsline{toc}{section}{Litsents}
 
