@@ -1516,7 +1516,7 @@ kor\-rutamise ja pöördelemendi võtmise suhtes. Olgu
 $\Lambda, \Lambda_1, \Lambda_2 \in \L$.
 Paneme tähele, et 
 \[\det \left(\Lambda_1 \Lambda_2 \right) = 
-\det \Lambda_1 \cdot \det \Lambda_2 = 1\] ja seose 
+\det \Lambda_1 \det \Lambda_2 = 1\] ja seose 
 (\ref{eq:lambda-1lambda-trans}) põhjal \[\det \Lambda^{-1} = 
 \det \left(\eta \Lambda^T \eta\right) = (-1)^2 \det \Lambda^T = 
 \det \Lambda = 1.\]
@@ -1558,9 +1558,9 @@ $\left(\left(\Lambda_1\right)\indices{^4_4}\right)^2 -
 Analoogiliselt saame valemist (\ref{eq:lambdaeta2}), et 
 $|\vec{b}| \leq \left(\Lambda_2\right)\indices{^4_4}$ 
 ja seega kokkuvõttes 
-$|\vec{a}\cdot\vec{b}| \leq |\vec{a}||\vec{b}| 
+\[|\vec{a}\cdot\vec{b}| \leq |\vec{a}||\vec{b}| 
 \leq \left(\Lambda_1\right)\indices{^4_4} 
-\left(\Lambda_2\right)\indices{^4_4}$. 
+\left(\Lambda_2\right)\indices{^4_4}.\] 
 Viimane aga tähendab, et $\left(\Lambda_1 \Lambda_2\right) \geq 0$, 
 millest piisab, et kehtiks 
 $\left(\Lambda_1 \Lambda_2\right) \geq 1$. Tõepoolest, 
@@ -2016,7 +2016,7 @@ Paneme tähele, et definitsiooni järgi $\left[u,v\right] =
 uv - vu = - \left(vu - uv\right) = - \left[v,u\right]$ ning 
 kehtib Jacobi samasus, sest
 \begin{align*}
-&\left[u, \left[v, w\right]\right] + 
+\left[u, \left[v, w\right]\right] &+ 
 	\left[v, \left[w, u\right]\right] + 
 	\left[w, \left[u, v\right]\right] = \\
 &= \left[u, vw - wv \right] + 
@@ -2026,7 +2026,7 @@ kehtib Jacobi samasus, sest
 	\left[v, wu\right] - \left[u, uw\right] + 
 	\left[w, uv\right] - \left[w, vu\right] = \\
 &= uvw - vwu - uwv + wvu + vwu - wuv - \\
-&- vuw + uwv + wuv - uvw - wvu + vuw = 0.
+&\phantom{=}\ - vuw + uwv + wuv - uvw - wvu + vuw = 0.
 \end{align*}
 Seega on definitsiooni \ref{def:lie-algebra} eeldused täidetud. 
 Märkuse \ref{markus:trace} põhjal $\Tr \left(uv\right) = 
@@ -2035,11 +2035,11 @@ Lõpuks paneme veel tähele, et $\left[u,v\right] +
 \left[u,v\right]^\dagger = 0$. Tõepoolest, kuna $u^\dagger = -u$ ja 
 $v^\dagger = -v$, siis
 \begin{align*}
-\left[u,v\right] + \left[u,v\right]^\dagger &= uv - vu + 
-\left(uv - vu\right)^\dagger = uv - vu + \left(uv\right)^\dagger - 
-\left(vu\right)^\dagger = \\
-&= uv - vu + v^\dagger u^\dagger - u^\dagger v^\dagger = 
-uv - vu + vu - uv = 0.
+\left[u,v\right] + \left[u,v\right]^\dagger &= 
+uv - vu + \left(uv - vu\right)^\dagger = \\
+&= uv - vu + \left(uv\right)^\dagger - \left(vu\right)^\dagger = \\
+&= uv - vu + v^\dagger u^\dagger - u^\dagger v^\dagger = \\
+&= uv - vu + vu - uv = 0.
 \end{align*}
 \end{naide}
 
@@ -2201,20 +2201,18 @@ Teemegi seda:
 \ad \rho_3 \left(\rho_3\right) &= \left[\rho_3, \rho_3\right] = 
 	\rho_3 \rho_3 - \rho_3 \rho_3 = 0.
 \end{align*}
-
 Saadud võrduste põhjal võime nüüd kirjutada
-
 \begin{align*}
 \ad \rho_1 = 2\begin{pmatrix}
 0 & 0 & 0 \\
 0 & 0 & 1 \\
 0 & -1 & 0
-\end{pmatrix}, 
+\end{pmatrix},\quad
 \ad \rho_2 = 2\begin{pmatrix}
 0 & 0 & -1 \\
 0 & 0 & 0 \\
 1 & 0 & 0
-\end{pmatrix}, 
+\end{pmatrix},\quad
 \ad \rho_3 = 2\begin{pmatrix}
 0 & 1 & 0 \\
 -1 & 0 & 0 \\
@@ -2342,7 +2340,7 @@ neljamõõtmelises aegruumis, vaid hoopis üldisemas $d$-mõõtmelises
 \emph{Minkowski superruumis}. Selles alapeatükis uurime pisut 
 vabamas vormis, mida Minkowski superruum endast kujutab ja kuidas 
 ta on seotud tavalise Minkowski aegruumiga. Alustuseks defineerime 
-superruumi ja superalgebra.
+superruumi ja super\-algebra.
 
 \begin{definitsioon}
 Vektorruumi $\V$ nimetatakse \emph{supervektorruumiks} ehk 
@@ -2401,7 +2399,7 @@ superalgebra $\A$ homogeensete elementide kommutaatori seosega
 \left[x, y\right] = x \circ y - 
 \left(-1\right)^{p\left(x\right) p\left(y\right)} y \circ x,
 \end{align*}
-kus $x, y \in \A$. Kui iga kahe suvalise elementie $a, b \in \A$ 
+kus $x, y \in \A$. Kui iga kahe suvalise elemendi $a, b \in \A$ 
 korral $\left[a, b\right] = 0$, siis nimetame superalgebrat $\A$ 
 kommutatiivseks.
 
@@ -2417,7 +2415,7 @@ Me ütleme, et ühikelemendiga assotsiatiivne algebra on
 \emph{Grassmanni algebra}, kui temas leidub lõplik moodustajate 
 süsteem $\left\lbrace\theta^1, \theta^2, \ldots, 
 \theta^m\right\rbrace$, $m \in \N$, mille elemendid rahuldavad 
-tingimusti \begin{itemize}
+tingimusi \begin{itemize}
 \item[(i)] suvaliste $i, j \in \left\lbrace 1, 2 \ldots, 
 m \right\rbrace$ korral $\theta^i \theta^j = - \theta^j \theta^i$,
 \item[(ii)] $\theta^1 \theta^2 \ldots \theta^m \neq 0$.
@@ -2428,7 +2426,7 @@ elemendist tähistame sümboliga $\G^m$.
 
 Vahetult definitsioonist saame Grassmanni algebra $\G^m$ kohta 
 teha ühe olulise järelduse. Kui võtame definitsiooni 
-\ref{def:grassmann} tingimuses $(i)$ indeksid $i = j$, siis saame 
+\ref{def:grassmann} tingimuses (i) indeksid $i = j$, siis saame 
 $\theta^i \theta^i = -\theta^i \theta^i$, millest
 $\left(\theta^i\right)^2 = 0$. See tingimus ütleb väga palju 
 Grassmanni algebra elementide kuju kohta. Nimelt, kuna 
@@ -2439,7 +2437,7 @@ kõikide $i \in \{1, 2, \ldots, m\}$ korral, siis moodustaja
 $\theta^i$ kas kuulub selle polünoomi liidetavate hulka parajasti 
 üks kord, või üldse mitte. Niisiis elemendi $\xi$ üldkuju on
 \begin{align*}
-\xi = \alpha_0 e + \sum_{i = 1}^{m} \alpha_i \theta^i + \ldots + 
+\xi = \alpha_0 e + \sum_{i} \alpha_i \theta^i + \ldots + 
 \sum_{i_1 i_2 \ldots i_m} \alpha_{i_1 i_2 \ldots i_m} 
 \theta^i_1 \theta^i_2 \ldots \theta^i_m,
 \end{align*}
