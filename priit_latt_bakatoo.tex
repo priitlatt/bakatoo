@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,oneside]{article}
+\documentclass[12pt,a4paper,oneside, draft]{article}
 
 \usepackage{tensor}
 \usepackage{amsmath}
@@ -6,7 +6,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[utf8]{inputenc}
-\usepackage[estonian]{babel}
+\usepackage[estonian, english]{babel}
 \usepackage[a4paper]{geometry}
 %\geometry{bindingoffset=1cm}
 %\geometry{textwidth=390pt}
@@ -123,7 +123,7 @@ Juhendaja: \dotfill ``.....'' juuni 2013
 \addcontentsline{toc}{section}{Sissejuhatus}
 
 Neljamõõtmeline reaalne vektorruum, mille kolme koordinaati 
-vaatleme kui ruumikoordinaate ja neljandat kui aega kirjeldavat 
+vaatleme kui ruumi\-koordinaate ja neljandat kui aega kirjeldavat 
 koordinaati, nimetame Minkowski\footnote{Hermann Minkowski 
 (1864--1909) --- poola matemaatik.} aegruumiks. Osutub, et 
 selline matemaatiline konstruktsioon loob väga sobivad 
@@ -141,14 +141,14 @@ põhjendada matemaatilise aruteluga. Teemakohane kirjandus
 on tavaliselt pigem füüsikaalane, siis tõestused üldjuhul kas 
 puuduvad täiesti või on võrdlemisi üldsõnalised. Sageli võib 
 monograafiates kohata selgitusi, mis on puhtfüüsikalised ega 
-põhjenda tegelikult probleemi matemaatilist sisu. Näiteks lause
+põhjenda tegelikult probleemi matemaatilist \mbox{sisu}. Näiteks \mbox{lause}
 \ref{lause:ryhmL} tulemus loetakse tavaliselt ilmseks, kuna 
-selle füüsikaline sisu ongi äärmiselt loomulik, kuid range 
+selle füüsikaline sisu \mbox{ongi} äärmiselt loomulik, kuid range 
 tõestus nõuab mõnegi kavala nipi rakendamist ning tehnilist 
 nokitsemist. 
 
 Töö viimane osa võtab eelnevaga võrreldes pisut erineva kursi 
-ja kirjeldab veidi vabamas vormis esiteks diferentsiaalgeomeetria 
+ja kirjeldab \mbox{veidi} vabamas vormis esiteks diferentsiaalgeomeetria 
 peamisi vahendeid, millega on võimalik ka Minkowski ruumi 
 struktuuri kirjeldada. Teise poolena on püütud populaarses 
 vormis anda ülevaadet klassikalise Minkowski ruumi 
@@ -157,19 +157,19 @@ füüsikas. Kõnealuseks edasiarenduseks on antikommuteeruvate
 koordinaatitega Minkowski superruum.
 
 Bakalaureusetöö on referatiivne ja selle esimese poole aluseks 
-on klassikuks kujunenud monograafia \cite{Naber}. Nimetatud monograafias
+on klassikuks kuju\-nenud monograafia \cite{Naber}. Nimetatud monograafias
 on enamik matemaatilist sisu omavaid tulemusi sõnastatud 
 ülesannetena või jõutud nendeni väga üldise arutelu tulemusel. 
 Siin oleme andnud nendele tulemustele ka range tõestuse. Töö 
 teise poole kirjutamiseks andis eelkõige inspiratsiooni 
-\cite{Super}, mis tutvustab supermatemaatika aluseid ning 
+\cite{Super}, mis tutvustab super\-matemaatika aluseid ning 
 rakendusi teoreetilises füüsikas.
 
 Töö koosneb neljast peatükist.
 
 Esimene peatükk keskendub valdkondadele, mis ei ole otseselt 
-käesoleva töö teemaga seotud, kuid osutuvad vajalikuks 
-mõistmaks töö järgnevaid osi. Võrdlemisi lakoonilisel 
+käesoleva töö \mbox{teemaga} seotud, kuid osutuvad vajalikuks 
+mõistmaks töö edasisi osi. Võrdlemisi lakoonilisel 
 viisil tuletame meelde, mida tähendab Gram--Schmidti algoritm 
 ortonormeeritud baasi leidmiseks skalaarkorrutisega ruumis ning 
 tõestame Cauchy--Schwartz--Bunjakowski võrratuse, ühe 
@@ -184,22 +184,22 @@ väga praktilisteks tööriistadeks, näiteks lauses
 töö geomeetrilist sisu, on pisut rohkem ruumi pühendatud 
 muutkonna mõiste tutvustamisele. Toodud on näide lihtsamatest 
 muutkondadest ning on selgitatud, kuidas tekib diferentseeruva 
-muutkonna mõiste.
+\mbox{muutkonna} mõiste.
 
 Teise peatüki eesmärgiks on kirjeldada Minkowski aegruumi 
 elementide ehk \emph{sündmuste} ja nende sündmuste teisenemisega 
 seotud kujutuste olemust. Selleks anname kõigepealt range 
 skalaarkorrutise definitsiooni ja tuletame meelde 
 pseudoeukleidilise ruumi mõiste. Seejärel kirjeldame 
-Minkowski ruumis skalaarkorrutise, millest saame meetrika. 
+Minkowski ruumi skalaar\-korrutise, millest saame meetrika. 
 Osutub, et meetrika alusel on ruumi $\M$ elemendid võimalik 
 jaotada kolme lõikumatusse klassi, need on \emph{ajasarnased, 
 ruumisarnased} ja \emph{nullpikkusega} vektorid. 
 Peatüki viimane punkt on pühendatud ruumi $\M$ 
-(pseudo)ortogonaalteisendustele ehk \emph{Lorentzi 
+ortogonaal\-teisendustele ehk \emph{Lorentzi 
 teisendustele}. Näitame kuidas saab selliseid 
 teisendusi maatrikskujul ja koordinaatides kirja panna ning 
-kuidas see esitus on seotud Minkowski aegruumi meetrikaga. 
+kuidas see esitus on seotud \mbox{Minkowski} aegruumi meetrikaga. 
 Lõpetuseks tõestame, et kõigi ortogonaalteisenduste hulk 
 omab väga lihtsat rühma struktuuri. Seda rühma nimetame 
 \emph{Lorentzi rühmaks}.
@@ -211,15 +211,15 @@ keskendume neist vaid olulisimate uurimisele, mille
 tulemusena sõelume kõigi ortogonaalteisenduste rühmast välja 
 pöörete alamrühma. Punkti lõpetame tulemusega, mis näitab 
 ära millised tingimused peavad olema täidetud, et ruumi 
-$\M$ teisendus oleks pööre. Järgmises punktis paneme tähele, 
-et pseudoortogonaalteisendus Minkowski ruumis 
+$\M$ \mbox{teisendus} oleks pööre. Järgmises punktis paneme tähele, 
+et pseudoortogonaal\-teisendus \mbox{Minkowski} ruumis 
 säilitab kauguse ja see motiveerib uurima lisaks 
 pseudoortogonaalteisendustele ka kujutusi, mille suhtes kaugus 
 on invariantne suurus. Peale Lorentzi teisenduste osutuvad 
 kaugusi säilitavateks teisendusteks sündmuste nihked. Nihete 
 ja Lorentzi teisenduste koosvaatlemisel tekivad Minkowski 
-ruumi sümmeetriad ehk \emph{Poincar\'e teisendused}, mis 
-moodustavad üheskoos \emph{Poincar\'e rühma}.
+\mbox{ruumi} sümmeetriad ehk \emph{Poincar\'e teisendused}, mis 
+moodustavad \emph{Poincar\'e rühma}.
 
 \begin{comment}
 Parem oleks kirjutada, et kaasaegses teoreetilises füüsikas üheks 
@@ -236,28 +236,28 @@ Neljandas peatükis tutvustame kaasaegse teoreetilise füüsika
 keskset mõistet, \emph{supersümmeetriat}. 
 Supersümmeetriliste teooriate matemaatiliseks kirjelduseks 
 oli arendatud geomeetria valdkond, mida võime nimetada 
-supergeomeetriaks. Minkowski superruum on supergeomeetria tähtsaim 
-struktuur. Üldjoontes on Minkowski superruum Minkowski aegruumi 
-laiend, kus neljale harilikule koordinadile lisatakse uued 
+supergeomeetriaks, \mbox{mille} tähtsaimaks struktuuriks on \mbox{Minkowski} superruum. 
+Üldjoontes on \mbox{Minkowski} superruum Minkowski aegruumi 
+laiend, kus neljale harilikule koordinadile \mbox{lisatakse} uued 
 koordinaadid, nõndanimetatud antikommuteeruvad koordinaadid.
 Diferentsiaalgeomeetria valdkonnast toome sisse \emph{Lie algebra} 
 ja tema esituse mõiste ning rikastame mõlemat definitsiooni 
-näidetega, mis on otseselt seotud Minkowski aegruumi geomeetriaga. 
+näidetega, mis on otseselt seotud Minkowski aeg\-ruumi geomeetriaga. 
 Edasi jõuame \emph{Lie rühma} mõisteni, mille seome 
 kirjeldaval viisil, ranget matemaatilist formalismi vältides 
-Lie algebraga. Peatüki, ja sellega ka töö lõpetame üldistades 
-klassikalist Minkowski aegruumi, tuues selleks sisse Minkowski 
+Lie algebraga. Peatüki, ja \mbox{sellega} ka töö lõpetame üldistades 
+klassikalist Minkowski aegruumi, tuues selleks \mbox{sisse} Minkowski 
 superruumi mõiste. Selle tarbeks defineerime superalgebra ja toome 
-viimasest tuntuima näite, \emph{Grassmanni algebra}. Jällegi 
+\mbox{viimasest} tuntuima näite, \emph{Grassmanni algebra}. Jällegi 
 üldistest formalismist hoidudes ja näidetega varustatuna 
-tutvustame lugejale kuidas on superruumil defineeritud 
+tutvustame lugejale kuidas on superruumil defi\-neeritud 
 funktsioonid ja nende diferentseerimine ning integreerimine.
 
 Kõikjal selles töös tähistab $\K$ suvalist korpust, mille
 karakteristika on null. Kui mõeldakse reaalarvude korpust 
 $\R$, siis on see vastavalt tähistatud. Analoogiliselt on 
 sümboliga $\V$ tähistatud suvaline vektorruum. Konkreetsete 
-ruumide korral kasutame neile vastavat süm\-boolikat, näiteks 
+ruumide korral \mbox{kasutame} neile vastavat süm\-boolikat, näiteks 
 $\M$ Minkowski ruumi korral.
 
 Ruumi kokkuhoiu ja mugavuse mõttes kasutame töös sageli 
@@ -298,8 +298,8 @@ läheb tarvis töö järgmistes osades.
 \subsection{Skalaarkorrutisega seotud abitulemused}
 \label{eelteadmised:skalaar}
 
-\begin{teoreem} [\textnormal{\cite[teoreem II.7.3]{FA2}}]
-Lõplikumõõtmelises skalaarkorrutisega varustatud vektorruumis 
+\begin{teoreem}
+Lõplikumõõtmelises skalaarkorrutisega \mbox{varustatud} vektorruumis 
 $\V$ leidub ortonormeeritud baas.
 \end{teoreem}
 \begin{proof}
@@ -307,9 +307,9 @@ Tähistame vektorruumi $\V$ skalaarkorrutise tähega $g$.
 
 Esiteks märgime, et igas ühemõõtmelises vektorruumis eksisteerib 
 ortonormeeritud baas, sest kui $\left\lbrace b \right\rbrace$ on 
-mingi baas, kus $b \neq 0$ on ühemõõtmelise vektorruumi mingi 
+mingi baas, kus $b \neq 0$ on ühemõõtmelise vektor\-ruumi \mbox{mingi} 
 element, siis $\left\lbrace \frac{1}{|b|} b\right\rbrace$ on 
-ortonormeeritud baas, kus $|b|$ tähistab vektori $b$ pikkust.
+ortonormeeritud baas, kus $|b|$ tähistab vektori $b$ \mbox{pikkust}.
 
 Eeldame nüüd, et igas $(n-1)$-mõõtmelises vektorruumis on olemas 
 ortonormeeritud baas ja olgu $n$-mõõtmelise vektorruumi 
@@ -335,12 +335,15 @@ a_n = b_n + \sum_{j = 1}^{n-1} \alpha^j e_j,
 \text{ kus } \alpha^1, \dots, \alpha^{n-1} \in \K.
 \end{align}
 Paneme tähele, et kui $a_n$ on sellisel kujul, siis $a_n \neq 0$, 
-sest vastasel korral $b_n \nobreak \in \spn\{ b_1, b_2, \dots, b_{n-1}\}$, 
+sest vastasel korral 
+\[b_n \in \spn\{ b_1, b_2, \dots, b_{n-1}\},\] 
 mis on vastuolus süsteemi $\{ b_1, b_2, \dots, b_{n-1}\}$ 
 lineaarse sõltu\-matusega.
 Kuna otsitav $a_n$ on kujul (\ref{eq:otsitav-a_n}) ja peab kehtima 
 tingimus (\ref{eq:a_n-ting}), siis nõuame, et 
-kõikide $k \in \{1, 2, \dots, n-1\}$ korral kehtiks 
+kõikide 
+\[k \in \{1, 2, \dots, n-1\}\]
+korral kehtiks 
 $a_n \perp e_k$. Viiamne on aga samaväärne tingimusega 
 $g\left(a_n, e_k\right) = 0$, mille võime kirjutada kujul 
 \[g\left(b_n + \sum_{j = 1}^{n-1} \alpha^j e_j, e_k \right) = 0.\]
@@ -360,13 +363,13 @@ $a_n = b_n - \sum_{j=1}^{n-1}g\left(b_n, e_j\right)e_j$.
 
 \begin{markus} \label{markus:gram-schmidt}
 Teoreemi 4.1 tõestuses antud algortimi ortonormeeritud baasi 
-leidmiseks nimetatakse \emph{-Schmidti algoritmiks} või 
+leidmiseks nimetatakse \emph{Gram--Schmidti algoritmiks} või 
 \emph{ortogonaliseerimisprotsessiks}.
 \end{markus}
 
 \begin{teoreem}[Cauchy--Schwartz--Bunjakowski võrratus, vt
-\cite{FA2}] \label{teoreem:C-S-B}
-Olgu $\V$ vektroruum skalaarkorrutisega 
+\cite{FA}] \label{teoreem:C-S-B}
+Olgu $\V$ vektor\-ruum skalaarkorrutisega 
 $g \colon\, \V \times \V \rightarrow \R$. Sellisel juhul 
 kehtib võrratus
 \begin{equation} \label{eq:C-S-B}
@@ -374,7 +377,7 @@ kehtib võrratus
 g \left(v, v \right)
 \end{equation}
 kõikide $u, v \in \V$ korral. Seejuures võrdus kehtib parajasti 
-siis, kui elemendid $u$ ja $v$ on lineaarselt sõltuvad.
+siis, kui elemendid \mbox{$u$ ja $v$} on lineaarselt sõltuvad.
 \end{teoreem}
 
 \begin{proof}
@@ -613,12 +616,12 @@ Järgmised hulgad on topoloogilised muutkonnad.
 \item[(a)] Ringjoon on ühemõõtmeline mittetriviaalne topoloogiline 
 muutukond.
 \begin{itemize}
-\item[1)] Võime võtta topoloogiaks alamruumi topoloogia, see on 
+\item[1)] Topoloogiaks võime võtta alamruumi topoloogia, mis on 
 Hausdorffi topoloogiline ruum.
 \item[2)] Alamruumi topoloogial on samuti loenduv baas.
 \item[3)] Homöomorfismideks sobib võtta neli lokaalset kaarti, 
 mille saame, kui projekteerime ülemise ja alumise poolringi 
-$x$-teljele ja vasak- ning parempoolse poolringi $y$-teljele.
+$x$-teljele ning vasak- ja parempoolse poolringi $y$-teljele.
 \end{itemize}
 \item[(b)] Sfäär on topoloogiline muutkond. (Põhjendus on 
 analoogline osaga (a).)
@@ -727,10 +730,12 @@ Olgu $\V$ $n$-mõõtmeline vektorruum üle reaalarvude korpuse.
 Me ütleme, et kujutus $g \colon\, \V \times \V 
 \rightarrow \R$ on \emph{bilineaarvorm}, kui $g$ on mõlema muutuja 
 järgi lineaarne, see tähendab 
-$g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) = 
-\alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right)$ 
-ja $g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) = 
-\alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)$ 
+\begin{align*}
+g \left( \alpha_1 u_1 + \alpha_2 u_2, v \right) &= 
+\alpha_1 g \left( u_1, v \right) + \alpha_2 g \left( u_2, v \right), \\
+g \left( u, \alpha_1 v_1 + \alpha_2 v_2 \right) &= 
+\alpha_1 g \left( u, v_1 \right) + \alpha_2 g \left( u, v_2 \right)
+\end{align*}
 kus $\alpha_1$ ja $\alpha_2$ on suvalised reaalarvud ning 
 $u, u_1, u_2, v, v_1$ ja $v_2$ on vektorruumi $\V$ elemendid. 
 
@@ -766,9 +771,10 @@ e_i \cdot e_j$, $i,j = 1, 2, \dots, n$, siis $u \cdot v =
 \end{itemize}
 
 \begin{naide}
-Vaatleme ruumi $\R^{n}$. Olgu $u = \left(u^1, u^2, \dots, u^n \right), 
-v = \left(v^1, v^2, \dots, v^n \right) \in \R^{n}$. Lihtne on 
-veenduda, et kujutus $g \left(u, v \right) = 
+Vaatleme ruumi $\R^{n}$. Olgu 
+\[u = \left(u^1, u^2, \dots, u^n \right), \quad
+v = \left(v^1, v^2, \dots, v^n \right) \in \R^{n}.\] 
+Lihtne on veenduda, et kujutus $g \left(u, v \right) = 
 u^1v^1 + u^2v^2 + \dots + u^n v^n$ on skalaarkorrutis.
 \end{naide}
 
@@ -830,7 +836,7 @@ ja analoogiliselt $g\left( u, \alpha v_1 + \beta v_2 \right) =
 \alpha g\left( u, v_1 \right) + \beta g\left( u, v_2\right)$.
 
 Kujutuse $g$ sümmeetrilisus on $g_1$ ja $g_2$ sümmeetrilisust 
-arvestades ilmne. Tõestuse lõpetamiseks piisab nüüd näidata, et 
+arvestades ilmne. Nüüd piisab tõestuse lõpetamiseks veel näidata, et 
 $g = 0$. Ühelt poolt paneme tähele, et
 \begin{equation*}
 g \left(u+v, u+v\right) = g_1 \left(u+v, u+v\right) - 
@@ -843,7 +849,8 @@ g \left(v, u+v\right) = \\
 &= g \left(u, u\right) + g \left(u, v\right) + 
 g \left(v, u\right) + g \left(v, v\right) = \\
 &= g \left(u, u\right) + 2g \left(u, v\right) + 
-g \left(v, v\right) = 2g \left(u, v\right).
+g \left(v, v\right) = \\
+&= 2g \left(u, v\right).
 \end{align*}
 Kokkuvõttes saime $2g\left(u, v\right) = 0$ ehk 
 $g\left(u, v\right) = 0$, mida oligi tarvis.
@@ -864,7 +871,7 @@ sama kõikide neid tingimusi rahuldavate baaside korral sama.
 Arvestades \textit{Gram\footnote{Jørgen Pedersen Gram (1850--1916) --- 
 taani matemaatik.}--Schmidti\footnote{Erhard Schmidt (1876--1959) --- 
 Tartus sündinud saksa matemaatik.}} algoritmi ortonormeeritud baasi 
-leidmiseks, muutub teoreemi tõestus ilmseks (vt märkus 
+konstrueerimiseks, muutub teoreemi tõestus ilmseks (vt märkus 
 \ref{markus:gram-schmidt}).
 % Lisa viide Gram-Schmidti algoritmile
 \end{proof}
@@ -1020,14 +1027,14 @@ uurime kujutuse $L$ omadusi veidi lähemalt.
 
 \begin{definitsioon}
 Ruumi $\M$ lineaarset kujutust $L \colon\, \M \rightarrow \M$ nimetatakse 
-\emph{pseudo\-ortogonaalteisenduseks}, kui ta säilitab 
+\emph{pseu\-do\-ortogonaalteisenduseks}, kui ta säilitab 
 skalaarkorrutise $g$, see tähendab iga $x$ ja $y$ korral ruumist 
 $\M$ kehtib võrdus $g \left(Lx, Ly \right) = g \left(x, y\right)$.
 \end{definitsioon}
 
 \begin{lause} \label{lause:ortogonaalteisendus}
-Olgu $L:\M \rightarrow \M$ lineaarne kujutus. Siis järgmised väited 
-on samaväärsed:
+Olgu $L \colon\, \M \rightarrow \M$ lineaarne kujutus. Siis on järgmised 
+väited sama\-väärsed:
 \begin{itemize}
 \item[\emph{(i)}] $L$ on pseudoortogonaalteisendus;
 \item[\emph{(ii)}] $L$ säilitab ruumi $\M$ ruutvormi, see tähendab 
@@ -1048,7 +1055,7 @@ kõikide $x \in \M$ korral ehk $L$ säilitab ruutvormi.
 (ii) $\Rightarrow$ (i) on täpselt lause 
 \ref{lause:skalaarkorrutise-yhesus}.
 
-(ii) $\Rightarrow$ (iii). Kehtigu $(ii)$ (ja seega ka $(i)$) ning 
+(ii) $\Rightarrow$ (iii). Kehtigu (ii) (ja seega ka (i)) ning 
 olgu $\left\lbrace e_1, e_2, e_3, e_4 \right\rbrace$ ortogonaalne 
 baas ruumis $\M$. Siis ka $\left\lbrace Le_1, Le_2, Le_3, Le_4 
 \right\rbrace$ on ortonormaalne baas ruumis $\M$, sest
@@ -1065,7 +1072,7 @@ sõltumatu.
 
 (iii) $\Rightarrow$ (ii). Olgu $\left\lbrace e_1, e_2, e_3, e_4 
 \right\rbrace$ ruumi $\M$ ortonormeeritud baas ja kehtigu tingimus 
-$(iii)$. Veendume, et alati $Q\left(Lx\right) = Q\left(x\right)$, 
+(iii). Veendume, et alati $Q\left(Lx\right) = Q\left(x\right)$, 
 kus $x \in \M$ on suvaline. Fikseerime $x \in \M$ ning esitugu ta 
 koordinaatides kujul $x = x^i e_i$, $i = 1, 2, 3, 4$.
 \begin{align*}
@@ -1093,20 +1100,23 @@ nimetada \emph{Miknowski ruumi meetrikaks}.
 Sellise tähistuse korral $\eta_{ab} = 1$, kui $a = b = 1, 2, 3$ ja 
 $\eta_{ab} = -1$, kui $a = b = 4$ ning $\eta_{ab} = 0$ muudel 
 juhtudel. Vahetult on kontrollitav, et $\eta = \eta^T$ ja 
-$\eta \eta^{-1} = \eta^{-1} \eta = E$, kus $E$ on ühikmaatriks.
-\newline
+\[\eta \eta^{-1} = \eta^{-1} \eta = E,\] 
+kus $E$ on ühikmaatriks.
+
 Arvestades sissetoodud tähistusi saame nüüd kirjutada 
 $g\left(e_a, e_b\right) = \eta_{ab}$, kus $\{e_a\}$ on ruumi $\M$ 
-ortonormeeritud baas. Enamgi veel, avaldades vektorid $u, v \in \M$ 
-baasivektorite kaudu $u = u^i e_i$ ja $v = v^i e_i$, saame 
-summeerimiskokkulepet kasutades kirjutada $g \left(u, v\right) = 
-\eta_{ab} u^a v^b$.
+ortonormeeritud baas. Enamgi veel, avaldades ruumi $\M$ vektorid 
+$u$ ja $v$ baasivektorite kaudu $u = u^i e_i$ ja $v = v^i e_i$, 
+saame summeerimiskokkulepet kasutades kirjutada 
+\[g \left(u, v\right) = \eta_{ab} u^a v^b.\]
 
 \paragraph{} Olgu $L \colon\, \M \rightarrow \M$ ruumi $\M$ 
 pseudoortogonaalteisendus ja $\{e_1, e_2, e_3, e_4\}$ selle ruumi 
 ortonormeeritud baas. Lause \ref{lause:ortogonaalteisendus} põhjal 
-on siis ka $\hat{e}_1 = Le_1, \hat{e}_2  = Le_2, \hat{e}_3 = Le_3, 
-\hat{e}_4 = Le_4$ ruumi $\M$ ortonormeeritud baas, kusjuures iga 
+on siis ka 
+\[\hat{e}_1 = Le_1,\quad \hat{e}_2  = Le_2,\quad \hat{e}_3 = Le_3, \quad
+\hat{e}_4 = Le_4\] 
+ruumi $\M$ ortonormeeritud baas, kusjuures iga 
 $e_i$, $i = 1,2,3,4$ saab esitada vektorite $\hat{e}_j$ 
 lineaarkombinatsioonina kujul
 \begin{equation} \label{eq:baasideseos}
@@ -1135,9 +1145,11 @@ Korrutades võrduse (\ref{eq:lambdaetamat1}) mõlemaid pooli maatriksiga
 $\Lambda^{-1}$ saame $\Lambda^T \eta = \eta \Lambda^{-1}$. Korrutades 
 nüüd saadud tulemust veel paremalt maatriksiga $\eta^{-1}$ on 
 tulemuseks $\Lambda^T = \eta \Lambda^{-1} \eta^{-1}$. Viimast arvesse 
-võttes võime kirjutada $\Lambda \eta \Lambda^T = \Lambda \eta^{-1} 
+võttes võime kirjutada 
+\[\Lambda \eta \Lambda^T = \Lambda \eta^{-1} 
 \Lambda^T = \Lambda \eta^{-1} \left( \eta \Lambda^{-1} \eta^{-1} 
-\right) = \Lambda \Lambda^{-1} \eta^{-1} = \eta^{-1} = \eta$ ehk
+\right) = \Lambda \Lambda^{-1} \eta^{-1} = \eta^{-1} = \eta\] 
+ehk
 \begin{equation} \label{eq:lambdaetamat2}
 \Lambda \eta \Lambda^T = \eta.
 \end{equation}
@@ -1292,7 +1304,7 @@ lähemalt selle rühma konkreetsemaid omadusi.
 
 \begin{definitsioon}
 Me ütleme, et $\Lambda \in \L_{GH}$ on \emph{ortokroonne}, kui 
-$\Lambda\indices{^4_4} \geq 1$ ja \emph{mitteortokroonne}, kui 
+$\Lambda\indices{^4_4} \geq 1$, ja \emph{mitteortokroonne}, kui 
 $\Lambda\indices{^4_4} \leq -1$.
 \end{definitsioon}
 
@@ -1325,8 +1337,8 @@ Niisiis
 \left(v^3\right)^2 \right) \overset{(*)}{\geq} \\
 &\geq u^1 v^1 + u^2 v^2 + u^3 v^3,
 \end{align*}
-kus võrratus $(*)$ tuleneb Cauchy--Scwartz--Bunjakowski võrratusest 
-ruumi $\R^3$ jaoks.
+kus võrratuse $(*)$ kehtivuse annab meile Cauchy--Scwartz--Bunjakowski võrratus 
+ruumis $\R^3$.
 Nüüd aga $|u^4 v^4| > |u^1 v^1 + u^2 v^2 + u^3 v^3|$, millest saame, 
 et $u^4 v^4 \neq 0$ ja $g\left (u, v\right ) \neq 0$.
 Oletame konkreetsuse mõttes, et $u^4 v^4 > 0$. Siis
@@ -1419,21 +1431,22 @@ Cauchy--Schwartz--Bunjakowski võrratusest ruumis $\R^{3}$ saame
 \end{align}
 Sooritades nüüd võrduses (\ref{eq:lambdaeta2}) asenduse $a = b = 4$ 
 saame
-\begin{align} \label{eq:ortokronkrit2}
-\left(\Lambda\indices{^4_1}\right)^2 + 
-	\left(\Lambda\indices{^4_2}\right)^2 &+ 
+\[\left(\Lambda\indices{^4_1}\right)^2 + 
+	\left(\Lambda\indices{^4_2}\right)^2 + 
 	\left(\Lambda\indices{^4_3}\right)^2 - 
-	\left(\Lambda\indices{^4_4}\right)^2 = 
-	-1 \text{, milllest järleldub} \nonumber \\
-\left(\Lambda\indices{^4_4}\right)^2 &> 
+	\left(\Lambda\indices{^4_4}\right)^2 = -1,\]
+milllest järleldub
+\begin{align} \label{eq:ortokronkrit2}
+\left(\Lambda\indices{^4_4}\right)^2 > 
 	\left(\Lambda\indices{^4_1}\right)^2 + 
 	\left(\Lambda\indices{^4_2}\right)^2 + 
 	\left(\Lambda\indices{^4_3}\right)^2.
 \end{align}
 Et $u \neq 0$, siis tingimustest (\ref{eq:ortokronkrit1}) ja 
-(\ref{eq:ortokronkrit2}) saame $\left(\Lambda\indices{^4_1} u^1 
+(\ref{eq:ortokronkrit2}) saame 
+\[\left(\Lambda\indices{^4_1} u^1 
 + \Lambda\indices{^4_2} u^2 + \Lambda\indices{^4_3} u^3\right)^2 < 
-\left(\Lambda\indices{^4_4} u^4\right)^2$, 
+\left(\Lambda\indices{^4_4} u^4\right)^2,\] 
 mille võime ruutude vahe valemit kasutades kirjutada kujul
 \begin{align} \label{eq:ortokronkrit3}
 \left(\Lambda\indices{^4_1} u^1 + \Lambda\indices{^4_2} u^2 + 
@@ -1484,7 +1497,7 @@ Meenutades veel seost (\ref{eq:lambdaetamat1}), siis saame kirjutada
 $\det\left(\Lambda^T \eta \Lambda\right) = \det \eta$, millest 
 tuleneb $\left(\det \Lambda\right)^2 = 1$. Järelikult kehtib kas
 \begin{equation*}
-\det \Lambda = 1 \text{ või } \det \Lambda = -1,
+\det \Lambda = 1 \quad \text{või} \quad \det \Lambda = -1,
 \end{equation*}
 ja seejuures ütleme, et $\Lambda$ on \emph{Lorentzi päristeisendus}, 
 kui $\det \Lambda = 1$.
@@ -1499,11 +1512,12 @@ päristeisendusused moodustavad rühma.
 Veendumaks, et hulk $\L$ on rühm näitame, et ta on kinnine 
 kor\-rutamise ja pöördelemendi võtmise suhtes. Olgu 
 $\Lambda, \Lambda_1, \Lambda_2 \in \L$.
-Paneme tähele, et $\det \left(\Lambda_1 \Lambda_2 \right) = 
-\det \Lambda_1 \cdot \det \Lambda_2 = 1$ ja seose 
-(\ref{eq:lambda-1lambda-trans}) põhjal $\det \Lambda^{-1} = 
+Paneme tähele, et 
+\[\det \left(\Lambda_1 \Lambda_2 \right) = 
+\det \Lambda_1 \cdot \det \Lambda_2 = 1\] ja seose 
+(\ref{eq:lambda-1lambda-trans}) põhjal \[\det \Lambda^{-1} = 
 \det \left(\eta \Lambda^T \eta\right) = (-1)^2 \det \Lambda^T = 
-\det \Lambda = 1$.
+\det \Lambda = 1.\]
 
 Seose (\ref{eq:lambda-1lambda-trans}) põhjal on ilmne ka 
 $\left(\Lambda^{-1}\right)\indices{^4_4} = 
@@ -1589,21 +1603,22 @@ $\det R = 1 \cdot (-1)^{4+4} \cdot \det \left(R\indices{^i_j}\right)
 = 1$. Samuti on täidetud ortogonaalsuse tingimus 
 (\ref{eq:lambdaetamat1}) kuna
 \begin{align*}
-R^T \eta R = 
+R^T \eta R &= 
 \begin{pmatrix}
 \left(R\indices{^i_j}\right) & 0 \\ 
 0 & 1 \\ 
 \end{pmatrix}^T \eta \begin{pmatrix}
 \left(R\indices{^i_j}\right) & 0 \\ 
 0 & 1 \\ 
-\end{pmatrix} = \begin{pmatrix}
+\end{pmatrix} = 
+\begin{pmatrix}
 \left(R\indices{^i_j}\right)^T & 0 \\ 
 0 & 1 \\ 
 \end{pmatrix} \begin{pmatrix}
 \left(R\indices{^i_j}\right) & 0 \\ 
 0 & -1 \\ 
 \end{pmatrix} = \\
-= \begin{pmatrix}
+&= \begin{pmatrix}
 \left(R\indices{^i_j}\right)^T 
 \left(R\indices{^i_j}\right) & 0 \cdot 0 \\ 
 0 \cdot 0  & -1 \cdot 1 \\ 
@@ -1612,7 +1627,8 @@ R^T \eta R =
 \left(R\indices{^i_j}\right)^{-1} 
 \left(R\indices{^i_j}\right) & 0 \\ 
 0  & -1 \\ 
-\end{pmatrix} = \begin{pmatrix}
+\end{pmatrix} = \\
+&= \begin{pmatrix}
 E & 0 \\ 
 0  & -1 \\ 
 \end{pmatrix} = \eta.
@@ -1631,10 +1647,10 @@ R_1 R_2 = \begin{pmatrix}
 0 & 1 \\ \end{pmatrix}
 \end{align*}
 ja seega $(R_1 R_2)\indices{^4_4} = 1$ ning 
-$\det \left(\left(\left(R_1\right)\indices{^i_j}\right) 
+\[\det \left(\left(\left(R_1\right)\indices{^i_j}\right) 
 \left(\left(R_2\right)\indices{^i_j}\right) \right) = 
 \det \left(\left(R_1\right)\indices{^i_j}\right) \det 
-\left(\left(R_1\right)\indices{^i_j}\right) = 1$.
+\left(\left(R_1\right)\indices{^i_j}\right) = 1.\]
 Teisalt, kui $R \in \mathcal{R}$, siis valemist 
 (\ref{eq:lambda-1lambda-trans}) saame
 \begin{align*}
@@ -1711,9 +1727,10 @@ $\det \left(\Lambda\indices{^i_j}\right) = 1$ on tõestatud osas, kus
 näitasime, et $\mathcal{R}$ on rühm ja seega on 
 $\left(\Lambda\indices{^i_j}\right)$ ortogonaalne. 
 Jääb veel näidata, et $\left(\Lambda\indices{^i_j}\right)^{-1} = 
-\left(\Lambda\indices{^i_j}\right)^T$. Selleks märgmine, et 
-blokkmaatriksi pööramise eeskirja järgi
-\begin{align*}
+\left(\Lambda\indices{^i_j}\right)^T$. Selleks arvutame 
+blokkmaatriksi pööramise eeskirja järgi $\Lambda^{-1}$:
+
+\begin{multline*}
 \Lambda^{-1} = 
 \begin{pmatrix}
 \left(\Lambda\indices{^i_j}\right) & 0 \\
@@ -1739,7 +1756,7 @@ blokkmaatriksi pööramise eeskirja järgi
 \left(\Lambda\indices{^i_j}\right)^{-1} & 0 \\
 0 & 1 \\ 
 \end{pmatrix}. \qquad\qquad\qquad\qquad\qquad\qquad
-\end{align*}
+\end{multline*}
 Osas, kus näitasime, et $\mathcal{R}$ on rühm tuli ka välja, et 
 $\Lambda^{-1} = \begin{pmatrix} \left(\Lambda\indices{^i_j}\right)^T 
 & 0 \\ 0 & 1 \\ \end{pmatrix}$, millest 
@@ -1783,7 +1800,8 @@ s\left(Lx, Ly\right) &= \eta_{ab} \left(\Lambda\indices{^a_c} x^c -
 	\Lambda\indices{^b_d} \left(x^d - y^d\right) = \\
 &= \eta \Lambda\indices{^a_c} \Lambda\indices{^b_d} 
 	\left(x^c - y^c\right) \left(x^d - y^d\right) = \\
-&= \eta \left(x^c - y^c\right) \left(x^d - y^d\right) = s(x, y).
+&= \eta \left(x^c - y^c\right) \left(x^d - y^d\right) = \\
+&= s(x, y).
 \end{align*}
 
 Olgu $n \in \Mat_{4, 1} \R$ komponentidega $n^a, a = 1, 2, 3, 4$ 
@@ -1798,16 +1816,16 @@ meie antud kauguse definitsiooni see nii ilmselt ka on. Seejuures
 teisendusi (\ref{eq:niked}) nimetame \emph{nihketeisendusteks}.
 
 Kokkuvõttes oleme leidnud kaks kujutuste klassi, nihked ja 
-(homogeensed) Lorentzi teisendused, mille suhtes ruumi $\M$ 
+(homogeensed) \mbox{Lorentzi} teisendused, mille suhtes ruumi $\M$ 
 sündmuste vaheline kaugus on invariantne. Üldisemalt nimetame 
 teisendust, mille suhtes sündmuste vaheline kaugus on invariantne 
 suurus \emph{sümmeetriateisenduseks}. Pöörame järgnevas pisut 
-tähelepanu sellistele sümmeetria\-teisendustele, mille me saame, kui 
+tähele\-panu sellistele sümmeetria\-teisendustele, mille me saame, kui 
 vaatleme nihkeid koos Lorentzi teisendustega.
 
 \begin{definitsioon}
 Olgu $\Lambda \in \L_{GH}$ Lorentzi teisendus ja 
-$n \in \Mat_{4, 1}\R$ mingi nihketeisenduse maatriks. 
+$n \in \Mat_{4, 1}\R$ mingi nihke\-teisenduse maatriks. 
 \emph{Poincar\'e teisenduseks}\footnote{Jules Henri Poincaré 
 (1854--1912) --- prantsuse matemaatik.} nimetame kujutust kujul
 \begin{align*}
@@ -1833,7 +1851,7 @@ tähistatakse sümboliga $\P$.
 Veendumaks Poincar\'e rühma defintsiooni korrektsuses piisab 
 näidata, et hulk $P$ varustatuna tehtega 
 $\circ \colon\, P \times P \rightarrow P$ moodustab tõepoolest rühma.
-Selle tõestamiseks olgu meil fikseeritud kolm Poicar\'e teisendust 
+Olgu meil selleks fikseeritud kolm Poicar\'e teisendust 
 $\{n_1, \Lambda_1\}, \{n_2, \Lambda_2\}$ ja $\{n_3, \Lambda_3\}$. 
 Esiteks märgime, et $ \Lambda_1 n_2 \in \Mat_{4, 1}\R$ ja seega ka 
 $n_1 + \Lambda_1 n_2 \in \Mat_{4, 1}\R$ ja $\Lambda_1 \Lambda_2 \in 
@@ -1884,7 +1902,9 @@ Poincar\'e rühma kontekstis.
 \end{markus}
 
 \newpage
-\section{Minkowski ruum teoreetilises füüsikas ja diferentsiaalgeomeetrias}
+\section[Minkowski ruum teoreetilises füüsikas ja 
+diferentsiaalgeomeetrias]{Minkowski ruum teoreetilises 
+füüsikas ja \newline diferentsiaalgeomeetrias}
 
 \subsection{Lie algebra}
 
@@ -1966,7 +1986,7 @@ kommutatsiooni\-eeskirjadega ehk struktuurikonstantidega.
 
 \begin{naide} \label{naide:su2}
 Vaatleme teist järku ruutmaatriksite hulka $\su2 \subset \Mat_2 \C$, 
-kus $u \in \su2$ rahuldab tingimusi
+mille element $u \in \su2$ rahuldab tingimusi
 \begin{align}
 \Tr u &= 0, \label{eq:su2-tr=0}\\ 
 u^\dagger + u &= 0. \label{eq:su2-antihermitian}
@@ -1987,7 +2007,7 @@ u + v + u^\dagger + v^\dagger = 0, \\
 ehk $u + v \in \su2$. Veendumaks, et $\su2$ on Lie algebra, piisab 
 nüüd veel näidata, et kommutaator $\left[\phantom{u}, 
 \phantom{u}\right]$ rahuldab definitsioonis \ref{def:lie-algebra} 
-antud tingimusi ning $\left[u,v\right] \in \su2$ ja 
+antud tingimusi ning kehtivad $\left[u,v\right] \in \su2$ ja 
 $\Tr \left[u,v\right] = 0$. 
 
 Paneme tähele, et definitsiooni järgi $\left[u,v\right] = 
@@ -2090,9 +2110,9 @@ teoreetilises füüsikas väga tähtis roll.
 \subsection{Lie algebra esitus}
 
 \begin{definitsioon}
-Olgu $V$ vektorruum ja $L$ Lie algebra. Lineaarkujutust 
-$\psi \colon\, L \rightarrow \Lin V$ nimetatakse Lie algebra $L$ esituseks, 
-kui ta säilitab kommutaatori, see tähendab suvaliste $u, v \in L$ 
+Olgu $V$ vektorruum ja $L$ Lie algebra. Me ütleme, et lineaar\-kujutus 
+$\psi \colon\, L \rightarrow \nobreak \Lin V$ on Lie algebra $L$ esitus, 
+kui ta säilitab kommutaatori, see tähendab iga $u, v \in L$ 
 korral $\left[\psi\left(u\right), \psi\left(v\right)\right] = 
 \psi\left(\left[u, v\right]\right)$. 
 \end{definitsioon}
@@ -2144,7 +2164,7 @@ esitus.
 
 \begin{definitsioon}
 Esitust lausest \ref{lause:adjoint} nimetame Lie algebra $L$ 
-\emph{adjungeeritud esituseks}.
+\emph{\mbox{adjungeeritud} esituseks}.
 \end{definitsioon}
 
 \begin{naide}
@@ -2152,11 +2172,10 @@ Leiame Lie algebra $\su2$ baasi $\{\rho_1, \rho_2, \rho_3\}$
 adjungeeritud esituse
 \[\{\ad \rho_1, \ad \rho_2, \ad \rho_3\}\]
 maatrikskuju. Arvestades adjungeeritud esituse definitsiooni, tuleb 
-meil selleks arvutada maatriksid $\ad \rho_1 \left(\rho_1\right), 
+meil selleks arvutada vektorid $\ad \rho_1 \left(\rho_1\right), 
 \ad \rho_1 \left(\rho_2\right), \ldots, 
 \ad \rho_3 \left(\rho_2\right)$ ja $\ad \rho_3 \left(\rho_3\right)$. 
 Teemegi seda:
-
 \begin{align*}
 \ad \rho_1 \left(\rho_1\right) &= \left[\rho_1, \rho_1\right] = 
 	\rho_1 \rho_1 - \rho_1 \rho_1 = 0, \\
@@ -2200,7 +2219,6 @@ Saadud võrduste põhjal võime nüüd kirjutada
 0 & 0 & 0
 \end{pmatrix},
 \end{align*}
-
 mis tähendab, Lie algebra $\su2$ adjungeeritud esituse baasiks sobib 
 kolmandat järku antisümmeetriliste maatriksite süsteem 
 \[\left\lbrace \begin{pmatrix}
@@ -2464,7 +2482,7 @@ $\G^{m}_{\overline{1}}$. Paneme tähele, et valemi
 (\ref{eq:grass_parity}) põhjal on alamruum $\G^{m}_{\overline{0}}$ 
 koguni algebra $\G^m$ alamalgebra. Nüüd, kuna 
 $\G^{m}_{\overline{0}} \cup \G^{m}_{\overline{1}} = \{0\}$, siis 
-saame suvalise $\xi \in \G^m$ lahutada paaris- ja paaritute 
+saame mistahes $\xi \in \G^m$ lahutada paaris- ja paaritute 
 elementide summaks ehk teisi sõnu Grassmanni algebra $\G^m$ on 
 lahutatav alamruumide $\G^{m}_{\overline{0}}$ ja 
 $\G^{m}_{\overline{1}}$ otsesummaks. Niisiis 
@@ -2725,12 +2743,12 @@ superspace and how to find integral or derivative of such
 functions.
 
 \newpage
-%\bibliographystyle{ieeetran}
-\bibliographystyle{alphaurl}
+\bibliographystyle{plainurl}
 \bibliography{references}
 \addcontentsline{toc}{section}{Kirjandus}
 
 \newpage
+\pagestyle{empty}
 \section*{Litsents}
 \addcontentsline{toc}{section}{Litsents}
 
